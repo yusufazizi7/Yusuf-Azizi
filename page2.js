@@ -40,6 +40,13 @@ function changeFont(fontName) {
     const arabicText = document.querySelectorAll('.nooniyah');
     arabicText.forEach(element => {
         element.style.fontFamily = fontName;
+
+
+        if (fontName.includes('Thuluth')) {
+            element.style.fontSize = '50px'; // Set the desired font size for Thuluth
+        } else {
+            element.style.fontSize = ''; // Reset to default size if other fonts are selected
+        }
     });
 
     localStorage.setItem('selectedFont', fontName);
@@ -64,6 +71,7 @@ function updateRadioButtons(fontName) {
     const amiriRadio = document.querySelector('input[name="font"][value="amiri"]');
     const neiziriRadio = document.querySelector('input[name="font"][value="Neiziri"]');
     const uthmanRadio = document.querySelector('input[name="font"][value="Uthman"]');
+    const thuluthRadio = document.querySelector('input[name="font"][value="Thuluth"]');
 
     if (fontName.includes('Amiri')) {
         amiriRadio.checked = true;
@@ -71,6 +79,9 @@ function updateRadioButtons(fontName) {
         neiziriRadio.checked = true;
     } else if (fontName.includes('Uthman')) {
         uthmanRadio.checked = true;
+    } else if (fontName.includes('Thuluth')) {
+
+        thuluthRadio.checked = true;
     } else {
         defaultRadio.checked = true;
     }
@@ -105,6 +116,9 @@ fontRadios.forEach(radio => {
                 changeFont("'Neiziri'");
             } else if (this.value === 'Uthman') {
                 changeFont("'Uthman'");
+            } else if (this.value === 'Thuluth'){
+
+                changeFont('Thuluth')
             }
         }
     });

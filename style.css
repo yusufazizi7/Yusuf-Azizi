@@ -30,6 +30,14 @@
 
 }
 
+@font-face {
+    font-family: Thuluth;
+    src: 
+         url('Fonts/AM_Thulth_Regular.ttf') format('truetype');
+
+
+}
+
 .nooniyah{
 
     direction: rtl;
@@ -39,6 +47,7 @@
     font-family: Neiziri;
 
     margin: 30px;
+    
 
    
 
