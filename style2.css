@@ -1,0 +1,395 @@
+@font-face {
+    font-family: MyCustomFont;
+    src: 
+         url('Far_Neirizi.ttf') format('truetype');
+
+
+}
+
+i:hover{
+
+    color: aqua;
+}
+
+
+html, body {overflow-x:hidden;}
+
+
+
+body{
+
+
+    margin: 0 auto;
+
+    
+    text-align: center;
+    
+    
+    background-color: #eae2d9;
+    
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: Calibri;
+    
+    
+    position: relative;
+
+    min-height: 100vh;
+    
+    
+
+    
+    color: rgb(0, 0, 0); /* Optionally, you can set text color to white for better visibility */
+    
+    
+
+
+}
+
+.btndownload {
+
+    margin: 25px;
+
+    background-color: blanchedalmond;
+
+    border-radius: 10px;
+
+    border-width: 3px;
+
+    width: 250px; 
+    
+    height: 30px;
+
+    color: black;
+    text-decoration: none;
+}
+
+
+.textBox {
+
+    border-style: solid;
+    border-width: 3px;
+
+    border-color: black;
+
+    background-color: azure;
+
+    width: 250px;
+
+    height: 35px;
+
+    font-size: x-large;
+    
+    
+    
+}
+
+
+.names {
+
+    border-style: solid;
+    border-width: 3px;
+
+    border-color: black;
+
+    background-color: azure;
+
+    
+
+    
+
+    font-size: x-large;
+
+    
+
+
+}
+
+
+#countLabel {
+
+
+    font-size: 50px;
+
+    border-style: solid;
+
+    padding-left: 30px;
+    
+    padding-right: 30px;
+
+}
+
+.button {
+
+
+    border-radius: 10px;
+    
+    width: 150px;
+    height: 50px;
+
+    margin-top: 20px;
+
+    background-color: azure;
+}
+
+
+
+
+
+
+
+
+
+
+.sumbitBtn {
+
+    margin: 25px;
+
+    background-color: blanchedalmond;
+
+    border-radius: 10px;
+
+    border-width: 3px;
+
+    width: 200px; 
+    
+    height: 30px;
+
+}
+
+
+i {
+
+    color: red;
+
+    
+}
+
+#logo:hover{
+
+
+    animation: scale;
+    animation-duration: 1s;
+    
+
+
+}
+
+
+
+#logo{
+
+    width: 50%;
+    position: static;
+    padding: 93px;
+
+    fill: red;
+    
+
+    
+}
+
+
+@keyframes scale{
+
+    /*50%{transform: scale(1.1, 1.1)}*/
+
+    50%{opacity: 0.5;}
+
+    
+}
+
+
+
+p[id^="p"] {
+
+
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+
+
+
+
+
+
+
+.nooniyah{
+
+    direction: rtl;
+
+    font-size: 40px;
+
+    font-family: Calibri;
+
+   
+
+    
+
+}
+
+
+
+
+.container {
+
+    padding: 0 330px;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 63px 0px;
+    
+    
+
+    
+}
+@media (max-width: 1500px) {
+    .container {
+        padding: 0 70px; /* Remove padding when viewport width is 768px or smaller */
+    }
+    nav {
+        width: 100%; /* Ensure navigation bar takes full width */
+    }
+}
+
+
+.logo{
+
+    width: 180px;
+    cursor: pointer;
+}
+
+nav ul{
+
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li{
+
+    display: inline-block;
+    margin: 10px 20px;
+
+}
+
+nav ul li a{
+
+    color: black;
+    text-decoration: none;
+    font-size: medium;
+}
+
+i {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    
+    color: red;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#Tiktok {
+
+    color: black;
+}
+
+#Tiktok:hover {
+
+    color: aqua;
+}
+
+i:hover {
+
+    color: aqua;
+}
+
+.btn {
+
+    border: 0;
+
+    width: 60px;
+
+    background: 0;
+}
+
+
+nav ul li a:hover {
+
+    color: aqua;
+}
+
+iframe {
+    display: block; /* Ensures the iframe is treated as a block-level element */
+    margin: 100px auto; /* Sets top and bottom margins to 0 and left and right margins to auto, centering the iframe horizontally */
+    width: 960px; /* Set the width to 100% to fill its container */
+    height: 540px;
+}
+
+.corner {
+    position: absolute;
+    width: 150px; /* Adjust the size as needed */
+    height: 174px; /* Adjust the size as needed */
+    
+    z-index: -1;
+    pointer-events: none;
+
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.icon-YoutubeIcon:before {
+    content: "\e900";
+  }
+
+
+.cls-1 {
+
+    
+
+    fill: black;
+
+    
+}
+.cls-1:hover {
+
+    fill: aqua;
+}
+
+#Layer_1 {
+
+    width: 200px;
+    height: auto;
+}
