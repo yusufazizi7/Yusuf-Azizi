@@ -49,12 +49,44 @@
     margin: 30px;
     
 
-   
+   list-style-type: arabic-indic;
 
     
 
 }
 
+.nooniyah li {
+
+    margin: 30px 65px 30px 65px;
+}
+
+.quran {
+
+    direction: rtl;
+
+    font-size: 40px;
+
+    font-family: Neiziri;
+
+    
+}
+
+
+
+
+.qurancntnr {
+
+    width: 50%;
+
+   
+   text-align: center;
+    
+
+    
+    
+    
+    background-color: lightblue;
+}
 
 
 i:hover{
@@ -111,6 +143,8 @@ body{
     min-height: 100vh;
 
     transition: 0.3s;;
+
+    
     
     
 

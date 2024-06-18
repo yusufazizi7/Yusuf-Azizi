@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const icon = document.getElementById('moon'); // Initially moon icon
     const body = document.body;
-    const logo = document.getElementById('logo');
+    
 
     // Check if dark mode is enabled in localStorage when the page loads
     const isDarkModeEnabled = localStorage.getItem('darkModeEnabled');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
 
-        logo.src = 'Images/QahtanilogoWhite.svg';
+        
     }
 
     icon.onclick = function() {
@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
 
-            logo.src = 'Images/QahtanilogoWhite.svg';
+            
             localStorage.setItem('darkModeEnabled', 'true');
         } else {
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
 
-            logo.src = 'Images/Qahtanipdflogo.svg';
+            
             localStorage.setItem('darkModeEnabled', 'false');
         }
     };
@@ -123,5 +123,3 @@ fontRadios.forEach(radio => {
         }
     });
 });
-
-
