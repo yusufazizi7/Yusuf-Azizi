@@ -46,7 +46,7 @@ function changeFont(fontName) {
 
         if (fontName.includes('Thuluth')) {
             if (isMobile) {
-                element.style.fontSize = ''; // Apply 50px size for mobile
+                element.style.fontSize = '20px'; // Apply 50px size for mobile
             } else {
                 element.style.fontSize = '50px'; // You can adjust this size for non-mobile if needed
             }

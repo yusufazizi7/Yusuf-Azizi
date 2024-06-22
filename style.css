@@ -46,7 +46,14 @@
 
 }
 
+.diacritic {
+    color: blue; /* Change this to your desired color */
+}
 
+.symbols-font {
+
+    color: red;
+}
 
 .bismillah {
     
