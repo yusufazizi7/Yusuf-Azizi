@@ -38,6 +38,27 @@
 
 }
 
+@font-face {
+    font-family: Symbols;
+    src: 
+         url('Fonts/Symbols1_Ver02.otf') format('opentype');
+
+
+}
+
+
+
+.bismillah {
+    
+    text-align: center;
+
+    font-size: 30px;
+
+    font-family: Amiri;
+
+    margin: 30px;
+
+}
 .nooniyah{
 
     direction: rtl;
@@ -55,6 +76,7 @@
 
 }
 
+
 .nooniyah li {
 
     margin: 30px 65px 30px 65px;
@@ -66,7 +88,13 @@
 
     font-size: 40px;
 
-    font-family: Neiziri;
+    font-family: Thuluth;
+
+    margin: 0px 150px 0px 150px;
+
+    text-align: center;
+
+    
 
     
 }
@@ -74,19 +102,6 @@
 
 
 
-.qurancntnr {
-
-    width: 50%;
-
-   
-   text-align: center;
-    
-
-    
-    
-    
-    background-color: lightblue;
-}
 
 
 i:hover{
@@ -418,7 +433,7 @@ i {
 @media only screen and (max-width: 640px) {
     
     .container {
-        padding: 0 50px; /* Remove padding when viewport width is 768px or smaller */
+        padding: 0 70px; /* Remove padding when viewport width is 768px or smaller */
 
         margin: 0px 20px;
     }
@@ -440,10 +455,7 @@ i {
     }
 
 
-    .nooniyah {
-
-        margin: 0px;
-    }
+    
 
     nav {
 
@@ -458,7 +470,7 @@ i {
 
     .logo {
 
-        width: 100px;
+        width: 50px;
         cursor: pointer;
     }
 
@@ -478,7 +490,17 @@ i {
 
     .nooniyah li {
 
-        margin: 0px;
+        margin: 30px;
+    }
+    
+    .bismillah {
+
+        
+    
+        font-size: 17px;
+    
+        
+    
     }
     
 
@@ -738,6 +760,34 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.sidebar {
+    position: fixed;
+    
+    right: -250px; /* Off-screen initially on the right */
+    
+
+    color: black;
+    
+    background: #f5f0ea;
+    border-radius: 2px;
+
+    border-color: black;
+    transition: right 0.3s ease; /* Transition on right property */
+    border: 1px solid black;
+    
+}
+
+.sidebar.active {
+    right: 0; /* Show sidebar from the right */
+    padding: 20px;
+    z-index: 1000;
+    height: 100%;
+    width: 250px;
+    top: 0;
+
+    
+}
+
 
 @media only screen and (max-width: 640px) {
     
@@ -748,8 +798,8 @@ nav ul li a:hover {
 
     .corner {
 
-        width: 120px; /* Adjust the size as needed */
-        height: 139px; /* Adjust the size as needed */
+        width: 97px; /* Adjust the size as needed */
+        height: 97px; /* Adjust the size as needed */
     
         z-index: -1;
         pointer-events: none;
@@ -757,9 +807,27 @@ nav ul li a:hover {
 
     #logo {
 
-        width: 85%;
+        width: 70%;
         position: static;
-        padding-top: 100px;
+        padding: 30px;
+
+        
+    }
+
+    .sidebar.active {
+        
+        width: 150px;
+        
+        
+    }
+    .fa-brands {
+
+        font-size: 25px;
+    }
+
+    .fa-solid {
+
+        font-size: 25px;
     }
 
 }
@@ -851,28 +919,8 @@ nav ul li a:hover {
 .fa-bars {
 
     color: var(--secondary-color);
-}
-
-
-.sidebar {
-    position: fixed;
-    
-    right: -250px; /* Off-screen initially on the right */
-    color: black;
-    
-    background: #f0f0f0;
-    transition: right 0.3s ease; /* Transition on right property */
-    
-    
-}
-
-.sidebar.active {
-    right: 0; /* Show sidebar from the right */
-    padding: 20px;
-    z-index: 1000;
-    height: 100%;
-    width: 250px;
-    top: 0;
 
     
 }
+
+

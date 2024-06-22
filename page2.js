@@ -38,14 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function changeFont(fontName) {
     const arabicText = document.querySelectorAll('.nooniyah, .quran');
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+
     arabicText.forEach(element => {
         element.style.fontFamily = fontName;
 
 
         if (fontName.includes('Thuluth')) {
-            element.style.fontSize = '50px'; // Set the desired font size for Thuluth
-        } else {
-            element.style.fontSize = ''; // Reset to default size if other fonts are selected
+            if (isMobile) {
+                element.style.fontSize = ''; // Apply 50px size for mobile
+            } else {
+                element.style.fontSize = '50px'; // You can adjust this size for non-mobile if needed
+            }
         }
     });
 
