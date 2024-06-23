@@ -44,14 +44,24 @@ function changeFont(fontName) {
         element.style.fontFamily = fontName;
 
 
-        if (fontName.includes('Thuluth')) {
-            if (isMobile) {
-                element.style.fontSize = '30px'; // Apply 50px size for mobile
+        if (fontName.includes('Thuluth') && (!isMobile) ) {
+           
+                const currentFontSize = window.getComputedStyle(element).fontSize;
+                // Extract the numerical value and add a few pixels
+                const newFontSize = parseFloat(currentFontSize) + 13; // Adding 3 pixels
+                element.style.fontSize = `${newFontSize}px`;
+                
+            } else if (fontName.includes('Thuluth') && (isMobile)) {
+
+                const currentFontSize = window.getComputedStyle(element).fontSize;
+                const newFontSize = parseFloat(currentFontSize) + 13; // Adding 3 pixels
+                element.style.fontSize = `${newFontSize}px`;
             } else {
-                element.style.fontSize = '50px'; // You can adjust this size for non-mobile if needed
+
+                element.style.fontSize = '';
             }
         }
-    });
+    );
 
     localStorage.setItem('selectedFont', fontName);
 }
