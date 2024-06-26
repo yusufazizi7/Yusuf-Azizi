@@ -27,7 +27,7 @@
             <ul>
                 <li><a href="Contactus.html">Contact us</a></li>
                 <li><a href="https://paypal.me/moyusufazizi" target="_blank">Donate</a></li>
-                <li><a href="page2.html">Nooniyah Al-Qahtani</a></li>
+                <li><a href="QahtaniPoem.html">Nooniyah Al-Qahtani</a></li>
                 <li><a href="page4.html">Videos</a></li>
             </ul>
             
@@ -792,29 +792,14 @@
     
     
     
-   
+    
+    
+    
+    
+    <script src="index.js"></script>
     <script src="page2.js"></script>
+    <script src="QahtaniScript.js"></script>
 
-    <script>
-        // Restore the state of the checkbox when the page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            var lineNumbersChecked = localStorage.getItem('lineNumbersChecked') === 'true';
-            document.getElementById('LineNumbers').checked = lineNumbersChecked;
-
-            document.getElementById('LineNumbers').addEventListener('change', function() {
-                localStorage.setItem('lineNumbersChecked', this.checked);
-                if (this.checked) {
-                    window.location.href = 'QhtniOrdred.html'; // Replace with the URL if needed
-                } else {
-                    window.location.href = 'page2.html'; // Replace with the URL of the original page
-                }
-            });
-
-            if (!lineNumbersChecked) {
-                window.location.href = 'page2.html'; // Automatically redirect if the checkbox is not checked
-            }
-        });
-    </script>
-
+    
 </body>
 </html>
