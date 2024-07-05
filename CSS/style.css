@@ -1,7 +1,7 @@
 @font-face {
     font-family: Uthman;
     src: 
-         url('Fonts/UthmanTN.ttf') format('truetype');
+         url('../Fonts/UthmanTN.ttf') format('truetype');
 
 
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: Neiziri;
     src: 
-         url('Fonts/Neirizi.ttf') format('truetype');
+         url('../Fonts/Neirizi.ttf') format('truetype');
 
 
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: Amiri;
     src: 
-         url('Fonts/Amiri-Regular.ttf') format('truetype');
+         url('../Fonts/Amiri-Regular.ttf') format('truetype');
 
 
 }
@@ -25,7 +25,7 @@
 @font-face {
     font-family: Hafs;
     src: 
-         url('Fonts/uthmanic_hafs.ttf') format('truetype');
+         url('../Fonts/Hafs.ttf') format('truetype');
 
 
 }
@@ -33,7 +33,7 @@
 @font-face {
     font-family: Thuluth;
     src: 
-         url('Fonts/AM_Thulth_Regular.ttf') format('truetype');
+         url('../Fonts/AM_Thulth_Regular.ttf') format('truetype');
 
 
 }
@@ -41,7 +41,7 @@
 @font-face {
     font-family: Symbols;
     src: 
-         url('Fonts/Symbols1_Ver02.otf') format('opentype');
+         url('../Fonts/Symbols1_Ver02.otf') format('opentype');
 
 
 }
@@ -72,7 +72,7 @@
 
     font-size: 37px;
 
-    font-family: Neiziri;
+    font-family: Thuluth;
 
     margin: 30px;
     
@@ -105,6 +105,8 @@
     margin: 0px 150px 0px 150px;
 
     text-align: center;
+
+    
 
     
 
@@ -354,7 +356,7 @@ p[id^="p"] {
 
 .container {
 
-    padding: 0 330px;
+    padding: 0 380px;
 }
 
 nav {
@@ -384,7 +386,7 @@ nav {
 
 .logo{
 
-    width: 180px;
+    width: 150px;
     cursor: pointer;
 }
 
@@ -435,10 +437,21 @@ i {
 
 @media (max-width: 1500px) {
     .container {
-        padding: 0 70px; /* Remove padding when viewport width is 768px or smaller */
+        padding: 0 140px; /* Remove padding when viewport width is 768px or smaller */
     }
     nav {
         width: 100%; /* Ensure navigation bar takes full width */
+    }
+
+    nav ul {
+
+        padding-right: 15px;
+
+    }
+    
+    .logo {
+
+        padding-right: 40px;
     }
 }
 
