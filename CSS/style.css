@@ -55,6 +55,13 @@
     color: red;
 }
 
+
+
+.pages {
+    width: 700px;
+    
+}
+
 .bismillah {
     
     text-align: center;
@@ -510,7 +517,7 @@ i {
 
     .logo {
 
-        width: 50px;
+        width: 100px;
         cursor: pointer;
     }
 
@@ -562,10 +569,6 @@ i {
     color: aqua;
 }
 
-a:hover {
-
-    color: aqua;
-}
 
 
 

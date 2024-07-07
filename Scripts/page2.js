@@ -36,26 +36,55 @@
 //     };
 // });
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     const logo = document.getElementById('logo');
+//     const logoSrcDark = 'Images/QahtanilogoWhite.svg';
+//     const logoSrcLight = 'Images/Qahtanipdflogo.svg';
+
+//     // Function to update the logo based on dark mode
+//     function updateLogo() {
+//         const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
+//         if (isDarkModeEnabled) {
+//             logo.src = logoSrcDark;
+//         } else {
+//             logo.src = logoSrcLight;
+//         }
+//     }
+
+//     // Initial update based on saved dark mode state
+//     updateLogo();
+
+//     // Optional: if you want to listen for changes in dark mode from the other script
+//     document.addEventListener('darkModeToggle', updateLogo);
+// });
+
 document.addEventListener('DOMContentLoaded', function() {
-    const logo = document.getElementById('logo');
-    const logoSrcDark = 'Images/QahtanilogoWhite.svg';
-    const logoSrcLight = 'Images/Qahtanipdflogo.svg';
+    const logo = document.querySelector("#logo");
 
-    // Function to update the logo based on dark mode
-    function updateLogo() {
-        const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
-        if (isDarkModeEnabled) {
-            logo.src = logoSrcDark;
-        } else {
-            logo.src = logoSrcLight;
+    logo.addEventListener('load', function() {
+        var svgDoc = logo.contentDocument;
+        var svgElements = svgDoc.querySelectorAll('*');
+
+        // Function to update the logo based on dark mode
+        function updateLogo() {
+            const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
+            if (isDarkModeEnabled) {
+                svgElements.forEach(function(element) {
+                    element.style.fill = 'white';
+                });
+            } else {
+                svgElements.forEach(function(element) {
+                    element.style.fill = 'black';
+                });
+            }
         }
-    }
 
-    // Initial update based on saved dark mode state
-    updateLogo();
+        // Initial update based on saved dark mode state
+        updateLogo();
 
-    // Optional: if you want to listen for changes in dark mode from the other script
-    document.addEventListener('darkModeToggle', updateLogo);
+        // Listen for changes in dark mode from the other script
+        document.addEventListener('darkModeToggle', updateLogo);
+    });
 });
 
 

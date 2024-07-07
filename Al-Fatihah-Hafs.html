@@ -1,63 +1,25 @@
 <!DOCTYPE html>
-
-<html> 
-
-<head> 
-
-    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
-
-    <meta name="desciption" content="My first website that I making by watching YouTube Tutorials">
-
-    <meta name="keywords" content="Islam, Nooniyah Al-Qahtani">
-
-    <meta name="author" content="Mohammad Yusuf Azizi">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Fatihah</title>
     <link rel="stylesheet" href="CSS/style.css">
-    
-
-
-  
-
-
-    
+    <link rel="stylesheet" href="CSS/quranStyling.css">
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/ico" href="Images/YoutubeIcon.ico">
-
-
-
-
-
+    
     
 
-    <title>
-
-        Contact form
-
-    </title>
-
-
-    
-
-    
-
-
-    
 </head>
-
-<!-- This is how I am making my website  -->
 <body>
-
 
     <img src="Images/LeftTopCorner.png" alt="Top Left Corner" class="corner top-left">
     <img src="Images/RightTopCorner.png" alt="Top Right Corner" class="corner top-right">
     <img src="Images/BottomRightCorner.png" alt="Bottom Left Corner" class="corner bottom-left">
     <img src="Images/BottomLeftCorner.png" alt="Bottom Right Corner" class="corner bottom-right">
 
-    
-    
 
     <div class="container">
 
@@ -70,49 +32,71 @@
                 <li><a href="Al-Fatihah-Hafs.html">Quran</a></li>
                 <li><a href="page4.html">Videos</a></li>
             </ul>
-
+            
             <button class="btn"><a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" id="youtube"><i class="fa-brands fa-youtube fa-2xl"></i></a></button>
             <button class="btn"><a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" id="instagramlink"><i class="fa-brands fa-instagram fa-2xl"></i></a></button>
             <button class="btn"><a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" id="tiktoklink"><i class="fa-brands fa-tiktok fa-2xl"></i></a></button>
-            
+            <!-- <input type="checkbox" id="drkmde-tggle">
+            <label id="tggle-label" for="drkmde-tggle"></label> -->
             <i id="moon" class="fa-solid fa-moon fa-2xl"></i>
+            
 
-        </nav>
+            <i class="fa-solid fa-bars fa-2xl" id="sidebarToggle"></i>
+
+            
     </div>
 
-    <div class="contact-container">
+    
+    <div class="sidebar" id="sidebar">
+        <header>Choose Font</header>
+        <label>
+            <input type="radio" name="font" value="default" checked> Default Font
+        </label>
         
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
-
-            <div class="contact-title">
-                <h2>Get in touch</h2>
-                <hr>
-            </div>
-            <input type="hidden" name="access_key" value="12c54ac0-ebf3-4c2d-a29d-b6326bce45d8">
-            <input type="hidden" name="redirect" value="https://yusufazizi7.github.io/YusufAzizi/Success.html">
-            <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
-            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-
-            <button type="submit">Sumbit <i id="arrow" class="fa-solid fa-arrow-right"></i></button>
-
-        </form>
-
         
-
+        <br>
+        <label>
+            <input type="radio" name="font" value="Uthman"> Hafs
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="font" value="Thuluth"> Thuluth
+        </label>
+        
     </div>
+
+
+</nav>
+    
+    
+
+
     
 
     
-    <script src="Scripts/index.js"></script>
+    <object  class="pages quransvg" data="Images/page1test.svg" type="image/svg+xml"></object><br>
+    <div class="page-number">۱</div><hr>
+    
+
+
+    <!-- <button class="quranBtns"><a href="Al-Baqarah-Hafs.html">Next Surah</a></button> -->
+
+    
+    <a id="btn" class="quranBtns" href="Al-Baqarah-Hafs.html">Next Surah</a>
+
+
+    <div class="extra-space"></div>
+    
+    
+    
+
+    
+    
+    
+    
+   <script src="Scripts/UpdateQuran.js"></script>
+   <script src="Scripts/index.js"></script>
+    
 
 </body>
-
-
-   
-
-
-
-
-
 </html>
