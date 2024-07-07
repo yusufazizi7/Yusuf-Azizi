@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     quransvgElements.forEach(function(quransvg) {
         quransvg.addEventListener('load', function() {
             var svgDoc = quransvg.contentDocument;
-            var svgElements = svgDoc.querySelectorAll('*');
+            var svgElements = svgDoc.querySelectorAll('*:not(.rect)');
+            var rects = svgDoc.querySelectorAll('.rect');
 
             // Function to update the logo based on dark mode
             function updateQuran() {
@@ -12,13 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (isDarkModeEnabled) {
                     svgElements.forEach(function(element) {
                         element.style.fill = 'white';
-                        element.classList.add('dark-theme')
+                        
+                        
                     });
+
+                    rects.forEach(function(element) {
+                        element.style.fill = 'darkblue';
+                        
+                        
+                    });
+                    
                 } else {
                     svgElements.forEach(function(element) {
                         element.style.fill = '';
-                        element.classList.remove('dark-theme')
+                        
                     });
+
+                    rects.forEach(function(element) {
+                        element.style.fill = '';
+                        
+                        
+                    });
+                    
                 }
             }
 
