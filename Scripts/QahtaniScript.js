@@ -29,3 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('showLineNumbers', checkbox.checked);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const listItems = document.querySelectorAll('.nooniyah li');
+
+    listItems.forEach(item => {
+        // Split the text into words
+        const words = item.textContent.split(' ');
+        
+        // Wrap each word in a span with class "qword", skipping "*"
+        const wrappedWords = words.map(word => {
+            return word === '*' ? word : `<span class="qword">${word}</span>`;
+        }).join(' ');
+        
+        // Wrap the entire text (now with wrapped words) in a span with class "list"
+        const wrappedText = `<span class="list">${wrappedWords}</span>`;
+        
+        // Update the list item content
+        item.innerHTML = wrappedText;
+    });
+});

@@ -105,8 +105,11 @@ hr {
 
 .pages {
     width: 700px;
+
+    
     
 }
+
 
 @media only screen and (max-width: 640px) {
     

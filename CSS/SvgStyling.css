@@ -1,0 +1,93 @@
+:root {
+
+    --third-color: #fff;
+    --fourth-color: #000;
+
+    --fifth-color: rgb(133, 169, 133);
+    --sixth-color: dimgrey;
+
+}
+
+.dark-theme {
+
+    --third-color: #000;
+    --fourth-color: #fff;
+
+    --fifth-color: yellow;
+
+    --sixth-color: white;
+
+}
+
+.ayah:hover .rect{
+
+    opacity: 1;
+    fill: var(--sixth-color);
+    
+
+
+}
+
+
+.ayah:hover path{
+
+    opacity: 1;
+    fill: var(--third-color);
+
+
+}
+
+
+
+
+.text {
+
+    fill: transparent;
+    font-size: x-large;
+
+}
+
+
+
+
+
+
+.word:hover .wordrect {
+
+    opacity: 1;
+    fill: var(--fifth-color);
+}
+
+path {
+
+    fill: var(--fourth-color);
+}
+
+
+.list:hover {
+
+    background-color: var(--sixth-color);
+    color: var(--third-color);
+    
+    
+    
+    
+    
+
+}
+
+.qword:hover {
+
+    background-color: var(--fifth-color);
+    
+
+}
+
+.list {
+
+    padding: 7px;
+}
+.qword {
+
+    padding: 7px 0px;
+}

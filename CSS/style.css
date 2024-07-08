@@ -46,6 +46,59 @@
 
 }
 
+
+:root {
+
+    --primary-color: #eae2d9;
+    --secondary-color: #212121;
+
+    
+
+
+    
+}
+
+.dark-theme {
+
+    --primary-color: #242424;
+    --secondary-color: #fff;
+
+    
+
+    
+
+}
+
+
+
+
+
+
+.nooniyah{
+
+    direction: rtl;
+
+    font-size: 37px;
+
+    font-family: Thuluth;
+
+    margin: 30px;
+    
+    
+
+    list-style: none;
+
+    
+    
+    
+
+    
+
+    
+
+}
+
+
 .diacritic {
     color: blue; /* Change this to your desired color */
 }
@@ -70,27 +123,9 @@
     margin: 30px;
 
 }
-.nooniyah{
 
-    direction: rtl;
 
-    font-size: 37px;
 
-    font-family: Thuluth;
-
-    margin: 30px;
-    
-    
-
-    list-style: none;
-    
-    
-
-   
-
-    
-
-}
 
 
 .nooniyah li {
@@ -117,7 +152,11 @@
     
 }
 
+.extra-space {
 
+    height: 200px;
+
+}
 
 
 
@@ -131,18 +170,7 @@ i:hover{
 html, body {overflow-x:hidden;}
 
 
-:root {
 
-    --primary-color: #eae2d9;
-    --secondary-color: #212121;
-}
-
-.dark-theme {
-
-    --primary-color: #242425;
-    --secondary-color: #fff;
-
-}
 
 .dark-theme .corner {
 

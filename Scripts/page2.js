@@ -89,32 +89,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
 function changeFont(fontName) {
     const arabicText = document.querySelectorAll('.nooniyah, .quran');
     const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
     arabicText.forEach(element => {
+        // Store the original font size if not already stored
+        if (!element.dataset.originalFontSize) {
+            element.dataset.originalFontSize = window.getComputedStyle(element).fontSize;
+        }
+
+        // Reset to the original font size before applying new adjustments
+        const originalFontSize = parseFloat(element.dataset.originalFontSize);
+        element.style.fontSize = `${originalFontSize}px`;
+
         element.style.fontFamily = fontName;
 
-
-        if (fontName.includes('Thuluth') && (!isMobile) ) {
-           
-                const currentFontSize = window.getComputedStyle(element).fontSize;
-                // Extract the numerical value and add a few pixels
-                const newFontSize = parseFloat(currentFontSize) + 13; // Adding 3 pixels
-                element.style.fontSize = `${newFontSize}px`;
-                
-            } else if (fontName.includes('Thuluth') && (isMobile)) {
-
-                const currentFontSize = window.getComputedStyle(element).fontSize;
-                const newFontSize = parseFloat(currentFontSize) + 7; // Adding 3 pixels
-                element.style.fontSize = `${newFontSize}px`;
-            } else {
-
-                element.style.fontSize = '';
-            }
+        if (fontName.includes('Thuluth') && !isMobile) {
+            const newFontSize = originalFontSize + 13;
+            element.style.fontSize = `${newFontSize}px`;
+        } else if (fontName.includes('Thuluth') && isMobile) {
+            const newFontSize = originalFontSize + 7;
+            element.style.fontSize = `${newFontSize}px`;
+        } else if (fontName.includes('Neiziri')) {
+            const newFontSize = originalFontSize - 3;
+            element.style.fontSize = `${newFontSize}px`;
+        } else {
+            element.style.fontSize = `${originalFontSize}px`; // Reset to original font size
         }
-    );
+    });
 
     localStorage.setItem('selectedFont', fontName);
 }
