@@ -69,6 +69,35 @@
 
 }
 
+.list:hover {
+
+    background-color: var(--sixth-color);
+    color: var(--third-color);
+    
+    
+    
+    
+    
+
+}
+
+.qword:hover {
+
+    background-color: var(--fifth-color);
+    color: red;
+    
+
+}
+
+.list {
+
+    padding: 7px;
+}
+.qword {
+
+    padding: 7px 0px;
+}
+
 
 
 
@@ -330,15 +359,7 @@ body{
 
 
 
-#logo:hover{
 
-
-    animation: scale;
-    animation-duration: 1s;
-    
-
-
-}
 
 
 
@@ -355,14 +376,7 @@ body{
 }
 
 
-@keyframes scale{
 
-    /*50%{transform: scale(1.1, 1.1)}*/
-
-    50%{opacity: 0.5;}
-
-    
-}
 
 
 

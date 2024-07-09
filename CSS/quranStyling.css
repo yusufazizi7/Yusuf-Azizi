@@ -1,50 +1,4 @@
-@font-face {
-    font-family: Uthman;
-    src: 
-         url('../Fonts/UthmanTN.ttf') format('truetype');
 
-
-}
-
-@font-face {
-    font-family: Neiziri;
-    src: 
-         url('../Fonts/Neirizi.ttf') format('truetype');
-
-
-}
-
-@font-face {
-    font-family: Amiri;
-    src: 
-         url('../Fonts/Amiri-Regular.ttf') format('truetype');
-
-
-}
-
-@font-face {
-    font-family: Hafs;
-    src: 
-         url('../Fonts/Hafs.ttf') format('truetype');
-
-
-}
-
-@font-face {
-    font-family: Thuluth;
-    src: 
-         url('../Fonts/AM_Thulth_Regular.ttf') format('truetype');
-
-
-}
-
-@font-face {
-    font-family: Symbols;
-    src: 
-         url('../Fonts/Symbols1_Ver02.otf') format('opentype');
-
-
-}
 
 
 :root {
@@ -68,7 +22,9 @@ hr {
 }
 
 .page-number {
-    font-family: Neiziri;
+    font-family: Uthman;
+    font-size: 23px;
+    
 }
 
 
@@ -105,6 +61,9 @@ hr {
 
 .pages {
     width: 700px;
+
+    margin-bottom: 50px;
+    margin-top: 30px;
 
     
     

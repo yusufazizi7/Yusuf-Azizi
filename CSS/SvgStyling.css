@@ -19,6 +19,11 @@
 
 }
 
+
+.ayah:hover {
+
+    cursor: text;
+}
 .ayah:hover .rect{
 
     opacity: 1;
@@ -40,14 +45,18 @@
 
 
 
-.text {
 
-    fill: transparent;
-    font-size: x-large;
 
+
+.wordrect {
+
+    opacity: 0;
 }
 
+.nlogo {
 
+    fill: var(--fourth-color);
+}
 
 
 
@@ -58,36 +67,23 @@
     fill: var(--fifth-color);
 }
 
+.word:hover path {
+
+    fill: red;
+}
+
+
 path {
 
     fill: var(--fourth-color);
 }
 
 
-.list:hover {
+.noonbg {
 
-    background-color: var(--sixth-color);
-    color: var(--third-color);
     
+    width: 940px;
+    height:400px;
+    x: 10px;
     
-    
-    
-    
-
-}
-
-.qword:hover {
-
-    background-color: var(--fifth-color);
-    
-
-}
-
-.list {
-
-    padding: 7px;
-}
-.qword {
-
-    padding: 7px 0px;
 }

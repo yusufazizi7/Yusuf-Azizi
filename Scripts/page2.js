@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
             if (isDarkModeEnabled) {
                 svgElements.forEach(function(element) {
-                    element.style.fill = 'white';
+                    element.classList.add('dark-theme');
                 });
             } else {
                 svgElements.forEach(function(element) {
-                    element.style.fill = 'black';
+                    element.classList.remove('dark-theme');
                 });
             }
         }
@@ -109,7 +109,7 @@ function changeFont(fontName) {
         element.style.fontFamily = fontName;
 
         if (fontName.includes('Thuluth') && !isMobile) {
-            const newFontSize = originalFontSize + 13;
+            const newFontSize = originalFontSize + 6;
             element.style.fontSize = `${newFontSize}px`;
         } else if (fontName.includes('Thuluth') && isMobile) {
             const newFontSize = originalFontSize + 7;
