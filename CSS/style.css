@@ -443,7 +443,7 @@ nav {
     height: 540px;
 }
 
-nav ul{
+nav ul {
 
     list-style: none;
     width: 100%;
@@ -456,6 +456,30 @@ nav ul li{
     display: inline-block;
     margin: 10px 20px;
 
+}
+
+.navMobile  {
+
+    list-style: none;
+    display: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    
+    
+}
+
+.navMobile a {
+
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+
+.navMobile a:hover {
+
+    
+    color: aqua;
 }
 
 nav ul li a{
@@ -507,11 +531,20 @@ i {
         padding: 0 70px; /* Remove padding when viewport width is 768px or smaller */
 
         margin: 0px 20px;
+
+
     }
     nav {
         width: 100%; /* Ensure navigation bar takes full width */
     }
 
+    .container ul {
+
+        display: none;
+
+    }
+
+    
     .btn {
         
         border: 0;
@@ -694,56 +727,43 @@ nav ul li a:hover {
 
 .contact-container {
 
+    padding-top: 150px;
     height: 50vh;
     display: flex;
     align-items: center;
-
     justify-content: space-evenly;
-
-    
 }
 
 .contact-left {
-    
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center; /* Center elements inside the form */
     gap: 20px;
 }
 
-.contact-title h2 {
+.contact-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the title and hr */
+}
 
+.contact-title h2 {
     font-weight: 600;
     color: var(--secondary-color);
     font-size: 40px;
     margin-bottom: 5px;
-
 }
 
 .contact-title hr {
-
     border: none;
     width: 120px;
     height: 5px;
-    background-color:var(--secondary-color);
+    background-color: var(--secondary-color);
     border-radius: 10px;
     margin-bottom: 20px;
-    
-   
-
-    
-
-}
-
-* {
-    
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
 }
 
 .contact-inputs {
-
     width: 400px;
     height: 50px;
     border: none;
@@ -752,41 +772,39 @@ nav ul li a:hover {
     font-weight: 500;
     color: #666;
     border-radius: 50px;
-
 }
 
 .contact-left textarea {
-
     height: 140px;
     padding-top: 15px;
     border-radius: 20px;
 }
 
 .contact-inputs:focus {
-
     border: 2px solid #ff994f;
 }
 
 .contact-inputs::placeholder {
-
     color: #a9a9a9;
 }
 
 .contact-left button {
-
     display: flex;
     align-items: center;
+    justify-content: center; /* Center text inside the button */
     padding: 15px 30px;
     font-size: 16px;
     color: var(--primary-color);
     gap: 10px;
-
-    
-
     border-radius: 50px;
-
     background-color: var(--secondary-color);
     cursor: pointer;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 @media (max-width:800px) {
@@ -840,6 +858,27 @@ nav ul li a:hover {
 .success-message a:hover {
 
     text-decoration: underline;
+}
+
+#sidebarToggle {
+
+    display: none;
+} 
+
+@media only screen and (max-width: 768px) {
+    #sidebarToggle {
+        display: block;
+    }
+
+    .navMobile {
+
+        display: block;
+    }
+}
+
+body.hasSidebar #sidebarToggle {
+
+    display: block;
 }
 
 .sidebar {

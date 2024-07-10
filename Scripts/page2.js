@@ -162,21 +162,11 @@ function updateRadioButtons(fontName) {
 
 document.addEventListener('DOMContentLoaded', initializeFont);
 
-const sidebar = document.getElementById('sidebar');
-const sidebarToggle = document.getElementById('sidebarToggle');
+// const sidebar2 = document.getElementById('sidebar');
+
 const fontRadios = sidebar.querySelectorAll('input[name="font"]');
 
-sidebarToggle.addEventListener('click', toggleSidebar);
 
-function toggleSidebar() {
-    sidebar.classList.toggle('active');
-}
-
-document.addEventListener('click', function(e) {
-    if (!sidebar.contains(e.target) && e.target !== sidebarToggle) {
-        sidebar.classList.remove('active');
-    }
-});
 
 fontRadios.forEach(radio => {
     radio.addEventListener('change', function() {

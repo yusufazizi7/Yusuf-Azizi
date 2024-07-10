@@ -32,3 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.dispatchEvent(darkModeToggleEvent);
     };
 });
+
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+
+
+sidebarToggle.addEventListener('click', toggleSidebar);
+
+function toggleSidebar() {
+    sidebar.classList.toggle('active');
+}
+
+document.addEventListener('click', function(e) {
+    if (!sidebar.contains(e.target) && e.target !== sidebarToggle) {
+        sidebar.classList.remove('active');
+    }
+});
+
+

@@ -13,7 +13,7 @@
     
 
 </head>
-<body>
+<body class="hasSidebar">
 
     <img src="Images/LeftTopCorner.png" alt="Top Left Corner" class="corner top-left">
     <img src="Images/RightTopCorner.png" alt="Top Right Corner" class="corner top-right">
@@ -43,10 +43,22 @@
 
             <i class="fa-solid fa-bars fa-2xl" id="sidebarToggle"></i>
 
+        </nav> 
             
     </div>
 
     <div class="sidebar" id="sidebar">
+
+
+        <ul class="navMobile">
+            <li><a href="Contactus.html">Contact us</a></li>
+            <li><a href="https://paypal.me/moyusufazizi" target="_blank">Donate</a></li>
+            <li><a href="QahtaniPoem.html">Nooniyah <br> Al-Qahtani</a></li>
+            <li><a href="Al-Fatihah-Hafs.html">Quran</a></li>
+            <li><a href="page4.html">Videos</a></li>
+        </ul>
+            
+        <br>
         <header>Choose Font</header>
         <label>
             <input type="radio" name="font" value="default" checked> Default Font
@@ -72,26 +84,38 @@
 
         <br>
         <br>
-        <label>
+        <label >
             <input type="checkbox" name="font" id="LineNumbers"> Line numbers
         </label>
+        
+        
+        
+        
+            
+    </div>
+
         
         
     </div>
 
 
-</nav>
+
+
+
     
 
 
     <br>
+
+    
+
 
     <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  font-weight: normal;">Nooniyah Al-Qahtani</h1>
     <br>
     
     <!-- <img   id="logo"  src="Images/Qahtanipdflogo.svg" alt="Nooniyah Al-Qahtani"> -->
     
-    <object id="logo" data="Images/Qahtanipdflogo.svg" type="image/svg+xml"></object>
+    <object id="logo" class="svgObject" data="Images/Qahtanipdflogo.svg" type="image/svg+xml"></object>
 
     
     <p class="bismillah"  > <span class="list"><span class="qword"> ﷽</span></span></p>
@@ -801,6 +825,7 @@
     <script src="Scripts/index.js"></script>
     <script src="Scripts/page2.js"></script>
     <script src="Scripts/QahtaniScript.js"></script>
+    <script src="Scripts/SvgObject.js"></script>
 
     
 </body>
