@@ -860,6 +860,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+.fa-solid {
+
+    font-size: 27px;
+}
+
 #sidebarToggle {
 
     display: none;
@@ -941,15 +946,7 @@ body.hasSidebar #sidebarToggle {
         
         
     }
-    .fa-brands {
-
-        font-size: 25px;
-    }
-
-    .fa-solid {
-
-        font-size: 25px;
-    }
+    
 
 }
 
