@@ -430,9 +430,11 @@ nav {
     
 }
 
-.logo{
 
-    width: 150px;
+
+.website-logo{
+
+    width: 115px;
     cursor: pointer;
 }
 
@@ -474,6 +476,12 @@ nav ul li{
     text-decoration: none;
     color: black;
 }
+
+.navMobile li {
+
+    margin: 5px 0px;
+}
+
 
 
 .navMobile a:hover {
@@ -860,10 +868,7 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.fa-solid {
 
-    font-size: 27px;
-}
 
 #sidebarToggle {
 
@@ -945,6 +950,11 @@ body.hasSidebar #sidebarToggle {
         width: 150px;
         
         
+    }
+
+    .fa-solid {
+
+        font-size: 23px;
     }
     
 

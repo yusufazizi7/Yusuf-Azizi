@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const icon = document.getElementById('moon'); // Initially moon icon
     const body = document.body;
+    const svgLogo = document.querySelectorAll(".website-logo")
 
     // Check if dark mode is enabled in localStorage when the page loads
     const isDarkModeEnabled = localStorage.getItem('darkModeEnabled');
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.classList.add('fa-sun');
     }
 
+    
     icon.onclick = function() {
         // Toggle dark theme
         body.classList.toggle('dark-theme');
@@ -31,6 +33,48 @@ document.addEventListener('DOMContentLoaded', function() {
         const darkModeToggleEvent = new Event('darkModeToggle');
         document.dispatchEvent(darkModeToggleEvent);
     };
+
+
+    svgLogo.forEach(function(logoSvg) {
+        logoSvg.addEventListener('load', function() {
+            var svgDoc = logoSvg.contentDocument;
+            var svgElements = svgDoc.querySelectorAll('*');
+            
+
+            // Function to update the logo based on dark mode
+            function updateQuran() {
+                const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
+                if (isDarkModeEnabled) {
+                    svgElements.forEach(function(element) {
+                        
+
+                        element.classList.add('dark-theme');
+                        
+                        
+                    });
+
+                    
+                    
+                } else {
+                    svgElements.forEach(function(element) {
+                        
+                        element.classList.remove('dark-theme');
+                        
+                    });
+
+                    
+                    
+                }
+            }
+
+            // Initial update based on saved dark mode state
+            updateQuran();
+
+            // Optional: if you want to listen for changes in dark mode from the other script
+            document.addEventListener('darkModeToggle', updateQuran);
+        });
+    });
+
 });
 
 const sidebar = document.getElementById('sidebar');

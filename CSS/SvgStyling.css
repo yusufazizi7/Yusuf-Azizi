@@ -20,6 +20,8 @@
 }
 
 
+
+
 .ayah:hover {
 
     cursor: text;
@@ -73,7 +75,7 @@
 }
 
 
-path {
+.svgQuran path {
 
     fill: var(--fourth-color);
 }
@@ -88,3 +90,27 @@ path {
     x: 10px;
     
 }
+
+
+
+
+
+
+
+.logosvg {
+
+    fill: var(--fourth-color);
+    /* cursor: pointer; */
+}
+
+.logosvg:hover  {
+
+    fill: red;
+}
+
+#logo-bg {
+
+    
+    opacity: 0;
+}
+  
