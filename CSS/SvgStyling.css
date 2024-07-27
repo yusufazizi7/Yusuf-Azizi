@@ -113,4 +113,31 @@
     
     opacity: 0;
 }
-  
+
+
+
+.content {
+
+    fill: var(--fourth-color);
+    cursor: pointer;
+
+}
+
+.content:hover {
+
+    fill: aqua;
+
+}
+
+.bg {
+
+    opacity: 0;
+}
+
+#mohammad {
+    
+    width: 200px;
+    
+}
+
+

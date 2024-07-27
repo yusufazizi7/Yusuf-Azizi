@@ -1,7 +1,7 @@
 
 
 function changeFont(fontName) {
-    const arabicText = document.querySelectorAll('.nooniyah, .quran');
+    const arabicText = document.querySelectorAll('.nooniyah, .quran-container');
     const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
     arabicText.forEach(element => {
@@ -67,31 +67,29 @@ function updateRadioButtons(fontName) {
 
 document.addEventListener('DOMContentLoaded', initializeFont);
 
-const sidebar = document.getElementById('sidebar');
-const sidebarToggle = document.getElementById('sidebarToggle');
+// const sidebarToggle = document.getElementById("sidebarToggle");
+// const sidebar = document.getElementById("sidebar")
+
 const fontRadios = sidebar.querySelectorAll('input[name="font"]');
 
-sidebarToggle.addEventListener('click', toggleSidebar);
+// sidebarToggle.addEventListener('click', toggleSidebar);
 
-function toggleSidebar() {
-    sidebar.classList.toggle('active');
-}
+// function toggleSidebar() {
+//     sidebar.classList.toggle('active');
+// }
 
-document.addEventListener('click', function(e) {
-    if (!sidebar.contains(e.target) && e.target !== sidebarToggle) {
-        sidebar.classList.remove('active');
-    }
-});
+// document.addEventListener('click', function(e) {
+//     if (!sidebar.contains(e.target) && e.target !== sidebarToggle) {
+//         sidebar.classList.remove('active');
+//     }
+// });
 
 fontRadios.forEach(radio => {
     radio.addEventListener('change', function() {
         if (this.checked) {
             if (this.value === 'default') {
                 changeFont("'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif");
-            } else if (this.value === 'amiri') {
-                changeFont("Amiri");
-            } else if (this.value === 'Neiziri') {
-                changeFont("Neiziri");
+            
             } else if (this.value === 'Uthman') {
                 changeFont("Hafs");
             } else if (this.value === 'Thuluth'){
@@ -99,5 +97,26 @@ fontRadios.forEach(radio => {
                 changeFont("Thuluth");
             }
         }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const listItems = document.querySelectorAll('.quran-container p');
+
+    listItems.forEach(item => {
+        // Split the text into words
+        const words = item.textContent.split(' ');
+        
+        // Wrap each word in a span with class "qword", skipping "*"
+        const wrappedWords = words.map(word => {
+            return word === '*' ? word : `<span class="qword">${word}</span>`;
+        }).join(' ');
+        
+        // Wrap the entire text (now with wrapped words) in a span with class "list"
+        const wrappedText = `<span class="list">${wrappedWords}</span>`;
+        
+        // Update the list item content
+        item.innerHTML = wrappedText;
     });
 });

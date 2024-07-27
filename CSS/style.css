@@ -51,6 +51,7 @@
 
     --primary-color: #eae2d9;
     --secondary-color: #212121;
+    --text-color: #000000;
 
     
 
@@ -62,6 +63,7 @@
 
     --primary-color: #242424;
     --secondary-color: #fff;
+    --text-color: #fff;
 
     
 
@@ -81,6 +83,25 @@
 
 }
 
+
+.poemTitle {
+
+    font-family: Thuluth;
+    font-weight: 0;
+    font-size: 110px;
+    margin: 70px 0;
+}
+
+
+.links {
+
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: Thuluth;
+    font-weight: 0;
+    font-size: 110px;
+}
+
 .qword:hover {
 
     background-color: var(--fifth-color);
@@ -91,11 +112,11 @@
 
 .list {
 
-    padding: 7px;
+    padding: 3px;
 }
 .qword {
 
-    padding: 7px 0px;
+    padding: 0px 0px;
 }
 
 
@@ -162,7 +183,7 @@
     margin: 30px 65px 30px 65px;
 }
 
-.quran {
+.quran-container {
 
     direction: rtl;
 
@@ -365,10 +386,11 @@ body{
 
 #logo{
 
-    width: 50%;
+    width: 40%;
     position: static;
     padding: 93px;
 
+    
     
     
 
@@ -566,7 +588,7 @@ i {
 
     }
 
-    .quran {
+    .quran-container {
 
         
         
@@ -1050,5 +1072,11 @@ body.hasSidebar #sidebarToggle {
 
     
 }
+
+.graphics {
+
+    width: 250px;
+}
+
 
 

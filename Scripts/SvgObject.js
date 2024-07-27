@@ -12,3 +12,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const logos = document.querySelectorAll(".svgObject");
+
+    logos.forEach(logo => {
+        logo.addEventListener('load', function() {
+            var svgDoc = logo.contentDocument;
+            var svgElements = svgDoc.querySelectorAll('*');
+
+            // Function to update the logo based on dark mode
+            function updatesvg() {
+                const isDarkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
+                if (isDarkModeEnabled) {
+                    svgElements.forEach(function(element) {
+                        element.classList.add('dark-theme');
+                    });
+                } else {
+                    svgElements.forEach(function(element) {
+                        element.classList.remove('dark-theme');
+                    });
+                }
+            }
+
+            // Initial update based on saved dark mode state
+            updatesvg();
+
+            // Listen for changes in dark mode from the other script
+            document.addEventListener('darkModeToggle', updatesvg);
+        });
+    });
+});
