@@ -5,7 +5,7 @@
 
       
 
-     @import url('../CSS/SvgStyling.css');
+     @import url('../../CSS/SvgStyling.css');
 
    
     

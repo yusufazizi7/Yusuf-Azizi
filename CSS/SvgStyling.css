@@ -134,10 +134,15 @@
     opacity: 0;
 }
 
-#mohammad {
-    
-    width: 200px;
-    
+
+
+
+.content:hover  .redcircle {
+
+    fill: aqua;
 }
 
+.redcircle  {
+    fill: #f5424a;
+}
 

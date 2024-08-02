@@ -84,12 +84,27 @@
 }
 
 
+
+
 .poemTitle {
 
     font-family: Thuluth;
     font-weight: 0;
     font-size: 110px;
-    margin: 70px 0;
+    
+}
+
+#qahtaniTitle {
+
+    width: 30%;
+    position: static;
+    margin-top: 100px;
+
+    
+    
+    
+
+    
 }
 
 
@@ -652,13 +667,51 @@ i {
     
     }
     
+    .poemTitle {
 
+        
+        
+        font-size: 50px;
+        
+    }
     
+    .poemofIbnAlQayim .poemTitle {
+
+        margin: 70px 0;
+    }
+    
+    
+    #qahtaniTitle {
+    
+        width: 300px;
+        position: static;
+        margin-top: 100px;
+    
+        
+        
+        
+    
+        
+    }
+
+    .engTitle {
+
+        font-size: larger;
+    }
 
 }
 
 
+.engTitle {
 
+    font-weight: normal;
+}
+
+.homeTitle {
+
+    font-weight: normal;
+    margin-top: 70px;
+}
 
 
 #Tiktok {
@@ -1071,11 +1124,6 @@ body.hasSidebar #sidebarToggle {
     color: var(--secondary-color);
 
     
-}
-
-.graphics {
-
-    width: 250px;
 }
 
 
