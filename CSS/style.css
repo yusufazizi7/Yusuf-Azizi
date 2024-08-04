@@ -91,12 +91,13 @@
     font-family: Thuluth;
     font-weight: 0;
     font-size: 110px;
+    margin: 80px 0;
     
 }
 
 #qahtaniTitle {
 
-    width: 30%;
+    width: 535px;
     position: static;
     margin-top: 100px;
 
