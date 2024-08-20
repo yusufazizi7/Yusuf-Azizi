@@ -71,6 +71,11 @@
 
 }
 
+
+
+
+
+
 .list:hover {
 
     background-color: var(--sixth-color);
@@ -1135,3 +1140,61 @@ body.hasSidebar #sidebarToggle {
 
 
 
+.grphscontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Gap between Sahabah and Ahlulbayt groups */
+    padding: 50px; /* Gap between the container and the page edges */
+}
+
+.Sahabah {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+
+.AhlulBait {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for AhlulBait */
+    grid-template-rows: repeat(2, auto); /* 2 rows for AhlulBait */
+    gap: 10px; /* Gap between objects in AhlulBait */
+}
+
+.Sahabah object,
+.AhlulBait object, .Sahabah2 object {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.sahabahContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Gap between Sahabah and Ahlulbayt groups */
+    padding: 50px; /* Gap between the container and the page edges */
+}
+
+.Sahabah2 {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.Umaran {
+
+    padding: 50px;
+}
+
+.Umaran object {
+
+    width: 150px;
+    margin: 0 30px;
+}

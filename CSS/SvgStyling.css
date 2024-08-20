@@ -120,7 +120,7 @@
 
     fill: var(--fourth-color);
     cursor: pointer;
-
+    
 }
 
 .content:hover {
@@ -146,3 +146,8 @@
     fill: #f5424a;
 }
 
+.evenOdd {
+
+    fill-rule: evenodd;
+    
+}
