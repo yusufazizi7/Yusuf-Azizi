@@ -1,6 +1,7 @@
 .svgObject {
 
     width: 200px;
+    
 }
 
 #manpraying {
@@ -22,6 +23,117 @@
 
     width: 250px;
 }
+
+.grpGrphs {
+
+    width: 170px;
+    
+}
+
+.grphscontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Gap between Sahabah and Ahlulbayt groups */
+    padding: 50px; /* Gap between the container and the page edges */
+}
+
+.Sahabah {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+
+.AhlulBait {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for AhlulBait */
+    grid-template-rows: repeat(2, auto); /* 2 rows for AhlulBait */
+    gap: 10px; /* Gap between objects in AhlulBait */
+}
+
+.Sahabah object,
+.AhlulBait object, .Sahabah2 object {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.sahabahContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Gap between Sahabah and Ahlulbayt groups */
+    padding: 50px; /* Gap between the container and the page edges */
+}
+
+.Sahabah2 {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.pairContainer {
+
+    padding: 50px;
+}
+
+.pairContainer object {
+
+    width: 150px;
+    margin: 0 30px;
+}
+
+.gcontainer, .sahabahGrp3  {
+
+    padding: 60px;
+}
+
+.gcontainer object {
+
+    margin: 0 30px;
+    width: 170px;
+}
+
+.sahabahGrp3 object {
+
+    margin: 0 10px;
+    width: 110px;
+}
+
+
+.Wives {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.Wives object {
+
+    width: 130px;
+    margin: 0 10px;
+}
+
+.muhaddithin {
+
+    padding: 50px;
+
+}
+
+.muhaddithin object {
+
+    height: 120px;
+
+}
+
+
 
 
 

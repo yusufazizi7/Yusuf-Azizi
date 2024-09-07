@@ -14,7 +14,7 @@
         "name": "Mohammad Yusuf Azizi"
       },
       "description": "Islamic Qalam offers a rich collection of Islamic poems, and more. Discover insightful Islamic content now.",
-      "keywords": ["Islam", "Nooniyah Al-Qahtani", "poems", "Nooniyah", "Arabic", "Islamic Qalam"]
+      "keywords": ["Islam", "Nooniyah Al-Qahtani", "poems", "Nooniyah", "Arabic", "Islamic Qalam", "nooniyah Al-Qahtani pdf"]
     }
     </script>
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
@@ -26,6 +26,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/SvgStyling.css">
+    <link rel="stylesheet" href="CSS/bookStyling.css">
     <link rel="icon" type="image/ico" href="Images/YoutubeIcon.ico">
     <title>Islamic Qalam | Islamic Poems, Nooniyah Al-Qahtani, Quran, Arabic</title>
     
@@ -65,16 +66,51 @@
         </ul>
     </div>
 
+    
+    <div class="product-page">
+        <!-- Left Column: Image Gallery -->
+        <div class="left-column">
+            <!-- Image Gallery Section -->
+            <div class="image-gallery">
+                <img src="Images/E-books/1.png" alt="Main Image" class="main-image" id="current-image" onclick="openLightbox()">
+    
+                <div class="thumbnail-images">
+                    <img src="Images/E-books/1.png" alt="Image 3" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/24.png" alt="Image 1" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/50.png" alt="Image 2" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/59.png" alt="Image 3" class="thumb" onclick="changeImage(this)">
+                    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Right Column: Product Title, Description, and Download Button -->
+        <div class="right-column">
+            <h1>Nooniyah Al-Qahtani</h1>
+            <p>
+                The Nooniyah Al-Qahtani is a profound Islamic poem detailing the core beliefs of the Ahlus Sunnah wal Jama'ah. 
+            </p>
 
-    <h1 class="homeTitle">Welcome to Islamic Qalam</h1>
+            <a href="E-books/Nooniyah-Al-Qahtani.pdf" class="rodownload" target="_blank" >Read Online</a>
+            <a href="E-books/Nooniyah-Al-Qahtani.pdf" class="btndownload"  download>Download Now</a>
+            
+        </div>
+    </div>
+    
+    <!-- Lightbox for Image Expansion -->
+    <div class="lightbox" id="lightbox">
+        <i class="fas fa-times lightbox-close" onclick="closeLightbox()"></i>
+        <i class="fas fa-chevron-left arrow arrow-left" onclick="prevImage()"></i>
+        <img src="Images/E-books/1.png" alt="Expanded Image" id="expanded-image">
+        <i class="fas fa-chevron-right arrow arrow-right" onclick="nextImage()"></i>
+    </div>
 
     
-    <object id="qahtaniTitle" class="svgObject" data="Images/Qahtanipdflogo2.svg" title="Nooniyah Al-Qahtani" type="image/svg+xml"></object>
-    <h2 class="engTitle2">Nooniyah Al-Qahtani</h2>
-    <a class="links" href="PoemofIbnAlQayim"><p class="poemTitle"><span class="list"><span class="qword">أَعُبَّادَ المَسِيحِ لَنَا سُؤَالٌ</span></span></p></a>
-    <h2 class="engTitle2">Oh worshippers of christ, we have a question</h2>
     <div class="extra-space"></div>
+
+
     <script src="Scripts/index.js"></script>
     <script src="Scripts/SvgObject.js"></script>
+    <script src="Scripts/bookScript.js"></script>
 </body>
 </html>
