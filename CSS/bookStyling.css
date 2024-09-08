@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-body {
+.product-page {
     font-family: Arial, sans-serif;
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: black;
     margin: 0 auto;
     transition: 0.3s;
 }
@@ -190,4 +190,12 @@ body {
         width: 70px; /* Adjust thumbnail size on smaller screens */
         height: 70px;
     }
+
+    .right-column {
+        
+        margin-top: 30px;
+        margin-left: 0px; /* Creates more space between the left and right column */
+        padding-right: 0px; /* Pushes the content closer to the right border */
+    }
+
 }

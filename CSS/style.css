@@ -903,14 +903,14 @@ nav ul li a:hover {
 
 #tick {
 
-    color: purple;
+    color: rgb(36, 161, 20);
 
     font-size: 50px;
 }
 
 .success-message h2 {
 
-    color: purple;
+    color: rgb(93, 181, 35);
     font-weight: normal;
     margin-bottom: 10px;
     font-size: xx-large;
@@ -928,7 +928,7 @@ nav ul li a:hover {
 .success-message a {
 
     text-decoration: none;
-    color: #9e6f5f;
+    color: #50ab3f;
 
     font-size: large;
 
