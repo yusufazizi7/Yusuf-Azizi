@@ -4,6 +4,12 @@
     
 }
 
+.horizGraphics {
+
+    height: 150px;
+    width: auto;
+}
+
 #manpraying {
 
     width: 250px;
@@ -22,6 +28,7 @@
 .gimg {
 
     width: 250px;
+    margin: 50px 0;
 }
 
 .grpGrphs {
@@ -133,7 +140,67 @@
 
 }
 
+.imgPair {
 
+    padding: 50px;
+}
+
+.imgPair img {
+
+
+    height: 150px; /* Set the desired height */
+    width: auto;   /* Automatically adjusts the width to maintain aspect ratio */
+    margin: 0 30px;
+}
+
+
+#Earth {
+
+    width: 190px;
+}
+
+.pairContainer2 {
+
+    padding: 50px;
+}
+
+.pairContainer2 object {
+
+    height: 150px;
+    width: auto;
+    margin: 0 30px;
+}
+
+.threeContainer {
+
+    padding: 50px;
+}
+
+.threeContainer object {
+
+    height: 140px;
+    width: auto;
+    margin: 0 30px;
+}
+
+
+.verticGraphics {
+
+    height: 200px;
+    width: auto;
+}
+
+#honeyAndCupping {
+
+    height: 150px;
+    width: auto;
+}
+
+.horizGraphics2 {
+
+    height: 100px;
+    width: auto;
+}
 
 
 

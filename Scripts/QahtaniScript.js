@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var graphicToggle = document.getElementById('graphicToggle');
-    var graphics = document.querySelectorAll('.nooniyah object, .nooniyah img'); // Use querySelectorAll to select all elements with the class 'graphics'
+    var graphics = document.querySelectorAll('.nooniyah object, .nooniyah img, .nooniyah div'); // Use querySelectorAll to select all elements with the class 'graphics'
 
     // Function to update the graphics display
     function updateGraphics() {
