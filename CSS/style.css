@@ -88,6 +88,14 @@
 
 }
 
+.engTranslation {
+
+    direction: ltr;
+    font-size: 30px;
+
+    margin: 0px 30%;
+}
+
 
 
 
@@ -997,6 +1005,15 @@ body.hasSidebar #sidebarToggle {
 
         font-size: 23px;
     }
+
+    .engTranslation {
+
+        
+        font-size: 15px;
+    
+        margin: 0px 0px;
+    }
+
 
     .corner {
 

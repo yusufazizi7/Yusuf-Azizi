@@ -65,6 +65,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    var engTransToggle = document.getElementById('engTransToggle');
+    var engTranslation = document.querySelectorAll('.engTranslation'); // Use querySelectorAll to select all elements with the class 'graphics'
+
+    // Function to update the graphics display
+    function toggleEngTranslation() {
+        engTranslation.forEach(function(translationLine) { // Loop through all selected elements
+            if (engTransToggle.checked) {
+                translationLine.style.display = '';
+            } else {
+                translationLine.style.display = 'none';
+            }
+        });
+    }
+
+    // Load the saved preference from localStorage
+    var engTransTogglePref = localStorage.getItem('showEngTranslation');
+    if (engTransTogglePref !== null) {
+        engTransToggle.checked = JSON.parse(engTransTogglePref);
+    }
+
+    // Initial update based on checkbox state
+    toggleEngTranslation();
+
+    // Event listener for checkbox changes
+    engTransToggle.addEventListener('change', function() {
+        toggleEngTranslation();
+        // Save the current preference to localStorage
+        localStorage.setItem('showEngTranslation', engTransToggle.checked);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
     const listItems = document.querySelectorAll('.nooniyah li');
 
     listItems.forEach(item => {
