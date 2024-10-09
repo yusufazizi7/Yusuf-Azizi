@@ -111,6 +111,7 @@
     transition: opacity 0.3s;
     font-size: x-large;
     font-family: Uthman;
+    direction: ltr;
 }
 
 .tooltip:hover .tooltiptext {
@@ -1076,6 +1077,14 @@ body.hasSidebar #sidebarToggle {
         font-size: 23px;
     }
     
+
+    .tooltip .tooltiptext {
+        
+        width: 70px;
+        
+        font-size: large;
+        
+    }
 
 }
 
