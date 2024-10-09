@@ -117,3 +117,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const listItems = document.querySelectorAll('.nooniyah li');
+
+    listItems.forEach((item, lineIndex) => {
+        // Split the text into words
+        const words = item.textContent.split(' ');
+
+        // Example translations array for each word, this should be updated with the actual translations
+        const translations = [
+            ['Oh', 'Revealer', 'of the Verses', 'and the Criterion', 'Between', 'You', 'and I', 'is the sanctity', 'of the Quran'],
+            ['Expand', 'with it', 'my chest', 'for knowledge', 'of guidance', 'and protect', 'my heart', 'from Satan']
+        ];
+
+        // Wrap each word in a span with class "qword" and tooltip functionality, skipping "*"
+        const wrappedWords = words.map((word, wordIndex) => {
+            if (word === '*') return word; // Skip the "*" symbol as requested
+
+            // Create the tooltip span with translation
+            const tooltipSpan = `<span class="tooltip qword">${word}<span class="tooltiptext">${translations[lineIndex][wordIndex] || 'Translation here'}</span></span>`;
+            return tooltipSpan;
+        }).join(' ');
+
+        // Wrap the entire text (now with wrapped words) in a span with class "list"
+        const wrappedText = `<span class="list">${wrappedWords}</span>`;
+
+        // Update the list item content
+        item.innerHTML = wrappedText;
+    });
+});
+
