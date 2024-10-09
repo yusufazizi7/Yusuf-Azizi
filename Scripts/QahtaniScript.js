@@ -97,47 +97,36 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const listItems = document.querySelectorAll('.nooniyah li');
 
-    listItems.forEach(item => {
-        // Split the text into words
-        const words = item.textContent.split(' ');
-        
-        // Wrap each word in a span with class "qword", skipping "*"
-        const wrappedWords = words.map(word => {
-            return word === '*' ? word : `<span class="qword">${word}</span>`;
-        }).join(' ');
-        
-        // Wrap the entire text (now with wrapped words) in a span with class "list"
-        const wrappedText = `<span class="list">${wrappedWords}</span>`;
-        
-        // Update the list item content
-        item.innerHTML = wrappedText;
-    });
-});
 
 
 document.addEventListener('DOMContentLoaded', function() {
     const listItems = document.querySelectorAll('.nooniyah li');
+
+    // Example translations array for each word, this should be updated with the actual translations
+    const translations = [
+        ['Oh', 'Revealer', 'of the Verses', 'and the Criterion', 'Between me', 'and between You', 'the sanctity', 'the Quran'],
+        ['Open', 'with it', 'my chest', 'for knowledge', 'of guidance', 'and protect', 'with it', 'my heart', 'from', 'Satan'],
+        ['Ease', 'with it', 'my affair', 'and settle', 'my goals', 'and save', 'with it', 'my body', 'from', 'the fires'],
+        ['Ease', 'with it', 'my affair', 'and settle', 'my goals', 'and save', 'with it', 'my body', 'from', 'the fires'],
+    ];
 
     listItems.forEach((item, lineIndex) => {
         // Split the text into words
         const words = item.textContent.split(' ');
 
-        // Example translations array for each word, this should be updated with the actual translations
-        const translations = [
-            ['Oh', 'Revealer', 'of the Verses', 'and the Criterion', 'Between', 'You', 'and I', 'is the sanctity', 'of the Quran'],
-            ['Expand', 'with it', 'my chest', 'for knowledge', 'of guidance', 'and protect', 'my heart', 'from Satan']
-        ];
-
         // Wrap each word in a span with class "qword" and tooltip functionality, skipping "*"
-        const wrappedWords = words.map((word, wordIndex) => {
-            if (word === '*') return word; // Skip the "*" symbol as requested
+        let translationIndex = 0; // Keeps track of the translation word index
+        const wrappedWords = words.map(word => {
+            if (word === '*') {
+                return '*'; // Keep the "*" symbol as it is without wrapping
+            }
 
-            // Create the tooltip span with translation
-            const tooltipSpan = `<span class="tooltip qword">${word}<span class="tooltiptext">${translations[lineIndex][wordIndex] || 'Translation here'}</span></span>`;
+            // Create the tooltip span with translation only if it's not "*"
+            const tooltipSpan = `<span class="tooltip qword">${word}<span class="tooltiptext">${translations[lineIndex][translationIndex] || 'Translation here'}</span></span>`;
+            translationIndex++; // Increment the translation index only if the word is not "*"
             return tooltipSpan;
+
         }).join(' ');
 
         // Wrap the entire text (now with wrapped words) in a span with class "list"
@@ -147,4 +136,3 @@ document.addEventListener('DOMContentLoaded', function() {
         item.innerHTML = wrappedText;
     });
 });
-
