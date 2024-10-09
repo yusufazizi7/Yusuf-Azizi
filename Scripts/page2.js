@@ -7,7 +7,7 @@
 
 
 function changeFont(fontName) {
-    const arabicText = document.querySelectorAll('.nooniyah, .quran');
+    const arabicText = document.querySelectorAll('.nooniyah :not(.engTranslation), .quran');
     const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
     arabicText.forEach(element => {
