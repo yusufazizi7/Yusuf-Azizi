@@ -22,7 +22,9 @@
 
 .graphics {
 
+    
     margin: 30px 0;
+    
 }
 
 .gimg {
@@ -205,26 +207,133 @@
 
 
 @media only screen and (max-width: 640px) {
-    
-    
-    .svgObject, #mushaf {
 
+    /* For SVG Objects and Mushaf */
+    .svgObject, #mushaf {
         width: 90px;
     }
 
-    #manpraying, .gimg {
+    
 
+    /* Man praying and general images */
+    #manpraying, .gimg {
         width: 125px;
     }
 
-    /* #crescent, #shiaSymbol {
-
-        width: 100px;
-    } */
-
+    /* Graphics */
     .graphics {
-
         margin: 10px 0;
+
+        margin-top: 35px;
     }
 
+    /* Horizontal Graphics */
+    .horizGraphics {
+        height: 75px;
+        width: auto;
+    }
+
+    /* Group Graphics */
+    .grpGrphs {
+        width: 77px;
+    }
+
+    /* Graphics Containers */
+    .grphscontainer, .sahabahContainer {
+        gap: 40px;
+        padding: 25px;
+    }
+
+    /* Sahabah group */
+    .Sahabah object, .AhlulBait object, .Sahabah2 object {
+        width: 45px;
+        height: auto;
+    }
+
+    /* Pair Container */
+    .pairContainer object {
+        width: 67px;
+        margin: 0 15px;
+    }
+
+    /* Gcontainer and Sahabah Group 3 */
+    .gcontainer, .sahabahGrp3 {
+        padding: 30px;
+    }
+
+    .gcontainer object {
+        width: 77px;
+        margin: 0 15px;
+    }
+
+    .sahabahGrp3 object {
+        width: 50px;
+        margin: 0 5px;
+    }
+
+    .ridhwanGrp object {
+
+        
+
+        width: 50px;
+    }
+
+    .ridhwanGrp {
+
+        margin-top: 30px;
+    }
+
+    /* Wives */
+    .Wives object {
+        width: 59px;
+        margin: 0 5px;
+    }
+
+    /* Muhaddithin */
+    .muhaddithin object {
+        height: 55px;
+    }
+
+    /* Image Pair */
+    .imgPair img {
+        height: 75px;
+        margin: 0 15px;
+    }
+
+    /* Earth */
+    #Earth {
+        width: 85px;
+    }
+
+    /* Pair Container 2 */
+    .pairContainer2 object {
+        height: 75px;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    /* Three Container */
+    .threeContainer object {
+        height: 67px;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    /* Vertical Graphics */
+    .verticGraphics {
+        height: 90px;
+        width: auto;
+    }
+
+    /* Honey and Cupping */
+    #honeyAndCupping {
+        height: 75px;
+        width: auto;
+    }
+
+    /* Horizontal Graphics 2 */
+    .horizGraphics2 {
+        height: 50px;
+        width: auto;
+    }
 }

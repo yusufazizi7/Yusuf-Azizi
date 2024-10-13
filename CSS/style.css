@@ -1080,9 +1080,10 @@ body.hasSidebar #sidebarToggle {
 
     .tooltip .tooltiptext {
         
-        width: 70px;
-        
-        font-size: large;
+        width: 70px; /* Set the tooltip width to 70px */
+        font-size: small; /* Adjust the font size for better readability */
+        margin-left: -35px; /* Center the tooltip based on its new width */
+        padding: 2px; /* Add some padding for better appearance */
         
     }
 
