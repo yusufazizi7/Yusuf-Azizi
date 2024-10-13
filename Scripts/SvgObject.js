@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const logos = document.querySelectorAll(".svgObject");
+    const logos = document.querySelectorAll(".svgObject, .graphics");
 
     logos.forEach(logo => {
         logo.addEventListener('load', function() {
