@@ -46,6 +46,14 @@
 
 }
 
+@font-face {
+    font-family: quran1;
+    src: 
+         url('../Fonts/Quran/QCF_P001.TTF') format('opentype');
+
+
+}
+
 
 :root {
 
@@ -73,6 +81,13 @@
 
 
 
+.quran {
+    
+    font-family: quran1;
+    font-size: 70px;
+    direction: rtl;
+    
+}
 
 
 
@@ -403,7 +418,6 @@ body{
 
     background-color: azure;
 }
-
 
 
 

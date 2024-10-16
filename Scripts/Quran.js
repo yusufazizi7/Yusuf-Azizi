@@ -1,121 +1,60 @@
 
 
-function changeFont(fontName) {
-    const arabicText = document.querySelectorAll('.nooniyah, .quran-container');
-    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+document.addEventListener('DOMContentLoaded', function() {
+    const quranDivs = document.querySelectorAll('.quran');
 
-    arabicText.forEach(element => {
-        element.style.fontFamily = fontName;
-
-
-        if (fontName.includes('Thuluth') && (!isMobile) ) {
-           
-            const currentFontSize = window.getComputedStyle(element).fontSize;
-            // Extract the numerical value and add a few pixels
-            const newFontSize = parseFloat(currentFontSize) + 13; // Adding 3 pixels
-            element.style.fontSize = `${newFontSize}px`;
+    quranDivs.forEach(div => {
+        const paragraphs = div.querySelectorAll('p'); // Get all <p> elements inside the .quran div
+        
+        paragraphs.forEach(p => {
+            // Split the text into words
+            const words = p.textContent.split(' ');
             
-        } else if (fontName.includes('Thuluth') && (isMobile)) {
-
-            const currentFontSize = window.getComputedStyle(element).fontSize;
-            const newFontSize = parseFloat(currentFontSize) + 7; // Adding 3 pixels
-            element.style.fontSize = `${newFontSize}px`;
-        } else {
-
-            element.style.fontSize = '';
-        }
-    
-    });
-
-    localStorage.setItem('fontquran', fontName);
-}
-
-function initializeFont() {
-    const storedFont = localStorage.getItem('fontquran');
-    if (storedFont) {
-        // Apply stored font preference
-        changeFont(storedFont);
-        updateRadioButtons(storedFont);
-    } else {
-        // Default initialization if no preference stored
-        const defaultFont = "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
-        changeFont(defaultFont);
-        updateRadioButtons(defaultFont);
-    }
-}
-
-function updateRadioButtons(fontName) {
-    const defaultRadio = document.querySelector('input[name="font"][value="default"]');
-    
-    
-    const uthmanRadio = document.querySelector('input[name="font"][value="Uthman"]');
-    const thuluthRadio = document.querySelector('input[name="font"][value="Thuluth"]');
-
-    if (fontName.includes('Amiri')) {
-        amiriRadio.checked = true;
-    } else if (fontName.includes('Neiziri')) {
-        neiziriRadio.checked = true;
-    } else if (fontName.includes('Hafs')) {
-        uthmanRadio.checked = true;
-    } else if (fontName.includes('Thuluth')) {
-
-        thuluthRadio.checked = true;
-    } else {
-        defaultRadio.checked = true;
-    }
-}
-
-document.addEventListener('DOMContentLoaded', initializeFont);
-
-// const sidebarToggle = document.getElementById("sidebarToggle");
-// const sidebar = document.getElementById("sidebar")
-
-const fontRadios = sidebar.querySelectorAll('input[name="font"]');
-
-// sidebarToggle.addEventListener('click', toggleSidebar);
-
-// function toggleSidebar() {
-//     sidebar.classList.toggle('active');
-// }
-
-// document.addEventListener('click', function(e) {
-//     if (!sidebar.contains(e.target) && e.target !== sidebarToggle) {
-//         sidebar.classList.remove('active');
-//     }
-// });
-
-fontRadios.forEach(radio => {
-    radio.addEventListener('change', function() {
-        if (this.checked) {
-            if (this.value === 'default') {
-                changeFont("'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif");
+            // Wrap each word in a span with class "qword"
+            const wrappedWords = words.map(word => {
+                return word === '*' ? word : `<span class="qword">${word}</span>`;
+            }).join(' ');
             
-            } else if (this.value === 'Uthman') {
-                changeFont("Hafs");
-            } else if (this.value === 'Thuluth'){
-
-                changeFont("Thuluth");
-            }
-        }
+            // Wrap the entire text (now with wrapped words) in a span with class "list"
+            const wrappedText = `<span class="list">${wrappedWords}</span>`;
+            
+            // Update the paragraph content
+            p.innerHTML = wrappedText;
+        });
     });
 });
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const listItems = document.querySelectorAll('.quran-container p');
+    const listItems = document.querySelectorAll('.quran p');
 
-    listItems.forEach(item => {
+    // Example translations array for each word, this should be updated with the actual translations
+    const translations = [
+        ['All praise', 'for Allah', 'Lord', 'of the Worlds', 'Ayah 1'],
+   
+    ];
+
+    listItems.forEach((item, lineIndex) => {
         // Split the text into words
         const words = item.textContent.split(' ');
-        
-        // Wrap each word in a span with class "qword", skipping "*"
+
+        // Wrap each word in a span with class "qword" and tooltip functionality, skipping "*"
+        let translationIndex = 0; // Keeps track of the translation word index
         const wrappedWords = words.map(word => {
-            return word === '*' ? word : `<span class="qword">${word}</span>`;
+            if (word === '*') {
+                return '*'; // Keep the "*" symbol as it is without wrapping
+            }
+
+            // Create the tooltip span with translation only if it's not "*"
+            const tooltipSpan = `<span class="tooltip qword">${word}<span class="tooltiptext">${translations[lineIndex][translationIndex] }</span></span>`;
+            translationIndex++; // Increment the translation index only if the word is not "*"
+            return tooltipSpan;
+
         }).join(' ');
-        
+
         // Wrap the entire text (now with wrapped words) in a span with class "list"
         const wrappedText = `<span class="list">${wrappedWords}</span>`;
-        
+
         // Update the list item content
         item.innerHTML = wrappedText;
     });
