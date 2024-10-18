@@ -7,7 +7,7 @@
 
 
 function changeFont(fontName) {
-    const arabicText = document.querySelectorAll('.nooniyah :not(engTranslation) :not(tooltiptext), .quran');
+    const arabicText = document.querySelectorAll('.poems :not(engTranslation) :not(tooltiptext), .quran');
     const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
     arabicText.forEach(element => {
@@ -56,7 +56,7 @@ function initializeFont() {
 }
 
 function changeFont(fontName) {
-    const arabicText = document.querySelectorAll('.nooniyah , .quran');
+    const arabicText = document.querySelectorAll('.poems , .quran');
     const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
     arabicText.forEach(element => {
@@ -91,7 +91,7 @@ function changeFont(fontName) {
 }
 
 function initializeFont() {
-    const arabicText = document.querySelectorAll('.nooniyah , .quran');
+    const arabicText = document.querySelectorAll('.poems , .quran');
     // Store the original font size for each element on page load
     arabicText.forEach(element => {
         if (!element.dataset.originalFontSize) {

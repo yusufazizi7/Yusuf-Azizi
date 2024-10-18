@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
         var checkbox = document.getElementById('LineNumbers');
-        var poemList = document.querySelector('.nooniyah');
+        var poemList = document.querySelector('.poems');
 
     // Function to update the list style
         function updateListStyle() {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var graphicToggle = document.getElementById('graphicToggle');
-    var graphics = document.querySelectorAll('.nooniyah object, .nooniyah img, .nooniyah div'); // Use querySelectorAll to select all elements with the class 'graphics'
+    var graphics = document.querySelectorAll('.poems object, .poems img, .poems div'); // Use querySelectorAll to select all elements with the class 'graphics'
 
     // Function to update the graphics display
     function updateGraphics() {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Example translations array for each word, this should be updated with the actual translations
     const translations = [
-        ['Oh', 'Revealer', 'of the Verses', 'and the Criterion', 'Between me', 'and between You', 'the sanctity', 'the Quran'],
+        ['Oh', 'Revealer', 'the Verses', 'and the Criterion', 'Between me', 'and between You', 'the sanctity', 'the Quran'],
         ['Open', 'with it', 'my chest', 'for knowledge', 'of guidance', 'and protect', 'with it', 'my heart', 'from', 'Satan'],
         ['Ease', 'with it', 'my affair', 'and settle', 'my needs', 'and save', 'with it', 'my body', 'from', 'the fires'],
         ['And lighten', 'with it', 'my load', 'and purify', 'intention', 'and increase', 'with it', 'my strength', 'and rectify', 'my state'],
@@ -262,8 +262,30 @@ document.addEventListener('DOMContentLoaded', function() {
         ['And they both', 'his ministers', 'the ones who', 'they', 'they', 'to the best', 'deeds', 'racing'],
         ['And they both', 'for Ahmad', 'his eyes', 'and his ears', 'and for their closeness', 'in', 'the grave', 'lying down'],
         ['They were', 'upon', 'Islam', 'most caring', 'its people', 'and they', 'for the religion', 'Mohammad', 'two Mountains'],
-   
+        
 
+        ['The purest of them', 'the firmest of them', 'the most god-fearing of them', 'the most pious of them', 'in', 'secrecy', 'and in public'],
+        ['The grandest of them', 'the purest of them', 'the highest of them', 'the most fulfilling of them', 'in', 'weight', 'and in excellence'],
+        ['Seddiq', 'Ahmad', 'companion', 'the cave', 'the one who', 'he', 'in', 'the cave', 'and the prophet', 'the second'],
+        ['I mean', 'Abu', 'Bakr', 'the one who', 'did not', 'differ', 'from', 'our Shariah', 'in', 'his virtue', 'two men'],
+        ['He', 'elder', 'companions', 'the prophet', 'and the best of them', 'and their Imam', 'truly', 'without', 'falsehood'],
+        ['And father', 'the pure one', 'the one who', 'her exoneration', 'indeed', 'came to us', 'in', 'Al-Noor', 'and the Furqan'],
+        ['Honour', 'Aishah', 'the approved one', 'from', 'free ones', 'a virgin', 'pure', 'garmented', 'the chaste one'],
+        ['She', 'wife', 'the best', 'the prophets', 'and his virgin', 'and his bride', 'from', 'a group', 'the women'],
+        ['She', 'his spouse', 'she', 'his companion', 'she', 'his confidant', 'she', 'his love', 'truly', 'without', 'blemish'],
+        ['Did he not', 'her father', 'devoted', 'her husband', 'and they both', 'with the spirit', 'Allah', 'coalescent'],
+        ['When', 'fulfilled', 'Seddiq', 'Ahmad', 'his vow', 'he gave', 'the caliphate', 'to the Imam', 'second'],
+        ['I mean', 'with it', 'Al-Farooq', 'he distinguished', 'valorously', 'with the sword', 'between', 'disbelief', 'and faith'],
+        ['He', 'made evident', 'Islam', 'after', 'its concealment', 'and he erased', 'the darkness', 'and uncovered', 'the concealment'],
+        ['And he passed', 'and left', 'the matter', 'consultation', 'among them', 'in', 'the matter', 'so they gathered', 'upon', 'Uthman'],
+        ['Who', 'used to', 'spend', 'his night', 'in', 'a rakaah', 'witr', 'and he would finish', 'a completion', 'the Quran'],
+
+        ['And held', 'the caliphate', 'the son-in-law', 'Ahmad', 'after him', 'I mean', 'Ali', 'the scholar', 'the righteous'],
+        ['The husband', 'the pure one', 'the brother', 'the Messenger', 'and his pillar', 'the lion', 'wars', 'the dueler', 'of peers'],
+        ['Glory be', 'the one who', 'made', 'the caliphate', 'a rank', 'and established', 'the imamate', 'what an', 'establishment'],
+        ['And appointed', 'the companions', 'so that', 'not', 'claim', 'from', 'after', 'Ahmad', 'in prophecy', 'a second'],
+        ['Honor', 'Fatimah', 'the pure', 'and her husband', 'and who', 'they both', 'to Mohammad', 'two grandsons'],
+        
 
        
         ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],

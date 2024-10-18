@@ -206,7 +206,7 @@
 
 
 
-.nooniyah{
+.poems{
 
     direction: rtl;
 
@@ -260,7 +260,7 @@
 
 
 
-.nooniyah li {
+.poems li {
 
     margin: 30px 65px 30px 65px;
 }
@@ -702,7 +702,7 @@ i {
         font-size: small;
     }
 
-    .nooniyah li {
+    .poems li {
 
         margin: 30px;
     }
@@ -1047,7 +1047,7 @@ body.hasSidebar #sidebarToggle {
 
 @media only screen and (max-width: 640px) {
     
-    .nooniyah {
+    .poems {
 
         font-size: 23px;
     }
