@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ['Beware', 'punishment', 'Allah', 'and hope', 'his reward', 'until', 'you are', 'like the one', 'for him', 'two hearts'],
         ['Our faith', 'in Allah', 'between', 'three', 'action', 'and words', 'and belief', 'the heart'],
         ['And it increases', 'with piety', 'and decreases', 'with wrong-doing', 'and both of them', 'in', 'the heart', 'wrestle'],
-        ['And when', 'you are along', 'with a temptation', 'in', 'darkness', 'and the soul', 'caller', 'to', 'transgression'],
+        ['And when', 'you are alone', 'with a temptation', 'in', 'darkness', 'and the soul', 'caller', 'to', 'transgression'],
 
        
         

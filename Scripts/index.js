@@ -95,4 +95,25 @@ document.addEventListener('click', function(e) {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the popup has been shown before
+    if (!localStorage.getItem('popupShown')) {
+        document.getElementById('donationPopup').style.display = 'block';
+    }
 
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('donationPopup').style.display = 'none';
+        localStorage.setItem('popupShown', 'true'); // Store the info in localStorage
+    }
+
+    // Attach close action to the close button and cancel button
+    document.querySelector('.close-btn').addEventListener('click', closePopup);
+    document.getElementById('cancelButton').addEventListener('click', closePopup);
+
+    // If the user clicks on the donate button, redirect them to your donation page
+    document.getElementById('donateButton').addEventListener('click', function() {
+        localStorage.setItem('popupShown', 'true'); // Save to prevent popup again
+        window.open('https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv', '_blank'); // Redirect to donation page
+    });
+});
