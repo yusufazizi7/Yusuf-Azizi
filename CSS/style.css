@@ -854,6 +854,17 @@ i {
         font-size: larger;
     }
 
+    .popup-content {
+        width: 90%; /* Reduce the width for mobile screens */
+        padding: 20px; /* Adjust padding for mobile */
+        margin: 50% auto; /* Adjust vertical margin */
+        font-size: 14px; /* Slightly smaller text for mobile */
+    }
+
+    .popup-content button {
+        font-size: 14px; /* Smaller button text for mobile */
+        padding: 8px 15px; /* Adjust padding on buttons for mobile */
+    }
 }
 
 
