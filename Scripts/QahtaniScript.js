@@ -502,35 +502,116 @@ document.addEventListener('DOMContentLoaded', function() {
         ['And observe', 'rise', 'dawn', 'and be certain', 'with it', 'for dawn', 'according', 'our elders', 'two dawns'],
         ['Dawn', 'lying', 'then', 'a dawn', 'true', 'and perhaps', 'in', 'the eye', 'appear similar'],
        
-        
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
-        ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
+        ['And the shadow', 'in', 'the times', 'different', 'as', 'time', 'winter', 'and summer', 'different'],
+        ['Then recite', 'when', 'recites', 'the Imam', 'quietly', 'and be silent', 'when', 'what', 'was', 'of', 'loudness'],
+        ['And for every', 'forgetfulness', 'two prostrations', 'then perform them', 'before', 'the Salam', 'and after it', 'two sayings'],
+        ['Sunnahs', 'the prayer', 'clear', 'and its obligations', 'so ask', 'the elders', 'jurisprudence', 'and excellence'],
+        ['Obligation', 'the prayer', 'its bowing', 'and its prostration', 'not', 'if', 'differ', 'in them', 'two men'],
+        ['Its Tahrim', 'its Takbir', 'and it Tahlil', 'its taslim', 'and they both', 'obligatory'],
+        ['And Al-Hamd', 'obligatory', 'in', 'the prayer', 'its recitation', 'its verses', 'seven', 'and they', 'Mathani'],
+        ['In', 'every', 'Rak’ah', 'the prayer', 'repeated', 'in it', 'with the Basmalah', 'so take', 'my clarification'],
+        ['And when', 'you forgot', 'its recitation', 'in', 'a Rak’ah', 'then make up', 'its Rak’ah', 'without', 'hesitation'],
+        ['Follow', 'your Imam', 'lowering', 'or', 'raising', 'for they both', 'two actions', 'praised'],
+        ['Not', 'raise', 'before', 'the Imam', 'and not', 'lower', 'for they both', 'two matters', 'blameworthy'],
+        ['Indeed', 'the Shariah', 'Sunnah', 'and obligations', 'and they both', 'for religion', 'Mohammad', 'two ropes'],
+        ['But', 'the Athaan', 'the morning', 'according', 'our elders', 'from', 'before', 'that', 'become distinct', 'the two fawns'],
+        ['It', 'a concession', 'in', 'the morning', 'not', 'in', 'other than it', 'from', 'cause', 'awakening', 'heedless', 'drowsy'],
+        ['Perfect', 'your prayer', 'bowing', 'or', 'prostrating', 'with calmness', 'gentleness', 'and humility'],
+        ['Not', 'enter', 'to', 'your prayer', 'holding', 'for holding', 'disrupts', 'the pillars'],
+        ['Pass', 'from', 'the night', 'the fasting', 'with an intention', 'from', 'before', 'that', 'become distinct', 'the two threads'],
+        ['Suffices you', 'in', 'Ramadan', 'intention', 'a night', 'since', 'is not', 'mixed', 'with a period', 'second'],
+        ['Ramadan', 'month', 'complete', 'in', 'our covenant', 'not', 'solves it', 'a day', 'and not', 'two days'],
+        ['Except', 'the traveller', 'and the sick', 'for indeed', 'came', 'the delay', 'their fast', 'for a time', 'second'],
+        ['And likewise', 'pregnancy', 'and breastfeeding', 'they both', 'in', 'breaking its fast', 'for our women', 'two excuses'],
+        ['Hasten', 'with breaking the fast', 'and pre-dawn meal', 'delayed', 'for they both', 'two matters', 'desirable'],
+        ['Protect', 'your fast', 'with silence', 'from', 'obscene speech', 'pull down', 'upon', 'your eyes', 'with the eyelids'],
+        ['Not', 'walk', 'of', 'two faces', 'from', 'between', 'the people', 'the worst', 'the people', 'the one', 'for him', 'two faces'],
+        ['Not', 'envy', 'anyone', 'over', 'their blessings', 'indeed', 'the envious', 'for the decree', 'your Lord', 'opposer'],
+        ['Not', 'strive', 'between', 'two friends', 'gossip', 'for because of it', 'come to hate', 'two close friends'],
+        ['And the eye', 'true', 'not', 'precedent', 'for what', 'is decreed', 'from', 'provisions', 'and deprivation'],
+        ['And magic', 'disbelief', 'its action', 'not', 'its knowledge', 'from', 'here', 'differ', 'the two rulings'],
+        ['And killing', 'punishment', 'the magicians', 'when', 'they', 'do', 'with it', 'for disbelief', 'and tyranny'],
+        ['And seek', 'goodness', 'the parents', 'for indeed it', 'obligatory', 'upon you', 'and obedience', 'the authority'],
+        ['Not', 'go out', 'against', 'the Imam', 'war-seeker', 'and if', 'that he', 'a man', 'from', 'Abyssinia'],
+        ['And when', 'you are ordered', 'with an innovation', 'or', 'an error', 'then flee', 'with your religion', 'other', 'lands'],
+        ['Religion', 'head', 'the wealth', 'so hold firmly', 'with it', 'for its loss', 'from', 'the greatest', 'losses'],
+        ['Not', 'be alone', 'with a woman', 'with suspicion', 'if', 'you were', 'in', 'devoutness', 'like', 'Banaan'],
+        ['Indeed', 'the men', 'the gazers', 'at', 'women', 'like', 'dogs', 'circle around', 'meats'],
+        ['If', 'did not', 'protect', 'these', 'meat', 'its lions', 'it will be eaten', 'without', 'compensation', 'and not', 'payment'],
+        ['Not', 'accept', 'from', 'the women', 'affection', 'for their hearts', 'quick', 'inclination'],
+        ['Not', 'leave', 'anyone', 'with your family', 'alone', 'for over', 'women', 'fought', 'two brothers'],
+        ['And lower', 'your eyelids', 'from', 'observance', 'women', 'and beauties', 'young men', 'and boys'],
+        ['Not', 'make', 'divorce', 'your wife', 'your goal', 'indeed', 'divorce', 'the most detestable', 'the oaths'],
+        ['Indeed', 'divorce', 'with', 'manumission', 'they both', 'two oaths', 'in the sight', 'Allah', 'detested'],
+        ['And dig', 'for your secret', 'in', 'your heart', 'a grave', 'and bury it', 'in', 'the depths', 'what', 'a burial'],
+        ['Indeed', 'the friend', 'with', 'the enemy', 'they both', 'in', 'secrecy', 'according', 'those of', 'intelligence', 'two types'],
+        ['Not', 'appear', 'from you', 'to', 'your friend', 'a fault', 'and make', 'your heart', 'the most trustworthy', 'the two close friends'],
+        ['Not', 'underestimate', 'from', 'the sins', 'their minors', 'for the drop', 'from it', 'bursting', 'bays'],
+        ['And when', 'you make a vow', 'then be', 'with your vow', 'fulfiller', 'for the vow', 'like', 'the covenant', 'questioned'],
+        ['Not', 'be occupied', 'with fault', 'other than you', 'heedless', 'from', 'fault', 'yourself', 'indeed it', 'two faults'],
+        ['Not', 'waste', 'your life', 'in', 'argumentation', 'disputing', 'indeed', 'argumentation', 'disrupts', 'religions'],
+        ['And beware', 'argumentation', 'men', 'for indeed it', 'leads', 'to', 'enmity', 'and resentment'],
+        ['And when', 'you are compelled', 'to', 'argumentation', 'and did not', 'find', 'for you', 'a place to flee', 'and meet each other', 'the two sides'],
+        ['Then make', 'book', 'Allah', 'a shield', 'ample', 'and the Shariah', 'your sword', 'and appear', 'in', 'the field'],
+        ['And the Sunnah', 'white', 'before you', 'armour', 'and ride', 'steed', 'determination', 'in', 'the arena'],
+        ['And stand firm', 'with your patience', 'under', 'banners', 'guidance', 'for patience', 'the most reliable', 'tool', 'the human'],
+        ['And pierce', 'with the spear', 'the truth', 'every', 'stubborn one', 'for Allah', 'the emergence', 'the knight', 'the piercer'],
+        ['And attack', 'with the sword', 'the truthfulness', 'attack', 'sincere', 'singly', 'for Allah', 'not', 'coward'],
+        ['And beware', 'with your effort', 'cunning', 'your opponent', 'indeed he', 'like fox', 'wild', 'in', 'trickery'],
+        ['The root', 'argumentation', 'from', 'questioning', 'and its branch', 'good', 'response', 'with the best', 'clarification'],
+        ['Not', 'look back', 'during', 'the question', 'and not', 'repeat', 'the wording', 'the question', 'they both', 'two faults'],
+
+    
+        ['And when', 'defeat', 'the opponent', 'not', 'mock', 'with him', 'for boastfulness', 'extinguishes', 'ember', 'goodness'],
+        ['For perhaps', 'was defeated', 'the warrior', 'deliberately', 'then', 'he turns aside', 'and attacks', 'the knights'],
+        ['And be silent', 'when', 'fall', 'the opponents', 'and make noise', 'for perhaps', 'they casted you', 'in', 'whirlpool'],
+        ['And perhaps', 'laughed', 'the opponents', 'for astonishment', 'then stand firm', 'and not', 'retreat', 'from', 'the evidence'],
+        ['Then when', 'prolong', 'in', 'the speech', 'then say', 'to them', 'indeed', 'eloquence', 'was bridled', 'with clarity'],
+        ['Not', 'get angry', 'when', 'you are questioned', 'and not', 'shout', 'for they both', 'traits', 'dispraised'],
+        ['And beware', 'debate', 'in an assembly', 'fear', 'until', 'is replaced', 'fear', 'with tranquility'],
+        ['Debate', 'an intellectual', 'fair', 'to you', 'intelligent', 'and be fair to him', 'you', 'according', 'what', 'you both see'],
+        ['And be', 'between you', 'a wise one', 'as a judge', 'just', 'when', 'you came to him', 'seeking judgement'],
+        ['Be', 'length', 'your time', 'silent', 'humble', 'for they both', 'for every', 'virtue', 'two doors'],
+        ['And cast off', 'cloak', 'the arrogance', 'from you', 'for indeed it', 'not', 'bear', 'with carrying it', 'the shoulders'],
+        ['Be doer', 'for good', 'and speaker', 'for it', 'for word', 'like', 'action', 'connected'],
+        ['From', 'relief', 'a distressed one', 'and feeding', 'a hungry one', 'and clothing', 'a naked one', 'and ransom', 'a captive'],
+        ['Then when', 'you do', 'the good', 'not', 'boast', 'with it', 'not', 'good', 'in', 'a boastful one', 'and one who reminds others of his favours'],
+        ['Be grateful', 'upon', 'blessings', 'and be patient', 'for affliction', 'for they both', 'traits', 'praiseworthy'],
+        ['Not', 'complain', 'with an ailment', 'or', 'scarcity', 'for they both', 'for honour', 'the person', 'dishonorable'],
+        ['Preserve', 'nobility', 'your face', 'with contentment', 'only', 'preservation', 'the faces', 'manhood', 'young men'],
+        ['In Allah', 'trust', 'and to him', 'return', 'and through him', 'seek help', 'so when', 'you do', 'then you', 'best', 'assisted'],
+        ['And when', 'you disobey', 'then repent', 'to your Lord', 'swiftly', 'fear', 'the death', 'and not', 'say', 'no', 'did not', 'come the time'],
+        ['And when', 'you are afflicted', 'with hardship', 'then be patient', 'for it', 'for hardship', 'singular', 'after', 'two eases'],
+        ['Not', 'stuff', 'your stomach', 'with food', 'becoming fat', 'for bodies', 'people', 'the knowledge', 'not', 'fat'],
+        ['Not', 'follow', 'your desires', 'your soul', 'excessively', 'for Allah', 'hates', 'a worshiper', 'lustful'],
+        ['Reduce', 'your food', 'as much as', 'you can', 'for indeed it', 'benefit', 'the bodies', 'and health', 'the bodies'],
+        ['And control', 'your desires', 'with tuning', 'your stomach', 'indeed it', 'the worst', 'the men', 'the weak', 'the one driven by his stomach'],
+        ['And who', 'degrades himself', 'for his private part', 'and his stomach', 'then they both', 'for him', 'with', 'those', 'desires', 'two stomachs'],
+        ['Preservation', 'healing', 'the hunger', 'and the thirst', 'and they both', 'for restraining', 'our souls', 'two chains'],
+        ['Thirst', 'your day', 'you are quenched', 'in', 'the home', 'high', 'a day', 'last long', 'the yearning', 'the thirsty'],
+        ['Good', 'nutrition', 'serves as substitute', 'from', 'drinking', 'medicine', 'especially', 'with', 'moderation', 'and consistency'],
+        ['Beware', 'and the anger', 'intense', 'upon', 'medicine', 'for perhaps', 'lead', 'to', 'disappointment'],
+        ['Take', 'your medicine', 'before', 'your drinking', 'and let it be', 'well-balanced', 'the components', 'and quantities'],
+        ['And treat', 'with honey', 'pure', 'and do cupping', 'for they both', 'for your ailment', 'two cures'],
+        ['Not', 'enter', 'the bathroom', 'full', 'stomach', 'not', 'good', 'in', 'bathing', 'for the full one'],
+        ['And sleep', 'above', 'the rooftop', 'from', 'under', 'the sky', 'exhausts', 'and diminishes', 'vitality', 'the bodies'],
+        ['Not', 'waste', 'your life', 'in', 'intercourse', 'for indeed it', 'covers', 'the faces', 'with covering', 'the pallor'],
+        ['I warn you', 'from', 'breath', 'the old woman', 'and her private part', 'for they both', 'for body', 'her bedmate', 'two sicknesses'],
+        ['Embrace', 'from', 'the women', 'every', 'young woman', 'Her breaths', 'like the fragrance', 'the basil'],
+        ['Not', 'good', 'in', 'forms', 'musical instruments', 'all of it', 'and dancing', 'and playing rhythms', 'in', 'the rods'],
+        ['Indeed', 'the pious one', 'for his Lord', 'abstaining', 'from', 'sound', 'strings', 'and listening', 'songs'],
+        ['And recitation', 'the Quran', 'from', 'people', 'piety', 'especially', 'with good', 'passion', 'and good', 'articulation'],
+        ['More delightful', 'and fulfilling', 'for the souls', 'in sweetness', 'from', 'sound', 'a flute', 'and tapping', 'drums'],
+        ['And its melodious sound', 'in the night', 'the most pleasant', 'thing to hear', 'from', 'melody', 'flutes', 'and lutes'],
+        ['Turn away', 'from', 'this world', 'low', 'as an ascetic', 'for asceticism', 'according', 'those of', 'intelligence', 'two asceticisms'],
+        ['Asceticism', 'from', 'the world', 'and asceticism', 'in commendation', 'Blessed', 'for the one who', 'came', 'for him', 'the two asceticisms'],
+        ['Not', 'seize', 'wealth', 'the orphans', 'wrongfully', 'and leave', 'usury', 'for they both', 'disobedience'],
+        ['And keep', 'for your neighbour', 'his right', 'and honour', 'and for every', 'neighbour', 'Muslim', 'two rights'],
+        ['And laugh', 'for your guest', 'when', 'comes down', 'his beast', 'indeed', 'the generous one', 'is delighted', 'with guests'],
+        ['Keep connection', 'those of', 'kinship', 'from you', 'even if', 'they are harsh', 'for keeping connection with them', 'better', 'than', 'abandonment'],
+        ['And be truthful', 'and not', 'swear', 'by your Lord', 'lying', 'and strive', 'in', 'atonement', 'the oaths'],
+        ['And stay away', 'oaths', 'false', 'for indeed they', 'leave', 'the homes', 'desolate', 'the walls'],
+       
         ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
         ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
         ['And remove', 'with it', 'my harm', 'and confirm', 'my repentance', 'and cause to profit', 'with it', 'my pledge', 'with out', ],
@@ -926,5 +1007,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update the list item content
         item.innerHTML = wrappedText;
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const listItems = document.querySelectorAll('.nooniyah li');
+
+    // Replace with your actual audio files for each word
+    const audioFiles = [
+        ['Audios/Ya.MP3', 'Audios/Munzila.MP3', 'Audios/AlAyate.MP3', 'Audios/WalFurqane.MP3', 'Audios/Bayni.MP3', 'Audios/WaBaynaka.MP3', 'Audios/Hurmatu.MP3', 'Audios/AlQurane.MP3'] 
+        
+        // More lines as needed
+    ];
+
+    // Create a single Audio object to control playback
+    let currentAudio = new Audio();
+
+    listItems.forEach((item, index) => {
+        const words = item.querySelectorAll('.qword');
+        words.forEach((word, wordIndex) => {
+            word.addEventListener('click', () => {
+                // Stop current audio if it's playing
+                if (!currentAudio.paused) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                }
+                // Assign a new source to the current audio and play it
+                currentAudio.src = audioFiles[index][wordIndex];
+                currentAudio.play();
+            });
+        });
     });
 });

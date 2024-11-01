@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const quranDivs = document.querySelectorAll('.quran');
+    const quranDivs = document.querySelectorAll('.quran, .nooniyah');
 
     quranDivs.forEach(div => {
         const paragraphs = div.querySelectorAll('p'); // Get all <p> elements inside the .quran div
