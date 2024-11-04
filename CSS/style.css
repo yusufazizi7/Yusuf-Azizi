@@ -232,6 +232,10 @@
     font-size: x-large;
     font-family: Uthman;
     direction: ltr;
+    user-select: none; /* For modern browsers */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 .tooltip:hover .tooltiptext {
