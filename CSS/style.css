@@ -81,7 +81,7 @@
 
 }
 
-#laamiyahIbnalwardiTitle {
+.poemTitles {
 
     width: 535px;
     position: static;
@@ -870,6 +870,13 @@ i {
         
     
         
+    }
+    
+    .poemTitles {
+
+        width: 300px;
+        position: static;
+        margin-top: 100px;
     }
 
     .engTitle {
