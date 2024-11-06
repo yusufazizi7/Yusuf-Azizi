@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ['And Abu', 'Ubaidah', 'owner', 'religiosity', 'and piety', 'and praise', 'assembly', 'pledge', 'Al-ridhwan'],
         ['Say', 'best', 'word', 'about', 'companions', 'Ahmad', 'and praise', 'all', 'the family', 'and the wives'],
         ['Leave', 'what', 'went on', 'between', 'the companions', 'in', 'conflict', 'with their swords', 'day', 'met', 'the two groups'],
-        ['For their slain', 'from them', 'and their', 'killer', 'for them', 'and both of them', 'in', 'day of gathering', 'be given mercy'],
+        ['For their slain', 'from them', 'and their killer', 'for them', 'and both of them', 'in', 'day of gathering', 'be given mercy'],
         ['And Allah', 'day', 'gathering', 'remove', 'all', 'what', 'contain', 'their chests', 'from', 'grudges'],
         ['And woe', 'to the assembly', 'those who', 'hastened', 'to', 'Uthman', 'and gathered', 'upon', 'disobedience'],
         ['Woe', 'to the one who', 'killed', 'Husain', 'for he', 'indeed', 'drew upon himself', 'from', 'his master', 'loss'],

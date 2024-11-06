@@ -1,0 +1,83 @@
+@font-face {
+    font-family: Uthman;
+    src: 
+         url('../Fonts/UthmanTN.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Neiziri;
+    src: 
+         url('../Fonts/Neirizi.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Amiri;
+    src: 
+         url('../Fonts/Amiri-Regular.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Hafs;
+    src: 
+         url('../Fonts/Hafs.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Thuluth;
+    src: 
+         url('../Fonts/AM_Thulth_Regular.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Symbols;
+    src: 
+         url('../Fonts/Symbols1_Ver02.otf') format('opentype');
+
+
+}
+
+@font-face {
+    font-family: quran1;
+    src: 
+         url('../Fonts/Quran/QCF_P001-Regular.ttf') format('opentype');
+
+
+}
+
+
+
+body {
+
+    margin: 0;
+    padding: 0;
+    background-color: #eae2d9;
+}
+
+.page  {
+
+    direction: rtl;
+    font-family: Uthman;
+
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.engTranslation {
+
+    direction: ltr;
+    margin: 30px;
+    font-size: 20px;
+    
+    font-family: Uthman;
+}
