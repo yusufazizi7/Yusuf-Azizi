@@ -21,10 +21,47 @@ hr {
     margin: 10px 0;
 }
 
+.quran-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height for centring */
+    /* Optional background */
+    margin: 0;
+}
+
+.quranbg {
+    width: 21cm; /* A4 width */
+    height: 29.7cm; /* A4 height */
+    background: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), /* Subtle shadow */
+                0 1px 3px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #ddd; /* Thin border */
+    padding: 20px; /* Padding for internal spacing */
+    overflow: hidden; /* Hide overflowing content */
+    display: flex;
+    flex-direction: column; /* Stack SVG and page number */
+    justify-content: space-between; /* Space out elements */
+    align-items: center;
+}
+
+.quransvg {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    flex: 1; /* Let the SVG take up remaining space */
+    max-height: calc(100% - 80px); /* Adjust to leave space for page number */
+    margin-bottom: auto; /* Push the page number to the bottom */
+}
+
 .page-number {
+    text-align: center; /* Centre the text */
+    /* Adjust font size as needed */
+    color: #333; /* Text color */
+    
+    padding: 5px; /* Optional padding around the text */
+    margin-top: 10px; /* Space above the page number */
     font-family: Uthman;
     font-size: 23px;
-    
 }
 
 
@@ -59,22 +96,16 @@ hr {
     
 }
 
-.pages {
-    width: 700px;
 
-    margin-bottom: 50px;
-    margin-top: 30px;
 
-    
-    
-}
 
 
 @media only screen and (max-width: 640px) {
     
-    .pages {
-        width: 390px;
-        
+    .quranbg {
+        width: 10cm; /* A4 width */
+        height: auto; /* A4 height */
+
     }
     
 
