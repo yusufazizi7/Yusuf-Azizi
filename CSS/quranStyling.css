@@ -41,7 +41,7 @@ hr {
     overflow: hidden; /* Hide overflowing content */
     display: flex;
     flex-direction: column; /* Stack SVG and page number */
-    justify-content: space-between; /* Space out elements */
+    justify-content: center; /* Space out elements */
     align-items: center;
 }
 
@@ -49,7 +49,7 @@ hr {
     width: 100%; /* Full width */
     height: auto; /* Maintain aspect ratio */
     flex: 1; /* Let the SVG take up remaining space */
-    max-height: calc(100% - 80px); /* Adjust to leave space for page number */
+    max-height: calc(100% - 50px); /* Adjust to leave space for page number */
     margin-bottom: auto; /* Push the page number to the bottom */
 }
 
@@ -58,8 +58,7 @@ hr {
     /* Adjust font size as needed */
     color: #333; /* Text color */
     
-    padding: 5px; /* Optional padding around the text */
-    margin-top: 10px; /* Space above the page number */
+ /* Space above the page number */
     font-family: Uthman;
     font-size: 23px;
 }

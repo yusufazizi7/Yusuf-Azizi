@@ -96,13 +96,51 @@
         <div class="left-column">
             <!-- Image Gallery Section -->
             <div class="image-gallery">
-                <img src="Images/E-books/1.png" alt="Main Image" class="main-image" id="current-image" onclick="openLightbox()">
+                <img src="Images/E-books/1.png" alt="Main Image" class="main-image product-image" onclick="openLightbox(this)">
+        
+                <div class="thumbnail-images">
+                    <img src="Images/E-books/1.png" alt="Thumbnail 1" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/24.png" alt="Thumbnail 2" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/50.png" alt="Thumbnail 3" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/59.png" alt="Thumbnail 4" class="thumb" onclick="changeImage(this)">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Column: Product Title, Description, and Download Button -->
+        <div class="right-column">
+            <h1>Nooniyah Al-Qahtani</h1>
+            <p>
+                The Nooniyah Al-Qahtani is a profound Islamic poem detailing the core beliefs of the Ahlus Sunnah wal Jama'ah.
+            </p>
+    
+            <a href="E-books/Nooniyah-Al-Qahtani.pdf" class="rodownload" target="_blank">Read Online</a>
+            <a href="E-books/Nooniyah-Al-Qahtani.pdf" class="btndownload" download>Download Now</a>
+        </div>
+    
+        <!-- Lightbox for Image Expansion -->
+        <div class="lightbox" data-product="1">
+            <i class="fas fa-times lightbox-close" onclick="closeLightbox(this)"></i>
+            <i class="fas fa-chevron-left arrow arrow-left" onclick="prevImage(this)"></i>
+            <img src="Images/E-books/1.png" alt="Expanded Image" class="expanded-image">
+            <i class="fas fa-chevron-right arrow arrow-right" onclick="nextImage(this)"></i>
+        </div>
+    </div>
+    
+
+
+    <div class="product-page">
+        <!-- Left Column: Image Gallery -->
+        <div class="left-column">
+            <!-- Image Gallery Section -->
+            <div class="image-gallery">
+                <img src="Images/E-books/Q1.png" alt="Main Image" class="main-image product-image"  onclick="openLightbox()">
     
                 <div class="thumbnail-images">
-                    <img src="Images/E-books/1.png" alt="Image 3" class="thumb" onclick="changeImage(this)">
-                    <img src="Images/E-books/24.png" alt="Image 1" class="thumb" onclick="changeImage(this)">
-                    <img src="Images/E-books/50.png" alt="Image 2" class="thumb" onclick="changeImage(this)">
-                    <img src="Images/E-books/59.png" alt="Image 3" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/Q1.png" alt="Image 3" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/Q3.png" alt="Image 1" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/Q4.png" alt="Image 2" class="thumb" onclick="changeImage(this)">
+                    <img src="Images/E-books/Q5.png" alt="Image 3" class="thumb" onclick="changeImage(this)">
                     
                 </div>
             </div>
@@ -110,24 +148,28 @@
     
         <!-- Right Column: Product Title, Description, and Download Button -->
         <div class="right-column">
-            <h1>Nooniyah Al-Qahtani</h1>
+            <h1>Poem Of Ibn Al-Qayyim in Response to The Christians</h1>
             <p>
-                The Nooniyah Al-Qahtani is a profound Islamic poem detailing the core beliefs of the Ahlus Sunnah wal Jama'ah. 
+                The poem of Ibn Al-Qayyim, 'O Worshippers of Christ,' is a powerful and eloquent refutation of Christian beliefs, inviting reflection on the truth of Tawheed (the Oneness of Allah) and the errors of polytheism
             </p>
 
-            <a href="E-books/Nooniyah-Al-Qahtani.pdf" class="rodownload" target="_blank" >Read Online</a>
-            <a href="E-books/Nooniyah-Al-Qahtani.pdf" class="btndownload"  download>Download Now</a>
+            <a href="E-books/Ibn-Al-Qayyim-Poem-Against-The-Christians.pdf" class="rodownload" target="_blank" >Read Online</a>
+            <a href="E-books/Ibn-Al-Qayyim-Poem-Against-The-Christians.pdf" class="btndownload"  download>Download Now</a>
             
         </div>
+
+
+        <div class="lightbox" data-product="2">
+            <i class="fas fa-times lightbox-close" onclick="closeLightbox()"></i>
+            <i class="fas fa-chevron-left arrow arrow-left" onclick="prevImage()"></i>
+            <img src="Images/E-books/Q1.png" alt="Expanded Image" class="expanded-image">
+            <i class="fas fa-chevron-right arrow arrow-right" onclick="nextImage()"></i>
+        </div>
+
     </div>
     
     <!-- Lightbox for Image Expansion -->
-    <div class="lightbox" id="lightbox">
-        <i class="fas fa-times lightbox-close" onclick="closeLightbox()"></i>
-        <i class="fas fa-chevron-left arrow arrow-left" onclick="prevImage()"></i>
-        <img src="Images/E-books/1.png" alt="Expanded Image" id="expanded-image">
-        <i class="fas fa-chevron-right arrow arrow-right" onclick="nextImage()"></i>
-    </div>
+    
 
     
     <div class="extra-space"></div>
