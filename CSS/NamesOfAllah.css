@@ -1,0 +1,68 @@
+@font-face {
+    font-family: NamesOfAllah;
+    src: 
+         url('../Fonts/NamesOfAllah.otf') format('opentype');
+
+
+}
+
+
+h1 {
+
+    margin: 100px 0px;
+}
+
+
+table {
+    width: 80%;
+    margin: 20px auto; /* Centers the table horizontally */
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.9rem;
+    
+}
+thead {
+    background-color: #f4d54d;
+    color: #fff;
+}
+th, td {
+    padding: 15px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+caption {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.names-of-Allah {
+    font-family: NamesOfAllah;
+    font-size: 8.3rem;
+}
+
+
+.names-of-Allah:hover {
+    
+    color: aqua;
+}
+
+table tr td:nth-child(3) {
+    direction: rtl; /* Ensures right-to-left text direction for Arabic */
+    text-align: center; /* Aligns text to the right */
+    font-family: 'Amiri', serif; /* Example Arabic-friendly font */
+    font-size: 1.2em; /* Adjust font size */
+     /* Change text colour if needed */
+}
+
+
