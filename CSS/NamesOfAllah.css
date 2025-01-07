@@ -61,8 +61,27 @@ table tr td:nth-child(3) {
     direction: rtl; /* Ensures right-to-left text direction for Arabic */
     text-align: center; /* Aligns text to the right */
     font-family: 'Amiri', serif; /* Example Arabic-friendly font */
-    font-size: 1.2em; /* Adjust font size */
+    font-size: 1.3em; /* Adjust font size */
      /* Change text colour if needed */
 }
 
+
+@media (max-width: 768px) {
+    table {
+        width: 300px; /* Adjust table width for smaller screens */
+        font-size: 0.6rem; /* Reduce font size for smaller screens */
+    }
+
+    th, td {
+        padding: 10px; /* Reduce padding for table cells */
+    }
+
+    .names-of-Allah {
+        font-size: 2.5rem; /* Adjust font size for Arabic calligraphy */
+    }
+    h1 {
+
+        font-size: 1.2rem;
+    }
+}
 
