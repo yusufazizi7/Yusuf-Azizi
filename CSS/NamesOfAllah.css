@@ -68,20 +68,46 @@ table tr td:nth-child(3) {
 
 @media (max-width: 768px) {
     table {
-        width: 300px; /* Adjust table width for smaller screens */
-        font-size: 0.6rem; /* Reduce font size for smaller screens */
+        width: 80%;
+        font-size: 1.6rem;
     }
 
     th, td {
-        padding: 10px; /* Reduce padding for table cells */
+        padding: 10px;
+        font-size: 1.4rem;
+    }
+
+    thead {
+        display: none; /* Hide table header */
+    }
+
+    tr {
+        display: block;
+         /* Add spacing between rows */
+    }
+
+    td {
+        display: block;
+        text-align: center;
+        
+        
+        padding: 10px 5px;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+        text-transform: uppercase;
     }
 
     .names-of-Allah {
-        font-size: 2.5rem; /* Adjust font size for Arabic calligraphy */
+        font-size: 4.5rem; /* Adjust Arabic font size for smaller screens */
     }
     h1 {
 
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
-
