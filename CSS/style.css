@@ -90,25 +90,7 @@
     
 }
 
-a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Makes the link colour inherit from its parent */
-    font-style: normal; /* Resets any italic styles */
-    font-weight: normal; /* Resets bold styling */
-}
 
-
-a:visited {
-    text-decoration: none; /* Ensures no underline for visited links */
-    color: inherit; /* Keeps the same colour as unvisited links */
-}
-
-
-/* Optional: Remove hover effects */
-a:hover, a:focus {
-    text-decoration: none; /* Ensures no underline on hover */
-    color: inherit; /* Keeps the same colour on hover */
-}
 
 
 .test:hover {

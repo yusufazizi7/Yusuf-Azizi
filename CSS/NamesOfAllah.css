@@ -26,7 +26,7 @@ thead {
     color: #fff;
 }
 th, td {
-    padding: 15px 15px;
+    padding: 15px 30px;
     text-align: center;
     border: 1px solid #ddd;
 }
@@ -64,6 +64,32 @@ table tr td:nth-child(3) {
     font-size: 1.3em; /* Adjust font size */
      /* Change text colour if needed */
 }
+
+a {
+    text-decoration: none; /* Removes underline */
+    /* Makes the link colour inherit from its parent */
+    font-style: normal; /* Resets any italic styles */
+    font-weight: normal; /* Resets bold styling */
+    color: black;
+    
+   
+}
+
+
+a:visited {
+    text-decoration: none; /* Ensures no underline for visited links */
+    /* Keeps the same colour as unvisited links */
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(46, 46, 255);
+}
+
+
+/* Optional: Remove hover effects */
+
 
 
 @media (max-width: 768px) {
