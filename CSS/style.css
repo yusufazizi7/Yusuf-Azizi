@@ -54,7 +54,17 @@
 
 }
 
+@font-face {
+    font-family: Titles;
+    src: 
+         url('../Fonts/Titles.otf') format('opentype');
 
+
+}
+
+* {
+    box-sizing: content-box;
+}
 
 
 :root {
@@ -62,10 +72,24 @@
     --primary-color: #eae2d9;
     --secondary-color: #212121;
     --text-color: #000000;
+    
 
     
 
 
+    
+}
+
+.title-links {
+    margin-top: 100px;
+    box-sizing: border-box;
+    /* border: .1rem solid transparent; */
+    
+}
+
+.title-links:hover, .links:hover {
+    
+    color: #007BFF;
     
 }
 
@@ -81,23 +105,35 @@
 
 }
 
-.poemTitles {
 
-    width: 535px;
-    position: static;
-    margin-top: 100px;
-    margin-bottom: 20px;
+.poem-titles {
+    font-family: Titles;
+    font-size: 17rem;
+    
     
 }
 
 
-
-
-.test:hover {
-
-    background-color: green;
-    color: red;
+a {
+    text-decoration: none; /* Removes underline */
+    /* Makes the link colour inherit from its parent */
+    font-style: normal; /* Resets any italic styles */
+    font-weight: normal; /* Resets bold styling */
+    color: black;
+    display: inline-block;
+    
+   
 }
+
+
+a:visited {
+    text-decoration: none; /* Ensures no underline for visited links */
+    /* Keeps the same colour as unvisited links */
+    color: inherit;
+}
+
+
+
 
 .popup {
     display: none; /* Hidden by default */
