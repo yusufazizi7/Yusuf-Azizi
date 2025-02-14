@@ -348,6 +348,12 @@ main {
     transform: rotate(90deg);
 }
 
+.poem-title {
+    font-feature-settings: "liga", "calt"; /* Enables standard ligatures */
+    font-variant-ligatures: normal; /* Ensures ligatures are active */
+    direction: rtl; /* Right-to-left text direction */
+}
+
 
 .extra-space {
 
@@ -366,6 +372,10 @@ main {
 #menu-bars:hover {
     color: var(--accent-color);
 }
+
+
+
+
 /* ================= RESPONSIVE DESIGN ================= */
 
 /* ================= RESPONSIVE DESIGN ================= */
@@ -425,6 +435,10 @@ main {
     /* Ensure nav-links are positioned right under the navbar */
     header {
         padding: 0.9rem 5%;
+    }
+
+    .poem-title {
+        font-family: Thuluth;
     }
 
     header .navbar {

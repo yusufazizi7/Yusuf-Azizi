@@ -165,6 +165,7 @@ main {
     .poem-title {
         font-size: 3rem; /* Reduce title size */
         padding: 10px 20px;
+        font-family: Thuluth;
     }
 
     /* Adjust Arabic text size */
