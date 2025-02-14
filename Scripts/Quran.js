@@ -1,61 +1,24 @@
+// Function to open the "Surah Not Available" popup
+function openSurahPopup() {
+    document.getElementById("surahPopup").style.display = "flex";
+}
 
+// Function to close the popup
+function closeSurahPopup() {
+    document.getElementById("surahPopup").style.display = "none";
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    const quranDivs = document.querySelectorAll('.quran, .nooniyah');
-
-    quranDivs.forEach(div => {
-        const paragraphs = div.querySelectorAll('p'); // Get all <p> elements inside the .quran div
-        
-        paragraphs.forEach(p => {
-            // Split the text into words
-            const words = p.textContent.split(' ');
-            
-            // Wrap each word in a span with class "qword"
-            const wrappedWords = words.map(word => {
-                return word === '*' ? word : `<span class="qword">${word}</span>`;
-            }).join(' ');
-            
-            // Wrap the entire text (now with wrapped words) in a span with class "list"
-            const wrappedText = `<span class="list">${wrappedWords}</span>`;
-            
-            // Update the paragraph content
-            p.innerHTML = wrappedText;
-        });
-    });
+// Close the popup when clicking anywhere outside the content
+document.getElementById("surahPopup").addEventListener("click", function(event) {
+    if (event.target === this) { // Ensure only the background click closes it
+        closeSurahPopup();
+    }
 });
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const listItems = document.querySelectorAll('.quran p');
-
-    // Example translations array for each word, this should be updated with the actual translations
-    const translations = [
-        ['All praise', 'for Allah', 'Lord', 'of the Worlds', 'Ayah 1'],
-   
-    ];
-
-    listItems.forEach((item, lineIndex) => {
-        // Split the text into words
-        const words = item.textContent.split(' ');
-
-        // Wrap each word in a span with class "qword" and tooltip functionality, skipping "*"
-        let translationIndex = 0; // Keeps track of the translation word index
-        const wrappedWords = words.map(word => {
-            if (word === '*') {
-                return '*'; // Keep the "*" symbol as it is without wrapping
-            }
-
-            // Create the tooltip span with translation only if it's not "*"
-            const tooltipSpan = `<span class="tooltip qword">${word}<span class="tooltiptext">${translations[lineIndex][translationIndex] }</span></span>`;
-            translationIndex++; // Increment the translation index only if the word is not "*"
-            return tooltipSpan;
-
-        }).join(' ');
-
-        // Wrap the entire text (now with wrapped words) in a span with class "list"
-        const wrappedText = `<span class="list">${wrappedWords}</span>`;
-
-        // Update the list item content
-        item.innerHTML = wrappedText;
+// Attach event listener to all unavailable Surah links
+document.querySelectorAll(".unavailable-surah").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        openSurahPopup();
     });
 });

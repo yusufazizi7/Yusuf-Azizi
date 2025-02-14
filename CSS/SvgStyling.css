@@ -95,8 +95,6 @@
 
 
 
-
-
 .logosvg {
 
     fill: var(--fourth-color);
@@ -151,3 +149,14 @@
     fill-rule: evenodd;
     
 }
+
+
+.logo {
+    fill: white;
+}
+
+.logo:hover {
+
+    fill: aqua;
+}
+

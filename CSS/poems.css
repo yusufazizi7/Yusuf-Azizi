@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.page-title {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+
+
+
+.poem-container {
+    padding: 0;
+    margin-top: 20px;
+    list-style-type: none; /* Arabic-style numbers */
+    list-style-position: inside; /* Ensures numbers are inside */
+    direction: rtl; /* Right-to-left direction */
+}
+
+.poem-verse {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: right; /* Aligns text to the right */
+    display: list-item; /* Ensure it's treated as a list item */
+}
+
+/* Move the verse number to the right of the text */
+.poem-verse::marker {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2rem;
+    direction: rtl;
+    unicode-bidi: embed;
+    
+    
+}
+
+/* Ensure Arabic text is right-aligned */
+.arabic-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8rem;
+    direction: rtl;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.eng-translation {
+    font-size: 1.2rem;
+    font-family: 'Calibri', sans-serif;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    text-align: center;
+    direction: ltr;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+
+
+main {
+    margin-top: 200px;
+}
+
+.bismillah {
+    font-family: Amiri;
+    font-size: 1.3rem;
+}
+
+
+
+
+.poem-title {
+    font-family: Titles; /* Ensure it's using a calligraphic font */
+    font-size: 5rem; /* Adjust size */
+    text-align: center;
+    color: var(--text-color); /* Main text color */
+    background: linear-gradient(to right, #f8f9fa, #e9ecef); /* Subtle gradient background */
+    padding: 15px 30px;
+    display: inline-block;
+    border: 2px solid var(--secondary-color); /* Accent-colored border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+/* Hover effect */
+.poem-title:hover {
+    background: var(--accent-color); /* Change background on hover */
+    color: white;
+    border-color: var(--secondary-color); /* Darker border on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Add decorative lines around the title */
+
+
+.poem-title::before {
+    left: -40px;
+    transition: left 0.3s ease-in-out;
+}
+
+.poem-title::after {
+    right: -40px;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Hover effect for decorative lines */
+.poem-title:hover::before {
+    left: 10px;
+}
+
+.poem-title:hover::after {
+    right: 10px;
+}
+
+#decreaseFont, #increaseFont, #resetFont {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Hover Effects */
+#decreaseFont:hover, #increaseFont:hover, #resetFont:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Font Size Display */
+#fontSizeDisplay {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar-section h3 {
+        font-size: 1rem;
+    }
+
+    #decreaseFont, #increaseFont, #resetFont {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    #fontSizeDisplay {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design for Poem Pages */
+@media only screen and (max-width: 768px) {
+    /* Adjust poem title size */
+    .poem-title {
+        font-size: 3rem; /* Reduce title size */
+        padding: 10px 20px;
+    }
+
+    /* Adjust Arabic text size */
+    .arabic-text {
+        font-size: 1.5rem; /* Reduce font size for better readability */
+    }
+
+    /* Adjust English translation size */
+    .eng-translation {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+
+    /* Adjust poem container */
+    .poem-container {
+        margin-top: 10px; /* Reduce margin */
+        padding: 0 10px; /* Add slight padding to avoid edge touching */
+    }
+
+    /* Adjust individual verse spacing */
+    .poem-verse {
+        padding: 8px 0;
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    /* Adjust Bismillah font */
+    .bismillah {
+        font-size: 1.1rem;
+    }
+
+    /* Ensure main content starts after navbar */
+    main {
+        margin-top: 150px; /* Reduce margin for smaller screens */
+    }
+}

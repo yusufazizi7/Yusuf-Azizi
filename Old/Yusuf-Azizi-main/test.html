@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            width: 21cm; /* A4 width */
+            height: 29.7cm; /* A4 height */
+            margin: 0;
+        }
+
+
+
+        .quranbg {
+            width: 21cm; /* A4 width */
+            height: 29.7cm; /* A4 height */
+
+            padding: 20px; /* Padding for internal spacing */
+            overflow: hidden; /* Hide overflowing content */
+            display: flex;
+            flex-direction: column; /* Stack SVG and page number */
+            justify-content: space-between; /* Space out elements */
+            align-items: center;
+        }
+
+        .quransvg {
+            width: 80%; /* Full width */
+            height: 80%; /* Maintain aspect ratio */
+            flex: 1; /* Let the SVG take up remaining space */
+             /* Adjust to leave space for page number */
+             /* Push the page number to the bottom */
+        }
+
+        .page-number {
+            text-align: center; /* Centre the text */
+            /* Adjust font size as needed */
+            color: #333; /* Text color */
+            
+             /* Space above the page number */
+            font-family: Uthman;
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quran-container">
+        <div class="quranbg">
+            
+            <object  class="pages quransvg svgObject" data="Images/page1test.svg" type="image/svg+xml"></object>
+            
+            <div class="page-number">1</div>
+        </div>
+    </div>
+
+    <div class="quran-container">
+        <div class="quranbg">
+            
+            <object  class="pages quransvg svgObject" data="Images/page2.svg" type="image/svg+xml"></object>
+            
+            <div class="page-number">1</div>
+        </div>
+    </div>
+    <div class="quran-container">
+        <div class="quranbg">
+            
+            <object  class="pages quransvg svgObject" data="Images/page3.svg" type="image/svg+xml"></object>
+            
+            <div class="page-number">1</div>
+        </div>
+    </div>
+    <div class="quran-container">
+        <div class="quranbg">
+            
+            <object  class="pages quransvg svgObject" data="Images/page4.svg" type="image/svg+xml"></object>
+            
+            <div class="page-number">1</div>
+        </div>
+    </div>
+
+
+
+    <script src="Scripts/UpdateQuran.js"></script>
+    
+</body>
+</html>

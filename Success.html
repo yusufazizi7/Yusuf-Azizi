@@ -26,7 +26,7 @@
 
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/global.css">
     
 
 
@@ -34,7 +34,7 @@
 
 
     
-    <link rel="icon" type="image/ico" href="Images/YoutubeIcon.ico">
+    <link rel="icon" type="image/ico" href="Images/website-favicon.png">
 
 
 
@@ -61,68 +61,58 @@
 <body>
 
 
-    <img src="Images/LeftTopCorner.png" alt="Top Left Corner" class="corner top-left">
-    <img src="Images/RightTopCorner.png" alt="Top Right Corner" class="corner top-right">
-    <img src="Images/BottomRightCorner.png" alt="Bottom Left Corner" class="corner bottom-left">
-    <img src="Images/BottomLeftCorner.png" alt="Bottom Right Corner" class="corner bottom-right">
+    <!-- Navbar -->
+    <header >
+        <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"></object>
 
-    
-    
-
-    <div class="container">
-
-        <nav>
-            <object data="Images/YoutubeIcon.svg" type="image/svg+xml"  class="website-logo"></object>
-            <ul>
-                <li><a href="Contactus">Contact us</a></li>
-                <li><a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a></li>
-                <li><a href="Nooniyah-Al-Qahtani">Nooniyah Al-Qahtani</a></li>
-                <li><a href="Al-Fatihah-Hafs">Quran</a></li>
-                <li><a href="Videos">Videos</a></li>
-                <li><a href="E-books">E-books</a></li>
-            </ul>
-
-            <button class="btn"><a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i id="Youtube" class="fa-brands fa-youtube fa-2xl"></i></a></button>
-            <button class="btn"><a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a></button>
-            <button class="btn"><a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i id="Tiktok" class="fa-brands fa-tiktok fa-2xl"></i></a></button>
+        <nav class="navbar">
             
-
-            <i id="moon" class="fa-solid fa-moon fa-2xl"></i>
-            <i class="fa-solid fa-bars fa-2xl" id="sidebarToggle"></i>
+            <a href="Nooniyah-Al-Qahtani">Nooniyah Al-Qahtani</a>
+            <a href="quran">Quran</a>
+            <a href="videos">videos</a>
+            <a href="e-books">E-books</a>
+            <a href="contact-us">Contact</a>
+            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
+            
         </nav>
-    </div>
 
-    <div class="sidebar" id="sidebar">
-
-
-        <ul class="navMobile">
-            <li><a href="Contactus">Contact us</a></li>
-            <li><a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a></li>
-            <li><a href="Nooniyah-Al-Qahtani">Nooniyah <br> Al-Qahtani</a></li>
-            <li><a href="Al-Fatihah-Hafs">Quran</a></li>
-            <li><a href="Videos">Videos</a></li>
-            <li><a href="E-books">E-books</a></li>
-        </ul>
-            
-       
+        <i id="menu-bars" class="fa-solid fa-bars"></i>
         
+
         
-        
-            
-    </div>
+    </header>
 
-
-    <div class="success-message">
-
-        <i id="tick" class="fa-regular fa-circle-check"></i>
-        <h2>Form submitted successfully!</h2>
-        <p>Thank you! The form has been submitted successfully. We will reply to you soon!</p>
-        <a href="Contactus">Go back</a>
-
-
-
-    </div>
     
+    
+
+
+
+    <main>
+        <div class="success-message">
+
+            <i id="tick" class="fa-regular fa-circle-check"></i>
+            <h2>Form submitted successfully!</h2>
+            <p>Thank you! The form has been submitted successfully. We will reply to you soon!</p>
+            <a href="contact-us">Go back</a>
+
+
+
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Islamic Qalam. All Rights Reserved.</p>
+        <p>
+            <a href="contact-us">Contact</a> | 
+            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
+        </p>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </footer>
 
 
 

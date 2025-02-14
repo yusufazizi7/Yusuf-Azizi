@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R6X1QNEYSL');
+    </script>
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Islamic Qalam for inquiries, feedback, or collaborations.">
+    <meta name="keywords" content="Islam, Islamic Qalam, Contact, Support, Feedback">
+    <meta name="author" content="Mohammad Yusuf Azizi">
+    <link rel="canonical" href="https://www.islamicqalam.com/contact-us">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/contact-us.css">
+
+    <link rel="icon" type="image/png" href="Images/website-favicon.png">
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+
+    <title>Contact Us | Islamic Qalam</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header >
+        <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"></object>
+
+        <nav class="navbar">
+            
+            <a href="Nooniyah-Al-Qahtani">Nooniyah Al-Qahtani</a>
+            <a href="quran">Quran</a>
+            <a href="videos">videos</a>
+            <a href="e-books">E-books</a>
+            <a href="contact-us">Contact</a>
+            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
+            
+        </nav>
+
+        <i id="menu-bars" class="fa-solid fa-bars"></i>
+
+        
+    </header>
+
+
+
+    <!-- Donation Popup -->
+    <div id="donationPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Support Our Project</h2>
+            <br>
+            <p>Assalamu Alaikum, dear visitor,</p>
+            <p>We understand that being asked to donate may be unexpected, but a lot of time, effort, and resources go into maintaining and growing this website. Currently, this platform is run by a single developer, working to provide you with valuable Islamic content, such as poems and beneficial resources for the Ummah.</p>
+            <p>If you’ve found benefit from this site, we kindly ask for your support with a small donation of $5. Your contribution will help us maintain the website and expand the content library, allowing us to continue offering more Islamic poems, educational material, and valuable services for the community.</p>
+            <p>Thank you for your understanding and support, and may Allah reward you for your generosity.</p>
+            <br>
+            <button id="donateButton">Donate</button>
+            <button id="cancelButton">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <main>
+    <section class="contact-container">
+        <div class="contact-box">
+            <h2>Contact Us</h2>
+            <p>Have a question, feedback, or collaboration idea? Reach out to us!</p>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="12c54ac0-ebf3-4c2d-a29d-b6326bce45d8">
+                <input type="hidden" name="redirect" value="https://www.islamicqalam.com/success">
+                
+                <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+                <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+
+                <button type="submit" class="contact-btn">Submit <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Islamic Qalam. All Rights Reserved.</p>
+        <p>
+            <a href="contact-us">Contact</a> | 
+            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
+        </p>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script src="Scripts/global.js"></script>
+</body>
+</html>

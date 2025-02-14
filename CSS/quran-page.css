@@ -1,0 +1,196 @@
+/* ================= QURAN PAGE STYLING ================= */
+
+/* General Layout */
+main {
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+    margin-top: 150px; /* Reduced margin for better spacing */
+}
+
+/* Page Title */
+.page-title {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+/* Quran Page Container */
+.quran-container {
+    display: block; /* Ensures pages flow naturally */
+    width: 100%;
+    max-width: 1000px; /* Ensures pages don’t exceed layout width */
+    margin: 0 auto; /* Centering */
+}
+
+/* Quran Page Background */
+.quranbg {
+    width: 21cm; /* A4 width */
+    height: 29.7cm; /* A4 height */
+    background: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    border: 2px solid var(--secondary-color); /* Darker contrast border */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content */
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 50px; /* Adds space between pages */
+}
+
+/* Quranic Text (SVG Container) */
+.quransvg {
+    width: 80%;
+    height: auto;
+    max-height: 100%;
+}
+
+/* Page Number */
+.page-number {
+    font-family: Uthman;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+/* Extra Spacing */
+.extra-space {
+    height: 100px;
+}
+
+/* ================= SURAH NAVIGATION BUTTONS ================= */
+
+.quran-nav {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.quran-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 8px 15px; /* Reduced padding */
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    width: 120px; /* Fixed smaller width */
+}
+
+/* Hover Effect */
+.quran-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* ================= COMING SOON SECTION ================= */
+.coming-soon {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    padding: 15px 30px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.coming-soon:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+
+
+
+/* Responsive Design for Quran Pages */
+@media only screen and (max-width: 1024px) {
+    .quranbg {
+        width: 90%; /* Scale down for tablets */
+        height: auto; /* Allow flexible height */
+        padding: 15px;
+    }
+
+    .quransvg {
+        width: 95%; /* Adjust SVG width */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .page-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px; /* Reduce spacing */
+    }
+
+    .quranbg {
+        width: 100%; /* Full width for better adaptation */
+        max-width: 95vw; /* Prevent overflow */
+        height: auto; /* Adjust height dynamically */
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .quransvg {
+        width: 100%;
+        max-height: 100%;
+    }
+
+    .page-number {
+        font-size: 1.3rem;
+    }
+
+    .quran-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        width: 110px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .quranbg {
+        width: 100%;
+        max-width: 90vw; /* Ensure it doesn’t exceed viewport */
+        height: auto;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    .quransvg {
+        width: 100%;
+    }
+
+    .page-number {
+        font-size: 1.1rem;
+    }
+
+    .quran-btn {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+        width: 90px;
+    }
+
+    .coming-soon {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+

@@ -1,0 +1,153 @@
+:root {
+
+    --third-color: #fff;
+    --fourth-color: #000;
+
+    --fifth-color: rgb(133, 169, 133);
+    --sixth-color: dimgrey;
+
+}
+
+.dark-theme {
+
+    --third-color: #000;
+    --fourth-color: #fff;
+
+    --fifth-color: yellow;
+
+    --sixth-color: white;
+
+}
+
+
+
+
+.ayah:hover {
+
+    cursor: text;
+}
+.ayah:hover .rect{
+
+    opacity: 1;
+    fill: var(--sixth-color);
+    
+
+
+}
+
+
+.ayah:hover path{
+
+    opacity: 1;
+    fill: var(--third-color);
+
+
+}
+
+
+
+
+
+
+
+.wordrect {
+
+    opacity: 0;
+}
+
+.word {
+
+    fill: var(--fourth-color);
+}
+
+
+
+
+.word:hover .wordrect {
+
+    opacity: 1;
+    fill: var(--fifth-color);
+}
+
+.word:hover path {
+
+    fill: red;
+}
+
+
+.svgQuran path {
+
+    fill: var(--fourth-color);
+}
+
+
+
+.noonbg {
+
+    
+    width: 940px;
+    height:400px;
+    x: 10px;
+    
+}
+
+
+
+
+
+
+
+.logosvg {
+
+    fill: var(--fourth-color);
+    /* cursor: pointer; */
+}
+
+.logosvg:hover  {
+
+    fill: aqua;
+}
+
+#logo-bg {
+
+    
+    opacity: 0;
+}
+
+
+
+.content {
+
+    fill: var(--fourth-color);
+    cursor: pointer;
+    
+}
+
+.content:hover {
+
+    fill: aqua;
+
+}
+
+.bg {
+
+    opacity: 0;
+}
+
+
+
+
+.content:hover  .redcircle {
+
+    fill: aqua;
+}
+
+.redcircle  {
+    fill: #f5424a;
+}
+
+.evenOdd {
+
+    fill-rule: evenodd;
+    
+}

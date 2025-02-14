@@ -1,0 +1,339 @@
+.svgObject {
+
+    width: 200px;
+    
+}
+
+.horizGraphics {
+
+    height: 150px;
+    width: auto;
+}
+
+#manpraying {
+
+    width: 250px;
+}
+
+#mushaf {
+
+    width: 200px;
+}
+
+.graphics {
+
+    
+    margin: 30px 0;
+    
+}
+
+.gimg {
+
+    width: 250px;
+    margin: 50px 0;
+}
+
+.grpGrphs {
+
+    width: 170px;
+    
+}
+
+.grphscontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Gap between Sahabah and Ahlulbayt groups */
+    padding: 50px; /* Gap between the container and the page edges */
+}
+
+.Sahabah {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+
+.AhlulBait {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for AhlulBait */
+    grid-template-rows: repeat(2, auto); /* 2 rows for AhlulBait */
+    gap: 10px; /* Gap between objects in AhlulBait */
+}
+
+.Sahabah object,
+.AhlulBait object, .Sahabah2 object {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.sahabahContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Gap between Sahabah and Ahlulbayt groups */
+    padding: 50px; /* Gap between the container and the page edges */
+}
+
+.Sahabah2 {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.pairContainer {
+
+    padding: 50px;
+}
+
+.pairContainer object {
+
+    width: 150px;
+    margin: 0 30px;
+}
+
+.gcontainer, .sahabahGrp3  {
+
+    padding: 60px;
+}
+
+.gcontainer object {
+
+    margin: 0 30px;
+    width: 170px;
+}
+
+.sahabahGrp3 object {
+
+    margin: 0 10px;
+    width: 110px;
+}
+
+
+.Wives {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+}
+
+.Wives object {
+
+    width: 130px;
+    margin: 0 10px;
+}
+
+.muhaddithin {
+
+    padding: 50px;
+
+}
+
+.muhaddithin object {
+
+    height: 120px;
+
+}
+
+.imgPair {
+
+    padding: 50px;
+}
+
+.imgPair img {
+
+
+    height: 150px; /* Set the desired height */
+    width: auto;   /* Automatically adjusts the width to maintain aspect ratio */
+    margin: 0 30px;
+}
+
+
+#Earth {
+
+    width: 190px;
+}
+
+.pairContainer2 {
+
+    padding: 50px;
+}
+
+.pairContainer2 object {
+
+    height: 150px;
+    width: auto;
+    margin: 0 30px;
+}
+
+.threeContainer {
+
+    padding: 50px;
+}
+
+.threeContainer object {
+
+    height: 140px;
+    width: auto;
+    margin: 0 30px;
+}
+
+
+.verticGraphics {
+
+    height: 200px;
+    width: auto;
+}
+
+#honeyAndCupping {
+
+    height: 150px;
+    width: auto;
+}
+
+.horizGraphics2 {
+
+    height: 100px;
+    width: auto;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+
+    /* For SVG Objects and Mushaf */
+    .svgObject, #mushaf {
+        width: 90px;
+    }
+
+    
+
+    /* Man praying and general images */
+    #manpraying, .gimg {
+        width: 125px;
+    }
+
+    /* Graphics */
+    .graphics {
+        margin: 10px 0;
+
+        margin-top: 35px;
+    }
+
+    /* Horizontal Graphics */
+    .horizGraphics {
+        height: 75px;
+        width: auto;
+    }
+
+    /* Group Graphics */
+    .grpGrphs {
+        width: 77px;
+    }
+
+    /* Graphics Containers */
+    .grphscontainer, .sahabahContainer {
+        gap: 40px;
+        padding: 25px;
+    }
+
+    /* Sahabah group */
+    .Sahabah object, .AhlulBait object, .Sahabah2 object {
+        width: 45px;
+        height: auto;
+    }
+
+    /* Pair Container */
+    .pairContainer object {
+        width: 67px;
+        margin: 0 15px;
+    }
+
+    /* Gcontainer and Sahabah Group 3 */
+    .gcontainer, .sahabahGrp3 {
+        padding: 30px;
+    }
+
+    .gcontainer object {
+        width: 77px;
+        margin: 0 15px;
+    }
+
+    .sahabahGrp3 object {
+        width: 50px;
+        margin: 0 5px;
+    }
+
+    .ridhwanGrp object {
+
+        
+
+        width: 50px;
+    }
+
+    .ridhwanGrp {
+
+        margin-top: 30px;
+    }
+
+    /* Wives */
+    .Wives object {
+        width: 59px;
+        margin: 0 5px;
+    }
+
+    /* Muhaddithin */
+    .muhaddithin object {
+        height: 55px;
+    }
+
+    /* Image Pair */
+    .imgPair img {
+        height: 75px;
+        margin: 0 15px;
+    }
+
+    /* Earth */
+    #Earth {
+        width: 85px;
+    }
+
+    /* Pair Container 2 */
+    .pairContainer2 object {
+        height: 75px;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    /* Three Container */
+    .threeContainer object {
+        height: 67px;
+        width: auto;
+        margin: 0 15px;
+    }
+
+    /* Vertical Graphics */
+    .verticGraphics {
+        height: 90px;
+        width: auto;
+    }
+
+    /* Honey and Cupping */
+    #honeyAndCupping {
+        height: 75px;
+        width: auto;
+    }
+
+    /* Horizontal Graphics 2 */
+    .horizGraphics2 {
+        height: 50px;
+        width: auto;
+    }
+}

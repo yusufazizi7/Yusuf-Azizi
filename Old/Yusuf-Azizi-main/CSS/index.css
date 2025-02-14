@@ -1,0 +1,125 @@
+html, body {overflow-x:hidden;}
+
+
+
+body{
+
+
+    
+
+    
+
+    
+    
+
+    background-image: url("Qahtani4YT.png");
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: Calibri;
+    
+    
+    
+    
+
+    
+    color: rgb(0, 0, 0); /* Optionally, you can set text color to white for better visibility */
+    
+    
+
+
+}
+
+.container {
+
+    padding: 0 330px;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+    
+    
+
+    
+}
+@media (max-width: 1500px) {
+    .container {
+        padding: 0 70px; /* Remove padding when viewport width is 768px or smaller */
+    }
+    nav {
+        width: 100%; /* Ensure navigation bar takes full width */
+    }
+}
+
+
+.logo{
+
+    width: 180px;
+    cursor: pointer;
+}
+
+nav ul{
+
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li{
+
+    display: inline-block;
+    margin: 10px 20px;
+
+}
+
+nav ul li a{
+
+    color: black;
+    text-decoration: none;
+    font-size: medium;
+}
+
+i{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    
+    color: red;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+i:hover {
+
+    color: aqua;
+}
+
+button {
+
+    border: 0;
+
+    background: 0;
+}
+
+
+nav ul li a:hover {
+
+    color: aqua;
+}
+
+iframe {
+    display: block; /* Ensures the iframe is treated as a block-level element */
+    margin: 100px auto; /* Sets top and bottom margins to 0 and left and right margins to auto, centering the iframe horizontally */
+    width: 960px; /* Set the width to 100% to fill its container */
+    height: 540px;
+}
