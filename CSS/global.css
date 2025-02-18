@@ -157,10 +157,6 @@ main section {
     color: var(--accent-color);
 }
 
-.thuluth-title {
-    font-family: Thuluth;
-    font-size: 1.9rem;
-}
 
 
 .poem a {
@@ -186,6 +182,10 @@ main section {
     cursor: pointer;
 }
 
+main .thuluth-title {
+    font-family: Thuluth;
+    font-size: 1.9rem;
+}
 
 
 
