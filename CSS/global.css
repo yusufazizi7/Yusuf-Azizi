@@ -157,7 +157,7 @@ main section {
     color: var(--accent-color);
 }
 
-#thuluth-title {
+.thuluth-title {
     font-family: Thuluth;
     font-size: 1.9rem;
 }

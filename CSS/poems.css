@@ -116,6 +116,12 @@ main {
     right: 10px;
 }
 
+.thuluth-title {
+
+    font-family: Thuluth;
+    font-size: 3rem;
+}
+
 #decreaseFont, #increaseFont, #resetFont {
     background: var(--secondary-color);
     color: var(--primary-color);
