@@ -78,10 +78,22 @@
         </nav>
 
         <i id="menu-bars" class="fa-solid fa-bars"></i>
-        
+        <i class="fa-solid fa-gear fa-2xl "></i>
 
         
     </header>
+
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-section">
+            <h3>Choose Qiraah</h3>
+            <label><input type="radio" name="Qiraah" value="Hafs" checked> Hafs</label>
+            <label><input type="radio" name="Qiraah" value="Warsh"> Warsh</label>
+
+        </div>
+
+
+    </div>
 
     <!-- Quran Page -->
     <main >
@@ -99,7 +111,7 @@
             
     
             <div class="quranbg">
-                <object class="pages quransvg svgObject" data="Images/page1test.svg" type="image/svg+xml"></object>
+                <object class="pages quransvg svgObject" data="Images/Quran/Hafs/Page-1.svg"  type="image/svg+xml"></object>
                 <div class="page-number">١</div>
             </div>
         </section>
@@ -134,5 +146,7 @@
     <!-- Scripts -->
     <script src="Scripts/global.js"></script>
     <script src="Scripts/SvgObject.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+    <script src="Scripts/QiraahChange.js"></script>
 </body>
 </html>
