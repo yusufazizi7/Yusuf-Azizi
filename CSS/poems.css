@@ -149,6 +149,51 @@ main {
     margin: 0 10px;
 }
 
+
+.word {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+    white-space: nowrap;
+
+}
+
+.word:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 12px; /* slightly larger */
+    border-radius: 8px; /* more rounded */
+    font-size: 15px; /* slightly bigger text */
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.word:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .sidebar-section h3 {

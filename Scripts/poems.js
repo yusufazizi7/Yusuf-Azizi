@@ -114,3 +114,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+let currentAudio = null;
+
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('word')) {
+        // Get only the Arabic word text, ignoring the tooltip
+        const wordText = e.target.childNodes[0]?.nodeValue.trim();
+
+        if (!wordText) return;
+
+        const audioPath = `Audios/${wordText}.mp3`;
+
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+        }
+
+        currentAudio = new Audio(audioPath);
+        currentAudio.play().catch(err => {
+            console.error(`Audio not found: ${audioPath}`, err);
+        });
+    }
+});
+
