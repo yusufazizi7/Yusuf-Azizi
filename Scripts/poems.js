@@ -125,7 +125,7 @@ document.addEventListener('click', function (e) {
 
         if (!wordText) return;
 
-        const audioPath = `Audios/${wordText}.mp3`;
+        const audioPath = `Audios/${wordText}.MP3`;
 
         if (currentAudio) {
             currentAudio.pause();
