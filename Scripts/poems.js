@@ -139,3 +139,28 @@ document.addEventListener('click', function (e) {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const verses = document.querySelectorAll('.poem-verse');
+  
+    verses.forEach((verse) => {
+      const arabic = verse.querySelector('.arabic-text');
+      const arabicWords = arabic?.textContent.trim().split(/\s+/) || [];
+  
+      arabic.textContent = ''; // Clear original text
+  
+      arabicWords.forEach((word) => {
+        if (word === '*') {
+          arabic.appendChild(document.createTextNode(' * '));
+          return;
+        }
+  
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.textContent = word;
+  
+        arabic.appendChild(span);
+        arabic.appendChild(document.createTextNode(' '));
+      });
+    });
+  });
+  

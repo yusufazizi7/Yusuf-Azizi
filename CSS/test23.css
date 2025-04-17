@@ -1,0 +1,16 @@
+@font-face {
+    font-family: quran;
+    src: url(../Fonts/original-hafs.woff);
+}
+
+
+main p {
+
+    font-family: quran;
+    font-size: xx-large;
+    margin: 0 200px;
+}
+
+span {
+    color: red;
+}
