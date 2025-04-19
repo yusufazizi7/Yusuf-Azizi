@@ -116,51 +116,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-let currentAudio = null;
 
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('word')) {
-        // Get only the Arabic word text, ignoring the tooltip
-        const wordText = e.target.childNodes[0]?.nodeValue.trim();
 
-        if (!wordText) return;
-
-        const audioPath = `Audios/${wordText}.MP3`;
-
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-        }
-
-        currentAudio = new Audio(audioPath);
-        currentAudio.play().catch(err => {
-            console.error(`Audio not found: ${audioPath}`, err);
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const verses = document.querySelectorAll('.poem-verse');
-  
-    verses.forEach((verse) => {
-      const arabic = verse.querySelector('.arabic-text');
-      const arabicWords = arabic?.textContent.trim().split(/\s+/) || [];
-  
-      arabic.textContent = ''; // Clear original text
-  
-      arabicWords.forEach((word) => {
-        if (word === '*') {
-          arabic.appendChild(document.createTextNode(' * '));
-          return;
-        }
-  
-        const span = document.createElement('span');
-        span.className = 'word';
-        span.textContent = word;
-  
-        arabic.appendChild(span);
-        arabic.appendChild(document.createTextNode(' '));
-      });
-    });
-  });
-  

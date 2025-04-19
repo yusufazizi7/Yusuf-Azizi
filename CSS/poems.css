@@ -149,7 +149,6 @@ main {
     margin: 0 10px;
 }
 
-
 .word {
     position: relative;
     display: inline-block;
@@ -157,13 +156,26 @@ main {
     transition: background-color 0.3s, color 0.3s;
     border-radius: 4px;
     white-space: nowrap;
-
 }
 
+/* Default hover if no class applied (fallback) */
 .word:hover {
     background-color: var(--accent-color);
     color: var(--primary-color);
 }
+
+/* If audio file found */
+.audio-found:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* If audio file missing */
+.audio-missing:hover {
+    background-color: var(--red-color); /* Bootstrap's 'danger' red (#dc3545) fits your palette */
+    color: var(--primary-color);
+}
+
 
 .tooltip {
     position: absolute;
