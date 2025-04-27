@@ -7,18 +7,35 @@
 @font-face { font-family: Hafs; src: url('../Fonts/Hafs.ttf') format('truetype'); }
 @font-face { font-family: Thuluth; src: url('../Fonts/AM_Thulth_Regular.ttf') format('truetype'); }
 @font-face { font-family: Titles; src: url('../Fonts/Titles.otf') format('opentype'); }
+@font-face { font-family: Quran-Hafs; src: url('../Fonts/original-hafs.woff') format('opentype'); }
 
 /* --- Root Variables --- */
-:root {
-    --primary-color: #f8f9fa; /* Light grey for a modern clean look */
-    --secondary-color: #343a40; /* Dark grey for contrast */
-    --text-color: #212529; /* Nearly black for better readability */
-    --accent-color: #007bff; /* Professional blue for highlights */
-    --footer-bg: #222; /* Dark footer for contrast */
+/* :root {
+    --primary-color: #f8f9fa; 
+    --secondary-color: #343a40; 
+    --text-color: #212529; 
+    --accent-color: #007bff; 
+    --footer-bg: #222; 
     --footer-text: #bbb;
     --red-color: #dc3545;
   
+} */
+
+
+:root {
+    --primary-color: #faf4e8;
+    --secondary-color: #0d3b26;
+    --text-color: #2b2b2b;
+    --accent-color: #8c6239;
+    --footer-bg: #18332f;
+    --footer-text: #e5e5d5;
+    --red-color: #b52121;
+    --blue-color: #0056b3;
 }
+
+
+
+
 
 
 

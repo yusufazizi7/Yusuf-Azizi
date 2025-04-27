@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const verses = document.querySelectorAll('.poem-verse');
+    const ayahs = document.querySelectorAll('.ayah-block');
 
-    verses.forEach((verse) => {
-        const arabic = verse.querySelector('.arabic-text');
+    ayahs.forEach((ayah) => {
+        const arabic = ayah.querySelector('.arabic-text');
         const arabicWords = arabic?.textContent.trim().split(/\s+/) || [];
 
         arabic.textContent = ''; // Clear original text
 
         arabicWords.forEach((word) => {
-            if (word === '*') {
-                arabic.appendChild(document.createTextNode(' * '));
+            // Ignore Arabic numbers (٠-٩)
+            if (/^[\u0660-\u0669]+$/.test(word)) {
+                arabic.appendChild(document.createTextNode(word + ' '));
                 return;
             }
 
@@ -21,36 +22,52 @@ document.addEventListener('DOMContentLoaded', () => {
             arabic.appendChild(document.createTextNode(' '));
         });
     });
+
+    precheckAllWords();
 });
 
 let currentAudio = null;
 
-// Function to check if an audio file exists
+// Function to check if an audio file exists in Quran or Poems folder
 async function checkAudioExists(wordText) {
+    const quranPath = `Audios/Quran/${wordText}.MP3`;
+    const poemsPath = `Audios/Poems/${wordText}.MP3`;
+
     try {
-        const response = await fetch(`Audios/Poems/${wordText}.MP3`, { method: 'HEAD' });
-        return response.ok;
+        const responseQuran = await fetch(quranPath, { method: 'HEAD' });
+        if (responseQuran.ok) {
+            return quranPath;
+        }
+
+        const responsePoem = await fetch(poemsPath, { method: 'HEAD' });
+        if (responsePoem.ok) {
+            return poemsPath;
+        }
     } catch (error) {
-        return false;
+        // Ignore errors silently
     }
+
+    return null; // Not found
 }
 
 // Pre-check all words on page load
-document.addEventListener('DOMContentLoaded', () => {
+async function precheckAllWords() {
     const wordSpans = document.querySelectorAll('.word');
 
-    wordSpans.forEach(async (wordSpan) => {
+    for (const wordSpan of wordSpans) {
         const wordText = wordSpan.childNodes[0]?.nodeValue.trim();
-        if (!wordText) return;
+        if (!wordText) continue;
 
-        const exists = await checkAudioExists(wordText);
-        if (exists) {
+        const sanitizedWord = wordText.replace(/[^\p{Letter}\p{Mark}\p{Number}]/gu, '');
+        const audioPath = await checkAudioExists(sanitizedWord);
+
+        if (audioPath) {
             wordSpan.classList.add('audio-found');
         } else {
             wordSpan.classList.add('audio-missing');
         }
-    });
-});
+    }
+}
 
 // Play audio on click
 document.addEventListener('click', async function (e) {
@@ -59,22 +76,15 @@ document.addEventListener('click', async function (e) {
         if (!wordText) return;
 
         const sanitizedWord = wordText.replace(/[^\p{Letter}\p{Mark}\p{Number}]/gu, '');
-        const audioPath = `Audios/Poems/${sanitizedWord}.MP3`;
 
-        // Check if the audio file exists first
-        try {
-            const response = await fetch(audioPath, { method: 'HEAD' });
-            if (!response.ok) {
-                // Show a popup if audio doesn't exist
-                showPopup("Audio not available yet for this word.");
-                return;
-            }
-        } catch (error) {
+        const audioPath = await checkAudioExists(sanitizedWord);
+
+        if (!audioPath) {
             showPopup("Audio not available yet for this word.");
             return;
         }
 
-        // Play audio if exists
+        // Play audio if found
         if (currentAudio) {
             currentAudio.pause();
             currentAudio.currentTime = 0;
@@ -86,7 +96,6 @@ document.addEventListener('click', async function (e) {
 });
 
 function showPopup(message) {
-    // Create popup div if it doesn't exist
     let popup = document.getElementById('audioPopup');
     if (!popup) {
         popup = document.createElement('div');
@@ -95,7 +104,7 @@ function showPopup(message) {
         popup.style.bottom = '20px';
         popup.style.left = '50%';
         popup.style.transform = 'translateX(-50%)';
-        popup.style.backgroundColor = 'var(--red-color)'; // Red colour for missing audio
+        popup.style.backgroundColor = 'var(--red-color)';
         popup.style.color = 'white';
         popup.style.padding = '10px 20px';
         popup.style.borderRadius = '8px';
@@ -103,7 +112,7 @@ function showPopup(message) {
         popup.style.fontSize = '16px';
         popup.style.zIndex = '9999';
         popup.style.display = 'none';
-        popup.style.transition = 'opacity 0.3s ease'; // Smooth fade
+        popup.style.transition = 'opacity 0.3s ease';
         popup.style.opacity = '0';
         document.body.appendChild(popup);
     }
@@ -116,6 +125,6 @@ function showPopup(message) {
         popup.style.opacity = '0';
         setTimeout(() => {
             popup.style.display = 'none';
-        }, 300); // Wait until fade-out finishes
-    }, 2500); // Visible for 2 seconds
+        }, 300);
+    }, 2500);
 }

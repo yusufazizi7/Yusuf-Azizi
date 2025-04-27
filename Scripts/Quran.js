@@ -15,10 +15,19 @@ document.getElementById("surahPopup").addEventListener("click", function(event) 
     }
 });
 
-// Attach event listener to all unavailable Surah links
-document.querySelectorAll(".unavailable-surah").forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        openSurahPopup();
-    });
+document.querySelectorAll(".surah-links").forEach(link => {
+    if (link.getAttribute("href") === "#") {
+        link.classList.add("surah-unavailable");
+
+        // Attach event listener to unavailable surah links
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behaviour
+            openSurahPopup();
+        });
+    }
 });
+
+
+
+
+

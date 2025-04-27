@@ -31,7 +31,7 @@ a {
     font-size: 2rem;
     text-align: center;
     color: var(--text-color);
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    background: linear-gradient(to right, #f1ebe1, var(--primary-color));
     padding: 15px 30px;
     display: flex;
     flex-direction: column;
