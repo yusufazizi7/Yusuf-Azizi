@@ -30,8 +30,8 @@ let currentAudio = null;
 
 // Function to check if an audio file exists in Quran or Poems folder
 async function checkAudioExists(wordText) {
-    const quranPath = `Audios/Quran/${wordText}.MP3`;
-    const poemsPath = `Audios/Poems/${wordText}.MP3`;
+    const quranPath = `../../Audios/Quran/${wordText}.MP3`;
+    const poemsPath = `../../Audios/Poems/${wordText}.MP3`;
 
     try {
         const responseQuran = await fetch(quranPath, { method: 'HEAD' });

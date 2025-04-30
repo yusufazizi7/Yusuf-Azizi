@@ -7,7 +7,7 @@
 @font-face { font-family: Hafs; src: url('../Fonts/Hafs.ttf') format('truetype'); }
 @font-face { font-family: Thuluth; src: url('../Fonts/AM_Thulth_Regular.ttf') format('truetype'); }
 @font-face { font-family: Titles; src: url('../Fonts/Titles.otf') format('opentype'); }
-@font-face { font-family: Quran-Hafs; src: url('../Fonts/original-hafs.woff') format('opentype'); }
+@font-face { font-family: Quran-Hafs; src: url('../Fonts/original-hafs.otf') format('opentype'); }
 
 /* --- Root Variables --- */
 /* :root {
