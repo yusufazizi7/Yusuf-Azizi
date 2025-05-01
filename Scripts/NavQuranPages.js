@@ -30,3 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.getElementById('openTajweedBtn').addEventListener('click', () => {
+    document.getElementById('tajweedPopup').style.display = 'flex';
+});
+
+document.getElementById('closePopup').addEventListener('click', () => {
+    document.getElementById('tajweedPopup').style.display = 'none';
+});
+
+// Optional: close popup when clicking outside content
+window.addEventListener('click', (e) => {
+    const popup = document.getElementById('tajweedPopup');
+    if (e.target === popup) {
+        popup.style.display = 'none';
+    }
+});

@@ -1,6 +1,6 @@
 .diff-from-hafs {
 
-    color: #ff00ff;
+    color: #f703f6; 
 
 
     direction: ltr;
@@ -15,7 +15,7 @@
 
 .lam-mulaghazhah {
 
-    color: blue;
+    color: #0273fd;
 }
 
 .mad-badal {
@@ -36,4 +36,9 @@
 .mad-lin {
 
     color: #9acc00;
+}
+
+.idgham {
+
+    color: #4a23f1;
 }

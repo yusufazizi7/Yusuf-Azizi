@@ -178,6 +178,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     outputHtml += `<span class="mad-badal">${warshSegments[i - 1]}${warshSegments[i]}</span>`;
                     continue;
                 }
+
+                if (isTatweelBeforeAlifMadBadal(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+                
+                    outputHtml += `<span class="mad-badal">${warshSegment}</span>`;
+                    continue;
+                }
+                
+                
+                
+                if (isIdgham(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+                
+                    outputHtml += `<span class="idgham">${warshSegments[i]}${warshSegments[i + 1]}</span>`;
+                    i++; // skip the next letter (e.g. Taa)
+                    continue;
+                }
+
+                if (isMadBadalTatweelWithSmallYeh(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+                
+                    // Only wrap the current Tatweel with small Yeh
+                    outputHtml += `<span class="mad-badal">${warshSegment}</span>`;
+                    continue;
+                }
+                
+                
+                
                 
                 
             
@@ -231,32 +268,46 @@ function normalizeArabic(text) {
 }
 
 // Detect if current Ra' should be treated as Muraqqaqah
+const raMuraqqaqahExceptions = [
+    'إِسۡرَآءِيلَ'
+    // Add more as needed
+];
+
 function isRaMuraqqaqah(segments, index) {
     const current = segments[index] || '';
     const previous = segments[index - 1] || '';
+    const beforePrevious = segments[index - 2] || '';
     const next = segments[index + 1] || '';
 
     if (!current.startsWith('ر')) return false;
 
+    // 🔒 Exception check using wider window
+    const context = segments.slice(index - 5, index + 6).join('').replace(/\s+/g, '');
+    for (const word of raMuraqqaqahExceptions) {
+        if (context.includes(word)) return false;
+    }
+
+    // Ra' must not have Kasrah or Sukoon itself
     if (current.includes('\u0650') || current.includes('\u0652')) return false;
 
-    // Harakat: Fathatan, Dammatan, Kasratan, Fathah, Dammah, Kasrah, Sukoon, Maddah, Small high Dammah ٞ, Inverted Dammah ٗ
     const harakatRegex = /[\u064B-\u0652\u0653\u0657\u0670\u067E\u065E\u0657]/;
-    if (!harakatRegex.test(current)) {
-        return false;
-    }
+    if (!harakatRegex.test(current)) return false;
 
-    if (next.startsWith('ط')) {
-        return false;
-    }
+    if (next.startsWith('ط')) return false;
 
-    const decomposedPrevious = previous.normalize('NFD');
-    const isPureYa = decomposedPrevious === 'ي';
+    const decomposedPrev = previous.normalize('NFD');
+    const decomposedBeforePrev = beforePrevious.normalize('NFD');
 
-    if (previous.includes('\u0650') || isPureYa) return true;
+    if (previous.includes('\u0650')) return true;
+    if (decomposedPrev === 'ي') return true;
+    if (decomposedPrev.startsWith('ي') && decomposedPrev.includes('\u06E1')) return true;
+    if (decomposedPrev.includes('\u06E1') && decomposedBeforePrev.includes('\u0650')) return true;
 
     return false;
 }
+
+
+
 
 
 function isSukoonAlifFollowedByHarakahAlif(segments, index) {
@@ -317,16 +368,13 @@ function isLamMulaqhazhah(segments, index) {
     // Check if the current letter is Laam (ل)
     if (!current.startsWith('ل')) return false;
 
-    // Check if Laam has Fathah or Dhammah
-    const hasFathahOrDhammah = current.includes('\u064E') || current.includes('\u064F');
-    if (!hasFathahOrDhammah) return false;
+    // ✅ Laam must have only Fathah (◌َ)
+    const hasFathahOnly = current.includes('\u064E');
+    if (!hasFathahOnly) return false;
 
-    // Check if the previous letter is Saad (ص) with Fathah or Dhammah (with or without Shaddah)
-    if (previous.startsWith('ص') && (previous.includes('\u064E') || previous.includes('\u064F'))) {
-        return true;
-    }
-
-    return false;
+    // Check if the previous letter is Ṣād (ص) or Ẓāʾ (ظ) with Fathah
+    const validHeavyLetter = (previous.startsWith('ص') || previous.startsWith('ظ')) && previous.includes('\u064E');
+    return validHeavyLetter;
 }
 
 
@@ -355,6 +403,17 @@ function isMadBadal(segments, index) {
 }
 
 
+function isTatweelBeforeAlifMadBadal(segments, index) {
+    const previous = segments[index - 1] || '';
+    const current = segments[index] || '';
+
+    // Check if current is plain Alif
+    if (current !== 'ا') return false;
+
+    // Check if previous is just Tatweel (no diacritics)
+    const decomposedPrev = previous.normalize('NFD');
+    return decomposedPrev === '\u0640'; // Tatweel only
+}
 
 
 
@@ -441,14 +500,17 @@ function isTaqlil(segments, index) {
     const isSmallAlifOnYa =
         decomposedNext.startsWith('ى') && decomposedNext.includes('\u0670'); // ىٰ
 
-    const isBareAlif =
-        decomposedNext === 'ا'; // exactly Alif — no marks, no hamzah
+    const isBareAlif = decomposedNext === 'ا'; // exactly Alif
+
+    const isTatweelWithDaggerAlif =
+        decomposedNext.startsWith('\u0640') && decomposedNext.includes('\u0670'); // ـٰ
 
     return {
         hasTaqlil: true,
-        includeNext: isSmallAlifOnYa || isBareAlif
+        includeNext: isSmallAlifOnYa || isBareAlif || isTatweelWithDaggerAlif
     };
 }
+
 
 
 
@@ -547,6 +609,42 @@ function isTatweelHamzahMadBadal(segments, index) {
 
 
 
+function isIdgham(segments, index) {
+    const current = segments[index] || '';       // Thaal
+    const next = segments[index + 1] || '';      // Taa with shaddah
+
+    // Must be ذ (Thaal) with no diacritics
+    const decomposedCurrent = current.normalize('NFD');
+    const isThaalBare = decomposedCurrent.startsWith('ذ') && !/[\u064B-\u0652\u0653\u0654]/.test(decomposedCurrent);
+
+    // Must be ت with Shaddah
+    const decomposedNext = next.normalize('NFD');
+    const isTaaWithShaddah = decomposedNext.startsWith('ت') && decomposedNext.includes('\u0651');
+
+    return isThaalBare && isTaaWithShaddah;
+}
+
+
+function isMadBadalTatweelWithSmallYeh(segments, index) {
+    const current = segments[index] || '';
+    const prev = segments[index - 1] || '';
+
+    const decomposedPrev = prev.normalize('NFD');
+    const decomposedCurrent = current.normalize('NFD');
+
+    // Case: current is Tatweel with Small Yeh Above (ۧ)
+    const isCurrentTatweelSmallYeh =
+        decomposedCurrent.startsWith('\u0640') &&
+        decomposedCurrent.includes('\u06E7'); // ۧ = U+06E7
+
+    // Previous is Tatweel with Kasrah and Hamzah Above (ـِٔ)
+    const isPreviousTatweelKasrahHamzah =
+        decomposedPrev.startsWith('\u0640') &&
+        decomposedPrev.includes('\u0650') && // Kasrah
+        decomposedPrev.includes('\u0654');   // Hamzah Above
+
+    return isPreviousTatweelKasrahHamzah && isCurrentTatweelSmallYeh;
+}
 
 
 
