@@ -226,7 +226,34 @@ main {
 .mad-lin-box { background-color: #9acc00; }
 .idgham-box { background-color: #4a23f1; }
 
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 12px; /* slightly larger */
+    border-radius: 8px; /* more rounded */
+    font-size: 15px; /* slightly bigger text */
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+    direction: ltr;
+}
 
+
+.word:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    
+}
 
 /* Responsive Design for Quran Pages */
 @media only screen and (max-width: 1024px) {

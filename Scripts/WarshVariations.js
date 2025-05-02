@@ -213,7 +213,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     continue;
                 }
                 
+                if (isMadBadalTatweelDaggerAlif(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
                 
+                    outputHtml += `<span class="mad-badal">${warshSegments[i]}</span>`;
+                    continue;
+                }
+                
+                
+                if (isTatweelHamzahFathahFollowedByTatweelDaggerAlif(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+                
+                    // Only wrap the current Tatweel with Hamzah in mad-badal
+                    outputHtml += `<span class="mad-badal">${warshSegment}</span>`;
+                
+                    // Let the next segment (Tatweel with Dagger Alif) be processed later
+                    continue;
+                }
                 
                 
                 
@@ -646,5 +668,36 @@ function isMadBadalTatweelWithSmallYeh(segments, index) {
     return isPreviousTatweelKasrahHamzah && isCurrentTatweelSmallYeh;
 }
 
+function isMadBadalTatweelDaggerAlif(segments, index) {
+    const prev1 = segments[index - 1] || '';
+    const prev2 = segments[index - 2] || '';
+    const current = segments[index] || '';
+
+    const decomposed = current.normalize('NFD');
+
+    const isTatweelDaggerAlif = decomposed.includes('\u0640') && decomposed.includes('\u0670'); // Tatweel + dagger alif
+
+    const isAlifLamFathah = prev2 === 'ٱ' && prev1.normalize('NFD').startsWith('ل') && prev1.includes('\u064E');
+
+    return isAlifLamFathah && isTatweelDaggerAlif;
+}
 
 
+function isTatweelHamzahFathahFollowedByTatweelDaggerAlif(segments, index) {
+    const current = segments[index] || '';
+    const next = segments[index + 1] || '';
+
+    const decomposedCurrent = current.normalize('NFD');
+    const decomposedNext = next.normalize('NFD');
+
+    const isCurrentTatweelWithFathahHamzah =
+        decomposedCurrent.startsWith('\u0640') &&
+        decomposedCurrent.includes('\u064E') && // Fathah
+        decomposedCurrent.includes('\u0654');   // Hamzah Above
+
+    const isNextTatweelWithDaggerAlif =
+        decomposedNext.startsWith('\u0640') &&
+        decomposedNext.includes('\u0670'); // Dagger Alif
+
+    return isCurrentTatweelWithFathahHamzah && isNextTatweelWithDaggerAlif;
+}

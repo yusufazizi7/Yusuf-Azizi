@@ -128,3 +128,31 @@ function showPopup(message) {
         }, 300);
     }, 2500);
 }
+
+
+if (window.location.pathname.endsWith('Al-Fatihah.html')) {
+    fetch('../../Scripts/Data/Al-Fatihah.json')
+      .then(response => response.json())
+      .then(allTranslations => {
+        const verses = document.querySelectorAll('.ayah-block');
+  
+        verses.forEach((verse, verseIndex) => {
+          const wordSpans = verse.querySelectorAll('.arabic-text .word');
+          const translationWords = allTranslations[verseIndex] || [];
+  
+          wordSpans.forEach((span, wordIndex) => {
+            const translation = translationWords[wordIndex];
+            if (translation) {
+              const tooltip = document.createElement('span');
+              tooltip.className = 'tooltip';
+              tooltip.textContent = translation;
+              span.appendChild(tooltip);
+            }
+          });
+        });
+      })
+      .catch(error => {
+        console.error('Error loading Al-Fatihah.json:', error);
+      });
+  }
+  

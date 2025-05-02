@@ -1,4 +1,4 @@
-fetch('Scripts/Data/translations.json')
+fetch('Scripts/Data/Nooniyah-Al-Qahtani-Translations.json')
   .then(response => response.json())
   .then(allTranslations => {
     const verses = document.querySelectorAll('.poem-verse');
