@@ -130,6 +130,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     continue;
                 }
 
+                
+                if (isMadLinFollowedByAlif(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+
+                    // Wrap Ya + Tatweel-Hamzah in mad-lin, then wrap the Alif in diff-from-hafs
+                    outputHtml += `<span class="mad-lin">${warshSegments[i]}${warshSegments[i + 1]}</span>`;
+
+                    const { segment: nextAfter, index: nextIndex } = nextNonWaqfSegment(warshSegments, i + 1);
+                    outputHtml += `<span class="diff-from-hafs">${nextAfter}</span>`;
+
+                    i = nextIndex; // Skip to the Alif
+                    continue;
+                }
+
+
                 if (isMadLin(warshSegments, i)) {
                     if (diffBuffer.length > 0) {
                         outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
@@ -237,17 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     continue;
                 }
 
-                if (isFathatanThenAlifBeforeAnotherAlif(warshSegments, i)) {
-                    if (diffBuffer.length > 0) {
-                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
-                        diffBuffer = '';
-                    }
                 
-                    // Wrap the Fathatan letter (i) and bare Alif (i+1)
-                    outputHtml += `<span class="diff-from-hafs">${warshSegments[i]}${warshSegments[i + 1]}</span>`;
-                    i++; // Skip next (the Alif)
-                    continue;
-                }
+
 
                 
                 if (isMadBadalLamAlifYaaOrWaw(warshSegments, i)) {
@@ -271,6 +280,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     i += 2; // skip space and second letter
                     continue;
                 }
+
+                
+                if (isLamMulaqhazhahWithAlifBetween(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+
+                    // Just wrap the Laam (not the Alif before it)
+                    outputHtml += `<span class="lam-mulaghazhah">${warshSegment}</span>`;
+                    continue;
+                }
+
+                if (isFathatanThenAlifBeforeAnotherAlif(warshSegments, i)) {
+                    if (diffBuffer.length > 0) {
+                        outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
+                        diffBuffer = '';
+                    }
+
+                    // Wrap the current segment (with Fathatan) and the next Alif together
+                    outputHtml += `<span class="diff-from-hafs">${warshSegments[i]}${warshSegments[i + 1]}</span>`;
+                    i++; // Skip next Alif
+                    continue;
+                }
+
+                
+
+                
+
                 
                 
             
@@ -434,6 +472,33 @@ function isRaMuraqqaqah(segments, index) {
 
 
 
+function isMadLinFollowedByAlif(segments, index) {
+    const current = segments[index] || '';     // e.g. "يۡ"
+    const next = segments[index + 1] || '';    // e.g. "ـًٔ"
+
+    const decomposedCurr = current.normalize('NFD');
+    const decomposedNext = next.normalize('NFD');
+
+    const isYaWithSukoon = decomposedCurr.startsWith('ي') && decomposedCurr.includes('\u06E1');
+    const isTatweelFathatanHamzah =
+        decomposedNext.includes('\u0640') && // Tatweel
+        decomposedNext.includes('\u064B') && // Fathatan
+        decomposedNext.includes('\u0654');   // Hamzah Above
+
+    if (!(isYaWithSukoon && isTatweelFathatanHamzah)) return false;
+
+    // Find next 2 non-waqf segments after next (i+1)
+    const { segment: nextAfter, index: nextIndex } = nextNonWaqfSegment(segments, index + 1);
+    const { segment: next2After } = nextNonWaqfSegment(segments, nextIndex);
+
+    const isNextBareAlif = nextAfter.normalize('NFD') === 'ا';
+    const startsWithAlifOrTatweel =
+        next2After.normalize('NFD').startsWith('ا') ||
+        next2After.normalize('NFD').startsWith('ـ');
+
+    return isNextBareAlif && startsWithAlifOrTatweel;
+}
+
 
 
 function isSukoonAlifFollowedByHarakahAlif(segments, index) {
@@ -499,9 +564,35 @@ function isLamMulaqhazhah(segments, index) {
     if (!hasFathahOnly) return false;
 
     // Check if the previous letter is Ṣād (ص) or Ẓāʾ (ظ) with Fathah
-    const validHeavyLetter = (previous.startsWith('ص') || previous.startsWith('ظ')) && (previous.includes('\u064E') || previous.includes('\u06E1')) ;
+    const validHeavyLetter = (previous.startsWith('ص') || previous.startsWith('ظ') || previous.startsWith('ط')) && (previous.includes('\u064E') || previous.includes('\u06E1')) ;
     return validHeavyLetter;
 }
+
+
+function isLamMulaqhazhahWithAlifBetween(segments, index) {
+    const current = segments[index] || '';       // Expected: Laam
+    const beforePrev = segments[index - 2] || ''; // Expected: heavy letter (ص، ظ، ط)
+    const alif = segments[index - 1] || '';      // Expected: bare Alif between
+
+    // 1. Must be Laam
+    if (!current.startsWith('ل')) return false;
+
+    // 2. Laam must have only Fathah or Shaddah + Small Shaddah
+    const hasFathahOnly = current.includes('\u064E') || current.includes('\u064B') || (current.includes('\u0651') && current.includes('\u0657'));
+    if (!hasFathahOnly) return false;
+
+    // 3. Check if middle segment is a **bare Alif** (must be exactly "ا")
+    if (alif.normalize('NFD') !== 'ا') return false;
+
+    // 4. Check if the character before Alif is a heavy letter (ص، ظ، ط) with Fathah or Quranic Sukoon
+    const isHeavyLetter =
+        (beforePrev.startsWith('ص') || beforePrev.startsWith('ظ') || beforePrev.startsWith('ط')) &&
+        (beforePrev.includes('\u064E') || beforePrev.includes('\u06E1'));
+
+    return isHeavyLetter;
+}
+
+
 
 
 function isMadBadal(segments, index) {
@@ -510,31 +601,66 @@ function isMadBadal(segments, index) {
     const next = segments[index + 1] || '';
     const afterNext = segments[index + 2] || '';
 
+    // --- Exception words ---
+    const EXCEPTION_WORDS = [
+        'ٱلۡقُرۡءَانُ'
+        // Add more as needed
+    ];
+
+    // Build a context string of nearby segments, remove spaces, normalise
+    const context = segments
+        .slice(index - 5, index + 6)
+        .join('')
+        .replace(/\s+/g, '')
+        .normalize('NFC');
+
+    for (const word of EXCEPTION_WORDS) {
+        if (context.includes(word)) return false;
+    }
+
     // --- 1. Original case: ٱ + ل + ا ---
-    if (previous.startsWith('ٱ') && current.startsWith('ل') && current.includes('\u064E') && next.startsWith('ا')) {
+    if (
+        previous.startsWith('ٱ') &&
+        current.startsWith('ل') &&
+        current.includes('\u064E') && // Fathah
+        next.startsWith('ا')
+    ) {
         const decomposed = afterNext.normalize('NFD');
         const hasSukoon = decomposed.includes('\u06E1'); // Quranic sukoon ۡ
-        return !hasSukoon;
+
+        // Ignore if no diacritic follows
+        const hasDiacritic = /[\u064B-\u065F\u0670\u0610-\u061A\u06D6-\u06ED]/.test(decomposed);
+
+        return !hasSukoon && hasDiacritic;
     }
 
     // --- 2. Other Mad Badal forms: ءَا / ءُو / ءِي ---
     const decomposedCurrent = current.normalize('NFD');
     const decomposedNext = next.normalize('NFD');
 
-    const isHamzahAlif = decomposedCurrent.startsWith('ء') && decomposedCurrent.includes('\u064E') && decomposedNext === 'ا';
-    const isHamzahWaw = (
-        (decomposedCurrent.startsWith('ء') && decomposedCurrent.includes('\u064F')) ||
-        (decomposedCurrent.startsWith('ا') && decomposedCurrent.includes('\u0654') && decomposedCurrent.includes('\u064F'))
-    ) && decomposedNext === 'و'; // Naked Waw only
-    
+    const isHamzahAlif =
+        decomposedCurrent.startsWith('ء') &&
+        decomposedCurrent.includes('\u064E') &&
+        decomposedNext === 'ا';
+
+    const isHamzahWaw =
+        (
+            (decomposedCurrent.startsWith('ء') && decomposedCurrent.includes('\u064F')) ||
+            (decomposedCurrent.startsWith('ا') && decomposedCurrent.includes('\u0654') && decomposedCurrent.includes('\u064F'))
+        ) &&
+        decomposedNext === 'و';
+
     const isAlifHamzaYah =
         decomposedCurrent.startsWith('ا') &&
-        decomposedCurrent.includes('\u0650') && // Kasrah
-        decomposedCurrent.includes('\u0655') && // Hamzah Below
-        decomposedNext === 'ي'; // Naked Ya only
+        decomposedCurrent.includes('\u0650') &&
+        decomposedCurrent.includes('\u0655') &&
+        decomposedNext === 'ي';
 
     return isHamzahAlif || isHamzahWaw || isAlifHamzaYah;
 }
+
+
+
 
 
 function isTatweelBeforeAlifMadBadal(segments, index) {
@@ -581,38 +707,6 @@ function isHamzahMaddWithoutDiacritics(segments, index) {
 }
 
 
-
-
-function isTanweenBeforeAlif(segments, index) {
-    const current = segments[index] || '';
-    const next = segments[index + 1] || '';
-    const afterNext = segments[index + 2] || '';
-
-    if (!current) return false;
-
-    // Step 1: Check if current (last letter of word1) has Tanween 
-    const decomposedCurrent = current.normalize('NFD');
-    const endsWithFathatan = decomposedCurrent.endsWith('\u064B');
-    const endsWithDammatan = decomposedCurrent.endsWith('\u064C');
-    const endsWithKasratan = decomposedCurrent.endsWith('\u064D');
-
-    const hasTanween = endsWithFathatan || endsWithDammatan || endsWithKasratan;
-    if (!hasTanween) return false;
-
-    // Step 2: Check if next segment is a space
-    if (next !== ' ') return false;
-
-    // Step 3: Now check after the space (afterNext) for Alif + Harakah
-    const decomposedAfterNext = afterNext.normalize('NFD');
-
-    const startsWithAlifFathah = decomposedAfterNext.startsWith('ا\u064E'); // اَ
-    const startsWithAlifDhammah = decomposedAfterNext.startsWith('ا\u064F'); // اُ
-    const startsWithAlifKasrah = decomposedAfterNext.startsWith('ا\u0650');  // اِ
-
-    const startsWithAlifHarakah = startsWithAlifFathah || startsWithAlifDhammah || startsWithAlifKasrah;
-
-    return startsWithAlifHarakah;
-}
 
 
 
@@ -711,7 +805,7 @@ function isMadBadalLamHamzahMadd(segments, index) {
     const decomposedPrevious = previous.normalize('NFD');
 
     // Previous must be Laam with Kasrah
-    const isLaamWithKasrah = decomposedPrevious.startsWith('ل') && decomposedPrevious.includes('\u0650');
+    const isLaamWithKasrah = decomposedPrevious.startsWith('ل') && (decomposedPrevious.includes('\u0650') || decomposedPrevious.includes('\u064E'));
 
     // Current must be Alif with Hamzah above and Maddah above
     const isAlifHamzahMadd = decomposedCurrent.startsWith('ا') &&
@@ -820,7 +914,11 @@ function isTatweelHamzahFathahFollowedByTatweelDaggerAlif(segments, index) {
 }
 
 
-const WAQF_MARKS = new Set(['\u06DA']); // ۚ Jeem Waqf mark (add more later)
+const WAQF_MARKS = new Set([
+    '\u06DA', // ۚ Jeem
+    '\u06D9',  // ۙ La
+    '\u06D6'
+]);
 
 function nextNonWaqfSegment(segments, startIndex) {
     for (let i = startIndex + 1; i < segments.length; i++) {
@@ -831,6 +929,8 @@ function nextNonWaqfSegment(segments, startIndex) {
     }
     return { segment: '', index: -1 };
 }
+
+
 
 function isFathatanThenAlifBeforeAnotherAlif(segments, index) {
     const current = segments[index] || ''; // Letter with Fathatan
@@ -849,6 +949,43 @@ function isFathatanThenAlifBeforeAnotherAlif(segments, index) {
     return isNextBareAlif && startsWithAlif;
 }
 
+
+
+
+
+
+
+
+function isTanweenBeforeAlif(segments, index) {
+    const current = segments[index] || '';
+    const next = segments[index + 1] || '';
+
+    if (!current) return false;
+
+    // Step 1: Check if current has Tanween
+    const decomposedCurrent = current.normalize('NFD');
+    const endsWithFathatan = decomposedCurrent.endsWith('\u064B'); // ً
+    const endsWithDammatan = decomposedCurrent.endsWith('\u064C'); // ٌ
+    const endsWithKasratan = decomposedCurrent.endsWith('\u064D'); // ٍ
+    const hasTanween = endsWithFathatan || endsWithDammatan || endsWithKasratan;
+
+    if (!hasTanween) return false;
+
+    // Step 2: Check if next segment is a space
+    if (next !== ' ') return false;
+
+    // Step 3: Find next non-waqf, non-space segment
+    const { segment: afterNext } = nextNonWaqfSegment(segments, index + 1);
+    if (!afterNext) return false;
+
+    const decomposedAfterNext = afterNext.normalize('NFD');
+
+    const startsWithAlifFathah = decomposedAfterNext.startsWith('ا\u064E'); // اَ
+    const startsWithAlifDhammah = decomposedAfterNext.startsWith('ا\u064F'); // اُ
+    const startsWithAlifKasrah = decomposedAfterNext.startsWith('ا\u0650');  // اِ
+
+    return startsWithAlifFathah || startsWithAlifDhammah || startsWithAlifKasrah;
+}
 
 
 
@@ -893,7 +1030,8 @@ function isIdghamAcrossWords(segments, index) {
     const decomposedNext = next.normalize('NFD');
 
     const idghamPairs = [
-        { from: 'د', to: 'ض' }
+        { from: 'د', to: 'ض' },
+        { from: 'د', to: 'ظ' }
         // Add more later like { from: 'ذ', to: 'ت' }
     ];
 
