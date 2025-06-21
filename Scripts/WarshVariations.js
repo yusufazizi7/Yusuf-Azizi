@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
                 const isHafsNumber = /^[\u0660-\u0669]+$/.test(hafsSegment);
                 const isWarshNumber = /^[\u0660-\u0669]+$/.test(warshSegment);
-            
+
                 if (isHafsNumber && isWarshNumber) {
                     if (diffBuffer.length > 0) {
                         outputHtml += `<span class="diff-from-hafs">${diffBuffer}</span>`;
@@ -406,7 +406,8 @@ function hasTanweenBeforeAlifAcrossAyahs(currentAyah, nextAyah) {
 function splitArabicWithSpaces(text) {
     const segments = [];
     
-    const regex = /(\s+)|([\p{Script=Arabic}\u0640\u06DA])([\u064B-\u065F\u0610-\u061A\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED\u0670]*)/gu;
+    const regex = /(\s+)|([\p{Script=Arabic}\u0640\u06DA\u0660-\u0669])([\u064B-\u065F\u0610-\u061A\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED\u0670]*)/gu;
+
     
 
     let match;
@@ -626,7 +627,7 @@ function isMadBadal(segments, index) {
         next.startsWith('ا')
     ) {
         const decomposed = afterNext.normalize('NFD');
-        const hasSukoon = decomposed.includes('\u06E1'); // Quranic sukoon ۡ
+        const hasSukoon = decomposed.includes('\u06E1') || decomposed.includes('\u06EA'); // Quranic sukoon ۡ
 
         // Ignore if no diacritic follows
         const hasDiacritic = /[\u064B-\u065F\u0670\u0610-\u061A\u06D6-\u06ED]/.test(decomposed);
@@ -646,7 +647,8 @@ function isMadBadal(segments, index) {
     const isHamzahWaw =
         (
             (decomposedCurrent.startsWith('ء') && decomposedCurrent.includes('\u064F')) ||
-            (decomposedCurrent.startsWith('ا') && decomposedCurrent.includes('\u0654') && decomposedCurrent.includes('\u064F'))
+            (decomposedCurrent.startsWith('ا')  && decomposedCurrent.includes('\u064F')) 
+            
         ) &&
         decomposedNext === 'و';
 
@@ -965,7 +967,11 @@ function isTanweenBeforeAlif(segments, index) {
     // Step 1: Check if current has Tanween
     const decomposedCurrent = current.normalize('NFD');
     const endsWithFathatan = decomposedCurrent.endsWith('\u064B'); // ً
-    const endsWithDammatan = decomposedCurrent.endsWith('\u064C'); // ٌ
+    const endsWithDammatan = 
+    decomposedCurrent.endsWith('\u064C') || 
+    decomposedCurrent.endsWith('\u064C\u0651') || 
+    decomposedCurrent.endsWith('\u0651\u064C');
+
     const endsWithKasratan = decomposedCurrent.endsWith('\u064D'); // ٍ
     const hasTanween = endsWithFathatan || endsWithDammatan || endsWithKasratan;
 
@@ -983,8 +989,9 @@ function isTanweenBeforeAlif(segments, index) {
     const startsWithAlifFathah = decomposedAfterNext.startsWith('ا\u064E'); // اَ
     const startsWithAlifDhammah = decomposedAfterNext.startsWith('ا\u064F'); // اُ
     const startsWithAlifKasrah = decomposedAfterNext.startsWith('ا\u0650');  // اِ
+    const startsWithTatweel = decomposedAfterNext.startsWith('\u0640');
 
-    return startsWithAlifFathah || startsWithAlifDhammah || startsWithAlifKasrah;
+    return startsWithAlifFathah || startsWithAlifDhammah || startsWithAlifKasrah || startsWithTatweel;
 }
 
 
