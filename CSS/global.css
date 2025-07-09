@@ -31,8 +31,16 @@
     --footer-text: #e5e5d5;
     --red-color: #b52121;
     --blue-color: #0056b3;
+    --highlight-color: #77a4d5;
 }
 
+
+svg {
+  width: 9em;
+  
+  vertical-align: middle;
+  fill: currentColor;
+}
 
 
 
@@ -162,9 +170,11 @@ main section {
 
 .poem-title {
     font-family: Titles;
-    font-size: 3rem;
-    margin: 20px 0;
+    font-size: 1rem;
+    margin: 40px 0;
 }
+
+
 
 .poem-title a {
     text-decoration: none;
@@ -177,7 +187,7 @@ main section {
 
 
 
-.poem a {
+a {
     text-decoration: none; /* No underline */
     color: inherit; /* Use the text color of the parent */
 }

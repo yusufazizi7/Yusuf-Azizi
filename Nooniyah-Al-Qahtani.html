@@ -81,7 +81,7 @@
     
         <div class="sidebar-section">
             <h3>Options</h3>
-            <label><input type="checkbox" id="LineNumbers"> Verse Numbers</label>
+            <label><input type="checkbox" id="LineNumbers" checked> Verse Numbers</label>
             <label><input type="checkbox" id="engTranslationToggle" checked> English Translation</label>
             
         </div>
@@ -92,6 +92,13 @@
             <span id="fontSizeDisplay">18px</span>
             <button id="increaseFont">+</button>
             <button id="resetFont">Reset</button>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Jump to Verse</h3>
+            <select id="verseDropdown">
+                <option value="">Select Verse</option>
+            </select>
         </div>
         
     </div>
@@ -120,13 +127,16 @@
     
     
 
-
+    <div id="copyToast" class="copy-toast">
+        <i class="fa-solid fa-scissors"></i>
+        Copied to clipboard!
+    </div>
    
 
     <main>
         <h1 class="page-title">Nooniyah Al-Qahtani</h1>
         
-        <p class="poem-title">نونيةالقحطاني</p> 
+        <icon class="poem-title">Nooniyah-Al-Qahtani</icon>
         
         <p class="bismillah"> ﷽</p>
     

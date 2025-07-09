@@ -11,18 +11,94 @@
 
 .poem-container {
     padding: 0;
-    margin-top: 20px;
+    margin-top: 30px;
     list-style-type: none; /* Arabic-style numbers */
     list-style-position: inside; /* Ensures numbers are inside */
     direction: rtl; /* Right-to-left direction */
 }
 
 .poem-verse {
-    padding: 10px 0;
+    position: relative;
+    padding: 15px 0;
     border-bottom: 1px solid #ccc;
-    text-align: right; /* Aligns text to the right */
-    display: list-item; /* Ensure it's treated as a list item */
+    text-align: right; /* centre Arabic + English */
+    display: list-item;
+    
+   
+}   
+
+
+
+
+.copy-wrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.copy-btn:hover {
+    color: var(--accent-color);
+}
+
+.copy-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.copy-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.copy-option:hover {
+    background-color: var(--primary-color);
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 1rem;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.copy-toast.show {
+    display: flex;
+    opacity: 1;
+}
+
+
 
 /* Move the verse number to the right of the text */
 .poem-verse::marker {
@@ -30,6 +106,7 @@
     color: black;
     font-size: 1.2rem;
     direction: rtl;
+    
     unicode-bidi: embed;
     
     
@@ -42,6 +119,7 @@
     direction: rtl;
     text-align: center;
     color: var(--text-color);
+    display: block;
 }
 
 .eng-translation {
@@ -73,12 +151,12 @@ main {
 
 
 .poem-title {
-    font-family: Titles; /* Ensure it's using a calligraphic font */
-    font-size: 5rem; /* Adjust size */
+    
+    font-size: 2rem; /* Adjust size */
     text-align: center;
     color: var(--text-color); /* Main text color */
     background: linear-gradient(to right, #f1ebe1, var(--primary-color)); /* Subtle gradient background */
-    padding: 15px 30px;
+    padding: 30px 30px;
     display: inline-block;
     border: 2px solid var(--secondary-color); /* Accent-colored border */
     border-radius: 12px; /* Rounded corners */
@@ -207,6 +285,28 @@ main {
     opacity: 1;
     visibility: visible;
     
+}
+
+#verseDropdown {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#verseDropdown option {
+    color: (--primary-color); /* dropdown text */
+}
+
+.highlight-verse {
+    background-color: var(--highlight-color);
+    color: white;
+    transition: background 0.5s, color 0.5s;
 }
 
 
