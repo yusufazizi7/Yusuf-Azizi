@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const res = await fetch('/Scripts/Data/icons.json');
+  const res = await fetch('Scripts/Data/icons.json');
   const icons = await res.json();
 
   const iconElements = document.querySelectorAll('icon');
