@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     verses.forEach((verse, i) => {
         const copyWrapper = verse.querySelector('.copy-wrapper');
         const playBtn = document.createElement("button");
-        playBtn.className = "copy-btn play-btn";
+        playBtn.className = "play-btn";
         playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
         playBtn.setAttribute("data-index", i);
         copyWrapper.appendChild(playBtn);
