@@ -187,17 +187,17 @@
                     And he descends to the heaven without [designating] a how.</p>
             </li>
             <li class="poem-verse">
-                <p class="arabic-text">وَأُقِرُّ بِالْمِيزَانِ وَالْحَوْضِ الَّذِي * أَرْجُو أَنَّي مِنْهُ رِيًّا أَنْهَلُ</p>
+                <p class="arabic-text">وَأُقِرُّ بِالْمِيزَانِ وَالْحَوْضِ الَّذِي * أَرْجُو بِأَنَّي مِنْهُ رِيًّا أَنْهَلُ</p>
                 <p class="eng-translation">And I affirm the scales and the fountain from which, <br>
                     I hope to drink, quenching my thirst.</p>
             </li>
             <li class="poem-verse">
-                <p class="arabic-text">وَكِذَا الصِّرَاطَ يُمَدُّ فَوْقَ جَهَنَّمٍ * فَمُسَلَّمٌ نَاجٍ وَآخَرُ مُهْمَلُ</p>
+                <p class="arabic-text">وَكَذَا الصِّرَاطَ يُمَدُّ فَوْقَ جَهَنَّمٍ * فَمُسَلَّمٌ نَاجٍ وَآخَرُ مُهْمَلُ</p>
                 <p class="eng-translation">And likewise, the bridge is stretched over hell, <br>
                     So one shall be granted safety and saved, while another abandoned.</p>
             </li>
             <li class="poem-verse">
-                <p class="arabic-text">وَالنَّارُ يَصْلَاهَا الشَّقِيُّ بِحِكْمَةٍ * وَكِذَا التَّقِيُّ إِلَى الجِنَانِ سَيَدْخُلُ</p>
+                <p class="arabic-text">وَالنَّارُ يَصْلَاهَا الشَّقِيُّ بِحِكْمَةٍ * وَكَذَا التَّقِيُّ إِلَى الجِنَانِ سَيَدْخُلُ</p>
                 <p class="eng-translation">And the wicked one shall burn in the fire by [divine] wisdom, <br>
                     And likewise, the righteous will enter the gardens.</p>
             </li>
@@ -238,12 +238,36 @@
         </div>
     </footer>
 
+
+    <div id="audioPlayerBar">
+        <audio id="audioPlayer" preload="metadata"></audio>
+
+        <div class="audio-controls">
+            <button id="closeAudioPlayer" title="Close" style="background:none;border:none;color:var(--primary-color);font-size:1.3rem;cursor:pointer;margin-right:10px;">
+            <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <label for="startVerse">Start:</label>
+            <select id="startVerse"></select>
+
+            <label for="endVerse">End:</label>
+            <select id="endVerse"></select>
+
+            <button id="playSelected"><i class="fa-solid fa-play"></i></button>
+            <button id="pauseAudio"><i class="fa-solid fa-pause"></i></button>
+            <button id="stopAudio"><i class="fa-solid fa-stop"></i></button>
+        </div>
+    </div>
+
+
+
     <!-- Scripts -->
     <script src="Scripts/global.js"></script>
 
     <script src="Scripts/poems.js"></script>
     <script src="Scripts/word.js"></script>
     <script src="Scripts/SideBar.js"></script>
+    <script src="Scripts/AudioPlayer.js"></script>
 
 </body>
 </html>
