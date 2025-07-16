@@ -36,6 +36,9 @@ async function checkAudioExists(wordText) {
 }
 
 // Pre-check all words on page load
+const audioCache = {}; // Cache for preloaded audio
+
+// Preload all available audio files
 document.addEventListener('DOMContentLoaded', () => {
     const wordSpans = document.querySelectorAll('.word');
 
@@ -43,47 +46,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const wordText = wordSpan.childNodes[0]?.nodeValue.trim();
         if (!wordText) return;
 
-        const exists = await checkAudioExists(wordText);
+        const sanitizedWord = wordText.replace(/[^\p{Letter}\p{Mark}\p{Number}]/gu, '');
+        const audioPath = `Audios/Poems/${sanitizedWord}.MP3`;
+
+        const exists = await checkAudioExists(sanitizedWord);
         if (exists) {
             wordSpan.classList.add('audio-found');
+            const audio = new Audio(audioPath);
+            audio.preload = 'auto';
+            audioCache[sanitizedWord] = audio;
         } else {
             wordSpan.classList.add('audio-missing');
         }
     });
 });
 
+
 // Play audio on click
-document.addEventListener('click', async function (e) {
+// Play audio on click
+document.addEventListener('click', function (e) {
     if (e.target.classList.contains('word')) {
         const wordText = e.target.childNodes[0]?.nodeValue.trim();
         if (!wordText) return;
 
         const sanitizedWord = wordText.replace(/[^\p{Letter}\p{Mark}\p{Number}]/gu, '');
-        const audioPath = `Audios/Poems/${sanitizedWord}.MP3`;
+        const audio = audioCache[sanitizedWord];
 
-        // Check if the audio file exists first
-        try {
-            const response = await fetch(audioPath, { method: 'HEAD' });
-            if (!response.ok) {
-                // Show a popup if audio doesn't exist
-                showPopup("Audio not available yet for this word.");
-                return;
-            }
-        } catch (error) {
+        if (!audio) {
             showPopup("Audio not available yet for this word.");
             return;
         }
 
-        // Play audio if exists
         if (currentAudio) {
             currentAudio.pause();
             currentAudio.currentTime = 0;
         }
 
-        currentAudio = new Audio(audioPath);
+        currentAudio = audio;
+        currentAudio.currentTime = 0;
         currentAudio.play();
     }
 });
+
 
 function showPopup(message) {
     // Create popup div if it doesn't exist

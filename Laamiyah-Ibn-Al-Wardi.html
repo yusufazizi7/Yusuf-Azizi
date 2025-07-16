@@ -286,7 +286,7 @@
             </li>
 
             <li class="poem-verse">
-                <p class="arabic-text">اِطْرَحِ الدُّنْيَا فَمِنْ عَادَاتِهِ * تَخْفِضُ الْعَالِي وَتُعْلِي مَنْ سَفَلْ</p>
+                <p class="arabic-text">اِطْرَحِ الدُّنْيَا فَمِنْ عَادَاتِهَا * تَخْفِضُ الْعَالِي وَتُعْلِي مَنْ سَفَلْ</p>
                 <p class="eng-translation">Throw away the world, for among its habits is that it lowers the high and raises the low.</p>
             </li>
             <li class="poem-verse">
@@ -385,7 +385,7 @@
             </li>
 
             <li class="poem-verse">
-                <p class="arabic-text">فَهْوَ كَالْمَحْبُوسِ عَنْ لَذَّاتِهِ * وَكِلَا كَفَيْهِ فِي الْحَشْرِ تُغَلّ</p>
+                <p class="arabic-text">فَهْوَ كَالْمَحْبُوسِ عَنْ لَذَّاتِهِ * وَكِلَا كَفَّيْهِ فِي الْحَشْرِ تُغَلّ</p>
                 <p class="eng-translation">He is like the one who is imprisoned from his pleasures, and both of his hand on the day of judgement will be chained.</p>
             </li>
             <li class="poem-verse">
@@ -504,12 +504,37 @@
         </div>
     </footer>
 
+        <div id="audioPlayerBar">
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+
+        <audio id="audioPlayer" preload="metadata"></audio>
+
+        <div class="audio-controls">
+            <button id="closeAudioPlayer" title="Close" style="background:none;border:none;color:var(--primary-color);font-size:1.3rem;cursor:pointer;margin-right:10px;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <label for="startVerse">Start:</label>
+            <select id="startVerse"></select>
+
+            <label for="endVerse">End:</label>
+            <select id="endVerse"></select>
+
+            <button id="playSelected"><i class="fa-solid fa-play"></i></button>
+            <button id="pauseAudio"><i class="fa-solid fa-pause"></i></button>
+            <button id="stopAudio"><i class="fa-solid fa-stop"></i></button>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="Scripts/global.js"></script>
 
     <script src="Scripts/poems.js"></script>
     <script src="Scripts/word.js"></script>
     <script src="Scripts/SideBar.js"></script>
+    <script src="Scripts/AudioPlayer.js"></script>
 
 </body>
 </html>

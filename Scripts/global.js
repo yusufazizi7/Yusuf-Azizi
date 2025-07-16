@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', async () => {
+  const res = await fetch('Scripts/Data/icons.json');
+  const icons = await res.json();
+
+  const iconElements = document.querySelectorAll('icon');
+
+  iconElements.forEach(async el => {
+    const iconName = el.textContent.trim().toLowerCase();
+    const existingClass = el.getAttribute('class') || '';
+
+    if (icons[iconName]) {
+      try {
+        const svgRes = await fetch(icons[iconName]);
+        let svgText = await svgRes.text();
+
+        // Inject class into the <svg> tag
+        const combinedClasses = `${existingClass} ${iconName}`.trim();
+        svgText = svgText.replace('<svg', `<svg class="${combinedClasses}"`);
+
+        el.outerHTML = svgText;
+      } catch (err) {
+        console.error(`Error loading SVG for "${iconName}":`, err);
+      }
+    } else {
+      console.warn(`Icon "${iconName}" not found in icons.json`);
+    }
+  });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.querySelector(".fa-bars");
     const navbar = document.querySelector(".navbar");
@@ -47,32 +79,5 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', async () => {
-  const res = await fetch('Scripts/Data/icons.json');
-  const icons = await res.json();
 
-  const iconElements = document.querySelectorAll('icon');
-
-  iconElements.forEach(async el => {
-    const iconName = el.textContent.trim().toLowerCase();
-    const existingClass = el.getAttribute('class') || '';
-
-    if (icons[iconName]) {
-      try {
-        const svgRes = await fetch(icons[iconName]);
-        let svgText = await svgRes.text();
-
-        // Inject class into the <svg> tag
-        const combinedClasses = `${existingClass} ${iconName}`.trim();
-        svgText = svgText.replace('<svg', `<svg class="${combinedClasses}"`);
-
-        el.outerHTML = svgText;
-      } catch (err) {
-        console.error(`Error loading SVG for "${iconName}":`, err);
-      }
-    } else {
-      console.warn(`Icon "${iconName}" not found in icons.json`);
-    }
-  });
-});
 

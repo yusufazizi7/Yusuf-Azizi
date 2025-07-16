@@ -156,7 +156,7 @@
                     But indeed, As-Siddiq is the best among them.</p>
             </li>
             <li class="poem-verse">
-                <p class="arabic-text">وَأَقُولُ فِي الْقُرْآنِ مَا جَاءَتْ بِهِ * آيَاتُهُ فَهْوَ الْقَدِيمُ الْمُنْزَلُ</p>
+                <p class="arabic-text">وَأَقُولُ فِي الْقُرْآنِ مَا جَاءَتْ بِهِ * آيَاتُهُ فَهُوَ الْقَدِيمُ الْمُنْزَلُ</p>
                 <p class="eng-translation">And I say about the Quran what its verses have brought, <br>
                     For it is eternal and revealed.</p>
             </li>
@@ -239,12 +239,17 @@
     </footer>
 
 
+
     <div id="audioPlayerBar">
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+
         <audio id="audioPlayer" preload="metadata"></audio>
 
         <div class="audio-controls">
             <button id="closeAudioPlayer" title="Close" style="background:none;border:none;color:var(--primary-color);font-size:1.3rem;cursor:pointer;margin-right:10px;">
-            <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark"></i>
             </button>
 
             <label for="startVerse">Start:</label>
@@ -258,6 +263,7 @@
             <button id="stopAudio"><i class="fa-solid fa-stop"></i></button>
         </div>
     </div>
+
 
 
 

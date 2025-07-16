@@ -354,6 +354,8 @@ main {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
+
 #audioPlayer {
     display: none; /* hide native controls */
 }
@@ -365,6 +367,8 @@ main {
     overflow: hidden;
     transition: all 0.3s ease;
 }
+
+
 #audioPlayerBar.show {
     visibility: visible;
     opacity: 1;
@@ -410,6 +414,24 @@ main {
     background: var(--secondary-color);
     color: var(--primary-color);
 }
+
+#progressContainer {
+    width: 100%;
+    height: 6px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-color);
+    transition: width 0.1s linear;
+}
+
 
 
 /* Responsive Design */
