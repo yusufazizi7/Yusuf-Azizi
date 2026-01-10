@@ -243,7 +243,7 @@ main {
     transition: opacity 0.3s ease;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri;
     user-select: none;
     direction: ltr;
 }

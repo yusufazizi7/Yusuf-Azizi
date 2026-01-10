@@ -120,7 +120,7 @@
 
 /* Ensure Arabic text is right-aligned */
 .arabic-text {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Calibri;
     font-size: 1.8rem;
     direction: rtl;
     text-align: center;
@@ -130,7 +130,7 @@
 
 .eng-translation {
     font-size: 1.2rem;
-    font-family: 'Calibri', sans-serif;
+    font-family: Calibri;
     color: var(--secondary-color);
     margin-top: 10px;
     text-align: center;
