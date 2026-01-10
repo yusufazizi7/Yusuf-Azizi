@@ -191,7 +191,7 @@ document.addEventListener('click', function (e) {
     if (e.target.classList.contains('copy-option')) {
         const verse = e.target.closest('.poem-verse');
         const arabic = verse.querySelector('.arabic-text')?.innerText.trim() || '';
-        const english = verse.querySelector('.eng-translation')?.innerText.trim() || '';
+        const english = verse.querySelector('')?.innerText.trim() || '';
 
         const type = e.target.getAttribute('data-type');
         const textToCopy = (type === 'arabic') ? arabic : english;

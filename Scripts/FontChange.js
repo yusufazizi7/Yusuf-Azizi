@@ -49,7 +49,7 @@ function initializeFont() {
         updateRadioButtons(storedFont);
     } else {
         // Default initialization if no preference stored
-        const defaultFont = "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
+        const defaultFont = "Calibri";
         changeFont(defaultFont);
         updateRadioButtons(defaultFont);
     }
@@ -106,7 +106,7 @@ function initializeFont() {
         updateRadioButtons(storedFont);
     } else {
         // Default initialization if no preference is stored
-        const defaultFont = "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
+        const defaultFont = "Calibri";
         changeFont(defaultFont);
         updateRadioButtons(defaultFont);
     }
