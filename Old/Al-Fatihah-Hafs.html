@@ -88,19 +88,41 @@
     
     
 
-    <div id="donationPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2>Support Our Project</h2>
-            <br>
-            <p>Assalamu Alaikum, dear visitor,</p>
-            <p>We understand that being asked to donate may be unexpected, but a lot of time, effort, and resources go into maintaining and growing this website. Currently, this platform is run by a single developer, working to provide you with valuable Islamic content, such as poems and beneficial resources for the Ummah.</p>
-            <p>If you’ve found benefit from this site, we kindly ask for your support with a small donation of $5. Your contribution will help us maintain the website and expand the content library, allowing us to continue offering more Islamic poems, educational material, and valuable services for the community.</p>
-            <p>Thank you for your understanding and support, and may Allah reward you for your generosity.</p>
-            <br>
-            <button id="donateButton">Donate</button>
-            <button id="cancelButton">Cancel</button>
+    <div
+      id="donationPopup"
+      class="popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donation-title"
+      aria-hidden="true"
+    >
+      <div class="popup-content">
+        <button
+          class="close-btn"
+          type="button"
+          aria-label="Close donation message"
+        >
+          &times;
+        </button>
+
+        <span class="popup-icon" aria-hidden="true">
+          <i class="fa-solid fa-heart"></i>
+        </span>
+
+        <h2 id="donation-title">Support Islamic Qalam</h2>
+
+        <p>
+          Islamic Qalam is maintained independently. A small donation helps
+          cover website costs and supports the creation of more translations and
+          beneficial resources.
+        </p>
+
+        <div class="popup-actions">
+          <button id="donateButton" type="button">Donate</button>
+
+          <button id="cancelButton" type="button">Maybe later</button>
         </div>
+      </div>
     </div>
     
 

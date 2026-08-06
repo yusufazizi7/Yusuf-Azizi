@@ -1,215 +1,700 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Islamic Qalam offers a rich collection of Islamic poems and more. Discover insightful Islamic content now.">
-    <meta name="keywords" content="Islam, Nooniyah Al-Qahtani, poems, Nooniyah, Arabic, Islamic Qalam">
-    <meta name="author" content="Mohammad Yusuf Azizi">
-    <link rel="canonical" href="https://www.islamicqalam.com/index.html">
-    
-    <title>Islamic Qalam | Islamic Poems, Quran, Arabic</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Islamic Qalam | Classical Islamic Poetry, Qur'an and E-books</title>
+    <meta
+      name="description"
+      content="Explore classical Islamic poetry, Arabic texts, English translations, Qur'an resources, videos and free e-books on Islamic Qalam."
+    />
+    <meta
+      name="keywords"
+      content="Islamic poetry, Arabic poetry, Islamic poems, Nooniyah Al-Qahtani, Qur'an, Islamic e-books, Arabic, Islamic Qalam"
+    />
+    <meta name="author" content="Mohammad Yusuf Azizi" />
+    <link rel="canonical" href="https://www.islamicqalam.com/" />
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Islamic Qalam" />
+    <meta
+      property="og:description"
+      content="Classical Islamic poetry, Arabic texts, English translations, Qur'an resources and free e-books."
+    />
+    <meta property="og:url" content="https://www.islamicqalam.com/" />
+    <meta property="og:site_name" content="Islamic Qalam" />
+
+    <!-- Website icon -->
+    <link rel="icon" type="image/png" href="Images/website-favicon.png" />
+
+    <!-- Global stylesheet -->
+    <link rel="stylesheet" href="CSS/global.css" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/50f622582e.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"
+    ></script>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-R6X1QNEYSL');
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "G-R6X1QNEYSL");
     </script>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- Structured data -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
-        "@type": "Website",
+        "@type": "WebSite",
         "name": "Islamic Qalam",
-        "url": "https://www.islamicqalam.com",
-        "author": {
-            "@type": "Person",
-            "name": "Mohammad Yusuf Azizi"
-        },
-        "description": "Islamic Qalam offers a rich collection of Islamic poems and more. Discover insightful Islamic content now.",
-        "keywords": ["Islam", "Nooniyah Al-Qahtani", "poems", "Nooniyah", "Arabic", "Islamic Qalam"]
-    }
+        "url": "https://www.islamicqalam.com/",
+        "description": "Classical Islamic poetry, Arabic texts, English translations, Qur'an resources, videos and free e-books.",
+        "inLanguage": ["en", "ar"],
+        "creator": {
+          "@type": "Person",
+          "name": "Mohammad Yusuf Azizi"
+        }
+      }
     </script>
+  </head>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="CSS/global.css">
+  <body>
     
-    <link rel="icon" type="image/ico" href="Images/website-favicon.png">
+    <!-- ================= HEADER ================= -->
 
-    <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <header class="site-header">
+      <div class="brand">
+        <!-- Custom object tag preserved -->
+        <object
+          class="website-logo"
+          data="Images/Website-logo.svg"
+          type="image/svg+xml"
+          aria-label="Islamic Qalam logo"
+        ></object>
 
+        <span class="brand-name"> Islamic Qalam </span>
+      </div>
 
-    <div id="donationPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2>Support Our Project</h2>
-            <br>
-            <p>Assalamu Alaikum, dear visitor,</p>
-            <p>We understand that being asked to donate may be unexpected, but a lot of time, effort, and resources go into maintaining and growing this website. Currently, this platform is run by a single developer, working to provide you with valuable Islamic content, such as poems and beneficial resources for the Ummah.</p>
-            <p>If you’ve found benefit from this site, we kindly ask for your support with a small donation of $5. Your contribution will help us maintain the website and expand the content library, allowing us to continue offering more Islamic poems, educational material, and valuable services for the community.</p>
-            <p>Thank you for your understanding and support, and may Allah reward you for your generosity.</p>
-            <br>
-            <button id="donateButton">Donate</button>
-            <button id="cancelButton">Cancel</button>
-        </div>
-    </div>
+      <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+        <a href="#poetry-library"> Poetry </a>
 
-    <!-- Navbar -->
-    <header >
-        <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"></object>
+        <a href="quran.html"> Qur'an </a>
 
-        <nav class="navbar">
-            
-            <a href="Nooniyah-Al-Qahtani.html">Nooniyah Al-Qahtani</a>
-            <a href="quran.html">Quran</a>
-            <a href="videos.html">Videos</a>
-            <a href="e-books.html">E-books</a>
-            <a href="contact-us.html">Contact</a>
-            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-            
-        </nav>
+        <a href="videos.html"> Videos </a>
 
-        <i id="menu-bars" class="fa-solid fa-bars"></i>
+        <a href="e-books.html"> E-books </a>
 
-        
+        <a href="contact-us.html"> Contact </a>
+
+        <a
+          class="nav-donate"
+          href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Donate
+        </a>
+      </nav>
+
+      <button
+        id="menu-bars"
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
     </header>
 
-    <!-- Homepage Content -->
-    <main>
-        <h1 class="home-title">Welcome to Islamic Qalam</h1>
+    <!-- ================= MAIN CONTENT ================= -->
 
-        <section class="poems-section">
+    <main id="main-content" class="home-page">
+      <!-- ================= HERO ================= -->
 
-            <a href="Nooniyah-Al-Qahtani.html">
-            <div class="poem">
-                <icon class="poem-title">Nooniyah-Al-Qahtani</icon>
-                <h2 class="eng-title">Nooniyah Al-Qahtani</h2>
-            </div>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">
+            <span aria-hidden="true"></span>
+            Islamic poetry · Qur'an · E-books
+          </p>
+
+          <h1 id="hero-title">
+            Classical Islamic works,
+            <span>beautifully presented.</span>
+          </h1>
+
+          <p class="hero-description">
+            Explore carefully presented Arabic poetry, English translations,
+            Qur'an resources and beneficial works from the Islamic tradition.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#poetry-library">
+              Explore the library
+
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
             </a>
 
-            
-
-            <a href="Laamiyah-Ibn-Al-Wardi.html">
-            <div class="poem">
-                <icon class="poem-title">laamiyah-ibn-al-wardi</icon>
-                <h2 class="eng-title">Laamiyah Ibn Al-Wardi</h2>
-            </div>
+            <a class="button button-secondary" href="e-books.html">
+              Browse e-books
             </a>
+          </div>
 
-            
+          <ul class="hero-points" aria-label="Website features">
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
 
-            <a href="Ha'iyyah-Ibn-Abi-Dawud.html">
-            <div class="poem">
-                <icon class="poem-title">Ha'iyyah-Ibn-Abi-Dawud</icon>
-                <h2 class="eng-title">Ha'iyyah Ibn Abi Dawud</h2>
-            </div>
-            </a>
+              Arabic originals
+            </li>
 
-            
-            <a href="Names-of-Allah.html">
-            <div class="poem">
-                <icon class="poem-title">Names-of-Allah</icon>
-                <h2 class="eng-title">The Most Beautiful Names of Allah</h2>
-            </div>
-            </a>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
 
-            <a href="Oh-worshippers-of-christ.html">
-            <div class="poem">
-                <icon class="poem-title" >Ha'iyyah-Ibn-Al-Qayyim</icon>
-                <h2 class="eng-title">Oh worshippers of Christ</h2>
-            </div>
-            </a>
+              English translations
+            </li>
 
-            <a href="Laamiyah-Ibn-Taymiyyah.html">
-            <div class="poem">
-                <icon class="poem-title">Laamiyah-Ibn-Taimiyyah</icon>
-                <h2 class="eng-title">Laamiyah Ibn Taymiyyah</h2>
-            </div>
-            </a>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
 
-            <a href="Nooniyah-Ibn-Al-Qayyim.html">
-            <div class="poem">
-                <icon class="poem-title">Nooniyah-Ibn-Al-Qayyim</icon>
-                <h2 class="eng-title">Nooniyah Ibn Al-Qayyim</h2>
-            </div>
+              Free access
+            </li>
+          </ul>
+        </div>
 
-            <a href="Laamiyah-Ibn-Al-Qayyim.html">
-            <div class="poem">
-                <icon class="poem-title">Laamiyah-Ibn-Al-Qayyim</icon>
-                <h2 class="eng-title">Laamiyah Ibn Al-Qayyim</h2>
-            </div>
-            </a>
-            </a>
-            <a href="Ta'iyyah-Al-Ilbiri.html">
-            <div class="poem">
-                <icon class="poem-title">Ta'iyyah-Al-Ilbiri</icon>
-                <h2 class="eng-title">Ta'iyyah Al-Ilbiri</h2>
-            </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-art-frame">
+            <span class="hero-ornament"> ✦ </span>
 
-            </a>
-            <a href="Al-Aqeedah-As-Safariniyyah.html">
-            <div class="poem">
-                <icon class="poem-title">Al-Aqeedah-As-Safariniyyah</icon>
-                <h2 class="eng-title">Al-Aqeedah As-Safariniyyah</h2>
-            </div>
+            <p class="hero-arabic">القلم الإسلامي</p>
 
-            </a>
+            <span class="hero-divider"></span>
 
+            <p class="hero-art-caption">Knowledge · Reflection · Benefit</p>
 
-            <a href="Ruba'iyyah-At-Tabrizi.html">
-            <div class="poem">
-                <icon class="poem-title">ruba'iyyah-at-tabrizi</icon>
-                <h2 class="eng-title">Ainiyyah At-Tabrizi</h2>
-            </div>
+            <span class="hero-ornament hero-ornament-bottom"> ✦ </span>
+          </div>
+        </div>
+      </section>
 
-            </a>
+      <!-- ================= CATEGORIES ================= -->
 
+      <section class="category-section" aria-labelledby="category-title">
+        <div class="section-heading section-heading-centred">
+          <p class="section-kicker">Begin exploring</p>
 
-            <a href="Poem-About-Martyrdom.html">
-            <div class="poem">
-                <icon class="poem-title">poem-about-martyrdom</icon>
-                <h2 class="eng-title">Poem About Martyrdom</h2>
-            </div>
+          <h2 id="category-title">Discover Islamic Qalam</h2>
 
-            </a>
-            
+          <p>Choose a section and continue your reading, listening or study.</p>
+        </div>
 
+        <div class="category-grid">
+          <a class="category-card" href="quran.html">
+            <span class="category-icon" aria-hidden="true">
+              <i class="fa-solid fa-book-quran"></i>
+            </span>
 
-            
+            <span class="category-content">
+              <strong> Qur'an </strong>
 
-            
+              <span> Read and explore Qur'anic resources. </span>
+            </span>
 
-            
-            
-        </section>
+            <i
+              class="fa-solid fa-arrow-right category-arrow"
+              aria-hidden="true"
+            ></i>
+          </a>
 
-        <div class="extra-space"></div>
+          <a class="category-card" href="e-books.html">
+            <span class="category-icon" aria-hidden="true">
+              <i class="fa-solid fa-book-open"></i>
+            </span>
+
+            <span class="category-content">
+              <strong> E-books </strong>
+
+              <span> Access formatted editions of classical works. </span>
+            </span>
+
+            <i
+              class="fa-solid fa-arrow-right category-arrow"
+              aria-hidden="true"
+            ></i>
+          </a>
+
+          <a class="category-card" href="videos.html">
+            <span class="category-icon" aria-hidden="true">
+              <i class="fa-solid fa-circle-play"></i>
+            </span>
+
+            <span class="category-content">
+              <strong> Videos </strong>
+
+              <span> Watch translated poetry and Islamic content. </span>
+            </span>
+
+            <i
+              class="fa-solid fa-arrow-right category-arrow"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= POETRY LIBRARY ================= -->
+
+      <section
+        id="poetry-library"
+        class="library-section"
+        aria-labelledby="library-title"
+      >
+        <div class="section-heading library-heading">
+          <div>
+            <p class="section-kicker">The poetry collection</p>
+
+            <h2 id="library-title">Explore classical works</h2>
+
+            <p>
+              Read Arabic texts alongside clear English titles and translations.
+            </p>
+          </div>
+
+          <a class="text-link" href="e-books.html">
+            View all e-books
+
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="poem-grid">
+          <!-- Nooniyah Al-Qahtani -->
+
+          <a class="poem-card featured-card" href="Nooniyah-Al-Qahtani.html">
+            <span class="card-label"> Featured </span>
+
+            <!-- Custom icon tag preserved -->
+            <icon class="poem-title"> Nooniyah-Al-Qahtani </icon>
+
+            <span class="card-copy">
+              <strong> Nooniyah Al-Qahtani </strong>
+
+              <span>
+                A renowned poem on creed, character and steadfastness.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Laamiyah Ibn Al-Wardi -->
+
+          <a class="poem-card" href="Laamiyah-Ibn-Al-Wardi.html">
+            <icon class="poem-title"> laamiyah-ibn-al-wardi </icon>
+
+            <span class="card-copy">
+              <strong> Laamiyah Ibn Al-Wardi </strong>
+
+              <span>
+                Wisdom on knowledge, discipline, ambition and the world.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Ha'iyyah Ibn Abi Dawud -->
+
+          <a class="poem-card" href="Ha'iyyah-Ibn-Abi-Dawud.html">
+            <icon class="poem-title"> Ha'iyyah-Ibn-Abi-Dawud </icon>
+
+            <span class="card-copy">
+              <strong> Ha'iyyah Ibn Abi Dawud </strong>
+
+              <span>
+                A concise classical poem outlining the creed of Ahl al-Sunnah.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Names of Allah -->
+
+          <a class="poem-card" href="Names-of-Allah.html">
+            <icon class="poem-title"> Names-of-Allah </icon>
+
+            <span class="card-copy">
+              <strong> The Most Beautiful Names of Allah </strong>
+
+              <span>
+                Learn and reflect upon Allah's Most Beautiful Names.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Explore the names
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- O Worshippers of Christ -->
+
+          <a class="poem-card" href="Oh-worshippers-of-christ.html">
+            <icon class="poem-title"> Ha'iyyah-Ibn-Al-Qayyim </icon>
+
+            <span class="card-copy">
+              <strong> O Worshippers of Christ </strong>
+
+              <span>
+                Ibn Al-Qayyim's poetic address concerning the nature of Christ.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Laamiyah Ibn Taymiyyah -->
+
+          <a class="poem-card" href="Laamiyah-Ibn-Taymiyyah.html">
+            <icon class="poem-title"> Laamiyah-Ibn-Taimiyyah </icon>
+
+            <span class="card-copy">
+              <strong> Laamiyah Ibn Taymiyyah </strong>
+
+              <span>
+                A concise poem expressing faith, loyalty and devotion.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Nooniyah Ibn Al-Qayyim -->
+
+          <a class="poem-card" href="Nooniyah-Ibn-Al-Qayyim.html">
+            <icon class="poem-title"> Nooniyah-Ibn-Al-Qayyim </icon>
+
+            <span class="card-copy">
+              <strong> Nooniyah Ibn Al-Qayyim </strong>
+
+              <span>
+                Selected verses from one of the great classical works on creed.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Laamiyah Ibn Al-Qayyim -->
+
+          <a class="poem-card" href="Laamiyah-Ibn-Al-Qayyim.html">
+            <icon class="poem-title"> Laamiyah-Ibn-Al-Qayyim </icon>
+
+            <span class="card-copy">
+              <strong> Laamiyah Ibn Al-Qayyim </strong>
+
+              <span>
+                Poetic counsel on the path of faith and upright conduct.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Ta'iyyah Al-Ilbiri -->
+
+          <a class="poem-card" href="Ta'iyyah-Al-Ilbiri.html">
+            <icon class="poem-title"> Ta'iyyah-Al-Ilbiri </icon>
+
+            <span class="card-copy">
+              <strong> Ta'iyyah Al-Ilbiri </strong>
+
+              <span>
+                Timeless advice on knowledge, age, repentance and the Hereafter.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Al-Aqeedah As-Safariniyyah -->
+
+          <a class="poem-card" href="Al-Aqeedah-As-Safariniyyah.html">
+            <icon class="poem-title"> Al-Aqeedah-As-Safariniyyah </icon>
+
+            <span class="card-copy">
+              <strong> Al-Aqeedah As-Safariniyyah </strong>
+
+              <span>
+                A classical didactic poem presenting matters of Islamic creed.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Ainiyyah At-Tabrizi -->
+
+          <a class="poem-card" href="Ruba'iyyah-At-Tabrizi.html">
+            <icon class="poem-title"> ruba'iyyah-at-tabrizi </icon>
+
+            <span class="card-copy">
+              <strong> Ainiyyah At-Tabrizi </strong>
+
+              <span>
+                A brief classical poem presented in Arabic and English.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- Poem About Martyrdom -->
+
+          <a class="poem-card" href="Poem-About-Martyrdom.html">
+            <icon class="poem-title"> poem-about-martyrdom </icon>
+
+            <span class="card-copy">
+              <strong> Poem About Martyrdom </strong>
+
+              <span>
+                A reflective Arabic poem with an English translation.
+              </span>
+            </span>
+
+            <span class="card-link">
+              Read the poem
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+
+      <section class="about-section" aria-labelledby="about-title">
+        <div class="about-panel">
+          <div class="about-mark" aria-hidden="true">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+
+          <div class="about-copy">
+            <p class="section-kicker">About the project</p>
+
+            <h2 id="about-title">Making beneficial works easier to access</h2>
+
+            <p>
+              Islamic Qalam is an independent project dedicated to presenting
+              classical Islamic poetry and educational resources in a clear,
+              readable and respectful format.
+            </p>
+          </div>
+
+          <a
+            class="button button-secondary button-on-dark"
+            href="contact-us.html"
+          >
+            Contact Islamic Qalam
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= SUPPORT ================= -->
+
+      <section class="support-section" aria-labelledby="support-title">
+        <div>
+          <p class="section-kicker">Support the project</p>
+
+          <h2 id="support-title">Help Islamic Qalam continue to grow</h2>
+
+          <p>
+            Contributions help cover website costs and support the preparation
+            of more translations, e-books and beneficial resources.
+          </p>
+        </div>
+
+        <a
+          class="button button-primary"
+          href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Make a donation
+
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        </a>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Islamic Qalam. All Rights Reserved.</p>
-        <p>
-            <a href="contact-us.html">Contact</a> 
-            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-        </p>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <!-- Custom object tag preserved -->
+          <object
+            class="website-logo"
+            data="Images/Website-logo.svg"
+            type="image/svg+xml"
+            aria-label="Islamic Qalam logo"
+          ></object>
+
+          <div>
+            <strong> Islamic Qalam </strong>
+
+            <p>Classical works, thoughtfully presented.</p>
+          </div>
         </div>
+
+        <div class="footer-links" aria-label="Footer navigation">
+          <a href="quran.html"> Qur'an </a>
+
+          <a href="videos.html"> Videos </a>
+
+          <a href="e-books.html"> E-books </a>
+
+          <a href="contact-us.html"> Contact </a>
+        </div>
+
+        <div class="social-links" aria-label="Social media">
+          <a
+            href="https://www.youtube.com/@yusufazizi319/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="https://www.instagram.com/yusufazizizizizi/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@yusufazizizizi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy;
+          <span id="current-year">2026</span>
+          Islamic Qalam. All rights reserved.
+        </p>
+      </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="Scripts/global.js"></script>
-    
+    <!-- ================= DONATION POPUP ================= -->
 
-</body>
+    <div
+      id="donationPopup"
+      class="popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donation-title"
+      aria-hidden="true"
+    >
+      <div class="popup-content">
+        <button
+          class="close-btn"
+          type="button"
+          aria-label="Close donation message"
+        >
+          &times;
+        </button>
+
+        <span class="popup-icon" aria-hidden="true">
+          <i class="fa-solid fa-heart"></i>
+        </span>
+
+        <h2 id="donation-title">Support Islamic Qalam</h2>
+
+        <p>
+          Islamic Qalam is maintained independently. A small donation helps
+          cover website costs and supports the creation of more translations and
+          beneficial resources.
+        </p>
+
+        <div class="popup-actions">
+          <button id="donateButton" type="button">Donate</button>
+
+          <button id="cancelButton" type="button">Maybe later</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="Scripts/global.js"></script>
+    <script src="Scripts/home.js"></script>
+  </body>
 </html>

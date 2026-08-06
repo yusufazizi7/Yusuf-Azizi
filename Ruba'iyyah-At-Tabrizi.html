@@ -42,71 +42,150 @@
 </head>
 <body>
 
-  <header>
+    <header class="site-header poem-site-header">
+        <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
 
-        <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"></object>
+            <span class="brand-name">Islamic Qalam</span>
+        </a>
 
-        <nav class="navbar">
-            
-            <a href="Nooniyah-Al-Qahtani.html">Nooniyah Al-Qahtani</a>
-            <a href="quran.html">Quran</a>
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+            <a href="index.html#poetry-library">Poetry</a>
+            <a href="quran.html">Qur'an</a>
             <a href="videos.html">Videos</a>
             <a href="e-books.html">E-books</a>
             <a href="contact-us.html">Contact</a>
-            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-            
+
+            <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
+                rel="noopener noreferrer">
+                Donate
+            </a>
         </nav>
 
-        <i id="menu-bars" class="fa-solid fa-bars"></i>
-        <i class="fa-solid fa-gear fa-2xl "></i>
+        <div class="header-actions">
+            <!-- Poem settings button -->
+            <button id="settings-toggle" class="header-action-button settings-toggle" type="button"
+                aria-label="Open poem settings" aria-controls="poem-settings" aria-expanded="false">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            </button>
 
-        
+            <!-- Mobile navigation button -->
+            <button id="menu-bars" class="header-action-button menu-toggle" type="button"
+                aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
     </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
+    <!-- Dark background shown behind the settings sidebar -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Poem settings sidebar -->
+    <aside class="sidebar" id="poem-settings" aria-label="Poem settings" aria-hidden="true">
+        <div class="sidebar-header">
+            <h2>Poem Settings</h2>
+
+            <button id="settings-close" class="sidebar-close" type="button" aria-label="Close poem settings">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
         <div class="sidebar-section">
             <h3>Choose Font</h3>
-            <label><input type="radio" name="font" value="default" checked> Default</label>
-            <label><input type="radio" name="font" value="amiri"> Amiri</label>
-            <label><input type="radio" name="font" value="Neiziri"> Neiziri</label>
-            <label><input type="radio" name="font" value="Uthman"> Uthman</label>
-            <label><input type="radio" name="font" value="Thuluth"> Thuluth</label>
+
+            <label>
+                <input type="radio" name="font" value="default" checked />
+                Default
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="amiri" />
+                Amiri
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="Neiziri" />
+                Neiziri
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="Uthman" />
+                Uthman
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="Thuluth" />
+                Thuluth
+            </label>
         </div>
 
         <div class="sidebar-section">
             <h3>Options</h3>
-            <label><input type="checkbox" id="LineNumbers" checked> Verse Numbers</label>
-            
-            <label><input type="checkbox" id="engTranslationToggle" checked> English Translation</label>
-            
+
+            <label>
+                <input type="checkbox" id="LineNumbers" checked />
+                Verse Numbers
+            </label>
+
+            <label>
+                <input type="checkbox" id="engTranslationToggle" />
+                English Translation
+            </label>
         </div>
 
         <div class="sidebar-section">
             <h3>Font Size</h3>
-            <button id="decreaseFont">−</button>
-            <span id="fontSizeDisplay">18px</span>
-            <button id="increaseFont">+</button>
-            <button id="resetFont">Reset</button>
+
+            <div class="font-size-controls">
+                <button id="decreaseFont" type="button" aria-label="Decrease font size">
+                    −
+                </button>
+
+                <span id="fontSizeDisplay">18px</span>
+
+                <button id="increaseFont" type="button" aria-label="Increase font size">
+                    +
+                </button>
+
+                <button id="resetFont" type="button">Reset</button>
+            </div>
         </div>
 
         <div class="sidebar-section">
             <h3>Jump to Verse</h3>
+
             <select id="verseDropdown">
                 <option value="">Select Verse</option>
             </select>
         </div>
-    </div>
+    </aside>
 
     <!-- Donation Popup -->
-    <div id="donationPopup" class="popup">
+    <div id="donationPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="donation-title"
+        aria-hidden="true">
         <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2>Support Our Project</h2>
-            <p>Assalamu Alaikum, dear visitor,</p>
-            <p>Your donation helps us maintain and grow this website. Support us with a small contribution to keep Islamic content available for everyone.</p>
-            <button id="donateButton">Donate</button>
-            <button id="cancelButton">Cancel</button>
+            <button class="close-btn" type="button" aria-label="Close donation message">
+                &times;
+            </button>
+
+            <span class="popup-icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </span>
+
+            <h2 id="donation-title">Support Islamic Qalam</h2>
+
+            <p>
+                Islamic Qalam is maintained independently. A small donation helps
+                cover website costs and supports the creation of more translations and
+                beneficial resources.
+            </p>
+
+            <div class="popup-actions">
+                <button id="donateButton" type="button">Donate</button>
+
+                <button id="cancelButton" type="button">Maybe later</button>
+            </div>
         </div>
     </div>
 
@@ -349,17 +428,55 @@
         <div class="extra-space"></div>
     </main>
 
-    <footer class="footer">
-            <p>&copy; 2024 Islamic Qalam. All Rights Reserved.</p>
-            <p>
-                <a href="contact-us.html">Contact</a> | 
-                <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-            </p>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <footer class="footer site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <!-- Custom object tag preserved -->
+                <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                    aria-label="Islamic Qalam logo"></object>
+
+                <div>
+                    <strong> Islamic Qalam </strong>
+
+                    <p>Classical works, thoughtfully presented.</p>
+                </div>
             </div>
+
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="quran.html"> Qur'an </a>
+
+                <a href="videos.html"> Videos </a>
+
+                <a href="e-books.html"> E-books </a>
+
+                <a href="contact-us.html"> Contact </a>
+            </div>
+
+            <div class="social-links" aria-label="Social media">
+                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="current-year">2026</span>
+                Islamic Qalam. All rights reserved.
+            </p>
+        </div>
     </footer>
 
 

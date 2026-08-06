@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the 99 Names of Allah with beautiful Arabic calligraphy and meanings on Islamic Qalam.">
+    <meta name="description"
+        content="Explore the 99 Names of Allah with beautiful Arabic calligraphy and meanings on Islamic Qalam.">
     <meta name="keywords" content="Islam, 99 Names of Allah, Asmaul Husna, Arabic calligraphy, Islamic Qalam">
     <meta name="author" content="Mohammad Yusuf Azizi">
     <link rel="canonical" href="https://www.islamicqalam.com/names-of-allah">
@@ -14,7 +16,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-R6X1QNEYSL');
     </script>
@@ -45,59 +47,66 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <header >
-        <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"></object>
+    <header class="site-header">
+        <div class="brand">
+            <!-- Custom object tag preserved -->
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
 
-        <nav class="navbar">
-            
-            <a href="Nooniyah-Al-Qahtani.html">Nooniyah Al-Qahtani</a>
-            <a href="quran.html">Quran</a>
-            <a href="videos.html">Videos</a>
-            <a href="e-books.html">E-books</a>
-            <a href="contact-us.html">Contact</a>
-            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-            
+            <span class="brand-name"> Islamic Qalam </span>
+        </div>
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+            <a href="#poetry-library"> Poetry </a>
+
+            <a href="quran.html"> Qur'an </a>
+
+            <a href="videos.html"> Videos </a>
+
+            <a href="e-books.html"> E-books </a>
+
+            <a href="contact-us.html"> Contact </a>
+
+            <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
+                rel="noopener noreferrer">
+                Donate
+            </a>
         </nav>
 
-        <i id="menu-bars" class="fa-solid fa-bars"></i>
-
-        
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
     </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-section">
-            <h3>Choose Font</h3>
-            <label><input type="radio" name="font" value="default" checked> Default</label>
-            <label><input type="radio" name="font" value="amiri"> Amiri</label>
-            <label><input type="radio" name="font" value="Neiziri"> Neiziri</label>
-            <label><input type="radio" name="font" value="Uthman"> Uthman</label>
-            <label><input type="radio" name="font" value="Thuluth"> Thuluth</label>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Options</h3>
-            <label><input type="checkbox" id="LineNumbers" checked> Verse Numbers</label>
-            <label><input type="checkbox" id="graphicToggle" checked> Show Graphics</label>
-        </div>
-    </div>
-
     <!-- Donation Popup -->
-    <div id="donationPopup" class="popup">
+    <div id="donationPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="donation-title"
+        aria-hidden="true">
         <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2>Support Our Project</h2>
-            <br>
-            <p>Assalamu Alaikum, dear visitor,</p>
-            <p>We understand that being asked to donate may be unexpected, but a lot of time, effort, and resources go into maintaining and growing this website. Currently, this platform is run by a single developer, working to provide you with valuable Islamic content, such as poems and beneficial resources for the Ummah.</p>
-            <p>If you’ve found benefit from this site, we kindly ask for your support with a small donation of $5. Your contribution will help us maintain the website and expand the content library, allowing us to continue offering more Islamic poems, educational material, and valuable services for the community.</p>
-            <p>Thank you for your understanding and support, and may Allah reward you for your generosity.</p>
-            <br>
-            <button id="donateButton">Donate</button>
-            <button id="cancelButton">Cancel</button>
+            <button class="close-btn" type="button" aria-label="Close donation message">
+                &times;
+            </button>
+
+            <span class="popup-icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </span>
+
+            <h2 id="donation-title">Support Islamic Qalam</h2>
+
+            <p>
+                Islamic Qalam is maintained independently. A small donation helps
+                cover website costs and supports the creation of more translations and
+                beneficial resources.
+            </p>
+
+            <div class="popup-actions">
+                <button id="donateButton" type="button">Donate</button>
+
+                <button id="cancelButton" type="button">Maybe later</button>
+            </div>
         </div>
     </div>
 
@@ -105,7 +114,7 @@
     <main>
 
         <h1 class="page-title">Names of Allah</h1>
-        
+
         <icon class="poem-title">Names-of-Allah</icon>
         <table>
             <thead>
@@ -621,7 +630,7 @@
                     <td>ٱلْحَيُ</td>
                     <td>Al-Hayy</td>
                     <td>The Ever-Living</td>
-    
+
                 </tr>
                 <tr>
                     <td>64</td>
@@ -871,7 +880,7 @@
                     <td>The Provider of Guidance</td>
                     <td><a href="https://quran.com/22?startingVerse=54" target="_blank">Quran 22:54</a></td>
                 </tr>
-                
+
                 <tr>
                     <td>95</td>
                     <td class="names-of-Allah">البديع</td>
@@ -914,35 +923,74 @@
                 </tr>
             </tbody>
         </table>
-        
-     
-      
-                
-    
-    
-    
+
+
+
+
+
+
+
 
 
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Islamic Qalam. All Rights Reserved.</p>
-        <p>
-            <a href="contact-us.html">Contact</a> | 
-            <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-        </p>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <footer class="footer site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <!-- Custom object tag preserved -->
+                <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                    aria-label="Islamic Qalam logo"></object>
+
+                <div>
+                    <strong> Islamic Qalam </strong>
+
+                    <p>Classical works, thoughtfully presented.</p>
+                </div>
+            </div>
+
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="quran.html"> Qur'an </a>
+
+                <a href="videos.html"> Videos </a>
+
+                <a href="e-books.html"> E-books </a>
+
+                <a href="contact-us.html"> Contact </a>
+            </div>
+
+            <div class="social-links" aria-label="Social media">
+                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="current-year">2026</span>
+                Islamic Qalam. All rights reserved.
+            </p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="Scripts/global.js"></script>
 
-    
+
 
 </body>
+
 </html>
