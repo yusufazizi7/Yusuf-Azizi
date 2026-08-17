@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comments Test | Islamic Qalam</title>
+
+    <link rel="stylesheet" href="/css/signup.css">
+
+    <style>
+        .comments-container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .comment-form {
+            margin-bottom: 30px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            min-height: 110px;
+
+            padding: 14px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+
+            resize: vertical;
+
+            font: inherit;
+
+            outline: none;
+        }
+
+        .comment-form textarea:focus {
+            border-color: #356859;
+
+            box-shadow:
+                0 0 0 3px rgba(53, 104, 89, 0.12);
+        }
+
+        .comment {
+            padding: 18px 0;
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+        }
+
+        .comment-date {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .comment-content {
+            margin: 0;
+
+            line-height: 1.6;
+
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        #commentMessage {
+            min-height: 20px;
+            margin-top: 10px;
+
+            font-size: 14px;
+        }
+
+        #loggedOutMessage {
+            margin-bottom: 25px;
+
+            padding: 15px;
+
+            background: #f5f7f6;
+            border-radius: 8px;
+
+            text-align: center;
+        }
+
+        #commentsLoading {
+            color: #6b7280;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .comment-action-button {
+            padding: 6px 12px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+
+            background: white;
+            color: #374151;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        .comment-action-button:hover {
+            background: #f5f7f6;
+        }
+
+        .comment-action-button.delete {
+            color: #b91c1c;
+        }
+
+        .edit-comment-input {
+            width: 100%;
+            min-height: 90px;
+
+            margin-top: 10px;
+            padding: 12px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+
+            resize: vertical;
+            font: inherit;
+        }
+
+        .edit-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .replies {
+            margin-top: 16px;
+            margin-left: 30px;
+            padding-left: 18px;
+            border-left: 2px solid #e5e7eb;
+        }
+
+        .reply {
+            padding: 14px 0;
+        }
+
+        .reply-form {
+            margin-top: 12px;
+        }
+
+        .reply-form textarea {
+            width: 100%;
+            min-height: 75px;
+
+            padding: 10px 12px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+
+            font: inherit;
+            resize: vertical;
+        }
+
+        .reply-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .like-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            padding: 6px 10px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+
+            background: white;
+            color: #374151;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        .like-button:hover {
+            background: #f5f7f6;
+        }
+
+        .like-button.liked {
+            color: #b91c1c;
+        }
+
+        .like-button:disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+
+        .comment-status {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .comment-status.pending {
+            background: #fff7ed;
+            color: #9a5b13;
+            border: 1px solid #fed7aa;
+        }
+
+        .comment-status.rejected {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+
+    <main class="comments-container">
+
+        <div class="signup-card">
+
+            <div class="signup-header">
+                <h1>Comments Test</h1>
+
+                <p>
+                    Testing the Islamic Qalam comments system.
+                </p>
+            </div>
+
+
+            <div id="loggedOutMessage" style="display: none;">
+
+                You must be logged in to leave a comment.
+
+                <br><br>
+
+                <a
+                    href="/login.html?redirect=/comments-test.html"
+                >
+                    Log in
+                </a>
+
+            </div>
+
+
+            <form
+                id="commentForm"
+                class="comment-form"
+                style="display: none;"
+            >
+
+                <div class="form-group">
+
+                    <label for="commentInput">
+                        Write a comment
+                    </label>
+
+                    <textarea
+                        id="commentInput"
+                        maxlength="3000"
+                        placeholder="Write your comment..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="signup-button"
+                >
+                    Post Comment
+                </button>
+
+
+                <p id="commentMessage"></p>
+
+            </form>
+
+
+            <h2>Comments</h2>
+
+            <p id="commentsLoading">
+                Loading comments...
+            </p>
+
+            <div id="commentsList"></div>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="Supabase/supabase-client.js"></script>
+    <script src="Supabase/comments-test.js"></script>
+
+</body>
+
+</html>

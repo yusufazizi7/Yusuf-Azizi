@@ -1,0 +1,946 @@
+/* =========================================================
+   ISLAMIC QALAM LOGIN PAGE
+   ========================================================= */
+
+
+/* ================= PAGE ================= */
+
+.login-page {
+    width: 100%;
+
+    flex: 1;
+
+    margin-top: 0;
+
+    padding-top: 82px;
+
+    background:
+        var(--home-bg);
+
+    text-align: left;
+}
+
+
+.login-section {
+    display: grid;
+
+    width:
+        min(
+            1040px,
+            calc(100% - 40px)
+        );
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(340px, 0.85fr);
+
+    gap: clamp(2rem, 6vw, 5rem);
+
+    align-items: stretch;
+
+    margin-inline: auto;
+
+    padding:
+        clamp(4rem, 8vw, 7rem)
+        0;
+}
+
+
+/* ================= LOGIN CARD ================= */
+
+.login-card {
+    padding:
+        clamp(
+            1.7rem,
+            4vw,
+            2.6rem
+        );
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius:
+        var(--home-radius);
+
+    background:
+        var(--home-surface);
+
+    box-shadow:
+        var(--home-shadow);
+}
+
+
+/* ================= HEADER ================= */
+
+.login-heading {
+    margin-bottom: 2rem;
+}
+
+
+.login-icon {
+    display: grid;
+
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 1.3rem;
+
+    place-items: center;
+
+    border-radius: 15px;
+
+    color:
+        var(--home-brown-dark);
+
+    background:
+        var(--home-surface-soft);
+
+    font-size: 1.25rem;
+}
+
+
+.login-heading .section-kicker {
+    margin-bottom: 0.65rem;
+}
+
+
+.login-heading h1 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.1rem
+        );
+
+    font-weight: 600;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.025em;
+}
+
+
+.login-heading > p:last-child {
+    max-width: 500px;
+
+    margin-top: 0.8rem;
+
+    color:
+        var(--home-muted);
+
+    line-height: 1.7;
+}
+
+
+/* ================= FORM ================= */
+
+.login-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.25rem;
+}
+
+
+.login-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+
+.login-form-group label {
+    color:
+        var(--home-green);
+
+    font-size: 0.88rem;
+
+    font-weight: 800;
+}
+
+
+/* ================= INPUT ================= */
+
+.login-input-wrapper {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.login-input-wrapper input {
+    width: 100%;
+
+    min-height: 51px;
+
+    padding:
+        0.8rem
+        1rem
+        0.8rem
+        2.8rem;
+
+    border:
+        1px solid
+        rgba(13, 59, 38, 0.18);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color:
+        var(--home-text);
+
+    background: #ffffff;
+
+    font: inherit;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.login-input-wrapper input::placeholder {
+    color: #929891;
+}
+
+
+.login-input-wrapper input:focus {
+    border-color:
+        rgba(140, 98, 57, 0.62);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 98, 57, 0.09);
+}
+
+
+.login-input-icon {
+    position: absolute;
+
+    left: 1rem;
+
+    z-index: 2;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.88rem;
+
+    pointer-events: none;
+}
+
+
+/* ================= PASSWORD ================= */
+
+.password-wrapper input {
+    padding-right: 3.2rem;
+}
+
+
+.password-toggle {
+    position: absolute;
+
+    right: 0.55rem;
+
+    display: grid;
+
+    width: 38px;
+    height: 38px;
+
+    place-items: center;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color:
+        var(--home-muted);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.password-toggle:hover {
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+/* ================= MESSAGE ================= */
+
+.login-message {
+    display: none;
+
+    padding: 0.75rem 0.9rem;
+
+    border-radius: 9px;
+
+    font-size: 0.86rem;
+
+    line-height: 1.45;
+}
+
+
+.login-message.show {
+    display: block;
+}
+
+
+.login-message.error {
+    border:
+        1px solid
+        rgba(181, 33, 33, 0.17);
+
+    color: #a12626;
+
+    background: #fff1f1;
+}
+
+
+.login-message.success {
+    border:
+        1px solid
+        rgba(23, 97, 61, 0.15);
+
+    color: #17613d;
+
+    background: #edf8f1;
+}
+
+
+/* ================= LOGIN BUTTON ================= */
+
+.login-submit {
+    display: inline-flex;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    gap: 0.7rem;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0.85rem 1.2rem;
+
+    border: none;
+
+    border-radius: 11px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    box-shadow:
+        0 11px 24px
+        rgba(13, 59, 38, 0.17);
+
+    font: inherit;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.login-submit:hover {
+    background:
+        var(--home-green-light);
+
+    box-shadow:
+        0 15px 28px
+        rgba(13, 59, 38, 0.21);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.login-submit:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ================= DIVIDER ================= */
+
+.login-divider {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto 1fr;
+
+    gap: 0.8rem;
+
+    align-items: center;
+
+    margin:
+        1.8rem 0 1.1rem;
+}
+
+
+.login-divider span {
+    height: 1px;
+
+    background:
+        var(--home-border);
+}
+
+
+.login-divider p {
+    color:
+        var(--home-muted);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+}
+
+
+/* ================= CREATE ACCOUNT ================= */
+
+.create-account-button {
+    display: flex;
+
+    min-height: 49px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0.8rem 1rem;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 11px;
+
+    color:
+        var(--home-green);
+
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    font-weight: 800;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.create-account-button:hover {
+    border-color:
+        rgba(140, 98, 57, 0.42);
+
+    color:
+        var(--home-green);
+
+    background: #ffffff;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.login-note {
+    margin-top: 1.1rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.78rem;
+
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+/* ================= ART PANEL ================= */
+
+.login-art {
+    display: flex;
+
+    align-items: stretch;
+}
+
+
+.login-art-inner {
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+
+    min-height: 560px;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    padding:
+        clamp(2rem, 5vw, 3.5rem);
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(140, 98, 57, 0.25);
+
+    border-radius:
+        48% 48% 22px 22px;
+
+    background:
+        linear-gradient(
+            rgba(255, 253, 248, 0.93),
+            rgba(255, 253, 248, 0.98)
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(140, 98, 57, 0.08) 0,
+            rgba(140, 98, 57, 0.08) 1px,
+            transparent 1px,
+            transparent 14px
+        );
+
+    box-shadow:
+        var(--home-shadow);
+
+    text-align: center;
+}
+
+
+.login-art-inner::before,
+.login-art-inner::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border:
+        1px solid
+        rgba(13, 59, 38, 0.11);
+
+    border-radius: inherit;
+
+    pointer-events: none;
+}
+
+
+.login-art-inner::after {
+    inset: 31px;
+
+    border-color:
+        rgba(140, 98, 57, 0.12);
+}
+
+
+.login-arabic {
+    position: relative;
+
+    z-index: 1;
+
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    direction: rtl;
+
+    font-family:
+        Thuluth,
+        Amiri,
+        serif;
+
+    font-size:
+        clamp(
+            3.1rem,
+            6vw,
+            5rem
+        );
+
+    line-height: 1.5;
+}
+
+
+.login-art-divider {
+    position: relative;
+
+    z-index: 1;
+
+    width: 68px;
+    height: 1px;
+
+    margin:
+        1rem 0 1.3rem;
+
+    background:
+        var(--home-brown);
+}
+
+
+.login-art h2 {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 310px;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            1.6rem,
+            3vw,
+            2.3rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+.login-art p:last-of-type {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 310px;
+
+    margin-top: 1rem;
+
+    color:
+        var(--home-muted);
+
+    line-height: 1.7;
+}
+
+
+.login-art-ornament {
+    position: absolute;
+
+    top: 55px;
+
+    color:
+        var(--home-brown);
+}
+
+
+.login-art-ornament-bottom {
+    top: auto;
+
+    bottom: 55px;
+}
+
+
+/* ================= FOCUS ================= */
+
+.login-page button:focus-visible,
+.login-page a:focus-visible {
+    outline:
+        3px solid
+        rgba(140, 98, 57, 0.45);
+
+    outline-offset: 3px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media only screen and
+(max-width: 900px) {
+
+    .login-section {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+
+
+    .login-art {
+        display: none;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media only screen and
+(max-width: 768px) {
+
+    .login-page {
+        padding-top: 72px;
+    }
+
+
+    .login-section {
+        width:
+            min(
+                100% - 28px,
+                650px
+            );
+
+        padding:
+            3.5rem 0 4.5rem;
+    }
+
+
+    .login-card {
+        padding: 1.4rem;
+    }
+
+}
+
+
+
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
+
+.forgot-password-row {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: -0.55rem;
+}
+
+
+.forgot-password-button {
+    padding: 0;
+
+    border: none;
+
+    color:
+        var(--home-brown-dark);
+
+    background: transparent;
+
+    font: inherit;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.forgot-password-button:hover {
+    color:
+        var(--home-green);
+
+    text-decoration: underline;
+}
+
+
+/* ================= RESET PANEL ================= */
+
+.forgot-password-panel {
+    margin-top: 0.25rem;
+
+    padding: 1.15rem;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 13px;
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.forgot-password-heading {
+    display: flex;
+
+    gap: 0.75rem;
+
+    align-items: flex-start;
+
+    margin-bottom: 1rem;
+}
+
+
+.forgot-password-icon {
+    display: grid;
+
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 auto;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    color:
+        var(--home-brown-dark);
+
+    background:
+        var(--home-surface);
+}
+
+
+.forgot-password-heading strong {
+    color:
+        var(--home-green);
+
+    font-size: 0.92rem;
+}
+
+
+.forgot-password-heading p {
+    margin-top: 0.25rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.78rem;
+
+    line-height: 1.5;
+}
+
+
+/* ================= RESET BUTTONS ================= */
+
+.forgot-password-actions {
+    display: flex;
+
+    gap: 0.65rem;
+
+    margin-top: 1rem;
+}
+
+
+.send-reset-button {
+    display: inline-flex;
+
+    min-height: 43px;
+
+    gap: 0.5rem;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0.7rem 1rem;
+
+    border: none;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font: inherit;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.send-reset-button:hover {
+    background:
+        var(--home-green-light);
+}
+
+
+.send-reset-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+.cancel-reset-button {
+    min-height: 43px;
+
+    padding:
+        0.7rem 1rem;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 9px;
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface);
+
+    font: inherit;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.cancel-reset-button:hover {
+    background: #ffffff;
+}

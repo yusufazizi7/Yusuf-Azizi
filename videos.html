@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-R6X1QNEYSL');
-    </script>
+
 
     <!-- Meta Tags -->
     <meta charset="UTF-8">
@@ -21,6 +15,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/videos.css">
+    
 
     <link rel="icon" type="image/png" href="Images/website-favicon.png">
 
@@ -28,191 +23,194 @@
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
 
     <title>Videos | Islamic Qalam</title>
+
 </head>
+
 <body>
 
     <!-- Navbar -->
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
-        <object
-          class="website-logo"
-          data="Images/Website-logo.svg"
-          type="image/svg+xml"
-          aria-label="Islamic Qalam logo"
-        ></object>
+        <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
 
-        <span class="brand-name">Islamic Qalam</span>
-      </a>
-
-      <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
-        <a href="index.html#poetry-library"> Poetry </a>
-
-        <a href="quran.html"> Qur'an </a>
-
-        <a href="videos.html" aria-current="page" class="active"> Videos </a>
-
-        <a href="e-books.html"> E-books </a>
-
-        <a href="contact-us.html">
-          Contact
+            <span class="brand-name">Islamic Qalam</span>
         </a>
 
-        <a
-          class="nav-donate"
-          href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Donate
-        </a>
-      </nav>
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+            <a href="index.html#poetry-library"> Poetry </a>
 
-      <button
-        id="menu-bars"
-        class="menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
+            <a href="quran.html"> Qur'an </a>
+
+            <a href="videos.html" aria-current="page" class="active"> Videos </a>
+
+            <a href="e-books.html"> E-books </a>
+
+            <a href="contact-us.html">
+                Contact
+            </a>
+
+            <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
+                rel="noopener noreferrer">
+                Donate
+            </a>
+            <a id="navAccountLink" class="nav-login" href="login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+            </a>
+        </nav>
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
     </header>
 
     <!-- Updated Donation Popup -->
-    <div
-      id="donationPopup"
-      class="popup"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="donation-title"
-      aria-hidden="true"
-    >
-      <div class="popup-content">
-        <button
-          class="close-btn"
-          type="button"
-          aria-label="Close donation message"
-        >
-          &times;
-        </button>
+    <div id="donationPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="donation-title"
+        aria-hidden="true">
+        <div class="popup-content">
+            <button class="close-btn" type="button" aria-label="Close donation message">
+                &times;
+            </button>
 
-        <span class="popup-icon" aria-hidden="true">
-          <i class="fa-solid fa-heart"></i>
-        </span>
+            <span class="popup-icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </span>
 
-        <h2 id="donation-title">Support Islamic Qalam</h2>
+            <h2 id="donation-title">Support Islamic Qalam</h2>
 
-        <p>
-          Islamic Qalam is maintained independently. A small donation helps
-          cover website costs and supports the creation of more translations and
-          beneficial resources.
-        </p>
+            <p>
+                Islamic Qalam is maintained independently. A small donation helps
+                cover website costs and supports the creation of more translations and
+                beneficial resources.
+            </p>
 
-        <div class="popup-actions">
-          <button id="donateButton" type="button">Donate</button>
+            <div class="popup-actions">
+                <button id="donateButton" type="button">Donate</button>
 
-          <button id="cancelButton" type="button">Maybe later</button>
+                <button id="cancelButton" type="button">Maybe later</button>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Video Section -->
+    <main class="videos-page">
 
-    <main>
-    <section class="video-container">
-        <h1 class="video-title">Our Videos</h1>
-        
-        <div class="video-grid">
-            <iframe src="https://www.youtube.com/embed/sjpp5ofsBIU" title="YouTube video player" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/6xs30PV7bDE" title="YouTube video player" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/IUkDFjKQWZY" title="YouTube video player" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/3vwxgDhn7sA" title="YouTube video player" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/u0TSmAJM6zE" title="Nooniyah Al-Qahtani Part 5" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/C-KcDLJtI34" title="Nooniyah Al-Qahtani Part 6" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/VmCYPn8ei9M" title="Nooniyah Al-Qahtani Part 7" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/_4aLuGG95YQ" title="" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/LW_4cg-UxpY" title="" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/NsCE0Y5WRLQ" title="" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/bFeXy3lh0dU" title="" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/O7mJcjt4uwA" title="" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/QfXohGIiXgE" title="" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/5pEGafrsELw" title="" allowfullscreen></iframe>
+        <!-- Video Hero -->
+        <section class="video-hero">
+            <div class="video-hero-content">
 
-            
-            
-        </div>
-    </section>
+                <span class="video-eyebrow">
+                    <i class="fa-solid fa-circle-play"></i>
+                    Islamic Qalam Video Library
+                </span>
+
+                <h1>Watch. Learn. Reflect.</h1>
+
+                <p>
+                    Explore Qur'an recitations, classical Islamic poetry,
+                    translations, lectures and other beneficial videos.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Video Library -->
+        <section class="video-library">
+
+            <div class="video-section-header">
+
+                <div>
+                    <span class="section-label">Video Library</span>
+
+                    <h2>Latest Videos</h2>
+                </div>
+
+                <p>
+                    Watch videos produced and presented by Islamic Qalam.
+                </p>
+
+            </div>
+
+
+
+
+            <div id="videoGrid" class="video-grid">
+            </div>
+
+
+
+        </section>
 
     </main>
 
     <!-- Footer -->
     <footer class="footer site-footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <object
-            class="website-logo"
-            data="Images/Website-logo.svg"
-            type="image/svg+xml"
-            aria-label="Islamic Qalam logo"
-          ></object>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                    aria-label="Islamic Qalam logo"></object>
 
-          <div>
-            <strong>Islamic Qalam</strong>
+                <div>
+                    <strong>Islamic Qalam</strong>
 
-            <p>Classical works, thoughtfully presented.</p>
-          </div>
+                    <p>Classical works, thoughtfully presented.</p>
+                </div>
+            </div>
+
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="quran.html"> Qur'an </a>
+
+                <a href="videos.html" aria-current="page"> Videos </a>
+
+                <a href="e-books.html"> E-books </a>
+
+                <a href="contact-us.html"> Contact </a>
+            </div>
+
+            <div class="social-links" aria-label="Social media">
+                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
 
-        <div class="footer-links" aria-label="Footer navigation">
-          <a href="quran.html"> Qur'an </a>
-
-          <a href="videos.html"> Videos </a>
-
-          <a href="e-books.html"> E-books </a>
-
-          <a href="contact-us.html" aria-current="page"> Contact </a>
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="current-year">2026</span>
+                Islamic Qalam. All rights reserved.
+            </p>
         </div>
-
-        <div class="social-links" aria-label="Social media">
-          <a
-            href="https://www.youtube.com/@yusufazizi319/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          >
-            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-          </a>
-
-          <a
-            href="https://www.instagram.com/yusufazizizizizi/?hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          </a>
-
-          <a
-            href="https://www.tiktok.com/@yusufazizizizi"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-          >
-            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          &copy;
-          <span id="current-year">2026</span>
-          Islamic Qalam. All rights reserved.
-        </p>
-      </div>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
     <script src="Scripts/global.js"></script>
+<script src="Scripts/donation-popup.js"></script>
+
+    <script src="Scripts/Data/videos.js"></script>
+
+    <script src="Scripts/videos.js"></script>
 </body>
+
 </html>

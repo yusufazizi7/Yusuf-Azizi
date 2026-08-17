@@ -40,44 +40,175 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const popup = document.getElementById("donationPopup");
-    const closeBtn = document.querySelector(".close-btn");
-    const cancelButton = document.getElementById("cancelButton");
-    const donateButton = document.getElementById("donateButton");
 
-    // Check if the user has already closed the popup
-    if (!localStorage.getItem("donationPopupClosed")) {
-        // Show popup if not closed before
-        popup.style.display = "flex";
+/* =====================================
+   NAVBAR ACCOUNT STATUS
+===================================== */
+
+async function updateNavbarAccount() {
+
+    const accountLink =
+        document.getElementById(
+            "navAccountLink"
+        );
+
+
+    const accountText =
+        document.getElementById(
+            "navAccountText"
+        );
+
+
+    if (
+        !accountLink ||
+        !accountText ||
+        !window.supabaseClient
+    ) {
+        return;
     }
 
-    // Function to close the popup
-    function closePopup() {
-        popup.style.display = "none";
-        // Save preference so it doesn't show again
-        localStorage.setItem("donationPopupClosed", "true");
+
+    const {
+        data: {
+            session
+        },
+        error
+    } =
+        await window.supabaseClient
+            .auth
+            .getSession();
+
+
+    if (error) {
+
+        console.error(
+            "Unable to check login status:",
+            error
+        );
+
+        return;
+
     }
 
-    // Close when clicking anywhere on the page
-    document.addEventListener("click", function(event) {
-        // Check if the click is outside the popup-content
-        if (!popup.contains(event.target) || event.target === closeBtn || event.target === cancelButton) {
-            closePopup();
-        }
-    });
 
-    // Close popup when clicking the close button
-    closeBtn.addEventListener("click", closePopup);
-    cancelButton.addEventListener("click", closePopup);
+    updateAccountLink(
+        session
+    );
 
-    // Redirect to Stripe donation page when clicking donate button
-    donateButton.addEventListener("click", function() {
-        window.open("https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv", "_blank");
-        closePopup(); // Close the popup after clicking donate
-    });
-});
+}
 
 
 
+/* =====================================
+   UPDATE ACCOUNT LINK
+===================================== */
 
+function updateAccountLink(
+    session
+) {
+
+    const accountLink =
+        document.getElementById(
+            "navAccountLink"
+        );
+
+
+    const accountText =
+        document.getElementById(
+            "navAccountText"
+        );
+
+
+    if (
+        !accountLink ||
+        !accountText
+    ) {
+        return;
+    }
+
+
+    const accountIcon =
+        accountLink.querySelector(
+            "i"
+        );
+
+
+    if (
+        session &&
+        session.user
+    ) {
+
+        accountLink.href =
+            "profile.html";
+
+
+        accountText.textContent =
+            "Profile";
+
+
+        accountIcon.className =
+            "fa-regular fa-user";
+
+
+        accountLink.setAttribute(
+            "aria-label",
+            "View your profile"
+        );
+
+    } else {
+
+        accountLink.href =
+            "login.html";
+
+
+        accountText.textContent =
+            "Login";
+
+
+        accountIcon.className =
+            "fa-solid fa-right-to-bracket";
+
+
+        accountLink.setAttribute(
+            "aria-label",
+            "Log in"
+        );
+
+    }
+
+}
+
+
+
+/* =====================================
+   LISTEN FOR AUTH CHANGES
+===================================== */
+
+if (
+    window.supabaseClient
+) {
+
+    window.supabaseClient
+        .auth
+        .onAuthStateChange(
+            (
+                event,
+                session
+            ) => {
+
+                updateAccountLink(
+                    session
+                );
+
+            }
+        );
+
+}
+
+
+
+/* =====================================
+   INITIAL CHECK
+===================================== */
+
+updateNavbarAccount();

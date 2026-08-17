@@ -12,14 +12,7 @@
 
     <title>Laamiyah Ibn Taymiyyah - Islamic Qalam</title>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-R6X1QNEYSL');
-    </script>
+    
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -40,6 +33,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="CSS/global.css">
     <link rel="stylesheet" href="CSS/poems.css">
+    <link rel="stylesheet" href="CSS/comments.css">
 
     <link rel="icon" type="image/ico" href="Images/website-favicon.png">
 
@@ -68,6 +62,13 @@
             <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
                 rel="noopener noreferrer">
                 Donate
+            </a>
+            <a id="navAccountLink" class="nav-login" href="login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
             </a>
         </nav>
 
@@ -206,119 +207,424 @@
 
 
     <!-- Main Content -->
-    <main>
-        <h1 class="page-title">Laamiyah Ibn Taymiyyah</h1>
+    <main class="poem-page" data-page-id="laamiyah-ibn-taymiyyah">
 
-        <icon class="poem-title">Laamiyah-Ibn-Taimiyyah</icon>
 
-        <p class="bismillah">﷽</p>
+        <!-- =============================================
+         POEM HERO
+         ============================================= -->
 
-        <ol class="poem-container">
-            <li class="poem-verse">
-                <p class="arabic-text">يَا سَائِلِي عَنْ مَذْهَبي وعَقِيدتِي * رُزِقَ الْهُدَى مَنْ لِلْهِدَايَةِ
-                    يَسْأَلُ</p>
-                <p class="eng-translation">Oh questioner about my doctrine and belief, <br>
-                    Guidance is granted to those who seek it.</p>
-            </li>
+        <section class="poem-hero">
 
-            <li class="poem-verse">
-                <p class="arabic-text">اسْمَعْ كَلَامَ مُحَقِّقٍ فِي قَوْلِهِ * لَا يَنْثَنِي عَنْهُ وَلَا يَتَبَّدَلُ
+            <div class="poem-hero-inner">
+
+                <p class="poem-eyebrow">
+                    Islamic Poetry
                 </p>
-                <p class="eng-translation">Listen to the words of one who speaks with truth in his saying, <br>
-                    He does not waver from it nor does he change.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">حُبُّ الصَّحَابَةِ كُلِّهِمْ لِي مَذْهَبٌ * وَمَوَدَّةُ الْقُرْبَى بِهَا
-                    أَتَوَسَّلُ</p>
-                <p class="eng-translation">The love for all the companions is my doctrine, <br>
-                    And through loving the kin of [the prophet], I seek closeness to [Allah]</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَلِكُلِّهِمْ قَدْرٌ عَلَا وَفَضَائِلُ * لَكِنَّمَا الصِّدِّيقُ مِنْهُمْ أَفْضَلُ
+
+
+                <h1 class="poem-main-title">
+
+                    <span class="sr-only">
+                        Laamiyah ibn Taymiyyah
+                    </span>
+
+                    <icon class="poem-title-svg">
+                        laamiyah-ibn-taimiyyah
+                    </icon>
+
+                </h1>
+
+
+                <p class="poem-description">
+                    Read the Arabic text alongside its
+                    English translation.
                 </p>
-                <p class="eng-translation">And all of them have their high ranks and virtues, <br>
-                    But indeed, As-Siddiq is the best among them.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَأَقُولُ فِي الْقُرْآنِ مَا جَاءَتْ بِهِ * آيَاتُهُ فَهُوَ الْقَدِيمُ
-                    الْمُنْزَلُ</p>
-                <p class="eng-translation">And I say about the Quran what its verses have brought, <br>
-                    For it is eternal and revealed.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَأَقُولُ قَالَ اللَّهُ جَلَّ جَلَالُهُ * وَالْمُصْطَفَى الْهَادِي وَلَا
-                    أَتَأَوَّلُ</p>
-                <p class="eng-translation">And I say, Allah, exalted be His glory, has said, <br>
-                    And the chosen guide (Mohammad) and I do not interpret (differently).</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَجَمِيعُ آيَاتِ الصِّفَاتِ أُمِرُّهَا * حَقًّا كَمَا نَقَلَ الطِّرَازُ الأَوَّلُ
-                </p>
-                <p class="eng-translation">And all the verses about [Allah’s] attributes, I pass them on, <br>
-                    Truly, just as the first generation transmitted.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَأَرُدُّ عُهْدَتَهَا إِلَى نُقَّالِهَا * وَأَصُونُهَا عَنْ كُلِّ مَا يُتَخَيَّلُ
-                </p>
-                <p class="eng-translation">And I entrust the responsibility of [its interpretation] to its transmitters,
-                    <br>
-                    And I protect them from all that can be imagined.
-                </p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">قُبْحَاً لِمَنْ نَبَذَ الْقُرَانَ وَرَاءَهُ * وَإِذَا اسْتَدَلَّ يَقُولُ قَالَ
-                    الْأَخْطَلُ</p>
-                <p class="eng-translation">Woe to the one who threw the Quran behind his back, <br>
-                    And when he seeks proof, he says, “Al-Akhtal said!”
-                    (Akhtal refers to someone who speaks senseless words)</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَالْمُؤْمِنُونَ يَرَوْنَ حَقًّا رَبَّهُمْ * وَإِلَى السَّمَاءِ بِغَيْرِ كَيْفٍ
-                    يَنْزِلُ</p>
-                <p class="eng-translation">And the believers shall truly see their Lord, <br>
-                    And he descends to the heaven without [designating] a how.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَأُقِرُّ بِالْمِيزَانِ وَالْحَوْضِ الَّذِي * أَرْجُو بِأَنَّي مِنْهُ رِيًّا
-                    أَنْهَلُ</p>
-                <p class="eng-translation">And I affirm the scales and the fountain from which, <br>
-                    I hope to drink, quenching my thirst.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَكَذَا الصِّرَاطَ يُمَدُّ فَوْقَ جَهَنَّمٍ * فَمُسَلَّمٌ نَاجٍ وَآخَرُ مُهْمَلُ
-                </p>
-                <p class="eng-translation">And likewise, the bridge is stretched over hell, <br>
-                    So one shall be granted safety and saved, while another abandoned.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَالنَّارُ يَصْلَاهَا الشَّقِيُّ بِحِكْمَةٍ * وَكَذَا التَّقِيُّ إِلَى الجِنَانِ
-                    سَيَدْخُلُ</p>
-                <p class="eng-translation">And the wicked one shall burn in the fire by [divine] wisdom, <br>
-                    And likewise, the righteous will enter the gardens.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">وَلِكُلِّ حَيٍّ عَاقِلٍ فِي قَبْرِهِ * عَمَلٌ يُقَارِنُهُ هُنَاكَ وَيُسْأَلُ</p>
-                <p class="eng-translation">And every living and rational person will have in his grave, <br>
-                    Deeds to accompany him there, and he will be questioned.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">هَذَا اعْتِقَادُ الشَّافِعِيِّ وَمَالِكٍ * وَأَبِي حَنِيفَةَ ثُمَّ أَحْمَدَ
-                    يَنْقُلُ</p>
-                <p class="eng-translation">This is the creed of Ash-Shafi’i and Maalik, <br>
-                    And Abu Hanifah, and then Ahmad transmitted.</p>
-            </li>
-            <li class="poem-verse">
-                <p class="arabic-text">فَإِنِ اتَّبَعْتَ سَبِيلَهُمْ فَمُوَفَّقٌ * وَإِنِ ابْتَدَعْتَ فَمَا عَلَيْكَ
-                    مُعَوَّلُ</p>
-                <p class="eng-translation">So if you follow their path, then you are successful, <br>
-                    And if you innovate, then there is no reliance upon you. </p>
-            </li>
+
+
+                <div class="poem-meta">
+
+                    <span class="poem-meta-item">
+
+                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+
+                        <span id="poemVerseCount">
+                            Verses
+                        </span>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
 
-        </ol>
+        <!-- =============================================
+         POEM READER
+         ============================================= -->
 
-        <div class="extra-space"></div>
+        <section class="poem-reading-section">
+
+            <div class="poem-reading-card">
+
+                <div class="poem-reading-header">
+
+                    <div>
+
+                        <span class="poem-reading-label">
+                            Arabic &amp; English
+                        </span>
+
+                        <p>
+                            Select the settings icon to customise
+                            the reading experience.
+                        </p>
+
+                    </div>
+
+
+                    <button class="poem-reading-settings" type="button" aria-label="Open reading settings"
+                        onclick="document.getElementById('settings-toggle').click()">
+
+                        <i class="fa-solid fa-gear" aria-hidden="true"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="poem-bismillah">
+                    ﷽
+                </div>
+
+                <ol class="poem-container">
+                    <li class="poem-verse">
+                        <p class="arabic-text">يَا سَائِلِي عَنْ مَذْهَبي وعَقِيدتِي * رُزِقَ الْهُدَى مَنْ
+                            لِلْهِدَايَةِ
+                            يَسْأَلُ</p>
+                        <p class="eng-translation">Oh questioner about my doctrine and belief, <br>
+                            Guidance is granted to those who seek it.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">اسْمَعْ كَلَامَ مُحَقِّقٍ فِي قَوْلِهِ * لَا يَنْثَنِي عَنْهُ وَلَا
+                            يَتَبَّدَلُ
+                        </p>
+                        <p class="eng-translation">Listen to the words of one who speaks with truth in his saying, <br>
+                            He does not waver from it nor does he change.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">حُبُّ الصَّحَابَةِ كُلِّهِمْ لِي مَذْهَبٌ * وَمَوَدَّةُ الْقُرْبَى بِهَا
+                            أَتَوَسَّلُ</p>
+                        <p class="eng-translation">The love for all the companions is my doctrine, <br>
+                            And through loving the kin of [the prophet], I seek closeness to [Allah]</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَلِكُلِّهِمْ قَدْرٌ عَلَا وَفَضَائِلُ * لَكِنَّمَا الصِّدِّيقُ مِنْهُمْ
+                            أَفْضَلُ
+                        </p>
+                        <p class="eng-translation">And all of them have their high ranks and virtues, <br>
+                            But indeed, As-Siddiq is the best among them.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَقُولُ فِي الْقُرْآنِ مَا جَاءَتْ بِهِ * آيَاتُهُ فَهُوَ الْقَدِيمُ
+                            الْمُنْزَلُ</p>
+                        <p class="eng-translation">And I say about the Quran what its verses have brought, <br>
+                            For it is eternal and revealed.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَقُولُ قَالَ اللَّهُ جَلَّ جَلَالُهُ * وَالْمُصْطَفَى الْهَادِي وَلَا
+                            أَتَأَوَّلُ</p>
+                        <p class="eng-translation">And I say, Allah, exalted be His glory, has said, <br>
+                            And the chosen guide (Mohammad) and I do not interpret (differently).</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَجَمِيعُ آيَاتِ الصِّفَاتِ أُمِرُّهَا * حَقًّا كَمَا نَقَلَ الطِّرَازُ
+                            الأَوَّلُ
+                        </p>
+                        <p class="eng-translation">And all the verses about [Allah’s] attributes, I pass them on, <br>
+                            Truly, just as the first generation transmitted.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَرُدُّ عُهْدَتَهَا إِلَى نُقَّالِهَا * وَأَصُونُهَا عَنْ كُلِّ مَا
+                            يُتَخَيَّلُ
+                        </p>
+                        <p class="eng-translation">And I entrust the responsibility of [its interpretation] to its
+                            transmitters,
+                            <br>
+                            And I protect them from all that can be imagined.
+                        </p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">قُبْحَاً لِمَنْ نَبَذَ الْقُرَانَ وَرَاءَهُ * وَإِذَا اسْتَدَلَّ يَقُولُ
+                            قَالَ
+                            الْأَخْطَلُ</p>
+                        <p class="eng-translation">Woe to the one who threw the Quran behind his back, <br>
+                            And when he seeks proof, he says, “Al-Akhtal said!”
+                            (Akhtal refers to someone who speaks senseless words)</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَالْمُؤْمِنُونَ يَرَوْنَ حَقًّا رَبَّهُمْ * وَإِلَى السَّمَاءِ بِغَيْرِ
+                            كَيْفٍ
+                            يَنْزِلُ</p>
+                        <p class="eng-translation">And the believers shall truly see their Lord, <br>
+                            And he descends to the heaven without [designating] a how.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأُقِرُّ بِالْمِيزَانِ وَالْحَوْضِ الَّذِي * أَرْجُو بِأَنَّي مِنْهُ
+                            رِيًّا
+                            أَنْهَلُ</p>
+                        <p class="eng-translation">And I affirm the scales and the fountain from which, <br>
+                            I hope to drink, quenching my thirst.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَكَذَا الصِّرَاطَ يُمَدُّ فَوْقَ جَهَنَّمٍ * فَمُسَلَّمٌ نَاجٍ وَآخَرُ
+                            مُهْمَلُ
+                        </p>
+                        <p class="eng-translation">And likewise, the bridge is stretched over hell, <br>
+                            So one shall be granted safety and saved, while another abandoned.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَالنَّارُ يَصْلَاهَا الشَّقِيُّ بِحِكْمَةٍ * وَكَذَا التَّقِيُّ إِلَى
+                            الجِنَانِ
+                            سَيَدْخُلُ</p>
+                        <p class="eng-translation">And the wicked one shall burn in the fire by [divine] wisdom, <br>
+                            And likewise, the righteous will enter the gardens.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَلِكُلِّ حَيٍّ عَاقِلٍ فِي قَبْرِهِ * عَمَلٌ يُقَارِنُهُ هُنَاكَ
+                            وَيُسْأَلُ</p>
+                        <p class="eng-translation">And every living and rational person will have in his grave, <br>
+                            Deeds to accompany him there, and he will be questioned.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">هَذَا اعْتِقَادُ الشَّافِعِيِّ وَمَالِكٍ * وَأَبِي حَنِيفَةَ ثُمَّ
+                            أَحْمَدَ
+                            يَنْقُلُ</p>
+                        <p class="eng-translation">This is the creed of Ash-Shafi’i and Maalik, <br>
+                            And Abu Hanifah, and then Ahmad transmitted.</p>
+                    </li>
+                    <li class="poem-verse">
+                        <p class="arabic-text">فَإِنِ اتَّبَعْتَ سَبِيلَهُمْ فَمُوَفَّقٌ * وَإِنِ ابْتَدَعْتَ فَمَا
+                            عَلَيْكَ
+                            مُعَوَّلُ</p>
+                        <p class="eng-translation">So if you follow their path, then you are successful, <br>
+                            And if you innovate, then there is no reliance upon you. </p>
+                    </li>
+
+
+
+                </ol>
+
+            </div>
+
+        </section>
+
+        <!-- =============================================
+         COMMENTS
+        ============================================= -->
+
+        <section id="comments" class="comments-section">
+
+            <div class="comments-shell">
+
+
+                <!-- HEADING -->
+
+                <div class="comments-heading">
+
+                    <div>
+
+                        <p class="comments-eyebrow">
+                            Discussion
+                        </p>
+
+                        <h2>
+                            Comments
+                        </h2>
+
+                        <p>
+                            Share your thoughts or reflections
+                            about this poem.
+                        </p>
+
+                    </div>
+
+
+                    <span id="commentsCount" class="comments-count">
+                        0 comments
+                    </span>
+
+                </div>
+
+
+
+                <!-- =====================================
+             LOGGED OUT
+             ===================================== -->
+
+                <div id="commentLoginPrompt" class="comment-login-prompt" hidden>
+
+                    <span class="comment-login-icon">
+
+                        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Join the discussion
+                        </h3>
+
+                        <p>
+                            Log in to leave a comment on this poem.
+                        </p>
+
+                    </div>
+
+
+                    <a id="commentsLoginLink" class="comment-login-button" href="login.html">
+
+                        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                        Log in
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =====================================
+             COMMENT FORM
+             ===================================== -->
+
+                <form id="commentForm" class="comment-form" hidden>
+
+                    <div class="comment-form-heading">
+
+                        <span class="comment-form-icon">
+
+                            <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Leave a comment
+                            </strong>
+
+                            <p>
+                                Comments are reviewed before
+                                appearing publicly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="comment-textarea-wrapper">
+
+                        <textarea id="commentContent" maxlength="3000" placeholder="Share your thoughts..."
+                            aria-label="Write your comment" required></textarea>
+
+
+                        <span id="commentCharacterCount" class="comment-character-count">
+                            0 / 3000
+                        </span>
+
+                    </div>
+
+
+                    <div class="comment-form-footer">
+
+                        <span class="comment-moderation-note">
+
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
+                            Your comment will be submitted for review.
+
+                        </span>
+
+
+                        <button id="submitCommentButton" class="comment-submit-button" type="submit">
+
+                            <span>
+                                Post comment
+                            </span>
+
+                            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+                <div id="commentMessage" class="comment-message" role="status" aria-live="polite"></div>
+
+
+
+                <!-- =====================================
+             COMMENTS LIST
+             ===================================== -->
+
+                <div class="comments-list-heading">
+
+                    <h3>
+                        Community comments
+                    </h3>
+
+                </div>
+
+
+                <div id="commentsLoading" class="comments-loading">
+
+                    <span class="comments-spinner"></span>
+
+                    Loading comments...
+
+                </div>
+
+
+                <div id="commentsList" class="comments-list"></div>
+
+
+                <div id="commentsEmpty" class="comments-empty" hidden>
+
+                    <span>
+
+                        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                    </span>
+
+
+                    <h3>
+                        No comments yet
+                    </h3>
+
+
+                    <p>
+                        Be the first to start the discussion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
 
     <!-- Footer -->
@@ -403,13 +709,35 @@
 
 
 
+
     <!-- Scripts -->
+    <!-- ================= SUPABASE ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
+
+    <!-- ================= GLOBAL ================= -->
+
     <script src="Scripts/global.js"></script>
+<script src="Scripts/donation-popup.js"></script>
+
+
+    <!-- ================= POEM ================= -->
 
     <script src="Scripts/poems.js"></script>
-    <script src="Scripts/word.js"></script>
+
+    
+
     <script src="Scripts/SideBar.js"></script>
-    <script src="Scripts/AudioPlayer.js"></script>
+
+    
+
+
+    <!-- ================= COMMENTS ================= -->
+
+    <script src="Supabase/comments.js"></script>
 
 </body>
 

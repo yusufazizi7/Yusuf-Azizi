@@ -45,7 +45,23 @@ svg {
 
 
 
+.sr-only {
+    position: absolute;
 
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
 
 /* --- Reset & Global Styles --- */
 * {
@@ -290,7 +306,7 @@ main {
     margin-bottom: 15px;
 }
 
-.popup-content p {
+.popup-content  {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 10px;
@@ -1809,9 +1825,9 @@ body {
 }
 
 /* Prevent the embedded SVG object from blocking the homepage link */
-.poem-site-header .brand object {
+/* .poem-site-header .brand object {
     pointer-events: none;
-}
+} */
 
 /* =========================================================
    SETTINGS SIDEBAR
@@ -2008,4 +2024,51 @@ body.sidebar-open {
         width: 40px;
         height: 40px;
     }
+}
+
+/* ================= LOGIN NAV BUTTON ================= */
+
+.site-header .navbar .nav-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+
+    margin-left: 0.15rem;
+    padding-inline: 1rem;
+    
+    box-sizing: border-box;
+    border: 1px solid rgba(250, 244, 232, 0.28);
+
+    color: var(--home-bg);
+    background: transparent;
+}
+
+.site-header .navbar .nav-login:hover {
+
+    border: 1px solid rgba(250, 244, 232, 0.28);
+    
+    border-color: var(--home-bg);
+
+    color: var(--home-green);
+    background: var(--home-bg);
+    
+}
+
+.site-header .navbar .nav-login i {
+    font-size: 0.88rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .site-header .navbar .nav-login {
+        width: 100%;
+
+        margin: 0.25rem 0 0;
+
+        padding: 0.85rem 0.9rem;
+
+        text-align: center;
+    }
+
 }

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>
+        Video | Islamic Qalam
+    </title>
+
+
+    <link rel="stylesheet" href="CSS/global.css">
+
+    <link rel="stylesheet" href="CSS/video-watch.css">
+
+    <link rel="stylesheet" href="CSS/comments.css">
+
+
+    <link rel="icon" type="image/png" href="Images/website-favicon.png">
+
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- Use your normal navbar here -->
+    <!-- Navbar -->
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
+
+            <span class="brand-name">Islamic Qalam</span>
+        </a>
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+            <a href="index.html#poetry-library"> Poetry </a>
+
+            <a href="quran.html"> Qur'an </a>
+
+            <a href="videos.html" aria-current="page" class="active"> Videos </a>
+
+            <a href="e-books.html"> E-books </a>
+
+            <a href="contact-us.html">
+                Contact
+            </a>
+
+            <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
+                rel="noopener noreferrer">
+                Donate
+            </a>
+            <a id="navAccountLink" class="nav-login" href="login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+            </a>
+        </nav>
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+    </header>
+
+    <!-- Updated Donation Popup -->
+    <div id="donationPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="donation-title"
+        aria-hidden="true">
+        <div class="popup-content">
+            <button class="close-btn" type="button" aria-label="Close donation message">
+                &times;
+            </button>
+
+            <span class="popup-icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </span>
+
+            <h2 id="donation-title">Support Islamic Qalam</h2>
+
+            <p>
+                Islamic Qalam is maintained independently. A small donation helps
+                cover website costs and supports the creation of more translations and
+                beneficial resources.
+            </p>
+
+            <div class="popup-actions">
+                <button id="donateButton" type="button">Donate</button>
+
+                <button id="cancelButton" type="button">Maybe later</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="watch-page">
+
+        <div class="watch-layout">
+
+
+            <!-- ================= PLAYER ================= -->
+
+            <section class="watch-main">
+
+
+                <div id="customVideoPlayer" class="custom-video-player">
+
+
+                    <video id="mainVideo" playsinline preload="metadata"></video>
+
+
+                    <button id="largePlayButton" class="large-play-button" type="button" aria-label="Play video">
+
+                        <i class="fa-solid fa-play" aria-hidden="true"></i>
+
+                    </button>
+
+
+                    <!-- CONTROLS -->
+
+                    <div class="video-controls">
+
+
+                        <!-- Progress -->
+
+                        <div id="videoProgress" class="watch-progress">
+
+                            <div id="videoBuffered" class="watch-buffered"></div>
+
+                            <div id="videoProgressPlayed" class="watch-progress-played"></div>
+
+                            <input id="videoSeek" type="range" min="0" max="100" value="0" step="0.1"
+                                aria-label="Video progress">
+
+                        </div>
+
+
+                        <div class="video-controls-row">
+
+
+                            <div class="video-controls-left">
+
+
+                                <button id="playPauseButton" class="control-button" type="button" aria-label="Play">
+
+                                    <i class="fa-solid fa-play"></i>
+
+                                </button>
+
+
+                                <button id="rewindButton" class="control-button" type="button"
+                                    aria-label="Rewind 10 seconds">
+
+                                    <i class="fa-solid fa-rotate-left"></i>
+
+                                    <span>
+                                        10
+                                    </span>
+
+                                </button>
+
+
+                                <button id="forwardButton" class="control-button" type="button"
+                                    aria-label="Forward 10 seconds">
+
+                                    <i class="fa-solid fa-rotate-right"></i>
+
+                                    <span>
+                                        10
+                                    </span>
+
+                                </button>
+
+
+                                <button id="muteButton" class="control-button" type="button" aria-label="Mute">
+
+                                    <i class="fa-solid fa-volume-high"></i>
+
+                                </button>
+
+
+                                <input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" value="1"
+                                    step="0.01" aria-label="Volume">
+
+
+                                <div class="video-time">
+
+                                    <span id="currentTime">
+                                        0:00
+                                    </span>
+
+                                    <span>
+                                        /
+                                    </span>
+
+                                    <span id="duration">
+                                        0:00
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="video-controls-right">
+
+
+                                <button id="speedButton" class="speed-button" type="button">
+                                    1×
+                                </button>
+
+
+                                <button id="fullscreenButton" class="control-button" type="button"
+                                    aria-label="Fullscreen">
+
+                                    <i class="fa-solid fa-expand"></i>
+
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- ================= TITLE / ACTIONS ================= -->
+
+                <div class="watch-title-row">
+
+                    <div class="watch-title-section">
+
+                        <h1 id="watchTitle">
+                            Video
+                        </h1>
+
+                        <span id="watchCategory" class="watch-category">
+                            Poetry
+                        </span>
+
+                    </div>
+
+
+                    <div class="watch-actions">
+
+                        <button id="likeButton" class="watch-action-button" type="button" aria-pressed="false">
+                            <i id="videoLikeIcon" class="fa-regular fa-thumbs-up" aria-hidden="true"></i>
+
+                            <span>
+                                Like
+                            </span>
+
+                            <span id="videoLikeCount" class="watch-like-count loading" aria-label="Video likes"></span>
+                        </button>
+
+                        <button id="shareButton" class="watch-action-button" type="button">
+                            <i class="fa-solid fa-share"></i>
+                            <span>Share</span>
+                        </button>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <!-- ================= DESCRIPTION ================= -->
+
+                <div class="watch-description-box">
+
+                    <div class="watch-description-meta">
+
+                        <span id="videoViewCount" class="watch-view-count loading"></span>
+
+                    </div>
+
+                    <p id="watchDescription"></p>
+
+                </div>
+
+
+                <!-- ================= COMMENTS ================= -->
+
+                <section id="comments" class="watch-comments comments-section" data-comment-type="video">
+
+                    <div class="comments-shell">
+
+                        <div class="comments-heading">
+
+                            <div>
+
+                                <p class="comments-eyebrow">
+                                    Discussion
+                                </p>
+
+                                <h2>
+                                    Comments
+                                </h2>
+
+                                <p>
+                                    Share your thoughts about this video.
+                                </p>
+
+                            </div>
+
+
+                            <span id="commentsCount" class="comments-count">
+                                0 comments
+                            </span>
+
+                        </div>
+
+
+                        <!-- LOGGED OUT -->
+
+                        <div id="commentLoginPrompt" class="comment-login-prompt" hidden>
+
+                            <span class="comment-login-icon">
+
+                                <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+                                    Join the discussion
+                                </h3>
+
+                                <p>
+                                    Log in to leave a comment on this video.
+                                </p>
+
+                            </div>
+
+
+                            <a id="commentsLoginLink" class="comment-login-button" href="login.html">
+
+                                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                                Log in
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- COMMENT FORM -->
+
+                        <form id="commentForm" class="comment-form" hidden>
+
+                            <div class="comment-form-heading">
+
+                                <span class="comment-form-icon">
+
+                                    <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Leave a comment
+                                    </strong>
+
+                                    <p>
+                                        Comments are reviewed before appearing publicly.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="comment-textarea-wrapper">
+
+                                <textarea id="commentContent" maxlength="3000" placeholder="Share your thoughts..."
+                                    aria-label="Write your comment" required></textarea>
+
+
+                                <span id="commentCharacterCount" class="comment-character-count">
+                                    0 / 3000
+                                </span>
+
+                            </div>
+
+
+                            <div class="comment-form-footer">
+
+                                <span class="comment-moderation-note">
+
+                                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
+                                    Your comment will be submitted for review.
+
+                                </span>
+
+
+                                <button id="submitCommentButton" class="comment-submit-button" type="submit">
+
+                                    <span>
+                                        Post comment
+                                    </span>
+
+                                    <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+
+                        <div id="commentMessage" class="comment-message" role="status" aria-live="polite"></div>
+
+
+                        <!-- COMMENTS LIST -->
+
+                        <div class="comments-list-heading">
+
+                            <h3>
+                                Community comments
+                            </h3>
+
+                        </div>
+
+
+                        <div id="commentsLoading" class="comments-loading">
+
+                            <span class="comments-spinner"></span>
+
+                            Loading comments...
+
+                        </div>
+
+
+                        <div id="commentsList" class="comments-list"></div>
+
+
+                        <div id="commentsEmpty" class="comments-empty" hidden>
+
+                            <span>
+
+                                <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                            </span>
+
+                            <h3>
+                                No comments yet
+                            </h3>
+
+                            <p>
+                                Be the first to start the discussion.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <aside class="related-videos">
+
+                <div class="related-videos-heading">
+
+                    <h2>
+                        More Videos
+                    </h2>
+
+                </div>
+
+
+                <div id="relatedVideos">
+                </div>
+
+            </aside>
+
+
+
+
+
+
+        </div>
+
+    </main>
+
+
+    <!-- Use your normal footer here -->
+    <footer class="footer site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                    aria-label="Islamic Qalam logo"></object>
+
+                <div>
+                    <strong>Islamic Qalam</strong>
+
+                    <p>Classical works, thoughtfully presented.</p>
+                </div>
+            </div>
+
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="quran.html"> Qur'an </a>
+
+                <a href="videos.html" aria-current="page"> Videos </a>
+
+                <a href="e-books.html"> E-books </a>
+
+                <a href="contact-us.html"> Contact </a>
+            </div>
+
+            <div class="social-links" aria-label="Social media">
+                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="current-year">2026</span>
+                Islamic Qalam. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
+    <script src="Scripts/global.js"></script>
+<script src="Scripts/donation-popup.js"></script>
+
+    <script src="Scripts/Data/videos.js"></script>
+
+    <script src="Scripts/video-watch.js"></script>
+
+    <script src="Supabase/comments.js"></script>
+
+</body>
+
+</html>

@@ -37,7 +37,7 @@
 
         <nav class="navbar">
             
-            <a href="../../Nooniyah-Al-Qahtani.html">Nooniyah Al-Qahtani</a>
+            <a href="../../nooniyah-al-qahtani.html">Nooniyah Al-Qahtani</a>
             <a href="../../quran.html">Quran</a>
             <a href="../../videos.html">Videos</a>
             <a href="../../e-books.html">E-books</a>
@@ -2178,7 +2178,212 @@
             <a class="quran-btn" href="#">Next Surah →</a>
         </div>
 
-        <div class="extra-space"></div>
+        </div>
+
+        </section>
+
+        <!-- =============================================
+     COMMENTS
+     ============================================= -->
+
+        <section id="comments" class="comments-section">
+
+            <div class="comments-shell">
+
+
+                <!-- HEADING -->
+
+                <div class="comments-heading">
+
+                    <div>
+
+                        <p class="comments-eyebrow">
+                            Discussion
+                        </p>
+
+                        <h2>
+                            Comments
+                        </h2>
+
+                        <p>
+                            Share your thoughts or reflections
+                            about this poem.
+                        </p>
+
+                    </div>
+
+
+                    <span id="commentsCount" class="comments-count">
+                        0 comments
+                    </span>
+
+                </div>
+
+
+
+                <!-- =====================================
+             LOGGED OUT
+             ===================================== -->
+
+                <div id="commentLoginPrompt" class="comment-login-prompt" hidden>
+
+                    <span class="comment-login-icon">
+
+                        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Join the discussion
+                        </h3>
+
+                        <p>
+                            Log in to leave a comment on this poem.
+                        </p>
+
+                    </div>
+
+
+                    <a id="commentsLoginLink" class="comment-login-button" href="login.html">
+
+                        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                        Log in
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =====================================
+             COMMENT FORM
+             ===================================== -->
+
+                <form id="commentForm" class="comment-form" hidden>
+
+                    <div class="comment-form-heading">
+
+                        <span class="comment-form-icon">
+
+                            <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Leave a comment
+                            </strong>
+
+                            <p>
+                                Comments are reviewed before
+                                appearing publicly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="comment-textarea-wrapper">
+
+                        <textarea id="commentContent" maxlength="3000" placeholder="Share your thoughts..."
+                            aria-label="Write your comment" required></textarea>
+
+
+                        <span id="commentCharacterCount" class="comment-character-count">
+                            0 / 3000
+                        </span>
+
+                    </div>
+
+
+                    <div class="comment-form-footer">
+
+                        <span class="comment-moderation-note">
+
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
+                            Your comment will be submitted for review.
+
+                        </span>
+
+
+                        <button id="submitCommentButton" class="comment-submit-button" type="submit">
+
+                            <span>
+                                Post comment
+                            </span>
+
+                            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+                <div id="commentMessage" class="comment-message" role="status" aria-live="polite"></div>
+
+
+
+                <!-- =====================================
+             COMMENTS LIST
+             ===================================== -->
+
+                <div class="comments-list-heading">
+
+                    <h3>
+                        Community comments
+                    </h3>
+
+                </div>
+
+
+                <div id="commentsLoading" class="comments-loading">
+
+                    <span class="comments-spinner"></span>
+
+                    Loading comments...
+
+                </div>
+
+
+                <div id="commentsList" class="comments-list"></div>
+
+
+                <div id="commentsEmpty" class="comments-empty" hidden>
+
+                    <span>
+
+                        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                    </span>
+
+
+                    <h3>
+                        No comments yet
+                    </h3>
+
+
+                    <p>
+                        Be the first to start the discussion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
     </main>
 
     <!-- Footer -->

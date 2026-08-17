@@ -1,212 +1,993 @@
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
+        const poemContainer =
+            document.querySelector(
+                ".poem-container"
+            );
 
-document.addEventListener("DOMContentLoaded", function () {
-    const fontRadios = document.querySelectorAll("input[name='font']");
-    const verseToggle = document.getElementById("LineNumbers");
-    const translationToggle = document.getElementById("engTranslationToggle");
-    const poemContainer = document.querySelector(".poem-container");
-    const arabicText = document.querySelectorAll(".arabic-text");
-    const translations = document.querySelectorAll(".eng-translation");
-
-    // Font Size Controls
-    const increaseFontBtn = document.getElementById("increaseFont");
-    const decreaseFontBtn = document.getElementById("decreaseFont");
-    const resetFontBtn = document.getElementById("resetFont");
-    const fontSizeDisplay = document.getElementById("fontSizeDisplay");
-
-    // Default font size
-    const defaultFontSize = 27; // 18px default
-    let fontSize = parseInt(localStorage.getItem("fontSize")) || defaultFontSize; // Load saved font size or default
-
-    // Apply font size
-    function applyFontSize() {
-        arabicText.forEach(text => text.style.fontSize = `${fontSize}px`);
-        fontSizeDisplay.textContent = `${fontSize}px`;
-    }
-    applyFontSize(); // Apply saved or default font size
-
-    // Increase Font Size
-    increaseFontBtn.addEventListener("click", function () {
-        if (fontSize < 40) { // Max limit
-            fontSize += 1;
-            localStorage.setItem("fontSize", fontSize);
-            applyFontSize();
-        }
-    });
-
-    // Decrease Font Size
-    decreaseFontBtn.addEventListener("click", function () {
-        if (fontSize > 12) { // Min limit
-            fontSize -= 1;
-            localStorage.setItem("fontSize", fontSize);
-            applyFontSize();
-        }
-    });
-
-    // Reset Font Size
-    resetFontBtn.addEventListener("click", function () {
-        fontSize = defaultFontSize; // Reset to default
-        localStorage.setItem("fontSize", fontSize);
-        applyFontSize();
-    });
-
-    // Apply saved font preference
-    const savedFont = localStorage.getItem("selectedFont");
-    if (savedFont) {
-        arabicText.forEach(text => text.style.fontFamily = savedFont);
-        const selectedRadio = document.querySelector(`input[value='${savedFont}']`);
-        if (selectedRadio) selectedRadio.checked = true;
-    }
-
-    // Apply saved verse number preference
-    const savedVerseNumbers = localStorage.getItem("showVerseNumbers");
-    if (savedVerseNumbers === "true") {
-        poemContainer.style.listStyleType = "arabic-indic";
-        verseToggle.checked = true;
-    } else {
-        poemContainer.style.listStyleType = "none";
-        verseToggle.checked = false;
-    }
-
-    // Check if translations exist before modifying them
-    const savedTranslation = localStorage.getItem("showTranslation");
-    if (translations.length > 0) {
-        if (savedTranslation === "true") {
-            translations.forEach(translation => translation.style.display = "block");
-            translationToggle.checked = true;
-        } else {
-            translations.forEach(translation => translation.style.display = "none");
-            translationToggle.checked = false;
+        if (!poemContainer) {
+            return;
         }
 
-        translationToggle.addEventListener("change", function () {
-            if (this.checked) {
-                translations.forEach(translation => translation.style.display = "block");
-                localStorage.setItem("showTranslation", "true");
-            } else {
-                translations.forEach(translation => translation.style.display = "none");
-                localStorage.setItem("showTranslation", "false");
+
+        const verses =
+            document.querySelectorAll(
+                ".poem-verse"
+            );
+
+
+        const arabicTexts =
+            document.querySelectorAll(
+                ".arabic-text"
+            );
+
+
+        const translations =
+            document.querySelectorAll(
+                ".eng-translation"
+            );
+
+
+        const fontRadios =
+            document.querySelectorAll(
+                "input[name='font']"
+            );
+
+
+        const verseToggle =
+            document.getElementById(
+                "LineNumbers"
+            );
+
+
+        const translationToggle =
+            document.getElementById(
+                "engTranslationToggle"
+            );
+
+
+        const verseDropdown =
+            document.getElementById(
+                "verseDropdown"
+            );
+
+
+        const increaseFontButton =
+            document.getElementById(
+                "increaseFont"
+            );
+
+
+        const decreaseFontButton =
+            document.getElementById(
+                "decreaseFont"
+            );
+
+
+        const resetFontButton =
+            document.getElementById(
+                "resetFont"
+            );
+
+
+        const fontSizeDisplay =
+            document.getElementById(
+                "fontSizeDisplay"
+            );
+
+
+        const poemVerseCount =
+            document.getElementById(
+                "poemVerseCount"
+            );
+
+
+
+
+        const copyToast =
+            document.getElementById(
+                "copyToast"
+            );
+
+
+
+        /* =====================================
+           VERSE COUNT
+        ===================================== */
+
+        if (poemVerseCount) {
+
+            poemVerseCount.textContent =
+                `${verses.length} ${
+                    verses.length === 1
+                        ? "verse"
+                        : "verses"
+                }`;
+
+        }
+
+
+
+        /* =====================================
+           FONT SIZE
+        ===================================== */
+
+        const defaultFontSize =
+            27;
+
+
+        let fontSize =
+            Number.parseInt(
+                localStorage.getItem(
+                    "fontSize"
+                ),
+                10
+            );
+
+
+        if (
+            Number.isNaN(
+                fontSize
+            )
+        ) {
+
+            fontSize =
+                defaultFontSize;
+
+        }
+
+
+        fontSize =
+            Math.min(
+                40,
+                Math.max(
+                    12,
+                    fontSize
+                )
+            );
+
+
+        function applyFontSize() {
+
+            arabicTexts.forEach(
+                text => {
+
+                    text.style.fontSize =
+                        `${fontSize}px`;
+
+                }
+            );
+
+
+            if (
+                fontSizeDisplay
+            ) {
+
+                fontSizeDisplay.textContent =
+                    `${fontSize}px`;
+
             }
-        });
-    } else {
-        if (translationToggle) {
-            translationToggle.parentElement.style.display = "none";
+
         }
-    }
 
-    // Change font based on selection
-    fontRadios.forEach(radio => {
-        radio.addEventListener("change", function () {
-            const selectedFont = this.value === "default" ? "inherit" : this.value;
-            arabicText.forEach(text => text.style.fontFamily = selectedFont);
-            localStorage.setItem("selectedFont", selectedFont);
-        });
-    });
 
-    // Toggle verse numbers
-    verseToggle.addEventListener("change", function () {
-        if (this.checked) {
-            poemContainer.style.listStyleType = "arabic-indic";
-            localStorage.setItem("showVerseNumbers", "true");
-        } else {
-            poemContainer.style.listStyleType = "none";
-            localStorage.setItem("showVerseNumbers", "false");
+        applyFontSize();
+
+
+
+        increaseFontButton
+            ?.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        fontSize >= 40
+                    ) {
+                        return;
+                    }
+
+
+                    fontSize += 1;
+
+
+                    localStorage.setItem(
+                        "fontSize",
+                        fontSize
+                    );
+
+
+                    applyFontSize();
+
+                }
+            );
+
+
+        decreaseFontButton
+            ?.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        fontSize <= 12
+                    ) {
+                        return;
+                    }
+
+
+                    fontSize -= 1;
+
+
+                    localStorage.setItem(
+                        "fontSize",
+                        fontSize
+                    );
+
+
+                    applyFontSize();
+
+                }
+            );
+
+
+        resetFontButton
+            ?.addEventListener(
+                "click",
+                () => {
+
+                    fontSize =
+                        defaultFontSize;
+
+
+                    localStorage.setItem(
+                        "fontSize",
+                        fontSize
+                    );
+
+
+                    applyFontSize();
+
+                }
+            );
+
+
+
+        /* =====================================
+           FONT FAMILY
+        ===================================== */
+
+        const fontFamilies = {
+
+            default:
+                "",
+
+            amiri:
+                "Amiri",
+
+            Neiziri:
+                "Neiziri",
+
+            Uthman:
+                "Uthman",
+
+            Thuluth:
+                "Thuluth"
+
+        };
+
+
+        let savedFont =
+            localStorage.getItem(
+                "selectedFont"
+            ) ||
+            "default";
+
+
+        /*
+         * Compatibility with the old script.
+         */
+
+        if (
+            savedFont ===
+            "inherit"
+        ) {
+
+            savedFont =
+                "default";
+
         }
-    });
-});
 
 
+        function applyFont(
+            fontKey
+        ) {
+
+            const family =
+                fontFamilies[
+                    fontKey
+                ] ?? "";
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const verseDropdown = document.getElementById('verseDropdown');
-    const verses = document.querySelectorAll('.poem-verse');
+            arabicTexts.forEach(
+                text => {
 
-    // Populate the dropdown
-    verses.forEach((verse, index) => {
-        // Give ID automatically
-        verse.id = `verse-${index + 1}`;
+                    text.style.fontFamily =
+                        family;
 
-        const option = document.createElement('option');
-        option.value = verse.id;
-        option.textContent = `Verse ${index + 1}`;
-        verseDropdown.appendChild(option);
+                }
+            );
 
-        const copyWrapper = document.createElement('div');
-        copyWrapper.className = 'copy-wrapper';
-
-        const copyBtn = document.createElement('button');
-        copyBtn.className = 'copy-btn';
-        copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i>';
-        copyWrapper.appendChild(copyBtn);
-
-        const dropdown = document.createElement('div');
-        dropdown.className = 'copy-dropdown';
-        dropdown.innerHTML = `
-            <div class="copy-option" data-type="arabic">Copy Arabic</div>
-            <div class="copy-option" data-type="english">Copy English</div>
-        `;
-        copyWrapper.appendChild(dropdown);
-
-        verse.appendChild(copyWrapper);
-
-    });
-
-    // On change, scroll to the verse
-    verseDropdown.addEventListener('change', (e) => {
-        const verseId = e.target.value;
-        if (verseId) {
-            const targetVerse = document.getElementById(verseId);
-            targetVerse.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // Highlight
-            targetVerse.classList.add('highlight-verse');
-            setTimeout(() => {
-                targetVerse.classList.remove('highlight-verse');
-            }, 2000);
         }
-    });
-});
+
+
+        applyFont(
+            savedFont
+        );
+
+
+        const savedRadio =
+            document.querySelector(
+                `input[name="font"][value="${savedFont}"]`
+            );
+
+
+        if (
+            savedRadio
+        ) {
+
+            savedRadio.checked =
+                true;
+
+        }
+
+
+        fontRadios.forEach(
+            radio => {
+
+                radio.addEventListener(
+                    "change",
+                    () => {
+
+                        const fontKey =
+                            radio.value;
+
+
+                        applyFont(
+                            fontKey
+                        );
+
+
+                        localStorage.setItem(
+                            "selectedFont",
+                            fontKey
+                        );
+
+                    }
+                );
+
+            }
+        );
 
 
 
-// Show/hide dropdown on button click
-document.addEventListener('click', function (e) {
-    const isButton = e.target.closest('.copy-btn');
-    const allDropdowns = document.querySelectorAll('.copy-dropdown');
+        /* =====================================
+           VERSE NUMBERS
+        ===================================== */
 
-    if (isButton) {
-        const dropdown = isButton.parentElement.querySelector('.copy-dropdown');
-        // Close all others first
-        allDropdowns.forEach(d => d.style.display = 'none');
-        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    } else {
-        // Clicked outside — close all
-        allDropdowns.forEach(d => d.style.display = 'none');
+        const savedVerseNumbers =
+            localStorage.getItem(
+                "showVerseNumbers"
+            );
+
+
+        const showVerseNumbers =
+            savedVerseNumbers ===
+            null
+                ? true
+                : savedVerseNumbers ===
+                    "true";
+
+
+        poemContainer.classList.toggle(
+            "show-verse-numbers",
+            showVerseNumbers
+        );
+
+
+        if (
+            verseToggle
+        ) {
+
+            verseToggle.checked =
+                showVerseNumbers;
+
+
+            verseToggle.addEventListener(
+                "change",
+                () => {
+
+                    poemContainer
+                        .classList
+                        .toggle(
+                            "show-verse-numbers",
+                            verseToggle.checked
+                        );
+
+
+                    localStorage.setItem(
+                        "showVerseNumbers",
+                        verseToggle.checked
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================
+           TRANSLATION
+        ===================================== */
+
+        if (
+            translations.length
+        ) {
+
+            const savedTranslation =
+                localStorage.getItem(
+                    "showTranslation"
+                );
+
+
+            /*
+             * First-time visitors see
+             * the translation.
+             */
+
+            const showTranslation =
+                savedTranslation ===
+                null
+                    ? true
+                    : savedTranslation ===
+                        "true";
+
+
+            translations.forEach(
+                translation => {
+
+                    translation.hidden =
+                        !showTranslation;
+
+                }
+            );
+
+
+            if (
+                translationToggle
+            ) {
+
+                translationToggle.checked =
+                    showTranslation;
+
+
+                translationToggle
+                    .addEventListener(
+                        "change",
+                        () => {
+
+                            translations
+                                .forEach(
+                                    translation => {
+
+                                        translation.hidden =
+                                            !translationToggle
+                                                .checked;
+
+                                    }
+                                );
+
+
+                            localStorage.setItem(
+                                "showTranslation",
+                                translationToggle
+                                    .checked
+                                    ? "true"
+                                    : "false"
+                            );
+
+                        }
+                    );
+
+            }
+
+        } else if (
+            translationToggle
+        ) {
+
+            translationToggle
+                .closest("label")
+                ?.setAttribute(
+                    "hidden",
+                    ""
+                );
+
+        }
+
+
+
+        /* =====================================
+           BUILD VERSE CONTROLS
+        ===================================== */
+
+        verses.forEach(
+            (
+                verse,
+                index
+            ) => {
+
+                const verseNumber =
+                    index + 1;
+
+
+                verse.id =
+                    `verse-${verseNumber}`;
+
+
+
+                /* JUMP DROPDOWN */
+
+                if (
+                    verseDropdown
+                ) {
+
+                    const option =
+                        document.createElement(
+                            "option"
+                        );
+
+
+                    option.value =
+                        verse.id;
+
+
+                    option.textContent =
+                        `Verse ${verseNumber}`;
+
+
+                    verseDropdown
+                        .appendChild(
+                            option
+                        );
+
+                }
+
+
+
+                /* COPY WRAPPER */
+
+                const copyWrapper =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                copyWrapper.className =
+                    "copy-wrapper";
+
+
+
+                const copyButton =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                copyButton.type =
+                    "button";
+
+
+                copyButton.className =
+                    "copy-btn";
+
+
+                copyButton.setAttribute(
+                    "aria-label",
+                    `Copy verse ${verseNumber}`
+                );
+
+
+                copyButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                copyButton.innerHTML =
+                    `
+                        <i
+                            class="fa-regular fa-copy"
+                            aria-hidden="true"
+                        ></i>
+                    `;
+
+
+
+                const dropdown =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                dropdown.className =
+                    "copy-dropdown";
+
+
+
+                const arabicOption =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                arabicOption.type =
+                    "button";
+
+
+                arabicOption.className =
+                    "copy-option";
+
+
+                arabicOption.dataset.type =
+                    "arabic";
+
+
+                arabicOption.textContent =
+                    "Copy Arabic";
+
+
+                dropdown.appendChild(
+                    arabicOption
+                );
+
+
+
+                if (
+                    verse.querySelector(
+                        ".eng-translation"
+                    )
+                ) {
+
+                    const englishOption =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    englishOption.type =
+                        "button";
+
+
+                    englishOption.className =
+                        "copy-option";
+
+
+                    englishOption.dataset.type =
+                        "english";
+
+
+                    englishOption.textContent =
+                        "Copy English";
+
+
+                    dropdown.appendChild(
+                        englishOption
+                    );
+
+                }
+
+
+
+                copyWrapper.append(
+                    copyButton,
+                    dropdown
+                );
+
+
+                verse.appendChild(
+                    copyWrapper
+                );
+
+            }
+        );
+
+
+
+        /* =====================================
+           JUMP TO VERSE
+        ===================================== */
+
+        verseDropdown
+            ?.addEventListener(
+                "change",
+                event => {
+
+                    const verseId =
+                        event.target.value;
+
+
+                    if (
+                        !verseId
+                    ) {
+                        return;
+                    }
+
+
+                    const target =
+                        document.getElementById(
+                            verseId
+                        );
+
+
+                    if (
+                        !target
+                    ) {
+                        return;
+                    }
+
+
+                    target.scrollIntoView({
+                        behavior:
+                            "smooth",
+
+                        block:
+                            "center"
+                    });
+
+
+                    target.classList.add(
+                        "highlight-verse"
+                    );
+
+
+                    window.setTimeout(
+                        () => {
+
+                            target.classList.remove(
+                                "highlight-verse"
+                            );
+
+                        },
+                        1800
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================
+           COPY MENU
+        ===================================== */
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                const copyButton =
+                    event.target.closest(
+                        ".copy-btn"
+                    );
+
+
+                if (
+                    copyButton
+                ) {
+
+                    const wrapper =
+                        copyButton.closest(
+                            ".copy-wrapper"
+                        );
+
+
+                    const dropdown =
+                        wrapper.querySelector(
+                            ".copy-dropdown"
+                        );
+
+
+                    document
+                        .querySelectorAll(
+                            ".copy-dropdown"
+                        )
+                        .forEach(
+                            menu => {
+
+                                if (
+                                    menu !==
+                                    dropdown
+                                ) {
+
+                                    menu.classList
+                                        .remove(
+                                            "open"
+                                        );
+
+                                }
+
+                            }
+                        );
+
+
+                    const open =
+                        dropdown.classList
+                            .toggle(
+                                "open"
+                            );
+
+
+                    copyButton.setAttribute(
+                        "aria-expanded",
+                        open
+                            ? "true"
+                            : "false"
+                    );
+
+
+                    return;
+
+                }
+
+
+                if (
+                    !event.target.closest(
+                        ".copy-dropdown"
+                    )
+                ) {
+
+                    document
+                        .querySelectorAll(
+                            ".copy-dropdown"
+                        )
+                        .forEach(
+                            menu => {
+
+                                menu.classList.remove(
+                                    "open"
+                                );
+
+                            }
+                        );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================
+           COPY CONTENT
+        ===================================== */
+
+        document.addEventListener(
+            "click",
+            async event => {
+
+                const option =
+                    event.target.closest(
+                        ".copy-option"
+                    );
+
+
+                if (
+                    !option
+                ) {
+                    return;
+                }
+
+
+                const verse =
+                    option.closest(
+                        ".poem-verse"
+                    );
+
+
+                const type =
+                    option.dataset.type;
+
+
+                const selector =
+                    type ===
+                    "arabic"
+                        ? ".arabic-text"
+                        : ".eng-translation";
+
+
+                const text =
+                    verse
+                        .querySelector(
+                            selector
+                        )
+                        ?.innerText
+                        .trim() ||
+                    "";
+
+
+                if (
+                    !text
+                ) {
+                    return;
+                }
+
+
+                try {
+
+                    await navigator.clipboard
+                        .writeText(
+                            text
+                        );
+
+
+                    showCopyToast();
+
+                } catch (
+                    error
+                ) {
+
+                    console.error(
+                        "Unable to copy:",
+                        error
+                    );
+
+                }
+
+
+                option
+                    .closest(
+                        ".copy-dropdown"
+                    )
+                    .classList
+                    .remove(
+                        "open"
+                    );
+
+            }
+        );
+
+
+
+        function showCopyToast() {
+
+            if (
+                !copyToast
+            ) {
+                return;
+            }
+
+
+            copyToast.classList.add(
+                "show"
+            );
+
+
+            window.setTimeout(
+                () => {
+
+                    copyToast.classList.remove(
+                        "show"
+                    );
+
+                },
+                1500
+            );
+
+        }
+
+
+
     }
-});
-
-// Handle copy option click
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('copy-option')) {
-        const verse = e.target.closest('.poem-verse');
-        const arabic = verse.querySelector('.arabic-text')?.innerText.trim() || '';
-        const english = verse.querySelector('')?.innerText.trim() || '';
-
-        const type = e.target.getAttribute('data-type');
-        const textToCopy = (type === 'arabic') ? arabic : english;
-
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const toast = document.getElementById('copyToast');
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 1500); // show for 1.5 seconds
-        });
-
-        // Close dropdown after copy
-        e.target.closest('.copy-dropdown').style.display = 'none';
-    }
-});
-
-
+);

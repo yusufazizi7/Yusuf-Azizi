@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auth Test | Islamic Qalam</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #f5f7f6;
+            color: #1f2933;
+
+            padding: 20px;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 450px;
+
+            padding: 35px;
+
+            background: white;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+
+            text-align: center;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .auth-card h1 {
+            margin-top: 0;
+        }
+
+        #authStatus {
+            font-size: 18px;
+            font-weight: 600;
+
+            margin: 20px 0 8px;
+        }
+
+        #userEmail {
+            color: #6b7280;
+
+            margin-bottom: 25px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .auth-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 120px;
+            height: 45px;
+
+            padding: 0 20px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #356859;
+            color: white;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
+        .auth-button:hover {
+            background: #2c584c;
+        }
+
+        #logoutButton {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="auth-card">
+
+        <h1>Authentication Test</h1>
+
+        <p id="authStatus">
+            Checking login status...
+        </p>
+
+        <p id="userEmail"></p>
+
+
+        <div class="auth-buttons">
+
+            <a href="/login.html?redirect=/auth-test.html" id="loginButton" class="auth-button">
+                Log In
+            </a>
+
+
+            <button type="button" id="logoutButton" class="auth-button">
+                Log Out
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
+    <script src="Supabase/auth-test.js"></script>
+
+</body>
+
+</html>

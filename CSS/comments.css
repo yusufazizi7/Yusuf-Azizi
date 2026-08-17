@@ -1,0 +1,2411 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.page-title {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+
+
+
+.poem-container {
+    padding: 0;
+    margin-top: 30px;
+    list-style-type: none;
+    /* Arabic-style numbers */
+    list-style-position: inside;
+    /* Ensures numbers are inside */
+    direction: rtl;
+    /* Right-to-left direction */
+}
+
+.poem-verse {
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: right;
+    /* centre Arabic + English */
+    display: list-item;
+
+
+}
+
+
+
+
+.copy-wrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.copy-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.copy-btn:hover {
+    color: var(--accent-color);
+}
+
+.copy-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.copy-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.copy-option:hover {
+    background-color: var(--primary-color);
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.copy-toast.show {
+    display: flex;
+    opacity: 1;
+}
+
+
+
+/* Move the verse number to the right of the text */
+.poem-verse::marker {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2rem;
+    direction: rtl;
+
+    unicode-bidi: embed;
+
+
+}
+
+/* Ensure Arabic text is right-aligned */
+.arabic-text {
+    font-family: Calibri;
+    font-size: 1.8rem;
+    direction: rtl;
+    text-align: center;
+    color: var(--text-color);
+    display: block;
+}
+
+.eng-translation {
+    font-size: 1.2rem;
+    font-family: Calibri;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    text-align: center;
+    direction: ltr;
+    font-family: Calibri;
+    max-width: 600px;
+    /* control the maximum width */
+    margin: 20px auto 0 auto;
+    /* center it nicely */
+    /* optional: center the text if you want */
+
+}
+
+
+
+main {
+    margin-top: 200px;
+}
+
+.bismillah {
+    font-family: Amiri;
+    font-size: 1.3rem;
+}
+
+
+
+
+.poem-title {
+
+    font-size: 2rem;
+    /* Adjust size */
+    text-align: center;
+    color: var(--text-color);
+    /* Main text color */
+    background: linear-gradient(to right, #f1ebe1, var(--primary-color));
+    /* Subtle gradient background */
+    padding: 30px 30px;
+    display: inline-block;
+    border: 2px solid var(--secondary-color);
+    /* Accent-colored border */
+    border-radius: 12px;
+    /* Rounded corners */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+/* Hover effect */
+.poem-title:hover {
+    background: var(--accent-color);
+    /* Change background on hover */
+    color: white;
+    border-color: var(--secondary-color);
+    /* Darker border on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+/* Add decorative lines around the title */
+
+
+.poem-title::before {
+    left: -40px;
+    transition: left 0.3s ease-in-out;
+}
+
+.poem-title::after {
+    right: -40px;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Hover effect for decorative lines */
+.poem-title:hover::before {
+    left: 10px;
+}
+
+.poem-title:hover::after {
+    right: 10px;
+}
+
+.poem-reading-settings {
+    display: grid;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border: 1px solid rgba(13, 59, 38, 0.18);
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.poem-reading-settings:hover {
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.poem-reading-settings i {
+    color: var(--home-brown-dark);
+}
+
+.thuluth-title {
+
+    font-family: Thuluth;
+    font-size: 3rem;
+}
+
+#decreaseFont,
+#increaseFont,
+#resetFont {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Hover Effects */
+#decreaseFont:hover,
+#increaseFont:hover,
+#resetFont:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Font Size Display */
+#fontSizeDisplay {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0 10px;
+}
+
+.word {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* Default hover if no class applied (fallback) */
+.word:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* If audio file found */
+.audio-found:hover {
+    background-color: var(--blue-color);
+    color: var(--primary-color);
+}
+
+/* If audio file missing */
+.audio-missing:hover {
+    background-color: var(--red-color);
+    /* Bootstrap's 'danger' red (#dc3545) fits your palette */
+    color: var(--primary-color);
+}
+
+
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 8px 12px;
+    /* slightly larger */
+    border-radius: 8px;
+    /* more rounded */
+    font-size: 15px;
+    /* slightly bigger text */
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Calibri;
+    user-select: none;
+    direction: ltr;
+}
+
+
+.word:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+#verseDropdown {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#verseDropdown option {
+    color: (--primary-color);
+    /* dropdown text */
+}
+
+.highlight-verse {
+    background-color: var(--highlight-color);
+    color: white;
+    transition: background 0.5s, color 0.5s;
+}
+
+
+
+/* === Verse Play Button === */
+.play-btn {
+    margin-top: 12px;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.play-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* === Fixed Audio Player Bar === */
+#audioPlayerBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--secondary-color);
+    padding: 15px 20px;
+    color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    font-family: Calibri;
+}
+
+
+
+#audioPlayer {
+    display: none;
+    /* hide native controls */
+}
+
+#audioPlayerBar {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+#audioPlayerBar.show {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding: 15px 20px;
+    /* apply only when shown */
+}
+
+
+.audio-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.audio-controls label {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.audio-controls select {
+    padding: 6px 10px;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.audio-controls button {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.audio-controls button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#progressContainer {
+    width: 100%;
+    height: 6px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-color);
+    transition: width 0.1s linear;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar-section h3 {
+        font-size: 1rem;
+    }
+
+    #decreaseFont,
+    #increaseFont,
+    #resetFont {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    #fontSizeDisplay {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design for Poem Pages */
+@media only screen and (max-width: 768px) {
+
+    /* Adjust poem title size */
+    .poem-title {
+        font-size: 3rem;
+        /* Reduce title size */
+        padding: 10px 20px;
+        font-family: Thuluth;
+    }
+
+    /* Adjust Arabic text size */
+    .arabic-text {
+        font-size: 1.5rem;
+        /* Reduce font size for better readability */
+    }
+
+    /* Adjust English translation size */
+    .eng-translation {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+
+    /* Adjust poem container */
+    .poem-container {
+        margin-top: 10px;
+        /* Reduce margin */
+        padding: 0 10px;
+        /* Add slight padding to avoid edge touching */
+    }
+
+    /* Adjust individual verse spacing */
+    .poem-verse {
+        padding: 8px 0;
+        font-size: 1.2rem;
+        /* Adjust font size */
+    }
+
+    /* Adjust Bismillah font */
+    .bismillah {
+        font-size: 1.1rem;
+    }
+
+    /* Ensure main content starts after navbar */
+    main {
+        margin-top: 150px;
+        /* Reduce margin for smaller screens */
+    }
+}
+
+/* =========================================================
+   MODERN POEM PAGE
+   ========================================================= */
+
+.poem-page {
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        125px 18px 80px;
+
+    background:
+        var(--home-bg);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.poem-hero {
+    width: min(100%, 1080px);
+
+    margin:
+        0 auto 2rem;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(13, 59, 38, 0.12);
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(135deg,
+            var(--home-green),
+            var(--home-green-light));
+
+    box-shadow:
+        0 20px 50px rgba(13, 59, 38, 0.12);
+}
+
+
+.poem-hero-inner {
+    max-width: 760px;
+
+    margin: auto;
+
+    padding:
+        clamp(3rem, 7vw, 5.5rem) 2rem;
+
+    text-align: center;
+}
+
+
+.poem-eyebrow {
+    margin:
+        0 0 0.9rem;
+
+    color:
+        #cfb897;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+.poem-main-title {
+    margin: 0;
+
+    color:
+        var(--home-bg);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(2.1rem,
+            5vw,
+            3.7rem);
+
+    font-weight: 600;
+
+    line-height: 1.12;
+}
+
+
+.poem-description {
+    max-width: 600px;
+
+    margin:
+        1.1rem auto 0;
+
+    color:
+        rgba(250, 244, 232, 0.78);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+.poem-meta {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.8rem;
+
+    margin-top: 1.7rem;
+
+    color:
+        rgba(250, 244, 232, 0.82);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+
+.poem-meta-item {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+}
+
+
+.poem-meta-divider {
+    opacity: 0.45;
+}
+
+
+.poem-settings-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    padding: 0;
+
+    border: 0;
+
+    color:
+        rgba(250, 244, 232, 0.86);
+
+    background: none;
+
+    font: inherit;
+
+    cursor: pointer;
+}
+
+
+.poem-settings-link:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   READING SECTION
+   ========================================================= */
+
+.poem-reading-section {
+    width: min(100%, 940px);
+
+    margin: auto;
+}
+
+
+.poem-reading-card {
+    padding:
+        clamp(1.1rem,
+            4vw,
+            2.2rem);
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 24px;
+
+    background:
+        var(--home-surface);
+
+    box-shadow:
+        var(--home-shadow);
+}
+
+
+.poem-reading-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding:
+        0.2rem 0.25rem 1.3rem;
+
+    border-bottom:
+        1px solid var(--home-border);
+}
+
+
+.poem-reading-label {
+    color:
+        var(--home-green);
+
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+
+.poem-reading-header p {
+    margin:
+        0.25rem 0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.74rem;
+}
+
+
+.poem-reading-settings {
+    display: grid;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 10px;
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+
+    cursor: pointer;
+}
+
+
+.poem-reading-settings:hover {
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+}
+
+
+/* =========================================================
+   BISMILLAH
+   ========================================================= */
+
+.poem-bismillah {
+    padding:
+        2.3rem 1rem 1.7rem;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Amiri,
+        serif;
+
+    font-size: 2rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   VERSES
+   ========================================================= */
+
+.poem-container {
+    counter-reset:
+        poem-verse;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.85rem;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    direction: ltr;
+}
+
+
+.poem-verse {
+    counter-increment:
+        poem-verse;
+
+    position: relative;
+
+    display: block;
+
+    padding:
+        2rem 3.4rem 1.8rem;
+
+    overflow: visible;
+
+    border:
+        1px solid rgba(13, 59, 38, 0.1);
+
+    border-radius: 16px;
+
+    background:
+        #ffffff;
+
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.poem-verse:hover {
+    border-color:
+        rgba(140, 98, 57, 0.24);
+
+    box-shadow:
+        0 10px 28px rgba(33, 42, 32, 0.055);
+}
+
+
+/* VERSE NUMBER */
+
+.poem-container.show-verse-numbers .poem-verse::before {
+    content:
+        counter(poem-verse);
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    display: grid;
+
+    width: 28px;
+    height: 28px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--home-brown-dark);
+
+    background:
+        var(--home-surface-soft);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ARABIC
+   ========================================================= */
+
+.arabic-text {
+    max-width: 800px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--home-text);
+
+    font-family:
+        Amiri,
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    line-height: 2;
+
+    direction: rtl;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ENGLISH
+   ========================================================= */
+
+.eng-translation {
+    max-width: 650px;
+
+    margin:
+        1rem auto 0;
+
+    padding-top:
+        1rem;
+
+    border-top:
+        1px solid rgba(13, 59, 38, 0.075);
+
+    color:
+        var(--home-muted);
+
+    font-family:
+        inherit;
+
+    font-size: 0.96rem;
+
+    line-height: 1.7;
+
+    direction: ltr;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   COPY BUTTON
+   ========================================================= */
+
+.copy-wrapper {
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    display: block;
+
+    transform: none;
+
+    z-index: 5;
+}
+
+
+.copy-btn {
+    display: grid;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    place-items: center;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 8px;
+
+    color:
+        var(--home-muted);
+
+    background:
+        transparent;
+
+    font-size: 0.78rem;
+
+    cursor: pointer;
+}
+
+
+.copy-btn:hover {
+    border-color:
+        var(--home-border);
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.copy-dropdown {
+    display: none;
+
+    position: absolute;
+
+    top: 38px;
+    left: 0;
+
+    min-width: 145px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 10px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(33, 42, 32, 0.12);
+
+    z-index: 20;
+}
+
+
+.copy-dropdown.open {
+    display: block;
+}
+
+
+.copy-option {
+    display: block;
+
+    width: 100%;
+
+    padding:
+        0.7rem 0.85rem;
+
+    border: 0;
+
+    color:
+        var(--home-text);
+
+    background:
+        transparent;
+
+    font: inherit;
+
+    font-size: 0.76rem;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.copy-option:hover {
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+/* =========================================================
+   COPY TOAST
+   ========================================================= */
+
+.copy-toast {
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding:
+        0.7rem 1rem;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    box-shadow:
+        0 12px 30px rgba(13, 59, 38, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translate(-50%,
+            10px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    z-index: 10000;
+}
+
+
+.copy-toast.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(-50%,
+            0);
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+   ========================================================= */
+
+.highlight-verse {
+    border-color:
+        var(--home-brown) !important;
+
+    background:
+        #fffaf0 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(140, 98, 57, 0.08);
+}
+
+
+/* =========================================================
+   COMMENTS SECTION
+   ========================================================= */
+
+.watch-comments.comments-section {
+    width: 100%;
+    margin: 2.5rem 0 0;
+}
+
+.comment-status.approved {
+    color: #17613d;
+    background: #e8f5ec;
+}
+
+.comments-shell {
+    padding:
+        clamp(1.2rem,
+            4vw,
+            2.2rem);
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 24px;
+
+    background:
+        var(--home-surface);
+
+    box-shadow:
+        var(--home-shadow);
+}
+
+
+/* HEADING */
+
+.comments-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom:
+        1px solid var(--home-border);
+}
+
+
+.comments-eyebrow {
+    margin:
+        0 0 0.35rem;
+
+    color:
+        var(--home-brown);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.comments-heading h2 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.8rem;
+}
+
+
+.comments-heading p {
+    margin:
+        0.45rem 0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.86rem;
+
+    line-height: 1.6;
+}
+
+
+.comments-count {
+    flex-shrink: 0;
+
+    padding:
+        0.45rem 0.7rem;
+
+    border-radius: 999px;
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   LOGIN PROMPT
+   ========================================================= */
+
+.comment-login-prompt {
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    gap: 1rem;
+
+    align-items: center;
+
+    margin-top: 1.5rem;
+
+    padding: 1.15rem;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 14px;
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-login-icon {
+    display: grid;
+
+    width: 44px;
+    height: 44px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+}
+
+
+.comment-login-prompt h3 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1rem;
+}
+
+
+.comment-login-prompt p {
+    margin:
+        0.25rem 0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.78rem;
+}
+
+
+.comment-login-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    padding:
+        0.65rem 0.9rem;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   COMMENT FORM
+   ========================================================= */
+
+.comment-form {
+    margin-top: 1.5rem;
+
+    padding: 1.2rem;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+
+.comment-form-heading {
+    display: flex;
+
+    gap: 0.75rem;
+
+    align-items: center;
+
+    margin-bottom: 1rem;
+}
+
+
+.comment-form-icon {
+    display: grid;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    color:
+        var(--home-brown-dark);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-form-heading strong {
+    display: block;
+
+    color:
+        var(--home-green);
+
+    font-size: 0.86rem;
+}
+
+
+.comment-form-heading p {
+    margin:
+        0.2rem 0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.72rem;
+}
+
+
+.comment-textarea-wrapper {
+    position: relative;
+}
+
+
+#commentContent {
+    display: block;
+
+    width: 100%;
+    min-height: 130px;
+
+    padding:
+        0.95rem 1rem 2rem;
+
+    resize: vertical;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color:
+        var(--home-text);
+
+    background:
+        var(--home-surface);
+
+    font: inherit;
+
+    font-size: 0.86rem;
+
+    line-height: 1.65;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#commentContent:focus {
+    border-color:
+        var(--home-green);
+
+    box-shadow:
+        0 0 0 3px rgba(13, 59, 38, 0.07);
+}
+
+
+.comment-character-count {
+    position: absolute;
+
+    right: 12px;
+    bottom: 9px;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.66rem;
+}
+
+
+.comment-form-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 0.85rem;
+}
+
+
+.comment-moderation-note {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.69rem;
+}
+
+
+.comment-moderation-note i {
+    color:
+        var(--home-brown);
+}
+
+
+.comment-submit-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.45rem;
+
+    min-height: 40px;
+
+    padding:
+        0.65rem 1rem;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font: inherit;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.comment-submit-button:hover {
+    background:
+        var(--home-green-light);
+}
+
+
+.comment-submit-button:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   COMMENT MESSAGE
+   ========================================================= */
+
+.comment-message {
+    display: none;
+
+    margin-top: 1rem;
+
+    padding:
+        0.75rem 0.9rem;
+
+    border-radius: 9px;
+
+    font-size: 0.76rem;
+}
+
+
+.comment-message.show {
+    display: block;
+}
+
+
+.comment-message.success {
+    color: #17613d;
+
+    background: #e8f5ec;
+}
+
+
+.comment-message.error {
+    color: #992929;
+
+    background: #fff0f0;
+}
+
+
+/* =========================================================
+   COMMENTS LIST
+   ========================================================= */
+
+.comments-list-heading {
+    margin-top: 2rem;
+}
+
+
+.comments-list-heading h3 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.05rem;
+}
+
+
+.comments-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    margin-top: 1rem;
+}
+
+
+.comment-card {
+    display: grid;
+
+    grid-template-columns:
+        46px minmax(0, 1fr);
+
+    gap: 0.85rem;
+
+    padding:
+        1rem;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 13px;
+
+    background: #ffffff;
+}
+
+
+.comment-avatar {
+    width: 46px;
+    height: 46px;
+
+    object-fit: cover;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius: 50%;
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0.8rem;
+}
+
+
+.comment-name {
+    color:
+        var(--home-green);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+
+.comment-username {
+    margin-left: 0.35rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.68rem;
+}
+
+
+.comment-date {
+    flex-shrink: 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.66rem;
+}
+
+
+.comment-content {
+    margin:
+        0.6rem 0 0;
+
+    color:
+        var(--home-text);
+
+    font-size: 0.84rem;
+
+    line-height: 1.65;
+
+    text-align: left;
+    direction: ltr;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+}
+
+.comment-card>div {
+    text-align: left;
+}
+
+
+.comment-status {
+    display: inline-flex;
+
+    margin-top: 0.65rem;
+
+    padding:
+        0.28rem 0.5rem;
+
+    border-radius: 999px;
+
+    font-size: 0.63rem;
+    font-weight: 800;
+}
+
+
+.comment-status.pending {
+    color: #875514;
+
+    background: #fff1d8;
+}
+
+
+.comment-status.rejected {
+    color: #9a2727;
+
+    background: #fff0f0;
+}
+
+
+/* =========================================================
+   COMMENTS LOADING / EMPTY
+   ========================================================= */
+
+.comments-loading {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.6rem;
+
+    padding: 2rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.76rem;
+}
+
+
+.comments-spinner {
+    width: 20px;
+    height: 20px;
+
+    border:
+        2px solid rgba(13, 59, 38, 0.12);
+
+    border-top-color:
+        var(--home-green);
+
+    border-radius: 50%;
+
+    animation:
+        comments-spin 0.8s linear infinite;
+}
+
+
+@keyframes comments-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.comments-empty {
+    padding:
+        2.5rem 1rem;
+
+    text-align: center;
+}
+
+
+.comments-empty>span {
+    display: grid;
+
+    width: 54px;
+    height: 54px;
+
+    margin:
+        0 auto 0.8rem;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--home-brown);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comments-empty h3 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1rem;
+}
+
+
+.comments-empty p {
+    margin:
+        0.35rem 0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 700px) {
+
+    .poem-page {
+        padding:
+            100px 10px 55px;
+    }
+
+
+    .poem-hero {
+        border-radius: 18px;
+    }
+
+
+    .poem-hero-inner {
+        padding:
+            2.8rem 1.2rem;
+    }
+
+
+    .poem-meta {
+        flex-wrap: wrap;
+    }
+
+
+    .poem-reading-card,
+    .comments-shell {
+        padding: 0.85rem;
+
+        border-radius: 16px;
+    }
+
+
+    .poem-verse {
+        padding:
+            2.7rem 1rem 1.5rem;
+    }
+
+
+    .arabic-text {
+        line-height: 1.9;
+    }
+
+
+    .copy-wrapper {
+        top: 10px;
+        left: 10px;
+    }
+
+
+    .poem-container.show-verse-numbers .poem-verse::before {
+        top: 10px;
+        right: 10px;
+    }
+
+
+    .comments-heading {
+        flex-direction: column;
+
+        gap: 0.8rem;
+    }
+
+
+    .comment-login-prompt {
+        grid-template-columns:
+            auto 1fr;
+    }
+
+
+    .comment-login-button {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+
+    .comment-form-footer {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .comment-submit-button {
+        width: 100%;
+    }
+
+
+    .comment-card {
+        grid-template-columns:
+            38px minmax(0, 1fr);
+    }
+
+
+    .comment-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .comment-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 0.2rem;
+    }
+
+}
+
+.poem-main-title {
+    display: flex;
+
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+}
+
+
+.poem-title-svg {
+    display: block;
+
+    width: auto;
+    max-width: min(100%, 560px);
+    max-height: 145px;
+
+    margin: 0 auto;
+}
+
+/* =========================================================
+   COMMENT ACTIONS
+========================================================= */
+
+.comment-actions {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 0.35rem;
+
+    margin-top: 0.7rem;
+}
+
+
+.comment-action-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.35rem;
+
+    min-height: 32px;
+
+    padding:
+        0.35rem 0.6rem;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    color:
+        var(--home-muted);
+
+    background:
+        transparent;
+
+    font: inherit;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.comment-action-button:hover {
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-action-button i {
+    font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   LIKE
+========================================================= */
+
+.comment-like-button.active {
+    color:
+        var(--home-green);
+}
+
+
+.comment-like-button.active i {
+    color:
+        var(--home-green);
+}
+
+
+.comment-action-button:disabled {
+    opacity: 0.55;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   REPLIES
+========================================================= */
+
+.comment-replies {
+    grid-column:
+        2 / -1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.65rem;
+
+    margin-top: 0.75rem;
+
+    padding-left: 1.1rem;
+
+    border-left:
+        2px solid var(--home-surface-soft);
+}
+
+
+.comment-reply {
+    grid-template-columns:
+        36px minmax(0, 1fr);
+
+    padding:
+        0.8rem;
+
+    border-color:
+        rgba(13,
+            59,
+            38,
+            0.08);
+
+    background:
+        var(--home-surface);
+}
+
+
+.comment-reply .comment-avatar {
+    width: 36px;
+
+    height: 36px;
+}
+
+
+/* =========================================================
+   REPLY FORM
+========================================================= */
+
+.reply-form {
+    margin-top:
+        0.9rem;
+
+    padding-top:
+        0.9rem;
+
+    border-top:
+        1px solid var(--home-border);
+}
+
+
+.reply-textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 90px;
+
+    padding:
+        0.75rem 0.85rem;
+
+    resize: vertical;
+
+    border:
+        1px solid var(--home-border);
+
+    border-radius:
+        10px;
+
+    outline: none;
+
+    color:
+        var(--home-text);
+
+    background:
+        var(--home-surface);
+
+    font: inherit;
+
+    font-size:
+        0.8rem;
+
+    line-height:
+        1.6;
+}
+
+
+.reply-textarea:focus {
+    border-color:
+        var(--home-green);
+
+    box-shadow:
+        0 0 0 3px rgba(13,
+            59,
+            38,
+            0.07);
+}
+
+
+.reply-form-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 0.5rem;
+
+    margin-top:
+        0.65rem;
+}
+
+
+.reply-cancel-button,
+.reply-submit-button {
+    min-height:
+        35px;
+
+    padding:
+        0.45rem 0.8rem;
+
+    border:
+        0;
+
+    border-radius:
+        999px;
+
+    font: inherit;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+}
+
+
+.reply-cancel-button {
+    color:
+        var(--home-green);
+
+    background:
+        transparent;
+}
+
+
+.reply-cancel-button:hover {
+    background:
+        var(--home-surface-soft);
+}
+
+
+.reply-submit-button {
+    color:
+        #ffffff;
+
+    background:
+        var(--home-green);
+}
+
+
+.reply-submit-button:hover {
+    background:
+        var(--home-green-light);
+}
+
+
+.reply-submit-button:disabled {
+    opacity:
+        0.6;
+
+    cursor:
+        wait;
+}
+
+.comment-card.linked-comment {
+    outline:
+        2px solid
+        var(--home-brown);
+
+    outline-offset:
+        3px;
+
+    background:
+        var(--home-surface-soft);
+
+    transition:
+        background-color 0.3s ease,
+        outline-color 0.3s ease;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .poem-title-svg {
+        max-width: 90%;
+        max-height: 110px;
+    }
+
+    .comment-replies {
+        grid-column:
+            1 / -1;
+
+        margin-left:
+            1.5rem;
+
+        padding-left:
+            0.7rem;
+    }
+
+
+    .comment-reply {
+        grid-template-columns:
+            32px minmax(0, 1fr);
+    }
+
+
+    .comment-reply .comment-avatar {
+        width: 32px;
+
+        height: 32px;
+    }
+
+}

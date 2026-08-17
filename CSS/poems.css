@@ -203,6 +203,51 @@ main {
     right: 10px;
 }
 
+.poem-reading-settings {
+    display: grid;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border: 1px solid rgba(13, 59, 38, 0.18);
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.poem-reading-settings:hover {
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.poem-reading-settings i {
+    color: var(--home-brown-dark);
+}
 .thuluth-title {
 
     font-family: Thuluth;
@@ -491,4 +536,1598 @@ main {
     main {
         margin-top: 150px; /* Reduce margin for smaller screens */
     }
+}
+
+/* =========================================================
+   MODERN POEM PAGE
+   ========================================================= */
+
+.poem-page {
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        125px
+        18px
+        80px;
+
+    background:
+        var(--home-bg);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.poem-hero {
+    width: min(100%, 1080px);
+
+    margin:
+        0 auto
+        2rem;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(13, 59, 38, 0.12);
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--home-green),
+            var(--home-green-light)
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(13, 59, 38, 0.12);
+}
+
+
+.poem-hero-inner {
+    max-width: 760px;
+
+    margin: auto;
+
+    padding:
+        clamp(3rem, 7vw, 5.5rem)
+        2rem;
+
+    text-align: center;
+}
+
+
+.poem-eyebrow {
+    margin:
+        0 0
+        0.9rem;
+
+    color:
+        #cfb897;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+.poem-main-title {
+    margin: 0;
+
+    color:
+        var(--home-bg);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            2.1rem,
+            5vw,
+            3.7rem
+        );
+
+    font-weight: 600;
+
+    line-height: 1.12;
+}
+
+
+.poem-description {
+    max-width: 600px;
+
+    margin:
+        1.1rem auto 0;
+
+    color:
+        rgba(250, 244, 232, 0.78);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+.poem-meta {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.8rem;
+
+    margin-top: 1.7rem;
+
+    color:
+        rgba(250, 244, 232, 0.82);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+
+.poem-meta-item {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+}
+
+
+.poem-meta-divider {
+    opacity: 0.45;
+}
+
+
+.poem-settings-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    padding: 0;
+
+    border: 0;
+
+    color:
+        rgba(250, 244, 232, 0.86);
+
+    background: none;
+
+    font: inherit;
+
+    cursor: pointer;
+}
+
+
+.poem-settings-link:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   READING SECTION
+   ========================================================= */
+
+.poem-reading-section {
+    width: min(100%, 940px);
+
+    margin: auto;
+}
+
+
+.poem-reading-card {
+    padding:
+        clamp(
+            1.1rem,
+            4vw,
+            2.2rem
+        );
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 24px;
+
+    background:
+        var(--home-surface);
+
+    box-shadow:
+        var(--home-shadow);
+}
+
+
+.poem-reading-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding:
+        0.2rem
+        0.25rem
+        1.3rem;
+
+    border-bottom:
+        1px solid
+        var(--home-border);
+}
+
+
+.poem-reading-label {
+    color:
+        var(--home-green);
+
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+
+.poem-reading-header p {
+    margin:
+        0.25rem
+        0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.74rem;
+}
+
+
+.poem-reading-settings {
+    display: grid;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 10px;
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+
+    cursor: pointer;
+}
+
+
+.poem-reading-settings:hover {
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+}
+
+
+/* =========================================================
+   BISMILLAH
+   ========================================================= */
+
+.poem-bismillah {
+    padding:
+        2.3rem
+        1rem
+        1.7rem;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Amiri,
+        serif;
+
+    font-size: 2rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   VERSES
+   ========================================================= */
+
+.poem-container {
+    counter-reset:
+        poem-verse;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.85rem;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    direction: ltr;
+}
+
+
+.poem-verse {
+    counter-increment:
+        poem-verse;
+
+    position: relative;
+
+    display: block;
+
+    padding:
+        2rem
+        3.4rem
+        1.8rem;
+
+    overflow: visible;
+
+    border:
+        1px solid
+        rgba(13, 59, 38, 0.1);
+
+    border-radius: 16px;
+
+    background:
+        #ffffff;
+
+    text-align: center;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.poem-verse:hover {
+    border-color:
+        rgba(140, 98, 57, 0.24);
+
+    box-shadow:
+        0 10px 28px
+        rgba(33, 42, 32, 0.055);
+}
+
+
+/* VERSE NUMBER */
+
+.poem-container.show-verse-numbers
+.poem-verse::before {
+    content:
+        counter(poem-verse);
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    display: grid;
+
+    width: 28px;
+    height: 28px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--home-brown-dark);
+
+    background:
+        var(--home-surface-soft);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ARABIC
+   ========================================================= */
+
+.arabic-text {
+    max-width: 800px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--home-text);
+
+    font-family:
+        Amiri,
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    line-height: 2;
+
+    direction: rtl;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ENGLISH
+   ========================================================= */
+
+.eng-translation {
+    max-width: 650px;
+
+    margin:
+        1rem auto 0;
+
+    padding-top:
+        1rem;
+
+    border-top:
+        1px solid
+        rgba(13, 59, 38, 0.075);
+
+    color:
+        var(--home-muted);
+
+    font-family:
+        inherit;
+
+    font-size: 0.96rem;
+
+    line-height: 1.7;
+
+    direction: ltr;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   COPY BUTTON
+   ========================================================= */
+
+.copy-wrapper {
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    display: block;
+
+    transform: none;
+
+    z-index: 5;
+}
+
+
+.copy-btn {
+    display: grid;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    place-items: center;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 8px;
+
+    color:
+        var(--home-muted);
+
+    background:
+        transparent;
+
+    font-size: 0.78rem;
+
+    cursor: pointer;
+}
+
+
+.copy-btn:hover {
+    border-color:
+        var(--home-border);
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.copy-dropdown {
+    display: none;
+
+    position: absolute;
+
+    top: 38px;
+    left: 0;
+
+    min-width: 145px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 10px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 12px 30px
+        rgba(33, 42, 32, 0.12);
+
+    z-index: 20;
+}
+
+
+.copy-dropdown.open {
+    display: block;
+}
+
+
+.copy-option {
+    display: block;
+
+    width: 100%;
+
+    padding:
+        0.7rem
+        0.85rem;
+
+    border: 0;
+
+    color:
+        var(--home-text);
+
+    background:
+        transparent;
+
+    font: inherit;
+
+    font-size: 0.76rem;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.copy-option:hover {
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+/* =========================================================
+   COPY TOAST
+   ========================================================= */
+
+.copy-toast {
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding:
+        0.7rem
+        1rem;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    box-shadow:
+        0 12px 30px
+        rgba(13, 59, 38, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translate(
+            -50%,
+            10px
+        );
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    z-index: 10000;
+}
+
+
+.copy-toast.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(
+            -50%,
+            0
+        );
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+   ========================================================= */
+
+.highlight-verse {
+    border-color:
+        var(--home-brown) !important;
+
+    background:
+        #fffaf0 !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140, 98, 57, 0.08);
+}
+
+
+/* =========================================================
+   COMMENTS SECTION
+   ========================================================= */
+
+.comments-section {
+    width: min(100%, 940px);
+
+    margin:
+        3rem auto 0;
+}
+
+.comment-status.approved {
+    color: #17613d;
+    background: #e8f5ec;
+}
+
+.comments-shell {
+    padding:
+        clamp(
+            1.2rem,
+            4vw,
+            2.2rem
+        );
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 24px;
+
+    background:
+        var(--home-surface);
+
+    box-shadow:
+        var(--home-shadow);
+}
+
+
+/* HEADING */
+
+.comments-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom:
+        1px solid
+        var(--home-border);
+}
+
+
+.comments-eyebrow {
+    margin:
+        0 0
+        0.35rem;
+
+    color:
+        var(--home-brown);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.comments-heading h2 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.8rem;
+}
+
+
+.comments-heading p {
+    margin:
+        0.45rem
+        0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.86rem;
+
+    line-height: 1.6;
+}
+
+
+.comments-count {
+    flex-shrink: 0;
+
+    padding:
+        0.45rem
+        0.7rem;
+
+    border-radius: 999px;
+
+    color:
+        var(--home-green);
+
+    background:
+        var(--home-surface-soft);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   LOGIN PROMPT
+   ========================================================= */
+
+.comment-login-prompt {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    gap: 1rem;
+
+    align-items: center;
+
+    margin-top: 1.5rem;
+
+    padding: 1.15rem;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 14px;
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-login-icon {
+    display: grid;
+
+    width: 44px;
+    height: 44px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+}
+
+
+.comment-login-prompt h3 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1rem;
+}
+
+
+.comment-login-prompt p {
+    margin:
+        0.25rem
+        0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.78rem;
+}
+
+
+.comment-login-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    padding:
+        0.65rem
+        0.9rem;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   COMMENT FORM
+   ========================================================= */
+
+.comment-form {
+    margin-top: 1.5rem;
+
+    padding: 1.2rem;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+
+.comment-form-heading {
+    display: flex;
+
+    gap: 0.75rem;
+
+    align-items: center;
+
+    margin-bottom: 1rem;
+}
+
+
+.comment-form-icon {
+    display: grid;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    color:
+        var(--home-brown-dark);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-form-heading strong {
+    display: block;
+
+    color:
+        var(--home-green);
+
+    font-size: 0.86rem;
+}
+
+
+.comment-form-heading p {
+    margin:
+        0.2rem
+        0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.72rem;
+}
+
+
+.comment-textarea-wrapper {
+    position: relative;
+}
+
+
+#commentContent {
+    display: block;
+
+    width: 100%;
+    min-height: 130px;
+
+    padding:
+        0.95rem
+        1rem
+        2rem;
+
+    resize: vertical;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color:
+        var(--home-text);
+
+    background:
+        var(--home-surface);
+
+    font: inherit;
+
+    font-size: 0.86rem;
+
+    line-height: 1.65;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#commentContent:focus {
+    border-color:
+        var(--home-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(13, 59, 38, 0.07);
+}
+
+
+.comment-character-count {
+    position: absolute;
+
+    right: 12px;
+    bottom: 9px;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.66rem;
+}
+
+
+.comment-form-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 0.85rem;
+}
+
+
+.comment-moderation-note {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.69rem;
+}
+
+
+.comment-moderation-note i {
+    color:
+        var(--home-brown);
+}
+
+
+.comment-submit-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.45rem;
+
+    min-height: 40px;
+
+    padding:
+        0.65rem
+        1rem;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    background:
+        var(--home-green);
+
+    font: inherit;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.comment-submit-button:hover {
+    background:
+        var(--home-green-light);
+}
+
+
+.comment-submit-button:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   COMMENT MESSAGE
+   ========================================================= */
+
+.comment-message {
+    display: none;
+
+    margin-top: 1rem;
+
+    padding:
+        0.75rem
+        0.9rem;
+
+    border-radius: 9px;
+
+    font-size: 0.76rem;
+}
+
+
+.comment-message.show {
+    display: block;
+}
+
+
+.comment-message.success {
+    color: #17613d;
+
+    background: #e8f5ec;
+}
+
+
+.comment-message.error {
+    color: #992929;
+
+    background: #fff0f0;
+}
+
+
+/* =========================================================
+   COMMENTS LIST
+   ========================================================= */
+
+.comments-list-heading {
+    margin-top: 2rem;
+}
+
+
+.comments-list-heading h3 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.05rem;
+}
+
+
+.comments-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    margin-top: 1rem;
+}
+
+
+.comment-card {
+    display: grid;
+
+    grid-template-columns:
+        46px
+        minmax(0, 1fr);
+
+    gap: 0.85rem;
+
+    padding:
+        1rem;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 13px;
+
+    background: #ffffff;
+}
+
+
+.comment-avatar {
+    width: 46px;
+    height: 46px;
+
+    object-fit: cover;
+
+    border:
+        1px solid
+        var(--home-border);
+
+    border-radius: 50%;
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comment-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0.8rem;
+}
+
+
+.comment-name {
+    color:
+        var(--home-green);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+
+.comment-username {
+    margin-left: 0.35rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.68rem;
+}
+
+
+.comment-date {
+    flex-shrink: 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.66rem;
+}
+
+
+.comment-content {
+    margin:
+        0.6rem
+        0 0;
+
+    color:
+        var(--home-text);
+
+    font-size: 0.84rem;
+
+    line-height: 1.65;
+
+    text-align: left;
+    direction: ltr;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+}
+
+.comment-card > div {
+    text-align: left;
+}
+
+
+.comment-status {
+    display: inline-flex;
+
+    margin-top: 0.65rem;
+
+    padding:
+        0.28rem
+        0.5rem;
+
+    border-radius: 999px;
+
+    font-size: 0.63rem;
+    font-weight: 800;
+}
+
+
+.comment-status.pending {
+    color: #875514;
+
+    background: #fff1d8;
+}
+
+
+.comment-status.rejected {
+    color: #9a2727;
+
+    background: #fff0f0;
+}
+
+
+/* =========================================================
+   COMMENTS LOADING / EMPTY
+   ========================================================= */
+
+.comments-loading {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.6rem;
+
+    padding: 2rem;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.76rem;
+}
+
+
+.comments-spinner {
+    width: 20px;
+    height: 20px;
+
+    border:
+        2px solid
+        rgba(13, 59, 38, 0.12);
+
+    border-top-color:
+        var(--home-green);
+
+    border-radius: 50%;
+
+    animation:
+        comments-spin
+        0.8s linear infinite;
+}
+
+
+@keyframes comments-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.comments-empty {
+    padding:
+        2.5rem
+        1rem;
+
+    text-align: center;
+}
+
+
+.comments-empty > span {
+    display: grid;
+
+    width: 54px;
+    height: 54px;
+
+    margin:
+        0 auto
+        0.8rem;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--home-brown);
+
+    background:
+        var(--home-surface-soft);
+}
+
+
+.comments-empty h3 {
+    margin: 0;
+
+    color:
+        var(--home-green);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1rem;
+}
+
+
+.comments-empty p {
+    margin:
+        0.35rem
+        0 0;
+
+    color:
+        var(--home-muted);
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and
+(max-width: 700px) {
+
+    .poem-page {
+        padding:
+            100px
+            10px
+            55px;
+    }
+
+
+    .poem-hero {
+        border-radius: 18px;
+    }
+
+
+    .poem-hero-inner {
+        padding:
+            2.8rem
+            1.2rem;
+    }
+
+
+    .poem-meta {
+        flex-wrap: wrap;
+    }
+
+
+    .poem-reading-card,
+    .comments-shell {
+        padding: 0.85rem;
+
+        border-radius: 16px;
+    }
+
+
+    .poem-verse {
+        padding:
+            2.7rem
+            1rem
+            1.5rem;
+    }
+
+
+    .arabic-text {
+        line-height: 1.9;
+    }
+
+
+    .copy-wrapper {
+        top: 10px;
+        left: 10px;
+    }
+
+
+    .poem-container.show-verse-numbers
+    .poem-verse::before {
+        top: 10px;
+        right: 10px;
+    }
+
+
+    .comments-heading {
+        flex-direction: column;
+
+        gap: 0.8rem;
+    }
+
+
+    .comment-login-prompt {
+        grid-template-columns:
+            auto
+            1fr;
+    }
+
+
+    .comment-login-button {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+
+    .comment-form-footer {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .comment-submit-button {
+        width: 100%;
+    }
+
+
+    .comment-card {
+        grid-template-columns:
+            38px
+            minmax(0, 1fr);
+    }
+
+
+    .comment-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .comment-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 0.2rem;
+    }
+
+}
+
+.poem-main-title {
+    display: flex;
+
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+}
+
+
+.poem-title-svg {
+    display: block;
+
+    width: auto;
+    max-width: min(100%, 560px);
+    max-height: 145px;
+
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .poem-title-svg {
+        max-width: 90%;
+        max-height: 110px;
+    }
+
 }
