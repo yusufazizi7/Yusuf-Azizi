@@ -1,44 +1,185 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  const res = await fetch('Scripts/Data/icons.json');
-  const icons = await res.json();
+/* =====================================
+   CUSTOM SVG ICON SYSTEM
+===================================== */
 
-  const iconElements = document.querySelectorAll('icon');
+let customIconsPromise =
+    null;
 
-  iconElements.forEach(async el => {
-    const iconName = el.textContent.trim().toLowerCase();
-    const existingClass = el.getAttribute('class') || '';
 
-    if (icons[iconName]) {
-      try {
-        const svgRes = await fetch(icons[iconName]);
-        let svgText = await svgRes.text();
+async function getCustomIcons() {
 
-        // Inject class into the <svg> tag
-        const combinedClasses = `${existingClass} ${iconName}`.trim();
-        svgText = svgText.replace('<svg', `<svg class="${combinedClasses}"`);
+    if (
+        customIconsPromise
+    ) {
 
-        el.outerHTML = svgText;
-      } catch (err) {
-        console.error(`Error loading SVG for "${iconName}":`, err);
-      }
-    } else {
-      console.warn(`Icon "${iconName}" not found in icons.json`);
+        return customIconsPromise;
+
     }
-  });
-});
+
+
+    customIconsPromise =
+        fetch(
+            "/Scripts/Data/icons.json"
+        )
+            .then(
+                response => {
+
+                    if (
+                        !response.ok
+                    ) {
+
+                        throw new Error(
+                            `Unable to load icons.json: ${response.status}`
+                        );
+
+                    }
+
+
+                    return response.json();
+
+                }
+            );
+
+
+    return customIconsPromise;
+
+}
 
 
 
+async function renderCustomIcons(
+    root = document
+) {
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.querySelector(".fa-bars");
-    const navbar = document.querySelector(".navbar");
+    const icons =
+        await getCustomIcons();
 
-    menuIcon.addEventListener("click", function () {
-        navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
-    });
-});
 
+    const iconElements =
+        root.querySelectorAll(
+            "icon"
+        );
+
+
+    const replacements =
+        Array.from(
+            iconElements
+        ).map(
+            async el => {
+
+                const iconName =
+                    el.textContent
+                        .trim()
+                        .toLowerCase();
+
+
+                const existingClass =
+                    el.getAttribute(
+                        "class"
+                    ) || "";
+
+
+                if (
+                    !icons[
+                    iconName
+                    ]
+                ) {
+
+                    console.warn(
+                        `Icon "${iconName}" not found in icons.json`
+                    );
+
+                    return;
+
+                }
+
+
+                try {
+
+                    const svgResponse =
+                        await fetch(
+                            icons[
+                            iconName
+                            ]
+                        );
+
+
+                    if (
+                        !svgResponse.ok
+                    ) {
+
+                        throw new Error(
+                            `Unable to load SVG: ${svgResponse.status}`
+                        );
+
+                    }
+
+
+                    let svgText =
+                        await svgResponse.text();
+
+
+                    const combinedClasses =
+                        `${existingClass} ${iconName}`
+                            .trim();
+
+
+                    svgText =
+                        svgText.replace(
+                            "<svg",
+                            `<svg class="${combinedClasses}"`
+                        );
+
+
+                    el.outerHTML =
+                        svgText;
+
+                } catch (
+                error
+                ) {
+
+                    console.error(
+                        `Error loading SVG for "${iconName}":`,
+                        error
+                    );
+
+                }
+
+            }
+        );
+
+
+    await Promise.all(
+        replacements
+    );
+
+}
+
+
+/*
+ * Make it available to scripts that
+ * dynamically create <icon> elements.
+ */
+
+window.renderCustomIcons =
+    renderCustomIcons;
+
+
+
+/* =====================================
+   INITIAL ICON RENDER
+===================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        renderCustomIcons(
+            document
+        );
+
+    }
+);
 
 
 /* =====================================
@@ -139,7 +280,7 @@ function updateAccountLink(
     ) {
 
         accountLink.href =
-            "profile.html";
+            "/profile.html";
 
 
         accountText.textContent =
@@ -158,7 +299,7 @@ function updateAccountLink(
     } else {
 
         accountLink.href =
-            "login.html";
+            "/login.html";
 
 
         accountText.textContent =

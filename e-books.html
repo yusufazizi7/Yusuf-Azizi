@@ -12,16 +12,7 @@
 
     <title>Islamic Qalam | Islamic E-books & PDFs</title>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-R6X1QNEYSL");
-    </script>
+
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -50,6 +41,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="CSS/global.css" />
     <link rel="stylesheet" href="CSS/e-book-styling.css" />
+    <link rel="stylesheet" href="CSS/cart.css" />
 
     <link rel="icon" type="image/png" href="Images/website-favicon.png" />
 
@@ -83,6 +75,17 @@
                 rel="noopener noreferrer">
                 Donate
             </a>
+
+            <button id="navCartButton" class="nav-cart" type="button" aria-label="Open shopping cart"
+                aria-controls="shoppingCart" aria-expanded="false">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+
+                <span>Cart</span>
+
+                <span id="cartItemCount" class="cart-item-count" aria-label="0 items in cart">
+                    0
+                </span>
+            </button>
             <a id="navAccountLink" class="nav-login" href="login.html">
                 <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
 
@@ -97,6 +100,70 @@
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
     </header>
+
+    <!-- Shopping Cart Overlay -->
+    <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+
+
+    <!-- Shopping Cart -->
+    <aside id="shoppingCart" class="shopping-cart" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+
+            <div>
+                <p class="cart-eyebrow">Your selection</p>
+                <h2>Shopping Cart</h2>
+            </div>
+
+            <button id="closeCartButton" class="cart-close-button" type="button" aria-label="Close shopping cart">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+        </div>
+
+
+        <div id="cartContents" class="cart-contents">
+
+            <div id="emptyCartMessage" class="empty-cart-message">
+
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+
+                <h3>Your cart is empty</h3>
+
+                <p>
+                    Add an e-book to begin your order.
+                </p>
+
+            </div>
+
+            <div id="cartItems" class="cart-items"></div>
+
+        </div>
+
+
+        <div id="cartFooter" class="cart-footer" hidden>
+
+            <div class="cart-subtotal">
+
+                <span>Subtotal</span>
+
+                <strong id="cartSubtotal">
+                    $0.00 USD
+                </strong>
+
+            </div>
+
+            <button id="checkoutButton" class="cart-checkout-button" type="button" disabled>
+                Proceed to Checkout
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+
+            <p class="cart-checkout-note">
+                Secure payment processing will be provided by Stripe.
+            </p>
+
+        </div>
+
+    </aside>
 
 
 
@@ -140,197 +207,409 @@
             </p>
         </section>
 
-        <section class="ebook-library" aria-label="Islamic e-book library">
+        <section class="ebook-library" aria-label="Islamic e-book store">
+
             <!-- Nooniyah Al-Qahtani -->
-            <a href="E-books/nooniyah-al-qahtani-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/1.png" alt="Cover of Nooniyah Al-Qahtani" loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="nooniyah-al-qahtani">
+                <a href="E-books/nooniyah-al-qahtani-e-book.html" class="ebook-cover-link"
+                    aria-label="View Nooniyah Al-Qahtani">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/nooniyah-al-qahtani/pdf/preview-1.webp" alt="Cover of Nooniyah Al-Qahtani" loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
                     <span class="ebook-category">Islamic Creed</span>
 
-                    <h2>Nooniyah Al-Qahtani</h2>
+                    <h2>
+                        <a href="E-books/nooniyah-al-qahtani-e-book.html">
+                            Nooniyah Al-Qahtani
+                        </a>
+                    </h2>
 
                     <p>
-                        A renowned Islamic poem detailing the principles of Ahlus-Sunnah
-                        wal-Jama'ah.
+                        A renowned Islamic poem detailing the principles of
+                        Ahlus-Sunnah wal-Jama'ah.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price" aria-label="Price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/nooniyah-al-qahtani-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="nooniyah-al-qahtani"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Oh Worshippers of Christ -->
-            <a href="E-books/oh-worshipper-of-christ-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/Q1.png" alt="Cover of Oh Worshippers of Christ" loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="oh-worshippers-of-christ">
+                <a href="E-books/oh-worshipper-of-christ-e-book.html" class="ebook-cover-link"
+                    aria-label="View Oh Worshippers of Christ">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/haiyyah-ibn-al-qayyim/pdf/preview-1.webp" alt="Cover of Oh Worshippers of Christ" loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
                     <span class="ebook-category">Comparative Religion</span>
 
-                    <h2>Oh Worshippers of Christ</h2>
+                    <h2>
+                        <a href="E-books/oh-worshipper-of-christ-e-book.html">
+                            Oh Worshippers of Christ
+                        </a>
+                    </h2>
 
                     <p>
-                        Ibn al-Qayyim's eloquent response to Christian beliefs and defence
-                        of Islamic monotheism.
+                        Ibn al-Qayyim's eloquent response to Christian beliefs
+                        and defence of Islamic monotheism.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/oh-worshipper-of-christ-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="oh-worshippers-of-christ"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Laamiyah Ibn Al-Wardi -->
-            <a href="E-books/laamiyah-ibn-al-wardi-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/LIW1.png" alt="Cover of Laamiyah Ibn Al-Wardi" loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="laamiyah-ibn-al-wardi">
+                <a href="E-books/laamiyah-ibn-al-wardi-e-book.html" class="ebook-cover-link">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/laamiyah-ibn-al-wardi/pdf/preview-1.webp" alt="Cover of Laamiyah Ibn Al-Wardi" loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
                     <span class="ebook-category">Wisdom and Morality</span>
 
-                    <h2>Laamiyah Ibn Al-Wardi</h2>
+                    <h2>
+                        <a href="E-books/laamiyah-ibn-al-wardi-e-book.html">
+                            Laamiyah Ibn Al-Wardi
+                        </a>
+                    </h2>
 
                     <p>
-                        A profound poem offering wisdom on character, morality and living
-                        a virtuous life.
+                        A profound poem offering wisdom on character,
+                        morality and living a virtuous life.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/laamiyah-ibn-al-wardi-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="laamiyah-ibn-al-wardi"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Laamiyah Ibn Taymiyyah -->
-            <a href="E-books/laamiyah-ibn-taymiyyah-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/LIT1.png" alt="Cover of Laamiyah Ibn Taymiyyah" loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="laamiyah-ibn-taymiyyah">
+                <a href="E-books/laamiyah-ibn-taymiyyah-e-book.html" class="ebook-cover-link">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/laamiyah-ibn-taymiyyah/pdf/preview-1.webp" alt="Cover of Laamiyah Ibn Taymiyyah" loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
                     <span class="ebook-category">Islamic Creed</span>
 
-                    <h2>Laamiyah Ibn Taymiyyah</h2>
+                    <h2>
+                        <a href="E-books/laamiyah-ibn-taymiyyah-e-book.html">
+                            Laamiyah Ibn Taymiyyah
+                        </a>
+                    </h2>
 
                     <p>
-                        A concise poem affirming the beliefs and methodology of Ahl
-                        al-Sunnah wal-Jama'ah.
+                        A concise poem affirming the beliefs and methodology
+                        of Ahl al-Sunnah wal-Jama'ah.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/laamiyah-ibn-taymiyyah-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="laamiyah-ibn-taymiyyah"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Ha'iyyah Ibn Abi Dawud -->
-            <a href="E-books/haiyyah-ibn-abi-dawud-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/Ha'iyyah-Ibn-Abi-Dawud-P1.png" alt="Cover of Ha'iyyah Ibn Abi Dawud"
-                        loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="haiyyah-ibn-abi-dawud">
+                <a href="E-books/haiyyah-ibn-abi-dawud-e-book.html" class="ebook-cover-link">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/haiyyah-ibn-abi-dawud/pdf/preview-1.webp" alt="Cover of Ha'iyyah Ibn Abi Dawud"
+                            loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
                     <span class="ebook-category">Islamic Creed</span>
 
-                    <h2>Ha'iyyah Ibn Abi Dawud</h2>
+                    <h2>
+                        <a href="E-books/haiyyah-ibn-abi-dawud-e-book.html">
+                            Ha'iyyah Ibn Abi Dawud
+                        </a>
+                    </h2>
 
                     <p>
-                        An eloquent poem outlining the foundational beliefs of Ahl
-                        al-Sunnah wal-Jama'ah.
+                        An eloquent poem outlining the foundational beliefs
+                        of Ahl al-Sunnah wal-Jama'ah.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/haiyyah-ibn-abi-dawud-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="haiyyah-ibn-abi-dawud"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Ta'iyyah Al-Ilbiri -->
-            <a href="E-books/taiyyah-al-ilbiri-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/Ta'iyyah-Al-Ilbiri/1.png" alt="Cover of Ta'iyyah Al-Ilbiri"
-                        loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="taiyyah-al-ilbiri">
+                <a href="E-books/taiyyah-al-ilbiri-e-book.html" class="ebook-cover-link">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/taiyyah-al-ilbiri/pdf/preview-1.webp" alt="Cover of Ta'iyyah Al-Ilbiri"
+                            loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
-                    <span class="ebook-category">Reminders and Repentance</span>
+                    <span class="ebook-category">
+                        Reminders and Repentance
+                    </span>
 
-                    <h2>Ta'iyyah Al-Ilbiri</h2>
+                    <h2>
+                        <a href="E-books/taiyyah-al-ilbiri-e-book.html">
+                            Ta'iyyah Al-Ilbiri
+                        </a>
+                    </h2>
 
                     <p>
-                        A moving reminder of the Hereafter, repentance, righteous deeds
-                        and the reality of worldly life.
+                        A moving reminder of the Hereafter, repentance,
+                        righteous deeds and the reality of worldly life.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/taiyyah-al-ilbiri-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="taiyyah-al-ilbiri" disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Laamiyah Ibn Al-Qayyim -->
-            <a href="E-books/laamiyah-ibn-al-qayyim-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/Laamiyah-Ibn-Al-Qayyim/1.png" alt="Cover of Laamiyah Ibn Al-Qayyim"
-                        loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="laamiyah-ibn-al-qayyim">
+                <a href="E-books/laamiyah-ibn-al-qayyim-e-book.html" class="ebook-cover-link">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/laamiyah-ibn-al-qayyim/pdf/preview-1.webp" alt="Cover of Laamiyah Ibn Al-Qayyim"
+                            loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
-                    <span class="ebook-category">Innovation and Spirituality</span>
+                    <span class="ebook-category">
+                        Innovation and Spirituality
+                    </span>
 
-                    <h2>Laamiyah Ibn Al-Qayyim</h2>
+                    <h2>
+                        <a href="E-books/laamiyah-ibn-al-qayyim-e-book.html">
+                            Laamiyah Ibn Al-Qayyim
+                        </a>
+                    </h2>
 
                     <p>
-                        Ibn al-Qayyim's warning against spiritual excesses and practices
-                        unsupported by the Qur'an and Sunnah.
+                        Ibn al-Qayyim's warning against spiritual excesses
+                        and practices unsupported by the Qur'an and Sunnah.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/laamiyah-ibn-al-qayyim-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="laamiyah-ibn-al-qayyim"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
 
             <!-- Al-Aqeedah As-Safariniyyah -->
-            <a href="E-books/al-aqeedah-as-safariniyyah-e-book.html" class="ebook-card">
-                <div class="ebook-cover">
-                    <img src="Images/E-books/Al-Aqeedah-As-Safariniyyah/1.png" alt="Cover of Al-Aqeedah As-Safariniyyah"
-                        loading="lazy" />
-                </div>
+            <article class="ebook-card" data-product-slug="al-aqeedah-as-safariniyyah">
+                <a href="E-books/al-aqeedah-as-safariniyyah-e-book.html" class="ebook-cover-link">
+                    <div class="ebook-cover">
+                        <img src="Images/E-books/al-aqeedah-as-safariniyyah/pdf/preview-1.webp"
+                            alt="Cover of Al-Aqeedah As-Safariniyyah" loading="lazy" />
+                    </div>
+                </a>
 
                 <div class="ebook-card-content">
                     <span class="ebook-category">Islamic Creed</span>
 
-                    <h2>Al-Aqeedah As-Safariniyyah</h2>
+                    <h2>
+                        <a href="E-books/al-aqeedah-as-safariniyyah-e-book.html">
+                            Al-Aqeedah As-Safariniyyah
+                        </a>
+                    </h2>
 
                     <p>
-                        A systematic poem explaining the doctrine of Ahl al-Sunnah
-                        wal-Jama'ah.
+                        A systematic poem explaining the doctrine of
+                        Ahl al-Sunnah wal-Jama'ah.
                     </p>
 
-                    <span class="ebook-view-button">
-                        View E-book
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </span>
+                    <div class="ebook-price">
+                        <span class="ebook-price-value">—</span>
+                        <span class="ebook-currency">USD</span>
+                    </div>
+
+                    <div class="ebook-card-actions">
+                        <a href="E-books/al-aqeedah-as-safariniyyah-e-book.html" class="ebook-view-button">
+                            View E-book
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <button class="ebook-cart-button" type="button" data-product-slug="al-aqeedah-as-safariniyyah"
+                            disabled>
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
-            </a>
+            </article>
+
         </section>
 
-        <div class="extra-space"></div>
+
+        <section class="ebooks-help-section">
+
+            <div class="ebooks-help-icon">
+
+                <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+
+            </div>
+
+
+            <div class="ebooks-help-content">
+
+                <p class="ebooks-help-kicker">
+                    Need Help?
+                </p>
+
+                <h2>
+                    Questions about e-books or downloads?
+                </h2>
+
+                <p>
+                    Visit our FAQ for answers about purchases,
+                    downloading again, sharing e-books and more.
+                </p>
+
+            </div>
+
+
+            <div class="ebooks-help-actions">
+
+                <a href="faq.html" class="ebooks-help-button">
+                    View FAQ
+
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+
+                <a href="retrieve-download.html" class="ebooks-help-secondary">
+                    Retrieve Download
+                </a>
+
+            </div>
+
+        </section>
+
+
+        
     </main>
 
     <!-- Footer -->
@@ -356,6 +635,8 @@
                 <a href="e-books.html"> E-books </a>
 
                 <a href="contact-us.html"> Contact </a>
+
+                <a href="faq.html"> FAQ </a>
             </div>
 
             <div class="social-links" aria-label="Social media">
@@ -385,9 +666,16 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script src="Supabase/supabase-client.js"></script>
     <script src="Scripts/global.js"></script>
-<script src="Scripts/donation-popup.js"></script>
-    <script src="Scripts/bookScript.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+
+    <script src="Scripts/donation-popup.js"></script>
+
+    <script src="Scripts/store.js"></script>
 </body>
 
 </html>

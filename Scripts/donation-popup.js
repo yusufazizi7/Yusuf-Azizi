@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("donationPopup");
     const closeBtn = document.querySelector(".close-btn");
     const cancelButton = document.getElementById("cancelButton");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Close when clicking anywhere on the page
-    document.addEventListener("click", function(event) {
+    document.addEventListener("click", function (event) {
         // Check if the click is outside the popup-content
         if (!popup.contains(event.target) || event.target === closeBtn || event.target === cancelButton) {
             closePopup();
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     cancelButton.addEventListener("click", closePopup);
 
     // Redirect to Stripe donation page when clicking donate button
-    donateButton.addEventListener("click", function() {
+    donateButton.addEventListener("click", function () {
         window.open("https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv", "_blank");
         closePopup(); // Close the popup after clicking donate
     });

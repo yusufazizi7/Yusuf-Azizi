@@ -323,6 +323,24 @@
 
                 </button>
 
+                <button class="admin-tab" type="button" data-tab="videos">
+
+                    <i class="fa-solid fa-video" aria-hidden="true">
+                    </i>
+
+                    Videos
+
+                </button>
+
+                <button class="admin-tab" type="button" data-tab="poems">
+
+                    <i class="fa-solid fa-feather-pointed" aria-hidden="true">
+                    </i>
+
+                    Poems
+
+                </button>
+
 
                 <button class="admin-tab" type="button" data-tab="users">
 
@@ -547,6 +565,422 @@
 
             </div>
 
+            <!-- ================= VIDEOS ================= -->
+
+            <div id="videosPanel" class="admin-panel" hidden>
+
+
+                <div class="admin-panel-heading">
+
+                    <div>
+
+                        <p class="section-kicker">
+                            Video analytics
+                        </p>
+
+                        <h2>
+                            Videos
+                        </h2>
+
+                        <p>
+                            Review video performance across Islamic Qalam,
+                            including views, likes and comments.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refreshVideoStats" class="admin-video-refresh" type="button">
+
+                        <i class="fa-solid fa-rotate" aria-hidden="true">
+                        </i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+                <!-- ================= VIDEO TOTALS ================= -->
+
+                <div class="admin-video-summary">
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon videos">
+
+                            <i class="fa-solid fa-video" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total videos
+                            </span>
+
+                            <strong id="videoTotalCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon views">
+
+                            <i class="fa-regular fa-eye" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total views
+                            </span>
+
+                            <strong id="videoTotalViews">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon likes">
+
+                            <i class="fa-regular fa-thumbs-up" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total likes
+                            </span>
+
+                            <strong id="videoTotalLikes">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon comments">
+
+                            <i class="fa-regular fa-comments" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total comments
+                            </span>
+
+                            <strong id="videoTotalComments">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- ================= VIDEO TOOLBAR ================= -->
+
+                <div class="admin-video-toolbar">
+
+
+                    <label class="admin-search">
+
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true">
+                        </i>
+
+                        <input id="videoSearch" type="search" placeholder="Search videos...">
+
+                    </label>
+
+
+                    <label class="admin-video-sort-wrapper">
+
+                        <span>
+                            Sort by
+                        </span>
+
+                        <select id="videoSort">
+
+                            <option value="views-desc">
+                                Most viewed
+                            </option>
+
+                            <option value="likes-desc">
+                                Most liked
+                            </option>
+
+                            <option value="comments-desc">
+                                Most commented
+                            </option>
+
+                            <option value="views-asc">
+                                Least viewed
+                            </option>
+
+                            <option value="title-asc">
+                                Title A–Z
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                </div>
+
+
+                <!-- ================= VIDEO LIST ================= -->
+
+                <div id="adminVideosList" class="admin-videos-grid">
+
+                    <p class="admin-empty-state">
+                        Loading video statistics...
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <!-- ================= POEMS ================= -->
+
+            <div id="poemsPanel" class="admin-panel" hidden>
+
+
+                <div class="admin-panel-heading">
+
+                    <div>
+
+                        <p class="section-kicker">
+                            Poetry analytics
+                        </p>
+
+                        <h2>
+                            Poems
+                        </h2>
+
+                        <p>
+                            Review poem performance across Islamic Qalam,
+                            including views, likes and comments.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refreshPoemStats" class="admin-video-refresh" type="button">
+
+                        <i class="fa-solid fa-rotate" aria-hidden="true">
+                        </i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= TOTALS ================= -->
+
+                <div class="admin-video-summary">
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon videos">
+
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total poems
+                            </span>
+
+                            <strong id="poemTotalCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon views">
+
+                            <i class="fa-regular fa-eye" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total views
+                            </span>
+
+                            <strong id="poemTotalViews">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon likes">
+
+                            <i class="fa-regular fa-thumbs-up" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total likes
+                            </span>
+
+                            <strong id="poemTotalLikes">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-video-summary-card">
+
+                        <span class="admin-video-summary-icon comments">
+
+                            <i class="fa-regular fa-comments" aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Total comments
+                            </span>
+
+                            <strong id="poemTotalComments">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- ================= TOOLBAR ================= -->
+
+                <div class="admin-video-toolbar">
+
+
+                    <label class="admin-search">
+
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true">
+                        </i>
+
+                        <input id="poemSearch" type="search" placeholder="Search poems...">
+
+                    </label>
+
+
+                    <label class="admin-video-sort-wrapper">
+
+                        <span>
+                            Sort by
+                        </span>
+
+                        <select id="poemSort">
+
+                            <option value="views-desc">
+                                Most viewed
+                            </option>
+
+                            <option value="likes-desc">
+                                Most liked
+                            </option>
+
+                            <option value="comments-desc">
+                                Most commented
+                            </option>
+
+                            <option value="views-asc">
+                                Least viewed
+                            </option>
+
+                            <option value="title-asc">
+                                Title A–Z
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                </div>
+
+
+
+                <!-- ================= POEM LIST ================= -->
+
+                <div id="adminPoemsList" class="admin-videos-grid">
+
+                    <p class="admin-empty-state">
+                        Loading poem statistics...
+                    </p>
+
+                </div>
+
+
+            </div>
+
 
             <!-- ================= USERS ================= -->
 
@@ -689,6 +1123,7 @@
 
         </div>
 
+
     </footer>
 
 
@@ -697,12 +1132,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <script src="Supabase/supabase-client.js"></script>
-
-    <script src="Scripts/global.js"></script>
+    <script src="/Supabase/supabase-client.js"></script>
 
 
-    <script src="Supabase/admin.js"></script>
+    <script src="/Scripts/global.js"></script>
+
+    <!-- Video definitions -->
+    <script src="/Scripts/Data/videos.js"></script>
+    <script src="/Scripts/Data/poems.js"></script>
+
+
+
+    <!-- Main admin dashboard -->
+    <script src="/Supabase/admin.js"></script>
+
+
+    <!-- Video analytics -->
+    <script src="/Supabase/admin-videos.js"></script>
+    <script src="/Supabase/admin-poems.js"></script>
+
+
 
 
 </body>

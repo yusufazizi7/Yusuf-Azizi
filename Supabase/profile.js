@@ -235,6 +235,48 @@ const logoutButton =
     );
 
 
+/* =====================================
+   PURCHASED ITEMS
+===================================== */
+
+const purchasesNavCount =
+    document.getElementById(
+        "purchasesNavCount"
+    );
+
+
+const profilePurchasesList =
+    document.getElementById(
+        "profilePurchasesList"
+    );
+
+
+const profilePurchasesLoading =
+    document.getElementById(
+        "profilePurchasesLoading"
+    );
+
+
+const profilePurchasesEmpty =
+    document.getElementById(
+        "profilePurchasesEmpty"
+    );
+
+
+const profilePurchasesMessage =
+    document.getElementById(
+        "profilePurchasesMessage"
+    );
+
+
+let profilePurchases =
+    [];
+
+
+let profilePurchasesLoaded =
+    false;
+
+
 let currentUser = null;
 
 let currentProfile = null;
@@ -1404,11 +1446,689 @@ profileNavButtons.forEach(
 
                 }
 
+                if (
+                    section ===
+                    "purchases"
+                    &&
+                    !profilePurchasesLoaded
+                ) {
+
+                    await loadProfilePurchases();
+
+                }
+
             }
         );
 
     }
 );
+
+
+/* =====================================
+   LOAD PURCHASED ITEMS
+===================================== */
+
+async function loadProfilePurchases() {
+
+    if (
+        !currentUser
+    ) {
+
+        return;
+
+    }
+
+
+    profilePurchasesLoading.hidden =
+        false;
+
+
+    profilePurchasesEmpty.hidden =
+        true;
+
+
+    profilePurchasesMessage.textContent =
+        "";
+
+
+    profilePurchasesMessage.className =
+        "profile-message";
+
+
+    profilePurchasesList.innerHTML =
+        "";
+
+
+    try {
+
+        const {
+            data,
+            error
+        } =
+            await window
+                .supabaseClient
+                .functions
+                .invoke(
+                    "get-account-ebook-purchases",
+                    {
+                        body: {}
+                    }
+                );
+
+
+        if (
+            error
+        ) {
+
+            console.error(
+                "Unable to load purchases:",
+                error
+            );
+
+
+            throw new Error(
+                "Unable to load purchases."
+            );
+
+        }
+
+
+        if (
+            data?.error
+        ) {
+
+            throw new Error(
+                data.error
+            );
+
+        }
+
+
+        profilePurchases =
+            Array.isArray(
+                data?.purchases
+            )
+                ? data.purchases
+                : [];
+
+
+        profilePurchasesLoaded =
+            true;
+
+
+        updatePurchaseCount();
+
+
+        renderProfilePurchases();
+
+
+    } catch (
+    error
+    ) {
+
+        console.error(
+            "Purchase loading failed:",
+            error
+        );
+
+
+        showPurchaseMessage(
+            "Unable to load your purchases.",
+            "error"
+        );
+
+    } finally {
+
+        profilePurchasesLoading.hidden =
+            true;
+
+    }
+
+}
+
+
+
+/* =====================================
+   PURCHASE COUNT
+===================================== */
+
+function updatePurchaseCount() {
+
+    const count =
+        profilePurchases.length;
+
+
+    purchasesNavCount.textContent =
+        count;
+
+
+    purchasesNavCount.hidden =
+        count === 0;
+
+}
+
+
+
+/* =====================================
+   PURCHASE MESSAGE
+===================================== */
+
+function showPurchaseMessage(
+    message,
+    type = "error"
+) {
+
+    profilePurchasesMessage.textContent =
+        message;
+
+
+    profilePurchasesMessage.className =
+        `profile-message show ${type}`;
+
+}
+
+
+
+/* =====================================
+   FORMAT PURCHASE DATE
+===================================== */
+
+function formatPurchaseDate(
+    value
+) {
+
+    if (
+        !value
+    ) {
+
+        return "";
+
+    }
+
+
+    const date =
+        new Date(
+            value
+        );
+
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return "";
+
+    }
+
+
+    return date.toLocaleDateString(
+        undefined,
+        {
+            day:
+                "numeric",
+
+            month:
+                "long",
+
+            year:
+                "numeric"
+        }
+    );
+
+}
+
+
+
+/* =====================================
+   FORMAT PURCHASE PRICE
+===================================== */
+
+function formatPurchasePrice(
+    priceCents
+) {
+
+    const amount =
+        Number(
+            priceCents
+        ) / 100;
+
+
+    if (
+        !Number.isFinite(
+            amount
+        )
+    ) {
+
+        return "";
+
+    }
+
+
+    return new Intl.NumberFormat(
+        undefined,
+        {
+            style:
+                "currency",
+
+            currency:
+                "USD"
+        }
+    )
+        .format(
+            amount
+        );
+
+}
+
+
+
+/* =====================================
+   RENDER PURCHASED ITEMS
+===================================== */
+
+function renderProfilePurchases() {
+
+    profilePurchasesList.innerHTML =
+        "";
+
+
+    if (
+        profilePurchases.length === 0
+    ) {
+
+        profilePurchasesEmpty.hidden =
+            false;
+
+
+        return;
+
+    }
+
+
+    profilePurchasesEmpty.hidden =
+        true;
+
+
+    profilePurchases.forEach(
+        purchase => {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "profile-purchase-card";
+
+
+            /* ================= ICON ================= */
+
+            const icon =
+                document.createElement(
+                    "div"
+                );
+
+
+            icon.className =
+                "profile-purchase-icon";
+
+
+            icon.innerHTML = `
+                <i
+                    class="fa-solid fa-book-open"
+                    aria-hidden="true"
+                ></i>
+            `;
+
+
+
+            /* ================= CONTENT ================= */
+
+            const content =
+                document.createElement(
+                    "div"
+                );
+
+
+            content.className =
+                "profile-purchase-content";
+
+
+            const title =
+                document.createElement(
+                    "h3"
+                );
+
+
+            title.textContent =
+                purchase.title ||
+                "E-book";
+
+
+            const metadata =
+                document.createElement(
+                    "div"
+                );
+
+
+            metadata.className =
+                "profile-purchase-meta";
+
+
+            const purchaseDate =
+                formatPurchaseDate(
+                    purchase.purchasedAt
+                );
+
+
+            const purchasePrice =
+                formatPurchasePrice(
+                    purchase.priceCents
+                );
+
+
+            if (
+                purchaseDate
+            ) {
+
+                const date =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                date.innerHTML = `
+                    <i
+                        class="fa-regular fa-calendar"
+                        aria-hidden="true"
+                    ></i>
+                `;
+
+
+                const dateText =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                dateText.textContent =
+                    `Purchased ${purchaseDate}`;
+
+
+                date.appendChild(
+                    dateText
+                );
+
+
+                metadata.appendChild(
+                    date
+                );
+
+            }
+
+
+            if (
+                purchasePrice
+            ) {
+
+                const price =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                price.innerHTML = `
+                    <i
+                        class="fa-solid fa-receipt"
+                        aria-hidden="true"
+                    ></i>
+                `;
+
+
+                const priceText =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                priceText.textContent =
+                    purchasePrice;
+
+
+                price.appendChild(
+                    priceText
+                );
+
+
+                metadata.appendChild(
+                    price
+                );
+
+            }
+
+
+            content.append(
+                title,
+                metadata
+            );
+
+
+
+            /* ================= DOWNLOAD ================= */
+
+            const downloadButton =
+                document.createElement(
+                    "button"
+                );
+
+
+            downloadButton.type =
+                "button";
+
+
+            downloadButton.className =
+                "profile-purchase-download";
+
+
+            downloadButton.innerHTML = `
+                <i
+                    class="fa-solid fa-download"
+                    aria-hidden="true"
+                ></i>
+
+                <span>
+                    Download
+                </span>
+            `;
+
+
+            downloadButton.addEventListener(
+                "click",
+                () => {
+
+                    createPurchaseDownload(
+                        purchase,
+                        downloadButton
+                    );
+
+                }
+            );
+
+
+
+            card.append(
+                icon,
+                content,
+                downloadButton
+            );
+
+
+            profilePurchasesList.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================
+   CREATE NEW TEMPORARY DOWNLOAD
+===================================== */
+
+async function createPurchaseDownload(
+    purchase,
+    button
+) {
+
+    if (
+        !purchase?.orderItemId
+    ) {
+
+        showPurchaseMessage(
+            "Unable to identify this purchase.",
+            "error"
+        );
+
+
+        return;
+
+    }
+
+
+    const originalHTML =
+        button.innerHTML;
+
+
+    button.disabled =
+        true;
+
+
+    button.innerHTML = `
+        <i
+            class="fa-solid fa-circle-notch fa-spin"
+            aria-hidden="true"
+        ></i>
+
+        <span>
+            Preparing...
+        </span>
+    `;
+
+
+    profilePurchasesMessage.textContent =
+        "";
+
+
+    profilePurchasesMessage.className =
+        "profile-message";
+
+
+    try {
+
+        const {
+            data,
+            error
+        } =
+            await window
+                .supabaseClient
+                .functions
+                .invoke(
+                    "create-account-ebook-download",
+                    {
+                        body: {
+
+                            orderItemId:
+                                purchase.orderItemId
+
+                        }
+                    }
+                );
+
+
+        if (
+            error
+        ) {
+
+            console.error(
+                "Download link creation failed:",
+                error
+            );
+
+
+            throw new Error(
+                "Unable to create download link."
+            );
+
+        }
+
+
+        if (
+            data?.error
+        ) {
+
+            throw new Error(
+                data.error
+            );
+
+        }
+
+
+        if (
+            !data?.token
+        ) {
+
+            throw new Error(
+                "Download token was not returned."
+            );
+
+        }
+
+
+        /*
+         * The raw token goes in the URL fragment.
+         *
+         * download.html will then pass it to
+         * get-ebook-download.
+         */
+
+        window.location.href =
+            `/download.html#token=${encodeURIComponent(
+                data.token
+            )}`;
+
+
+    } catch (
+    error
+    ) {
+
+        console.error(
+            "Unable to prepare download:",
+            error
+        );
+
+
+        showPurchaseMessage(
+            "Unable to prepare your download. Please try again.",
+            "error"
+        );
+
+
+        button.disabled =
+            false;
+
+
+        button.innerHTML =
+            originalHTML;
+
+    }
+
+}
 
 
 /* =====================================

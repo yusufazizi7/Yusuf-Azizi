@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Download your purchased Islamic Qalam e-book." />
+
+    <meta name="referrer" content="no-referrer" />
+
+    <title>
+        Download E-book | Islamic Qalam
+    </title>
+
+
+    <link rel="stylesheet" href="CSS/global.css" />
+
+    <link rel="stylesheet" href="CSS/download.css" />
+
+    <link rel="icon" type="image/png" href="Images/website-favicon.png" />
+
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="brand">
+
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
+
+            <span class="brand-name">
+                Islamic Qalam
+            </span>
+
+        </div>
+
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="e-books.html">
+                E-books
+            </a>
+
+            <a href="contact-us.html">
+                Contact
+            </a>
+
+            <a id="navAccountLink" class="nav-login" href="login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+            </a>
+
+        </nav>
+
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= DOWNLOAD ================= -->
+
+    <main class="download-main">
+
+        <section class="download-card">
+
+
+            <!-- LOADING -->
+
+            <div id="downloadLoading" class="download-state">
+
+                <div class="download-icon">
+                    <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i>
+                </div>
+
+                <h1>
+                    Preparing your e-book
+                </h1>
+
+                <p>
+                    We're verifying your secure
+                    download link.
+                </p>
+
+            </div>
+
+
+            <!-- READY -->
+
+            
+            
+            <div id="downloadReady" class="download-state" hidden>
+            
+                <div class="download-icon download-success-icon">
+            
+                    <i class="fa-solid fa-book-open" aria-hidden="true">
+                    </i>
+            
+                </div>
+            
+            
+                <p class="download-eyebrow">
+                    Purchase verified
+                </p>
+            
+            
+                <h1 id="downloadBookTitle">
+                    Your e-book is ready
+                </h1>
+            
+            
+                <p>
+                    Choose the file you would like
+                    to download.
+                </p>
+            
+            
+                <div id="downloadFileButtons" class="download-file-buttons">
+                </div>
+            
+            
+                <p class="download-permanent-note">
+            
+                    <i class="fa-solid fa-link" aria-hidden="true">
+                    </i>
+            
+                    This access link is valid for
+                    15 minutes. Your purchase remains
+                    permanent, and you can generate a
+                    new link whenever you need to
+                    download your e-book again.
+            
+                </p>
+            
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div id="downloadError" class="download-state" hidden>
+
+                <div class="download-icon download-error-icon">
+
+                    <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+
+                </div>
+
+                <h1>
+                    Download unavailable
+                </h1>
+
+                <p id="downloadErrorText">
+                    This download link could not be verified.
+                </p>
+
+
+                <a href="contact-us.html" class="download-primary-button">
+                    Contact Islamic Qalam
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
+    <script src="Scripts/global.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+
+    <script src="Scripts/download.js"></script>
+
+</body>
+
+</html>

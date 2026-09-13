@@ -30,7 +30,7 @@ function changeFont(fontName) {
         } else if (fontName.includes('Thuluth') && isMobile) {
             const newFontSize = originalFontSize + 7;
             element.style.fontSize = `${newFontSize}px`;
-        } else if (fontName.includes('Neiziri')) {
+        } else if (fontName.includes('Neirizi')) {
             const newFontSize = originalFontSize - 3;
             element.style.fontSize = `${newFontSize}px`;
         } else {
@@ -79,7 +79,7 @@ function changeFont(fontName) {
         } else if (fontName.includes('Thuluth') && isMobile) {
             const newFontSize = originalFontSize + 7;
             element.style.fontSize = `${newFontSize}px`;
-        } else if (fontName.includes('Neiziri')) {
+        } else if (fontName.includes('Neirizi')) {
             const newFontSize = originalFontSize - 3;
             element.style.fontSize = `${newFontSize}px`;
         } else {
@@ -117,13 +117,13 @@ document.addEventListener('DOMContentLoaded', initializeFont);
 function updateRadioButtons(fontName) {
     const defaultRadio = document.querySelector('input[name="font"][value="default"]');
     const amiriRadio = document.querySelector('input[name="font"][value="amiri"]');
-    const neiziriRadio = document.querySelector('input[name="font"][value="Neiziri"]');
+    const neiziriRadio = document.querySelector('input[name="font"][value="Neirizi"]');
     const uthmanRadio = document.querySelector('input[name="font"][value="Uthman"]');
     const thuluthRadio = document.querySelector('input[name="font"][value="Thuluth"]');
 
     if (fontName.includes('Amiri')) {
         amiriRadio.checked = true;
-    } else if (fontName.includes('Neiziri')) {
+    } else if (fontName.includes('Neirizi')) {
         neiziriRadio.checked = true;
     } else if (fontName.includes('Uthman')) {
         uthmanRadio.checked = true;
@@ -149,8 +149,8 @@ fontRadios.forEach(radio => {
                 changeFont("'Thuluth");
             } else if (this.value === 'amiri') {
                 changeFont("'Amiri'");
-            } else if (this.value === 'Neiziri') {
-                changeFont("'Neiziri'");
+            } else if (this.value === 'Neirizi') {
+                changeFont("'Neirizi'");
             } else if (this.value === 'Uthman') {
                 changeFont("'Uthman'");
             } else {

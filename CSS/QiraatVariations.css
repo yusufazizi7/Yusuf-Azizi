@@ -1,44 +1,33 @@
 .diff-from-hafs {
+  color: #f703f6;
 
-    color: #f703f6; 
-
-
-    direction: ltr;
-
+  direction: ltr;
 }
 
 .ra-muraqqaqah {
-
-    color: #44e53f;
-    
+  color: #44e53f;
 }
 
 .lam-mulaghazhah {
-
-    color: #0273fd;
+  color: #0273fd;
 }
 
 .mad-badal {
-
-    color: #00ccff;
+  color: #00ccff;
 }
 
 .taqlil-word {
-
-    color: red;
+  color: red;
 }
 
 .silah-meem {
-
-    color: orange;
+  color: orange;
 }
 
 .mad-lin {
-
-    color: #9acc00;
+  color: #9acc00;
 }
 
 .idgham {
-
-    color: #4a23f1;
+  color: #4a23f1;
 }

@@ -1,0 +1,200 @@
+/* =========================================================
+   E-BOOK DOWNLOAD
+   ========================================================= */
+
+.download-main {
+  display: flex;
+
+  width: 100%;
+  min-height: 100vh;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-top: 0;
+
+  padding: 150px 20px 80px;
+
+  background: linear-gradient(180deg, var(--primary-color), #fffdf8);
+}
+
+.download-card {
+  width: min(620px, 100%);
+
+  padding: clamp(30px, 5vw, 50px);
+
+  border: 1px solid rgba(140, 98, 57, 0.2);
+
+  border-radius: 22px;
+
+  background: #fffdf8;
+
+  box-shadow: 0 18px 50px rgba(13, 59, 38, 0.09);
+
+  text-align: center;
+}
+
+.download-state[hidden] {
+  display: none !important;
+}
+
+/* ================= ICON ================= */
+
+.download-icon {
+  display: grid;
+
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 22px;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--accent-color);
+
+  background: rgba(140, 98, 57, 0.1);
+
+  font-size: 1.5rem;
+}
+
+.download-success-icon {
+  color: #ffffff;
+
+  background: var(--secondary-color);
+}
+
+.download-error-icon {
+  color: var(--red-color);
+
+  background: rgba(181, 33, 33, 0.08);
+}
+
+/* ================= TEXT ================= */
+
+.download-eyebrow {
+  margin-bottom: 8px;
+
+  color: var(--accent-color);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.download-state h1 {
+  margin-bottom: 12px;
+
+  color: var(--secondary-color);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+
+  line-height: 1.15;
+}
+
+.download-state > p {
+  max-width: 470px;
+
+  margin-inline: auto;
+
+  color: var(--text-color);
+
+  line-height: 1.65;
+
+  opacity: 0.72;
+}
+
+/* ================= BUTTON ================= */
+
+.download-primary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 27px;
+
+  padding: 13px 19px;
+
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  background: var(--secondary-color);
+
+  font-weight: 700;
+}
+
+.download-primary-button:hover {
+  color: #ffffff;
+
+  background: #174f37;
+}
+
+/* ================= NOTE ================= */
+
+.download-permanent-note {
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: 28px !important;
+
+  padding: 14px;
+
+  border-radius: 9px;
+
+  background: rgba(140, 98, 57, 0.07);
+
+  font-size: 0.8rem;
+
+  text-align: left;
+}
+
+.download-permanent-note i {
+  flex: 0 0 auto;
+
+  margin-top: 4px;
+
+  color: var(--accent-color);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .download-main {
+    padding: 110px 14px 50px;
+  }
+
+  .download-primary-button {
+    width: 100%;
+  }
+}
+
+.download-file-buttons {
+    display: grid;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.download-file-buttons .download-primary-button {
+    width: 100%;
+}
+
+.download-file-buttons button {
+    border: none;
+    cursor: pointer;
+}
+
+.download-file-buttons button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}

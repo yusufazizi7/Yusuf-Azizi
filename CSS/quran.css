@@ -1,121 +1,914 @@
-/* ================= QURAN PAGE STYLING ================= */
+/* =========================================================
+   QUR'AN PAGE
+   ========================================================= */
 
-main {
-    text-align: center;
-    padding: 40px 20px;
+/* ================= PAGE ================= */
+
+.quran-page {
+  width: 100%;
+  flex: 1 0 auto;
+  margin-top: 0;
+  padding-top: 82px;
+  overflow-x: hidden;
+  background: var(--home-bg);
+  text-align: left;
 }
 
-.page-title {
-    font-family: Titles;
-    font-size: 3rem;
-    color: var(--text-color);
-    margin: 60px 0px;
+.quran-page section {
+  margin-top: 0;
 }
 
-a {
-    text-decoration: none;
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.quran-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(140, 98, 57, 0.24),
+      transparent 30rem
+    ),
+    linear-gradient(135deg, #0d3b26 0%, #123f2d 52%, #18332f 100%);
 }
 
-/* Surah List Container */
+.quran-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to right, transparent, black 55%, transparent);
+}
+
+.quran-hero-inner {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+
+  gap: clamp(2.5rem, 6vw, 6rem);
+
+  width: min(1180px, calc(100% - 40px));
+
+  min-height: 500px;
+
+  margin-inline: auto;
+
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+
+  align-items: center;
+}
+
+.quran-hero-copy {
+  max-width: 700px;
+}
+
+.quran-eyebrow,
+.quran-section-eyebrow {
+  margin-bottom: 0.8rem;
+
+  color: #d8c3a8;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.quran-hero h1 {
+  margin: 0;
+
+  color: var(--home-bg);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.9rem, 6vw, 5.2rem);
+
+  font-weight: 600;
+
+  line-height: 1.04;
+
+  letter-spacing: -0.035em;
+}
+
+.quran-hero-description {
+  max-width: 640px;
+
+  margin-top: 1.35rem;
+
+  color: rgba(250, 244, 232, 0.78);
+
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+
+  line-height: 1.75;
+}
+
+.quran-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.75rem 1.15rem;
+
+  margin-top: 1.8rem;
+
+  color: rgba(250, 244, 232, 0.82);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.quran-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.42rem;
+}
+
+.quran-hero-meta i {
+  color: #d8c3a8;
+}
+
+/* ================= HERO ART ================= */
+
+.quran-hero-art {
+  display: grid;
+  place-items: center;
+}
+
+.quran-hero-art-frame {
+  position: relative;
+
+  display: grid;
+
+  width: min(100%, 380px);
+
+  min-height: 300px;
+
+  padding: 3.2rem 2.2rem;
+
+  place-items: center;
+
+  border: 1px solid rgba(250, 244, 232, 0.18);
+
+  border-radius: 28px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  box-shadow:
+    inset 0 0 0 8px rgba(255, 255, 255, 0.018),
+    0 30px 80px rgba(0, 0, 0, 0.16);
+
+  text-align: center;
+}
+
+.quran-hero-art-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 18px;
+
+  border: 1px solid rgba(216, 195, 168, 0.22);
+
+  border-radius: 20px;
+
+  pointer-events: none;
+}
+
+.quran-hero-calligraphy {
+  position: relative;
+  z-index: 1;
+
+  direction: rtl;
+
+  color: var(--home-bg);
+
+  font-family: Thuluth, Amiri, serif;
+
+  font-size: clamp(3.6rem, 8vw, 6.2rem);
+
+  line-height: 1.35;
+}
+
+.quran-hero-art-caption {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 1rem;
+
+  color: rgba(250, 244, 232, 0.62);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DIRECTORY
+   ========================================================= */
+
+.surah-directory {
+  width: min(1180px, calc(100% - 40px));
+
+  margin-inline: auto;
+
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+.surah-directory-heading {
+  margin-bottom: 1.8rem;
+}
+
+.surah-directory-heading > div {
+  max-width: 680px;
+}
+
+.quran-section-eyebrow {
+  color: var(--home-brown);
+}
+
+.surah-directory-heading h2 {
+  margin: 0;
+
+  color: var(--home-green);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2rem, 4vw, 3.15rem);
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.025em;
+}
+
+.surah-directory-heading p:last-child {
+  margin-top: 0.75rem;
+
+  color: var(--home-muted);
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SEARCH + FILTERS
+   ========================================================= */
+
+.surah-toolbar {
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0.8rem;
+}
+
+.surah-search {
+  position: relative;
+
+  display: block;
+
+  width: min(100%, 520px);
+}
+
+.surah-search i {
+  position: absolute;
+
+  top: 50%;
+  left: 1rem;
+
+  color: var(--home-muted);
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+}
+
+.surah-search input {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 0.78rem 1rem 0.78rem 2.8rem;
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 12px;
+
+  outline: none;
+
+  color: var(--home-text);
+
+  background: var(--home-surface);
+
+  font: inherit;
+
+  box-shadow: 0 7px 22px rgba(33, 42, 32, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.surah-search input::placeholder {
+  color: #8a9189;
+}
+
+.surah-search input:focus {
+  border-color: rgba(140, 98, 57, 0.52);
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(140, 98, 57, 0.1);
+}
+
+.surah-filter-group {
+  display: inline-flex;
+
+  gap: 0.35rem;
+
+  padding: 0.3rem;
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 12px;
+
+  background: var(--home-surface);
+}
+
+.surah-filter {
+  min-height: 38px;
+
+  padding: 0.55rem 0.9rem;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  color: var(--home-muted);
+
+  background: transparent;
+
+  font: inherit;
+
+  font-size: 0.8rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.surah-filter:hover {
+  color: var(--home-green);
+
+  background: var(--home-surface-soft);
+}
+
+.surah-filter.active {
+  color: #ffffff;
+
+  background: var(--home-green);
+}
+
+/* ================= RESULT BAR ================= */
+
+.surah-results-bar {
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.2rem;
+
+  color: var(--home-muted);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.surah-status-key {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+}
+
+.status-dot {
+  display: inline-block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+}
+
+.status-dot.available {
+  background: #2f7b50;
+}
+
+/* =========================================================
+   SURAH GRID
+   ========================================================= */
+
 .surah-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    direction: rtl;
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  direction: ltr;
 }
 
-/* Surah Box Styling */
+.surah-links {
+  display: block;
+
+  min-width: 0;
+
+  text-decoration: none;
+}
+
 .surah-box {
-    font-family: Thuluth;
-    font-size: 2rem;
-    text-align: center;
-    color: var(--text-color);
-    background: linear-gradient(to right, #f1ebe1, var(--primary-color));
-    padding: 15px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid var(--secondary-color);
-    border-radius: 12px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    width: 300px;
+  position: relative;
+
+  display: flex;
+
+  min-height: 148px;
+
+  padding: 1.2rem 1.2rem 1.1rem;
+
+  overflow: hidden;
+
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 18px;
+
+  color: var(--home-text);
+
+  background: var(--home-surface);
+
+  box-shadow: 0 10px 28px rgba(33, 42, 32, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
-/* Hover Effect */
-.surah-box:hover {
-    background: var(--accent-color);
-    color: white;
-    border-color: var(--secondary-color);
-    transform: scale(1.05);
+.surah-box::after {
+  content: "Coming soon";
+
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
+
+  padding: 0.35rem 0.5rem;
+
+  border-radius: 999px;
+
+  color: var(--home-muted);
+
+  background: var(--home-surface-soft);
+
+  font-family: Calibri, sans-serif;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.02em;
 }
 
-/* Surah Name */
+.surah-links.available .surah-box::after {
+  content: "Available";
+
+  color: #1f5b39;
+
+  background: rgba(47, 123, 80, 0.12);
+}
+
+.surah-links:hover .surah-box {
+  border-color: rgba(140, 98, 57, 0.3);
+
+  background: #ffffff;
+
+  box-shadow: 0 16px 34px rgba(33, 42, 32, 0.085);
+
+  transform: translateY(-3px);
+}
+
+.surah-links.available:hover .surah-box {
+  border-color: rgba(47, 123, 80, 0.32);
+}
+
+/* ================= ARABIC NAME ================= */
+
 .surah-name {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--text-color);
-    direction: rtl;
-    font-variant-numeric: traditional;
+  max-width: calc(100% - 75px);
+
+  color: var(--home-green);
+
+  font-family: Thuluth, Amiri, serif;
+
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+
+  font-weight: normal;
+
+  line-height: 1.45;
+
+  direction: rtl;
+
+  text-align: left;
 }
 
+/* ================= TRANSLATION ================= */
 
+.surah-translation {
+  margin-top: 0.35rem;
 
-/* ================= SURAH NOT AVAILABLE POPUP ================= */
+  color: var(--home-muted);
+
+  font-family: Calibri, sans-serif;
+
+  font-size: 0.88rem;
+
+  line-height: 1.45;
+
+  direction: ltr;
+
+  text-align: left;
+}
+
+.surah-links.available .surah-translation {
+  color: #4e6256;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.surah-empty {
+  padding: 4.2rem 1.5rem;
+
+  text-align: center;
+}
+
+.surah-empty[hidden] {
+  display: none !important;
+}
+
+.surah-empty-icon {
+  display: grid;
+
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 1rem;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--home-brown-dark);
+
+  background: var(--home-surface-soft);
+}
+
+.surah-empty h3 {
+  color: var(--home-green);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.3rem;
+}
+
+.surah-empty p {
+  margin-top: 0.4rem;
+
+  color: var(--home-muted);
+}
+
+/* =========================================================
+   SURAH NOT AVAILABLE POPUP
+   ========================================================= */
+
 .surah-popup {
-    display: none; /* Ensure it is hidden initially */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 2000;
-    
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 3000;
+
+  display: none;
+
+  padding: 1.25rem;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(13, 32, 24, 0.55);
+
+  backdrop-filter: blur(4px);
+}
+
+.surah-popup.active {
+  display: flex;
 }
 
 .surah-popup-content {
-    background: var(--primary-color);
-    color: var(--text-color);
-    padding: 25px;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+  position: relative;
+
+  width: min(100%, 440px);
+
+  padding: 2.5rem 2rem 1.7rem;
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 22px;
+
+  color: var(--home-text);
+
+  background: var(--home-surface);
+
+  box-shadow: 0 28px 80px rgba(13, 32, 24, 0.24);
+
+  text-align: center;
 }
 
-/* Close Button */
 .close-surah-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: absolute;
+
+  top: 0.9rem;
+  right: 0.9rem;
+
+  display: grid;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  place-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: var(--home-muted);
+
+  background: transparent;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 1.7rem;
+
+  cursor: pointer;
 }
 
 .close-surah-btn:hover {
-    color: var(--accent-color);
+  color: var(--home-green);
+
+  background: var(--home-surface-soft);
 }
 
+.surah-popup-icon {
+  display: grid;
 
+  width: 58px;
+  height: 58px;
 
-/* Surah Translation */
-.surah-translation {
-    font-size: 1rem;
-    color: var(--secondary-color);
-    margin-top: 5px;
-    font-family: Uthman;
+  margin: 0 auto 1.1rem;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--home-green);
+
+  background: var(--home-surface-soft);
+
+  font-size: 1.15rem;
 }
 
-/* Responsive Design */
-/* Responsive Design for Quran Page */
+.surah-popup-content h2 {
+  margin: 0;
+
+  color: var(--home-green);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.65rem;
+}
+
+.surah-popup-content p {
+  margin-top: 0.75rem;
+
+  color: var(--home-muted);
+
+  line-height: 1.65;
+}
+
+.surah-popup-button {
+  min-height: 44px;
+
+  margin-top: 1.25rem;
+
+  padding: 0.7rem 1.2rem;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background: var(--home-green);
+
+  font: inherit;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.surah-popup-button:hover {
+  background: var(--home-green-light);
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.quran-page a:focus-visible,
+.quran-page button:focus-visible,
+.quran-page input:focus-visible,
+.surah-popup button:focus-visible {
+  outline: 3px solid rgba(140, 98, 57, 0.45);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media only screen and (max-width: 980px) {
+  .quran-hero-inner {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    text-align: center;
+  }
+
+  .quran-hero-copy {
+    max-width: 760px;
+
+    margin-inline: auto;
+  }
+
+  .quran-hero-description {
+    margin-inline: auto;
+  }
+
+  .quran-hero-meta {
+    justify-content: center;
+  }
+
+  .quran-hero-art-frame {
+    width: min(82vw, 370px);
+  }
+
+  .surah-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 768px) {
+  .quran-page {
+    padding-top: 72px;
+  }
+
+  .quran-hero-inner,
+  .surah-directory {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .quran-hero-inner {
+    gap: 3rem;
+
+    padding: 3.8rem 0 4.5rem;
+  }
+
+  .quran-hero h1 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .quran-hero-meta {
+    gap: 0.7rem 1rem;
+  }
+
+  .surah-directory {
+    padding: 4.5rem 0;
+  }
+
+  .surah-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .surah-search {
+    width: 100%;
+  }
+
+  .surah-filter-group {
+    align-self: flex-start;
+  }
+
+  .surah-results-bar {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 0.45rem;
+  }
+
+  .surah-list {
+    grid-template-columns: 1fr;
+  }
+
+  .surah-box {
+    min-height: 136px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media only screen and (max-width: 480px) {
+  .quran-hero-art-frame {
+    min-height: 260px;
+
+    padding: 2.5rem 1.5rem;
+  }
+
+  .quran-hero-meta {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .surah-filter-group {
+    width: 100%;
+  }
+
+  .surah-filter {
+    flex: 1;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .surah-box,
+  .surah-filter,
+  .surah-search input,
+  .surah-popup-button,
+  .close-surah-btn {
+    transition: none;
+  }
+}

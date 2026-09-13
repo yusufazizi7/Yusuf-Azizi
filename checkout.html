@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Secure checkout for Islamic Qalam e-books." />
+
+    <title>
+        Checkout | Islamic Qalam
+    </title>
+
+    <link rel="stylesheet" href="CSS/global.css" />
+
+    <link rel="stylesheet" href="CSS/checkout.css" />
+
+    <link rel="icon" type="image/png" href="Images/website-favicon.png" />
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="brand">
+
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
+
+            <span class="brand-name">
+                Islamic Qalam
+            </span>
+
+        </div>
+
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+
+            <a href="index.html#poetry-library">
+                Poetry
+            </a>
+
+            <a href="quran.html">
+                Qur'an
+            </a>
+
+            <a href="videos.html">
+                Videos
+            </a>
+
+            <a href="e-books.html">
+                E-books
+            </a>
+
+            <a href="contact-us.html">
+                Contact
+            </a>
+
+            <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
+                rel="noopener noreferrer">
+                Donate
+            </a>
+
+            <a id="navAccountLink" class="nav-login" href="login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+            </a>
+
+        </nav>
+
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <main class="checkout-main">
+
+        <div class="checkout-container">
+
+
+            <!-- ================= LEFT ================= -->
+
+            <section class="checkout-details">
+
+                <a href="e-books.html" class="checkout-back-link">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+
+                    Back to e-books
+                </a>
+
+
+                <div class="checkout-heading">
+
+                    <p class="checkout-eyebrow">
+                        Secure Checkout
+                    </p>
+
+                    <h1>
+                        Complete your order
+                    </h1>
+
+                    <p>
+                        Enter the email address where you
+                        would like to receive your permanent
+                        e-book download links.
+                    </p>
+
+                </div>
+
+
+                <!-- Customer -->
+
+                <div class="checkout-section">
+
+                    <div class="checkout-section-heading">
+
+                        <span class="checkout-step">
+                            1
+                        </span>
+
+                        <div>
+                            <h2>
+                                Contact information
+                            </h2>
+
+                            <p>
+                                Your download links will be
+                                sent to this email.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div id="accountStatus" class="checkout-account-status" hidden></div>
+
+
+                    <div id="checkoutEmailSection" class="checkout-field">
+
+                        <label for="checkoutEmail">
+                            Email address
+                        </label>
+
+                        <input id="checkoutEmail" name="email" type="email" autocomplete="email"
+                            placeholder="you@example.com" required />
+
+                        <p id="emailError" class="checkout-field-error" hidden>
+                            Please enter a valid email address.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment -->
+
+                <div class="checkout-section">
+
+                    <div class="checkout-section-heading">
+
+                        <span class="checkout-step">
+                            2
+                        </span>
+
+                        <div>
+                            <h2 id="checkoutPaymentHeading">
+                                Payment
+                            </h2>
+                            
+                            <p id="checkoutPaymentDescription">
+                                Payment information will be
+                                securely processed by Stripe.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div id="paymentPlaceholder" class="payment-placeholder">
+                        <div class="payment-placeholder-icon">
+                        
+                            <i id="paymentPlaceholderIcon" class="fa-solid fa-lock" aria-hidden="true">
+                            </i>
+                        
+                        </div>
+                        
+                        <div>
+                        
+                            <strong id="paymentPlaceholderTitle">
+                                Secure payment
+                            </strong>
+                        
+                            <p id="paymentPlaceholderText">
+                                Continue below to load the secure
+                                Stripe payment form.
+                            </p>
+                        
+                        </div>
+                    </div>
+
+
+                    <div id="paymentElementContainer" class="payment-element-container" hidden>
+                        <div id="payment-element"></div>
+                    </div>
+
+
+                    <p id="paymentError" class="payment-error" hidden></p>
+
+                </div>
+
+
+                <button id="continuePaymentButton" class="checkout-payment-button" type="button" disabled>
+                    Continue to Payment
+
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+
+
+                <p id="checkoutDevelopmentMessage" class="checkout-development-message" hidden>
+                    Checkout details are valid. Stripe payment
+                    integration will be connected in the next step.
+                </p>
+
+
+                <div class="checkout-security">
+
+                    <span>
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+                        Secure checkout
+                    </span>
+
+                    <span>
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
+                        Download link sent by email
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+
+                        No account required
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RIGHT ================= -->
+
+            <aside class="checkout-summary">
+
+                <div class="checkout-summary-card">
+
+                    <h2>
+                        Order summary
+                    </h2>
+
+
+                    <div id="checkoutItems" class="checkout-items"></div>
+
+
+                    <div id="checkoutEmpty" class="checkout-empty" hidden>
+
+                        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+
+                        <h3>
+                            Your cart is empty
+                        </h3>
+
+                        <p>
+                            Add an e-book before proceeding
+                            to checkout.
+                        </p>
+
+                        <a href="e-books.html" class="checkout-store-button">
+                            Browse e-books
+                        </a>
+
+                    </div>
+
+
+                    <div id="checkoutTotals" class="checkout-totals">
+
+                        <div>
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <span id="checkoutSubtotal">
+                                $0.00 USD
+                            </span>
+                        </div>
+
+
+                        <div class="checkout-total-row">
+
+                            <strong>
+                                Total
+                            </strong>
+
+                            <strong id="checkoutTotal">
+                                $0.00 USD
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="checkout-digital-note">
+                        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+
+                        Digital products only. No shipping
+                        charges apply.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
+    <script src="https://js.stripe.com/clover/stripe.js"></script>
+
+    <script src="Scripts/global.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+
+    <script src="Scripts/checkout.js"></script>
+
+
+
+</body>
+
+</html>

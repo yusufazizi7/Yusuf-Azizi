@@ -1,133 +1,710 @@
-/* ================== NAMES OF ALLAH PAGE ================== */
+/* =========================================================
+   NAMES OF ALLAH
+   ========================================================= */
 
-/* --- Custom Font for Names --- */
 @font-face {
-    font-family: NamesOfAllah;
-    src: url('../Fonts/NamesOfAllah.otf') format('opentype');
+  font-family: NamesOfAllah;
+  src: url("../Fonts/NamesOfAllah.otf") format("opentype");
+  font-display: swap;
 }
 
-/* --- Page Title --- */
+/* ================= PAGE ================= */
 
-
-/* --- Table Styling --- */
-
-main {
-
-    margin-bottom: 150px;
-}
-table {
-    width: 80%;
-    margin: 20px auto; /* Centers the table horizontally */
-    border-collapse: collapse;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    font-size: 1.9rem;
+.names-page {
+  width: 100%;
+  flex: 1 0 auto;
+  margin-top: 0;
+  padding-top: 82px;
+  overflow-x: hidden;
+  background: var(--home-bg);
+  text-align: left;
 }
 
-thead {
-    background-color: var(--accent-color);
-    color: white;
+.names-page section {
+  margin-top: 0;
 }
 
-th, td {
-    padding: 15px 30px;
-    text-align: center;
-    border: 1px solid #ddd;
+/* ================= HERO ================= */
+
+.names-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(140, 98, 57, 0.24),
+      transparent 28rem
+    ),
+    linear-gradient(135deg, #0d3b26 0%, #123f2d 52%, #18332f 100%);
 }
 
-th {
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.names-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to right, transparent, black 55%, transparent);
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.names-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  width: min(1180px, calc(100% - 40px));
+  min-height: 480px;
+  margin-inline: auto;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  align-items: center;
 }
 
-caption {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--secondary-color);
+.names-hero-copy {
+  max-width: 700px;
 }
 
-/* --- Arabic Name Styling --- */
+.names-eyebrow,
+.names-section-eyebrow {
+  margin-bottom: 0.8rem;
+  color: #d8c3a8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.names-hero h1 {
+  margin: 0;
+  color: var(--home-bg);
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 5.1rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.names-hero-description {
+  max-width: 650px;
+  margin-top: 1.35rem;
+  color: rgba(250, 244, 232, 0.78);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  line-height: 1.75;
+}
+
+.names-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.15rem;
+  margin-top: 1.8rem;
+  color: rgba(250, 244, 232, 0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.names-hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.names-hero-meta i {
+  color: #d8c3a8;
+}
+
+/* ================= HERO ART ================= */
+
+.names-hero-art {
+  display: grid;
+  place-items: center;
+}
+
+.names-hero-art-ring {
+  position: relative;
+  display: grid;
+  width: min(100%, 330px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(250, 244, 232, 0.18);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(250, 244, 232, 0.1) 0%,
+    rgba(250, 244, 232, 0.035) 58%,
+    transparent 59%
+  );
+  box-shadow:
+    inset 0 0 0 18px rgba(255, 255, 255, 0.018),
+    0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.names-hero-art-ring::before,
+.names-hero-art-ring::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.names-hero-art-ring::before {
+  inset: 18px;
+  border: 1px solid rgba(216, 195, 168, 0.22);
+}
+
+.names-hero-art-ring::after {
+  inset: 39px;
+  border: 1px dashed rgba(216, 195, 168, 0.18);
+}
+
+.names-hero-calligraphy {
+  position: relative;
+  z-index: 2;
+  direction: rtl;
+  color: var(--home-bg);
+  font-family: NamesOfAllah, Thuluth, serif;
+  font-size: clamp(7rem, 14vw, 10rem);
+  line-height: 1;
+  text-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= DIRECTORY ================= */
+
+.names-directory {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+.names-directory-heading {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+
+.names-directory-heading > div {
+  max-width: 680px;
+}
+
+.names-section-eyebrow {
+  color: var(--home-brown);
+}
+
+.names-directory-heading h2 {
+  margin: 0;
+  color: var(--home-green);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.names-directory-heading p:last-child {
+  margin-top: 0.75rem;
+  color: var(--home-muted);
+  line-height: 1.7;
+}
+
+/* ================= SEARCH TOOLBAR ================= */
+
+.names-toolbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.names-search {
+  position: relative;
+  display: block;
+  width: min(100%, 520px);
+}
+
+.names-search i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  color: var(--home-muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.names-search input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.78rem 1rem 0.78rem 2.8rem;
+  border: 1px solid var(--home-border);
+  border-radius: 12px;
+  outline: none;
+  color: var(--home-text);
+  background: var(--home-surface);
+  font: inherit;
+  box-shadow: 0 7px 22px rgba(33, 42, 32, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.names-search input::placeholder {
+  color: #8a9189;
+}
+
+.names-search input:focus {
+  border-color: rgba(140, 98, 57, 0.52);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(140, 98, 57, 0.1);
+}
+
+.names-result-count {
+  flex-shrink: 0;
+  color: var(--home-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* ================= TABLE CARD ================= */
+
+.names-table-card {
+  overflow: hidden;
+  border: 1px solid var(--home-border);
+  border-radius: 22px;
+  background: var(--home-surface);
+  box-shadow: var(--home-shadow);
+}
+
+.names-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.names-table {
+  width: 100%;
+  min-width: 1020px;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 1rem;
+}
+
+.names-table thead {
+  color: var(--home-bg);
+  background: var(--home-green);
+}
+
+.names-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 1rem 1.15rem;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(250, 244, 232, 0.9);
+  background: var(--home-green);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.names-table th:first-child,
+.names-table td:first-child {
+  width: 68px;
+  text-align: center;
+}
+
+.names-table th:nth-child(2),
+.names-table td:nth-child(2) {
+  width: 190px;
+  text-align: center;
+}
+
+.names-table th:nth-child(3),
+.names-table td:nth-child(3) {
+  width: 180px;
+  text-align: center;
+}
+
+.names-table th:nth-child(6),
+.names-table td:nth-child(6) {
+  width: 145px;
+  text-align: center;
+}
+
+.names-table td {
+  padding: 1rem 1.15rem;
+  border: 0;
+  border-bottom: 1px solid rgba(13, 59, 38, 0.085);
+  color: var(--home-text);
+  background: transparent;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.names-table tbody tr {
+  background: transparent;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.names-table tbody tr:nth-child(even) {
+  background: rgba(242, 234, 220, 0.32);
+}
+
+.names-table tbody tr:hover {
+  background: rgba(242, 234, 220, 0.72);
+}
+
+.names-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ================= CONTENT COLUMNS ================= */
+
+.names-table td:first-child {
+  color: var(--home-brown);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .names-of-Allah {
-    font-family: NamesOfAllah, Thuluth;
-    font-size: 8.3rem;
-    transition: color 0.3s ease-in-out;
+  direction: rtl;
+  color: var(--home-green);
+  font-family: NamesOfAllah, Thuluth, serif;
+  font-size: 4.8rem;
+  line-height: 1;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-/* --- Hover Effect --- */
-.names-of-Allah:hover {
-    color: aqua;
+.names-table tbody tr:hover .names-of-Allah {
+  color: var(--home-brown-dark);
+  transform: scale(1.025);
 }
 
-table tr td:nth-child(3) {
-    direction: rtl; /* Ensures right-to-left text direction for Arabic */
+.names-table td:nth-child(3) {
+  direction: rtl;
+  color: var(--home-green);
+  font-family: Amiri, serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+}
+
+.names-table td:nth-child(4) {
+  color: var(--home-green);
+  font-weight: 800;
+}
+
+.names-table td:nth-child(5) {
+  color: var(--home-muted);
+  line-height: 1.55;
+}
+
+.names-table td:nth-child(6) a {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.52rem 0.7rem;
+  border: 1px solid var(--home-border);
+  border-radius: 8px;
+  color: var(--home-green);
+  background: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.names-table td:nth-child(6) a::after {
+  content: "↗";
+  font-size: 0.78em;
+}
+
+.names-table td:nth-child(6) a:hover {
+  border-color: rgba(140, 98, 57, 0.35);
+  color: var(--home-brown-dark);
+  background: var(--home-surface-soft);
+  transform: translateY(-1px);
+}
+
+/* ================= EMPTY SEARCH STATE ================= */
+
+.names-empty {
+  padding: 4.2rem 1.5rem;
+  text-align: center;
+}
+
+.names-empty[hidden] {
+  display: none !important;
+}
+
+.names-empty-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 1rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--home-brown-dark);
+  background: var(--home-surface-soft);
+}
+
+.names-empty h3 {
+  color: var(--home-green);
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+}
+
+.names-empty p {
+  margin-top: 0.4rem;
+  color: var(--home-muted);
+}
+
+/* ================= FOCUS ================= */
+
+.names-page a:focus-visible,
+.names-search input:focus-visible {
+  outline: 3px solid rgba(140, 98, 57, 0.42);
+  outline-offset: 3px;
+}
+
+/* ================= TABLET ================= */
+
+@media only screen and (max-width: 900px) {
+  .names-hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
     text-align: center;
-    font-family: 'Amiri', serif;
-    font-size: 1.3em;
+  }
+
+  .names-hero-copy {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  .names-hero-description {
+    margin-inline: auto;
+  }
+
+  .names-hero-meta {
+    justify-content: center;
+  }
+
+  .names-hero-art-ring {
+    width: min(75vw, 280px);
+  }
 }
 
-/* --- Link Styling --- */
-a {
-    text-decoration: none;
-    font-style: normal;
-    font-weight: normal;
-    color: var(--text-color);
+/* ================= MOBILE ================= */
+
+@media only screen and (max-width: 768px) {
+  .names-page {
+    padding-top: 72px;
+  }
+
+  .names-hero-inner,
+  .names-directory {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .names-hero-inner {
+    gap: 2.8rem;
+    padding: 3.8rem 0 4.5rem;
+  }
+
+  .names-hero h1 {
+    font-size: clamp(2.55rem, 12vw, 4rem);
+  }
+
+  .names-hero-meta {
+    gap: 0.7rem 1rem;
+  }
+
+  .names-directory {
+    padding: 4.5rem 0;
+  }
+
+  .names-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .names-search {
+    width: 100%;
+  }
+
+  .names-result-count {
+    padding-left: 0.15rem;
+  }
+
+  .names-table-card {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .names-table-scroll {
+    overflow: visible;
+  }
+
+  .names-table {
+    min-width: 0;
+    border: 0;
+  }
+
+  .names-table thead {
+    display: none;
+  }
+
+  .names-table,
+  .names-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .names-table tbody {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .names-table tbody tr,
+  .names-table tbody tr:nth-child(even) {
+    position: relative;
+    display: block;
+    padding: 1.15rem 1.1rem 1rem;
+    overflow: hidden;
+    border: 1px solid var(--home-border);
+    border-radius: 18px;
+    background: var(--home-surface);
+    box-shadow: 0 10px 28px rgba(33, 42, 32, 0.055);
+  }
+
+  .names-table tbody tr:hover {
+    background: var(--home-surface);
+  }
+
+  .names-table td {
+    display: grid;
+    grid-template-columns: minmax(92px, 0.38fr) minmax(0, 1fr);
+    gap: 0.8rem;
+    width: 100% !important;
+    padding: 0.55rem 0;
+    border: 0;
+    text-align: left !important;
+  }
+
+  .names-table td::before {
+    color: var(--home-muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .names-table td:nth-child(1) {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: grid;
+    width: 34px !important;
+    height: 34px;
+    padding: 0;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--home-brown-dark);
+    background: var(--home-surface-soft);
+    font-size: 0.72rem;
+    z-index: 2;
+  }
+
+  .names-table td:nth-child(1)::before,
+  .names-table td:nth-child(2)::before {
+    display: none;
+  }
+
+  .names-table td:nth-child(2) {
+    display: block;
+    padding: 0.6rem 2.8rem 1.1rem;
+    text-align: center !important;
+  }
+
+  .names-table td:nth-child(3)::before {
+    content: "Arabic";
+    direction: ltr;
+  }
+
+  .names-table td:nth-child(4)::before {
+    content: "Name";
+  }
+
+  .names-table td:nth-child(5)::before {
+    content: "Meaning";
+  }
+
+  .names-table td:nth-child(6)::before {
+    content: "Reference";
+  }
+
+  .names-of-Allah {
+    font-size: clamp(4.2rem, 20vw, 6rem);
+  }
+
+  .names-table td:nth-child(3) {
+    direction: rtl;
+    font-size: 1.45rem;
+  }
+
+  .names-table td:nth-child(6) a {
+    justify-self: start;
+  }
 }
 
-main a:visited {
-    text-decoration: none;
-    color: inherit;
+/* ================= SMALL PHONES ================= */
+
+@media only screen and (max-width: 480px) {
+  .names-hero-art-ring {
+    width: min(78vw, 245px);
+  }
+
+  .names-hero-meta {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .names-table tbody tr {
+    padding-inline: 0.95rem;
+  }
+
+  .names-table td {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 0.65rem;
+  }
 }
 
-main a:hover {
-    text-decoration: underline;
-    color: var(--accent-color);
-}
+/* ================= REDUCED MOTION ================= */
 
-/* --- Responsive Styles --- */
-@media (max-width: 768px) {
-    table {
-        width: 90%;
-        font-size: 1.6rem;
-    }
-
-    th, td {
-        padding: 10px;
-        font-size: 1.4rem;
-    }
-
-    thead {
-        display: none; /* Hide table header */
-    }
-
-    tr {
-        display: block;
-    }
-
-    td {
-        display: block;
-        text-align: center;
-        padding: 10px 5px;
-    }
-
-    td:before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-        color: var(--secondary-color);
-        text-transform: uppercase;
-    }
-
-    .names-of-Allah {
-        font-size: 4.5rem; /* Adjust Arabic font size for smaller screens */
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
+@media (prefers-reduced-motion: reduce) {
+  .names-of-Allah,
+  .names-table td:nth-child(6) a,
+  .names-search input {
+    transition: none;
+  }
 }

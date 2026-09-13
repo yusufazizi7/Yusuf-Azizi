@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-R6X1QNEYSL');
     </script>
@@ -45,65 +46,56 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <!-- Donation Popup -->
-    <div
-      id="donationPopup"
-      class="popup"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="donation-title"
-      aria-hidden="true"
-    >
-      <div class="popup-content">
-        <button
-          class="close-btn"
-          type="button"
-          aria-label="Close donation message"
-        >
-          &times;
-        </button>
+    <div id="donationPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="donation-title"
+        aria-hidden="true">
+        <div class="popup-content">
+            <button class="close-btn" type="button" aria-label="Close donation message">
+                &times;
+            </button>
 
-        <span class="popup-icon" aria-hidden="true">
-          <i class="fa-solid fa-heart"></i>
-        </span>
+            <span class="popup-icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </span>
 
-        <h2 id="donation-title">Support Islamic Qalam</h2>
+            <h2 id="donation-title">Support Islamic Qalam</h2>
 
-        <p>
-          Islamic Qalam is maintained independently. A small donation helps
-          cover website costs and supports the creation of more translations and
-          beneficial resources.
-        </p>
+            <p>
+                Islamic Qalam is maintained independently. A small donation helps
+                cover website costs and supports the creation of more translations and
+                beneficial resources.
+            </p>
 
-        <div class="popup-actions">
-          <button id="donateButton" type="button">Donate</button>
+            <div class="popup-actions">
+                <button id="donateButton" type="button">Donate</button>
 
-          <button id="cancelButton" type="button">Maybe later</button>
+                <button id="cancelButton" type="button">Maybe later</button>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Navbar -->
-    <header >
+    <header>
         <object class="website-logo" data="../../Images/Website-logo.svg" type="image/svg+xml"></object>
 
         <nav class="navbar">
-            
+
             <a href="../../nooniyah-al-qahtani.html">Nooniyah Al-Qahtani</a>
             <a href="../../quran.html">Quran</a>
             <a href="../../videos.html">Videos</a>
             <a href="../../e-books.html">E-books</a>
             <a href="../../contact-us.html">Contact</a>
             <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
-            
+
         </nav>
 
         <i id="menu-bars" class="fa-solid fa-bars"></i>
         <i class="fa-solid fa-gear fa-2xl "></i>
 
-        
+
     </header>
 
 
@@ -118,7 +110,7 @@
         <div class="sidebar-section">
             <button id="openTajweedBtn" class="tajweed-btn">📘 Tajweed Rules</button>
         </div>
-        
+
 
     </div>
 
@@ -126,95 +118,100 @@
         <div class="popup-content">
             <span id="closePopup" class="close">&times;</span>
             <h2>Tajweed Rules</h2>
-    
-          <div class="tajweed-rule"><span class="color-box diff-from-hafs-box"></span> Difference from Hafs</div>
-          <div class="tajweed-rule"><span class="color-box ra-muraqqaqah-box"></span> Rā' Muraqqaqah (light Rā')</div>
-          <div class="tajweed-rule"><span class="color-box lam-mulaghazhah-box"></span> Lām Mulaqhazhah</div>
-          <div class="tajweed-rule"><span class="color-box mad-badal-box"></span> Madd Badal</div>
-          <div class="tajweed-rule"><span class="color-box taqlil-word-box"></span> Taqlīl</div>
-          <div class="tajweed-rule"><span class="color-box silah-meem-box"></span> Ṣilah Meem</div>
-          <div class="tajweed-rule"><span class="color-box mad-lin-box"></span> Madd Leen</div>
-          <div class="tajweed-rule"><span class="color-box idgham-box"></span> Idghām (Merging)</div>
+
+            <div class="tajweed-rule"><span class="color-box diff-from-hafs-box"></span> Difference from Hafs</div>
+            <div class="tajweed-rule"><span class="color-box ra-muraqqaqah-box"></span> Rā' Muraqqaqah (light Rā')</div>
+            <div class="tajweed-rule"><span class="color-box lam-mulaghazhah-box"></span> Lām Mulaqhazhah</div>
+            <div class="tajweed-rule"><span class="color-box mad-badal-box"></span> Madd Badal</div>
+            <div class="tajweed-rule"><span class="color-box taqlil-word-box"></span> Taqlīl</div>
+            <div class="tajweed-rule"><span class="color-box silah-meem-box"></span> Ṣilah Meem</div>
+            <div class="tajweed-rule"><span class="color-box mad-lin-box"></span> Madd Leen</div>
+            <div class="tajweed-rule"><span class="color-box idgham-box"></span> Idghām (Merging)</div>
         </div>
-      </div>
+    </div>
 
     <!-- Quran Page -->
-    <main >
-        
+    <main>
+
         <h1 class="page-title">Surah Al-Fatihah</h1>
 
         <div class="quran-nav">
             <a class="quran-btn" href="../../quran.html">← Previous Surah</a>
             <a class="quran-btn" href="Al-Baqarah.html">Next Surah →</a>
         </div>
-        
+
         <section class="quran-container">
 
             <p class="bismillah"> ﷽</p>
 
             <hr class="ayah-separator">
 
-          
-          
-            
-          
+
+
+
+
             <div class="ayah-block">
-              <p class="arabic-text" hafs-data="ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ ٢">ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ ١</p>
-              <p class="translation-text">[All] praise is [due] to Allah, Lord of the worlds –</p>
-            </div>
-          
-            <hr class="ayah-separator">
-          
-            <div class="ayah-block">
-              <p class="arabic-text" hafs-data="ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ٣">ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ٢</p>
-              <p class="translation-text">The Entirely Merciful, the Especially Merciful,</p>
-            </div>
-          
-            <hr class="ayah-separator">
-          
-            <div class="ayah-block">
-              <p class="arabic-text" hafs-data="مَٰلِكِ يَوۡمِ ٱلدِّينِ ٤">مَلِكِ يَوۡمِ ٱلدِّينِ ٣</p>
-              <p class="translation-text"><span class="diff-from-hafs">King</span> of the Day of Recompense.</p>
-            </div>
-          
-            <hr class="ayah-separator">
-          
-            <div class="ayah-block">
-              <p class="arabic-text" hafs-data="إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ ٥">إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ ٤</p>
-              <p class="translation-text">It is You we worship and You we ask for help.</p>
-            </div>
-          
-            <hr class="ayah-separator">
-          
-            <div class="ayah-block">
-              <p class="arabic-text" hafs-data="ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ ٦">ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ ٥</p>
-              <p class="translation-text">Guide us to the straight path –</p>
-            </div>
-          
-            <hr class="ayah-separator">
-          
-            <div class="ayah-block">
-              <p class="arabic-text" hafs-data="صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ ٧">صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ ٦</p>
-              <p class="translation-text">The path of those upon whom You have bestowed favor</p>
+                <p class="arabic-text" hafs-data="ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ ٢">ٱلۡحَمۡدُ لِلَّهِ رَبِّ
+                    ٱلۡعَٰلَمِينَ ١</p>
+                <p class="translation-text">[All] praise is [due] to Allah, Lord of the worlds –</p>
             </div>
 
             <hr class="ayah-separator">
-            
+
             <div class="ayah-block">
-              <p class="arabic-text" hafs-data="غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ ٧">غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ ٧</p>
-              <p class="translation-text">Not of those who have earned Your anger or of those who are astray.</p>
+                <p class="arabic-text" hafs-data="ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ٣">ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ ٢</p>
+                <p class="translation-text">The Entirely Merciful, the Especially Merciful,</p>
             </div>
 
             <hr class="ayah-separator">
-            
-            
 
-            
+            <div class="ayah-block">
+                <p class="arabic-text" hafs-data="مَٰلِكِ يَوۡمِ ٱلدِّينِ ٤">مَلِكِ يَوۡمِ ٱلدِّينِ ٣</p>
+                <p class="translation-text"><span class="diff-from-hafs">King</span> of the Day of Recompense.</p>
+            </div>
 
-           
-          
-          </section>    
-          
+            <hr class="ayah-separator">
+
+            <div class="ayah-block">
+                <p class="arabic-text" hafs-data="إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ ٥">إِيَّاكَ نَعۡبُدُ
+                    وَإِيَّاكَ نَسۡتَعِينُ ٤</p>
+                <p class="translation-text">It is You we worship and You we ask for help.</p>
+            </div>
+
+            <hr class="ayah-separator">
+
+            <div class="ayah-block">
+                <p class="arabic-text" hafs-data="ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ ٦">ٱهۡدِنَا ٱلصِّرَٰطَ
+                    ٱلۡمُسۡتَقِيمَ ٥</p>
+                <p class="translation-text">Guide us to the straight path –</p>
+            </div>
+
+            <hr class="ayah-separator">
+
+            <div class="ayah-block">
+                <p class="arabic-text" hafs-data="صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ ٧">صِرَٰطَ ٱلَّذِينَ
+                    أَنۡعَمۡتَ عَلَيۡهِمۡ ٦</p>
+                <p class="translation-text">The path of those upon whom You have bestowed favor</p>
+            </div>
+
+            <hr class="ayah-separator">
+
+            <div class="ayah-block">
+                <p class="arabic-text" hafs-data="غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ ٧">غَيۡرِ
+                    ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ ٧</p>
+                <p class="translation-text">Not of those who have earned Your anger or of those who are astray.</p>
+            </div>
+
+            <hr class="ayah-separator">
+
+
+
+
+
+
+
+        </section>
+
 
         <div class="quran-nav">
             <a class="quran-btn" href="../../quran.html">← Previous Surah</a>
@@ -225,7 +222,7 @@
     <hr>
 
     <!-- Next Surah Button -->
-    
+
 
     <div class="extra-space"></div>
 
@@ -233,24 +230,27 @@
     <footer class="footer">
         <p>&copy; 2024 Islamic Qalam. All Rights Reserved.</p>
         <p>
-            <a href="contact-us.html">Contact</a> 
+            <a href="contact-us.html">Contact</a>
             <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank">Donate</a>
         </p>
         <div class="social-links">
-            <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank"><i
+                    class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="../../Scripts/global.js"></script>
-    
+
     <script src="../../Scripts/SideBar.js"></script>
-    
+
     <script src="../../Scripts/WarshVariations.js"></script>
     <script src="../../Scripts/NavQuranPages.js"></script>
     <script src="../../Scripts/warshWord.js"></script>
-    
+
 </body>
+
 </html>

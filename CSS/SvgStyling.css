@@ -1,27 +1,15 @@
-
-
-
-
-
 .bg {
-
-    opacity: 0;
+  opacity: 0;
 }
-
 
 .evenOdd {
-
-    fill-rule: evenodd;
-    
+  fill-rule: evenodd;
 }
 
-
 .logo {
-    fill: rgb(252, 252, 252);
+  fill: rgb(252, 252, 252);
 }
 
 .logo:hover {
-
-    fill: #8c6239;
+  fill: #8c6239;
 }
-

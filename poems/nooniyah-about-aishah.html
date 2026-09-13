@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Read Nooniyah About Aishah with English translation on Islamic Qalam. Explore Islamic poetry with Arabic text and its meaning.">
+    <meta name="keywords" content="Islam, Nooniyah About Aishah, Arabic poetry, Islamic poems, Islamic Qalam">
+    <meta name="author" content="Mohammad Yusuf Azizi">
+    <link rel="canonical" href="https://www.islamicqalam.com/poems/nooniyah-about-aishah.html">
+
+    <title>Nooniyah About Aishah - Islamic Qalam</title>
+
+
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Nooniyah About Aishah",
+        "url": "https://www.islamicqalam.com/poems/nooniyah-about-aishah.html",
+        "author": {
+            "@type": "Person",
+            "name": "Mohammad Yusuf Azizi"
+        },
+        "description": "Read Nooniyah About Aishah with English translation on Islamic Qalam. Explore Islamic poetry with Arabic text and its meaning.",
+        "keywords": ["Islam", "Nooniyah About Aishah", "Arabic poetry", "Islamic poems", "Islamic Qalam"]
+    }
+    </script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/CSS/global.css">
+    <link rel="stylesheet" href="/CSS/comments.css">
+    <link rel="stylesheet" href="/CSS/poems.css">
+
+
+    <link rel="icon" type="image/ico" href="/Images/website-favicon.png">
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header poem-site-header">
+        <div class="brand">
+            <!-- Custom object tag preserved -->
+            <object class="website-logo" data="/Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
+
+            <span class="brand-name"> Islamic Qalam </span>
+        </div>
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+            <a href="/index.html#poetry-library">Poetry</a>
+            <a href="/quran.html">Qur'an</a>
+            <a href="/videos.html">Videos</a>
+            <a href="/e-books.html">E-books</a>
+            <a href="/contact-us.html">Contact</a>
+
+            <a class="nav-donate" href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank"
+                rel="noopener noreferrer">
+                Donate
+            </a>
+            <a id="navAccountLink" class="nav-login" href="/login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+            </a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Poem settings button -->
+            <button id="settings-toggle" class="header-action-button settings-toggle" type="button"
+                aria-label="Open poem settings" aria-controls="poem-settings" aria-expanded="false">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            </button>
+
+            <!-- Mobile navigation button -->
+            <button id="menu-bars" class="header-action-button menu-toggle" type="button"
+                aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+
+
+    <!-- Dark background shown behind the settings sidebar -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Poem settings sidebar -->
+    <aside class="sidebar" id="poem-settings" aria-label="Poem settings" aria-hidden="true">
+        <div class="sidebar-header">
+            <h2>Poem Settings</h2>
+
+            <button id="settings-close" class="sidebar-close" type="button" aria-label="Close poem settings">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Choose Font</h3>
+
+            <label>
+                <input type="radio" name="font" value="default" checked />
+                Default
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="amiri" />
+                Amiri
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="Neirizi" />
+                Neirizi
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="Uthman" />
+                Uthman
+            </label>
+
+            <label>
+                <input type="radio" name="font" value="Thuluth" />
+                Thuluth
+            </label>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Options</h3>
+
+            <label>
+                <input type="checkbox" id="LineNumbers" checked />
+                Verse Numbers
+            </label>
+
+            <label>
+                <input type="checkbox" id="engTranslationToggle" />
+                English Translation
+            </label>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Font Size</h3>
+
+            <div class="font-size-controls">
+                <button id="decreaseFont" type="button" aria-label="Decrease font size">
+                    −
+                </button>
+
+                <span id="fontSizeDisplay">18px</span>
+
+                <button id="increaseFont" type="button" aria-label="Increase font size">
+                    +
+                </button>
+
+                <button id="resetFont" type="button">Reset</button>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Jump to Verse</h3>
+
+            <select id="verseDropdown">
+                <option value="">Select Verse</option>
+            </select>
+        </div>
+    </aside>
+
+    <!-- Donation Popup -->
+    <div id="donationPopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="donation-title"
+        aria-hidden="true">
+        <div class="popup-content">
+            <button class="close-btn" type="button" aria-label="Close donation message">
+                &times;
+            </button>
+
+            <span class="popup-icon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </span>
+
+            <h2 id="donation-title">Support Islamic Qalam</h2>
+
+            <p>
+                Islamic Qalam is maintained independently. A small donation helps
+                cover website costs and supports the creation of more translations and
+                beneficial resources.
+            </p>
+
+            <div class="popup-actions">
+                <button id="donateButton" type="button">Donate</button>
+
+                <button id="cancelButton" type="button">Maybe later</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="copyToast" class="copy-toast">
+        <i class="fa-solid fa-scissors"></i>
+        Copied to clipboard!
+    </div>
+
+
+    <!-- Main Content -->
+    <main class="poem-page" data-page-id="nooniyah-about-aishah">
+
+
+        <!-- =============================================
+         POEM HERO
+         ============================================= -->
+
+        <section class="poem-hero">
+
+            <div class="poem-hero-inner">
+
+                <p class="poem-eyebrow">
+                    Islamic Poetry
+                </p>
+
+
+                <h1 class="poem-main-title">
+
+                    <span class="sr-only">
+                        Nooniyah About the Virtues of Aishah (RA)
+                    </span>
+
+                    <icon class="poem-title-svg">
+                        nooniyah-about-aishah
+                    </icon>
+
+                </h1>
+
+
+                <p class="poem-description">
+                    Read the Arabic text alongside its
+                    English translation.
+                </p>
+
+
+                <div class="poem-meta">
+
+
+                    <!-- VERSES -->
+
+                    <span class="poem-meta-item">
+
+                        <i class="fa-regular fa-file-lines" aria-hidden="true">
+                        </i>
+
+                        <span id="poemVerseCount">
+                            Verses
+                        </span>
+
+                    </span>
+
+
+                    <span class="poem-meta-divider" aria-hidden="true">
+
+                        ·
+
+                    </span>
+
+
+                    <!-- VIEWS -->
+
+                    <span class="poem-meta-item">
+
+                        <i class="fa-regular fa-eye" aria-hidden="true">
+                        </i>
+
+                        <span id="poemViewCount" class="poem-engagement-count">
+
+                            0 views
+
+                        </span>
+
+                    </span>
+
+
+                    <span class="poem-meta-divider" aria-hidden="true">
+
+                        ·
+
+                    </span>
+
+
+                    <!-- LIKES -->
+
+                    <button id="poemLikeButton" class="poem-meta-item poem-like-button" type="button"
+                        aria-pressed="false">
+
+                        <i id="poemLikeIcon" class="fa-regular fa-thumbs-up" aria-hidden="true">
+                        </i>
+
+                        <span id="poemLikeCount" class="poem-engagement-count">
+
+                            0 likes
+
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+         POEM READER
+         ============================================= -->
+
+        <section class="poem-reading-section">
+
+            <div class="poem-reading-card">
+
+                <div class="poem-reading-header">
+
+                    <div>
+
+                        <span class="poem-reading-label">
+                            Arabic &amp; English
+                        </span>
+
+                        <p>
+                            Select the settings icon to customise
+                            the reading experience.
+                        </p>
+
+                    </div>
+
+
+                    <button class="poem-reading-settings" type="button" aria-label="Open reading settings"
+                        onclick="document.getElementById('settings-toggle').click()">
+
+                        <i class="fa-solid fa-gear" aria-hidden="true"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div class="poem-bismillah">
+                    ﷽
+                </div>
+
+                <ol class="poem-container">
+                    <li class="poem-verse">
+                        <p class="arabic-text">مَا شَانُ أُمِّ الْمُؤْمِنِينَ وَشَانِي * هُدِيَ الْمُحِبُّ لَهَا وَضَلَّ
+                            الشَّانِي</p>
+                        <p class="eng-translation">What is my status compared to the status of the Mother of the
+                            Believers? The one who loves
+                            her is rightly guided, while the one who hates her is astray.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إِنِّي أَقُولُ مُبَيِّنًا عَنْ فَضْلِهَا * ومُتَرْجِمًا عَنْ قَوْلِهَا
+                            بِلِسَانِي</p>
+                        <p class="eng-translation">Indeed, I speak, clarifying her virtue, and convey her words in my
+                            own tongue.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">يَا مُبْغِضِي لَا تَأْتِ قَبْرَ مُحَمَّدٍ * فَالْبَيْتُ بَيْتِي
+                            وَالْمَكَانُ مَكَانِي</p>
+                        <p class="eng-translation">Oh you who hate me, do not come near the grave of Muhammad, for the
+                            house is my house,
+                            and the place is my place.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إِنِّي خُصِصْتُ عَلَى نِسَاءِ مُحَمَّدٍ * بِصِفَاتِ بِرٍّ تَحْتَهُنَّ
+                            مَعَانِي</p>
+                        <p class="eng-translation">Indeed, I have been singled out, among the wives of Muhammad, with
+                            qualities of
+                            righteousness rich with meaning.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَسَبَقْتُهُنَّ إِلَى الْفَضَائِلِ كُلِّهَا * فَالْسَّبْقُ سَبْقِي
+                            وَالْعِنَانُ عِنَانِي</p>
+                        <p class="eng-translation">And I surpassed them all in every virtue, so the lead is my lead, and
+                            the reins are my
+                            reins.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">مَرِضَ النَّبِيُّ وَمَاتَ بَيْنَ تَرَائِبِي * فَالْيَوْمُ يَوْمِي
+                            وَالزَّمَانُ زَمَانِي</p>
+                        <p class="eng-translation">The Prophet fell ill and died between my chest, so today is my day,
+                            and this time is my
+                            time.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">زَوْجِي رَسُولُ اللَّهِ لَمْ أَرَ غَيْرَهُ * اللَّهُ زَوَّجَنِي بِهِ
+                            وَحَبَانِي</p>
+                        <p class="eng-translation">My husband is the Messenger of Allah, I have seen none besides him;
+                            Allah Himself married
+                            me to him and honoured me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَتَاهُ جِبْرِيلُ الأَمِينُ بِصُورَتِي * فَأَحَبَّنِي الْمُخْتَارُ
+                            حِينَ رَآنِي</p>
+                        <p class="eng-translation">And Gabriel the trustworthy one came to him with my image, so the
+                            chosen one loved me
+                            when he saw me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">أَنَا بِكْرُهُ الْعَذْرَاءُ عِنْدِي سِرُّهُ * وَضَجِيعُهُ فِي مَنْزِلِي
+                            قَمَرَانِ</p>
+                        <p class="eng-translation">I was his virgin maiden; with me was his secret, and in my home,
+                            beside him, lie two
+                            moons.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وتَكَلَّمَ اللَّهُ الْعَظِيمُ بِحُجَّتِي * وَبَرَاءَتِي فِي مُحْكَمِ
+                            الْقُرْآنِ</p>
+                        <p class="eng-translation">And Allah, the Most Great, spoke in my defence, declaring my
+                            innocence in the clear
+                            verses of the Qur’an.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهُ خَفَّرَنِي وَعَظَّمَ حُرْمَتِي * وَعَلَى لِسَانِ نَبِيِّهِ
+                            بَرَّانِي</p>
+                        <p class="eng-translation">And Allah has protected me and magnified my honour, and upon the
+                            tongue of His Prophet,
+                            He declared me innocent</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهُ فِي الْقُرْآنِ قَدْ لَعَنَ الَّذِي * بَعْدَ الْبَرَاءَةِ
+                            بِالْقَبِيحِ رَمَانِي</p>
+                        <p class="eng-translation">And Allah, in the Qur’an, has cursed the one who, after my innocence
+                            was declared, still
+                            accused me with vile slander.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهُ وَبَّخَ مَنْ أَرَادَ تَنَقُّصِي * إِفْكًا وَسَبَّحَ نَفْسَهُ
+                            فِي شَانِي</p>
+                        <p class="eng-translation">And Allah rebuked those who sought to diminish me with falsehood, and
+                            He glorified
+                            Himself concerning my affair.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إِنِّي لَمُحْصَنَةُ الْإِزَارِ بَرِيئَةٌ * وَدَلِيلُ حُسْنِ طَهَارَتِي
+                            إِحْصَانِي</p>
+                        <p class="eng-translation">Indeed, I am chaste and guarded, innocent, and the proof of my purity
+                            is my very
+                            chastity.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهُ أَحْصَنَنِي بِخَاتَمِ رُسْلِهِ * وَأَذَلَّ أَهْلَ الإِفْكِ
+                            وَالْبُهْتَانِ</p>
+                        <p class="eng-translation">And Allah preserved me through the Seal of His Messengers, and He
+                            humiliated the people
+                            of slander and false accusation.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَسَمِعْتُ وَحْيَ اللَّهِ عِنْدَ مُحَمَّدٍ * مِنْ جَبْرَئِيلَ وَنُورُهُ
+                            يَغْشَانِي</p>
+                        <p class="eng-translation">And I heard the revelation of Allah with Muhammad, from Gabriel,
+                            while its light would
+                            envelop me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">أَوْحَى إِلَيْهِ وَكُنْتُ تَحْتَ ثِيَابِهِ * فَحَنَا عَلَيَّ بِثَوْبِهِ
+                            وَخَبَانِي</p>
+                        <p class="eng-translation">Revelation would come to him while I was beneath his garment, so he
+                            would draw his cloak
+                            over me and cover me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">مَنْ ذَا يُفَاخِرُنِي وَيُنْكِرُ صُحْبَتِي * وَمُحَمَّدٌ فِي حَجْرِهِ
+                            رَبَّانِي</p>
+                        <p class="eng-translation">Who is there that can rival me or deny my companionship, when
+                            Muhammad himself raised me
+                            in his care?</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَخَذْتُ عَنْ أَبَوَيَّ دِينَ مُحَمَّدٍ * وَهُمَا عَلَى الْإِسْلَامِ
+                            مُصْطَحِبَانِ</p>
+                        <p class="eng-translation">And I took the religion of Muhammad from my parents, while both of
+                            them were firm upon
+                            Islam.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَبِي أَقَامَ الدِّينَ بَعْدَ مُحَمَّدٍ * فَالنَّصْلُ نَصْلِي
+                            وَالسِّنَانُ سِنَانِي</p>
+                        <p class="eng-translation">And my father upheld the religion after Muhammad, so the sword is my
+                            sword and the spear
+                            is my spear.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَالْفَخْرُ فَخْرِي وَالْخِلَافَةُ فِي أَبِي * حَسْبِي بِهَذَا مَفْخَرًا
+                            وَكَفَانِي</p>
+                        <p class="eng-translation">And the honour is my honour, and the caliphate rests with my father,
+                            this is enough for
+                            me as a source of pride, and it suffices me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَأَنَا ابْنَةُ الصِّدِّيقِ صَاحِبِ أَحْمَدٍ * وَحَبِيبِهِ فِي السِّرِّ
+                            وَالإِعْلَانِ</p>
+                        <p class="eng-translation">And I am the daughter of the truthful one, the companion of Ahmad,
+                            his beloved in private
+                            and in public.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">نَصَرَ النَّبِيَّ بِمَالِهِ وَفَعَالِهِ * وَخُرُوجِهِ مَعَهُ مِنَ
+                            الأَوْطَانِ</p>
+                        <p class="eng-translation">He supported the Prophet with his wealth and his deeds, and by
+                            leaving his homeland
+                            alongside him.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">ثَانِيهِ فِي الْغَارِ الَّذِي سَدَّ الْكُوَى * بِرِدَائِهِ أَكْرِمْ بِهِ
+                            مِنْ ثَانِ</p>
+                        <p class="eng-translation">The second of the two in the cave, he who blocked its openings with
+                            his cloak; how noble
+                            a companion he was.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَجَفَا الْغِنَى حَتَّى تَخَلَّلَ بِالْعَبَا * زُهْدًا وَأَذْعَنَ
+                            أَيَّمَا إِذْعَانِ</p>
+                        <p class="eng-translation">He turned away from wealth until he lived in coarse garments, out of
+                            asceticism,
+                            submitting with complete submission.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَتَخَلَّلَتْ مَعَهُ مَلاَئِكَةُ السَّمَاءِ * وَأَتَتْهُ بُشْرَى اللَّهِ
+                            بِالرِّضْوَانِ</p>
+                        <p class="eng-translation">And the angels of the heavens gathered around him, and glad tidings
+                            from Allah came to
+                            him of His pleasure.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَهُوَ الَّذِي لَمْ يَخْشَ لَوْمَةَ لَائِمٍ * فِي قَتْلِ أَهْلِ الْبَغْيِ
+                            وَالْعُدْوَانِ</p>
+                        <p class="eng-translation">And he is the one who did not fear the blame of any blamer in killing
+                            the people of
+                            transgression and aggression.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">قَتَلَ الأُلَى مَنَعُوا الزَّكَاةَ بِكُفْرِهِمْ * وَأَذَلَّ أَهْلَ
+                            الْكُفْرِ وَالطُّغْيَانِ
+                        </p>
+                        <p class="eng-translation">He killed those who withheld the charity out of disbelief, and
+                            humiliated the people of
+                            disbelief and transgression.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">سَبَقَ الصَّحَابَةَ وَالقَرَابَةَ لِلْهُدَى * هُوَ شَيْخُهُمْ فِي
+                            الْفَضْلِ وَالإحْسَانِ</p>
+                        <p class="eng-translation">He surpassed the companions and the kin in guidance, he is their
+                            elder in virtue and
+                            excellence.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهِ مَا اسْتَبَقُوا لِنَيْلِ فَضِيلَةٍ * مِثْلَ اسْتِبَاقِ
+                            الْخَيْلِ يَوْمَ رِهَانِ</p>
+                        <p class="eng-translation">By Allah, whenever they raced to attain a virtue, like horses
+                            competing on the day of a
+                            wager,</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إلَّا وَطَارَ أَبِي إِلَى عَلْيَائِهَا * فَمَكَانُهُ مِنْهَا أَجَلُّ
+                            مَكَانِ</p>
+                        <p class="eng-translation">Except that my father would soar ahead to its highest heights, and
+                            his place among them
+                            was the most exalted of places.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَيْلٌ لِعَبْدٍ خَانَ آلَ مُحَمَّدٍ * بِعَدَاوةِ الأَزْوَاجِ
+                            وَالأَخْتَانِ</p>
+                        <p class="eng-translation">Woe to the one who betrays the family of Muhammad through enmity
+                            toward the wives and the
+                            in-laws.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">طُوبَى لِمَنْ وَالَى جَمَاعَةَ صَحْبِهِ * وَيَكُونُ مِنْ أَحْبَابِهِ
+                            الْحَسَنَانِ</p>
+                        <p class="eng-translation">Glad tidings to the one who shows loyalty to the community of his
+                            companions and among
+                            his beloved people are Hassan and Hussain.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">بَيْنَ الصَّحَابَةِ وَالْقَرَابَةِ أُلْفَةٌ * لَا تَسْتَحِيلُ بِنَزْغَةِ
+                            الشَّيْطَانِ</p>
+                        <p class="eng-translation">Between the companions and the relatives is a bond of harmony that
+                            cannot be broken by
+                            the whispering of Satan.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">هُمْ كَالأَصَابِعِ فِي الْيَدَيْنِ تَوَاصُلًا * هَل يَسْتَوِي كَفٌّ
+                            بِغَيْرِ بَنَانِ</p>
+                        <p class="eng-translation">They are like the fingers upon the hands in their unity, can a hand
+                            be complete without
+                            its fingers?</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">حَصِرَتْ صُدُورُ الْكَافِرِينَ بِوَالِدِي * وَقُلُوبُهُمْ مُلِئَتْ مِنَ
+                            الأَضْغَانِ</p>
+                        <p class="eng-translation">The chests of the disbelievers were constricted because of my father,
+                            and their hearts
+                            were filled with resentment.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">حُبُّ البَتُولِ وَبَعْلِهَا لَمْ يَخْتَلِفْ * مِن مِلَّةِ الإِسْلَامِ
+                            فِيهِ اثْنَانِ</p>
+                        <p class="eng-translation">Love for Al-Batoul and her husband, no one has disputed concerning it
+                            in Islam.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">أَكْرِمْ بِأَرْبَعَةٍ أَئِمَّةِ شَرْعِنَا * فَهُمُ لِبَيْتِ الدِّينِ
+                            كَالأَرْكَانِ</p>
+                        <p class="eng-translation">How noble are the four, the leaders of our religion, for they are to
+                            the house of faith
+                            like its pillars.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">نُسِجَتْ مَوَدَّتُهُمْ سَدًى فِي لُحْمَةٍ * فَبِنَاؤُهَا مِن أَثْبَتِ
+                            البُنْيَانِ</p>
+                        <p class="eng-translation">Their love has been woven firmly together, so its structure is among
+                            the strongest of
+                            foundations.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">اللَّهُ أَلَّفَ بَيْنَ وُدِّ قُلُوبِهِمْ * لِيَغِيظَ كُلَّ مُنَافِقٍ
+                            طَعَّانِ</p>
+                        <p class="eng-translation">Allah joined their hearts together in love, to enrage every
+                            slanderous hypocrite.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">رُحَمَاءُ بَيْنَهُمْ صَفَتْ أَخْلاقُهُمْ * وَخَلَتْ قُلُوبُهُمْ مِنَ
+                            الشَّنَآنِ</p>
+                        <p class="eng-translation">Merciful among themselves, their character was pure, and their hearts
+                            were free from
+                            hatred.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">فَدُخُولُهُمْ بَيْنَ الأَحِبَّةِ كُلْفَةٌ * وَسِبَابُهُمْ سَبَبٌ إِلَى
+                            الْحِرْمَانِ</p>
+                        <p class="eng-translation">So their [hypocrites] intrusion among the beloved people is
+                            unwelcome, and their insults
+                            are a cause of deprivation.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">جَمَعَ الإِلَٰهُ الْمُسْلِمِينَ عَلَى أَبِي * وَاسْتُبْدِلُوا مِنْ
+                            خَوْفِهِمْ بِأَمَانِ</p>
+                        <p class="eng-translation">Allah united the Muslims upon my father, and replaced their fear with
+                            security.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَإِذَا أَرَادَ اللَّهُ نُصْرَةَ عَبْدِهِ * مَنْ ذَا يُطِيقُ لَهُ عَلَى
+                            خِذْلَانِ</p>
+                        <p class="eng-translation">And when Allah intends to grant victory to His servant, who is there
+                            that can bring about
+                            his defeat?</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">مَنْ حَبَّنِي فَلْيَجْتَنِبْ مَنْ سَبَّنِي * إِنْ كَانَ صَانَ مَحَبَّتِي
+                            وَرَعَانِي</p>
+                        <p class="eng-translation">Whoever loves me, let him avoid the one who reviles me, if he truly
+                            preserves my love and
+                            shows me regard.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَإِذَا مُحِبِّي قَدْ أَلَظَّ بِمُبْغِضِي * فَكِلَاهُمَا فِي الْبُغْضِ
+                            مُسْتَوِيَانِ</p>
+                        <p class="eng-translation">And if my lover persists in keeping company with my hater, then both
+                            of them are equal in
+                            hatred.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إِنِّي لَطَيِّبَةٌ خُلِقْتُ لِطَيِّبٍ * وَنِسَاءُ أَحْمَدَ أَطْيَبُ
+                            النِّسْوَانِ</p>
+                        <p class="eng-translation">Indeed, I am pure, created for one who is pure, and the wives of
+                            Ahmad are the purest of
+                            women.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إِنِّي لَأُمُّ الْمُؤْمِنِينَ فَمَنْ أَبَى * حُبِّي فَسَوْفَ يَبُوءُ
+                            بِالْخُسْرَانِ</p>
+                        <p class="eng-translation">Indeed, I am the Mother of the Believers, so whoever refuses to love
+                            me will surely
+                            return bearing loss.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">اللَّهُ حَبَّبَنِي لِقَلْبِ نَبِيِّهِ * وَإِلَى الصِّرَاطِ الْمُسْتَقِيمِ
+                            هَدَانِي</p>
+                        <p class="eng-translation">Allah made me beloved to the heart of His Prophet, and guided me to
+                            the straight path.
+                        </p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهُ يُكْرِمُ مَنْ أَرَادَ كَرَامَتِي * وَيُهِينُ رَبِّي مَنْ
+                            أَرَادَ هَوَانِي</p>
+                        <p class="eng-translation">And Allah honours the one who seeks to honour me, and my Lord
+                            humiliates the one who
+                            seeks to dishonour me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">وَاللَّهَ أَسْأَلُهُ زِيَادَةَ فَضْلِهِ * وَحَمِدْتُهُ شُكْرًا لِمَا
+                            أَوْلَانِي</p>
+                        <p class="eng-translation">And I ask Allah for an increase of His bounty, and I praise Him in
+                            gratitude for what He
+                            has granted me.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">يَا مَنْ يَلُوذُ بِأَهْلِ بَيْتِ مُحَمَّدٍ * يَرْجُو بِذَلِكَ رَحْمَةَ
+                            الرَّحْمَـٰنِ</p>
+                        <p class="eng-translation">Oh you who seek refuge with the family of Muhammad, hoping thereby
+                            for the mercy of the
+                            Most Merciful,</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">صِلْ أُمَّهَاتِ الْمُؤْمِنِينَ وَلَا تَحِدْ * عَنَّا فَتُسْلَبَ حُلَّةَ
+                            الْإِيْمَانِ</p>
+                        <p class="eng-translation">Maintain ties with the Mothers of the Believers and do not turn away
+                            from us, lest you be
+                            stripped of the garment of faith.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">إِنِّي لَصَادِقَةٌ الْمَقَالِ كَرِيمَةٌ * إِي وَالَّذِي ذَلَّتْ لَهُ
+                            الثَّقَلَانِ</p>
+                        <p class="eng-translation">Indeed, I am truthful in speech and noble, yes, by the One before
+                            whom both Jinn and
+                            Mankind are humbled.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">خُذْهَا إِلَيْكَ فَإِنَّمَا هِيَ رَوْضَةٌ * مَحْفُوفَةٌ بِالرَّوْحِ
+                            وَالرَّيْحَانِ</p>
+                        <p class="eng-translation">Take it, for it is but a garden, surrounded by comfort and fragrant
+                            blossoms.</p>
+                    </li>
+
+                    <li class="poem-verse">
+                        <p class="arabic-text">صَلَّى الْإِلَـٰهُ عَلَى النَّبِيِّ وَآلِهِ * فَبِهِمْ تُشَمُّ أَزَاهِرُ
+                            الْبُسْتَانِ</p>
+                        <p class="eng-translation">May Allah send blessings upon the Prophet and his family, for through
+                            them the flowers of
+                            the garden are given their scent.</p>
+                    </li>
+                </ol>
+
+            </div>
+
+        </section>
+
+        <!-- =============================================
+         COMMENTS
+        ============================================= -->
+
+        <section id="comments" class="comments-section">
+
+            <div class="comments-shell">
+
+
+                <!-- HEADING -->
+
+                <div class="comments-heading">
+
+                    <div>
+
+                        <p class="comments-eyebrow">
+                            Discussion
+                        </p>
+
+                        <h2>
+                            Comments
+                        </h2>
+
+                        <p>
+                            Share your thoughts or reflections
+                            about this poem.
+                        </p>
+
+                    </div>
+
+
+                    <span id="commentsCount" class="comments-count">
+                        0 comments
+                    </span>
+
+                </div>
+
+
+
+                <!-- =====================================
+             LOGGED OUT
+             ===================================== -->
+
+                <div id="commentLoginPrompt" class="comment-login-prompt" hidden>
+
+                    <span class="comment-login-icon">
+
+                        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Join the discussion
+                        </h3>
+
+                        <p>
+                            Log in to leave a comment on this poem.
+                        </p>
+
+                    </div>
+
+
+                    <a id="commentsLoginLink" class="comment-login-button" href="/login.html">
+
+                        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                        Log in
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =====================================
+             COMMENT FORM
+             ===================================== -->
+
+                <form id="commentForm" class="comment-form" hidden>
+
+                    <div class="comment-form-heading">
+
+                        <span class="comment-form-icon">
+
+                            <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Leave a comment
+                            </strong>
+
+                            <p>
+                                Comments are reviewed before
+                                appearing publicly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="comment-textarea-wrapper">
+
+                        <textarea id="commentContent" maxlength="3000" placeholder="Share your thoughts..."
+                            aria-label="Write your comment" required></textarea>
+
+
+                        <span id="commentCharacterCount" class="comment-character-count">
+                            0 / 3000
+                        </span>
+
+                    </div>
+
+
+                    <div class="comment-form-footer">
+
+                        <span class="comment-moderation-note">
+
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
+                            Your comment will be submitted for review.
+
+                        </span>
+
+
+                        <button id="submitCommentButton" class="comment-submit-button" type="submit">
+
+                            <span>
+                                Post comment
+                            </span>
+
+                            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+                <div id="commentMessage" class="comment-message" role="status" aria-live="polite"></div>
+
+
+
+                <!-- =====================================
+             COMMENTS LIST
+             ===================================== -->
+
+                <div class="comments-list-heading">
+
+                    <h3>
+                        Community comments
+                    </h3>
+
+                </div>
+
+
+                <div id="commentsLoading" class="comments-loading">
+
+                    <span class="comments-spinner"></span>
+
+                    Loading comments...
+
+                </div>
+
+
+                <div id="commentsList" class="comments-list"></div>
+
+
+                <div id="commentsEmpty" class="comments-empty" hidden>
+
+                    <span>
+
+                        <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
+                    </span>
+
+
+                    <h3>
+                        No comments yet
+                    </h3>
+
+
+                    <p>
+                        Be the first to start the discussion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <!-- Custom object tag preserved -->
+                <object class="website-logo" data="/Images/Website-logo.svg" type="image/svg+xml"
+                    aria-label="Islamic Qalam logo"></object>
+
+                <div>
+                    <strong> Islamic Qalam </strong>
+
+                    <p>Classical works, thoughtfully presented.</p>
+                </div>
+            </div>
+
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="/quran.html"> Qur'an </a>
+
+                <a href="/videos.html"> Videos </a>
+
+                <a href="/e-books.html"> E-books </a>
+
+                <a href="/contact-us.html"> Contact </a>
+                
+                <a href="/faq.html"> FAQ </a>
+            </div>
+
+            <div class="social-links" aria-label="Social media">
+                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="current-year">2026</span>
+                Islamic Qalam. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+    <div id="audioPlayerBar">
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+
+        <audio id="audioPlayer" preload="metadata"></audio>
+
+        <div class="audio-controls">
+            <button id="closeAudioPlayer" title="Close"
+                style="background:none;border:none;color:var(--primary-color);font-size:1.3rem;cursor:pointer;margin-right:10px;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <label for="startVerse">Start:</label>
+            <select id="startVerse"></select>
+
+            <label for="endVerse">End:</label>
+            <select id="endVerse"></select>
+
+            <button id="playSelected"><i class="fa-solid fa-play"></i></button>
+            <button id="pauseAudio"><i class="fa-solid fa-pause"></i></button>
+            <button id="stopAudio"><i class="fa-solid fa-stop"></i></button>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Scripts -->
+    <!-- ================= SUPABASE ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="/Supabase/supabase-client.js"></script>
+    <!-- ================= GLOBAL ================= -->
+
+    <script src="/Scripts/global.js"></script>
+    <script src="/Scripts/donation-popup.js"></script>
+    <!-- ================= POEM ================= -->
+
+    <script src="/Scripts/poems.js"></script>
+    <script src="/Supabase/poem-stats.js"></script>
+    <script src="/Scripts/SideBar.js"></script>
+    <script src="/Scripts/poem-settings.js"></script>
+    <!-- ================= COMMENTS ================= -->
+    <script src="/Supabase/comments.js"></script>
+
+</body>
+
+</html>

@@ -260,13 +260,13 @@ document.addEventListener(
         const fontFamilies = {
 
             default:
-                "",
+                "Calibri, sans-serif",
 
             amiri:
                 "Amiri",
 
-            Neiziri:
-                "Neiziri",
+            Neirizi:
+                "Neirizi",
 
             Uthman:
                 "Uthman",

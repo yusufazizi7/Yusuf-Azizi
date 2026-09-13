@@ -1,124 +1,129 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const navigation = document.getElementById("primary-navigation");
     const menuButton = document.getElementById("menu-bars");
-
-    const settingsButton = document.getElementById("settings-toggle");
-    const settingsSidebar = document.getElementById("poem-settings");
-    const settingsCloseButton = document.getElementById("settings-close");
-    const sidebarBackdrop = document.getElementById("sidebar-backdrop");
+    const navigation = document.getElementById("primary-navigation");
+    const menuIcon = menuButton?.querySelector("i");
 
     function closeNavigation() {
-        navigation?.classList.remove("active");
-        menuButton?.setAttribute("aria-expanded", "false");
-        menuButton?.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
-    }
+        if (!menuButton || !navigation) return;
 
-    function toggleNavigation() {
-        if (!navigation || !menuButton) {
-            return;
-        }
+        navigation.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
 
-        const isOpen = navigation.classList.toggle("active");
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
-
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
-    }
-
-    function openSettings() {
-        if (!settingsSidebar || !settingsButton) {
-            return;
-        }
-
-        closeNavigation();
-
-        settingsSidebar.classList.add("active");
-        sidebarBackdrop?.classList.add("active");
-        document.body.classList.add("sidebar-open");
-
-        settingsSidebar.setAttribute("aria-hidden", "false");
-        settingsButton.setAttribute("aria-expanded", "true");
-        settingsButton.setAttribute(
-            "aria-label",
-            "Close poem settings"
-        );
-
-        settingsCloseButton?.focus();
-    }
-
-    function closeSettings() {
-        if (!settingsSidebar || !settingsButton) {
-            return;
-        }
-
-        settingsSidebar.classList.remove("active");
-        sidebarBackdrop?.classList.remove("active");
-        document.body.classList.remove("sidebar-open");
-
-        settingsSidebar.setAttribute("aria-hidden", "true");
-        settingsButton.setAttribute("aria-expanded", "false");
-        settingsButton.setAttribute(
-            "aria-label",
-            "Open poem settings"
-        );
-    }
-
-    function toggleSettings() {
-        const isOpen =
-            settingsSidebar?.classList.contains("active");
-
-        if (isOpen) {
-            closeSettings();
-        } else {
-            openSettings();
+        if (menuIcon) {
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
         }
     }
 
-    menuButton?.addEventListener(
-        "click",
-        toggleNavigation
-    );
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("active");
 
-    settingsButton?.addEventListener(
-        "click",
-        toggleSettings
-    );
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
 
-    settingsCloseButton?.addEventListener(
-        "click",
-        closeSettings
-    );
+            if (menuIcon) {
+                menuIcon.classList.toggle("fa-bars", !isOpen);
+                menuIcon.classList.toggle("fa-xmark", isOpen);
+            }
+        });
 
-    sidebarBackdrop?.addEventListener(
-        "click",
-        closeSettings
-    );
+        navigation.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeNavigation);
+        });
 
-    navigation?.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeNavigation);
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeNavigation();
+            }
+        });
+    }
+
+    const currentYear = document.getElementById("current-year");
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+    const popup = document.getElementById("donationPopup");
+    const closeButton = popup?.querySelector(".close-btn");
+    const cancelButton = document.getElementById("cancelButton");
+    const donateButton = document.getElementById("donateButton");
+
+    const donationUrl =
+        "https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv";
+
+    function openPopup() {
+        if (!popup) return;
+
+        popup.classList.add("is-visible");
+        popup.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+        closeButton?.focus();
+    }
+
+    function closePopup() {
+        if (!popup) return;
+
+        popup.classList.remove("is-visible");
+        popup.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+
+        sessionStorage.setItem(
+            "islamicQalamDonationSeen",
+            "true"
+        );
+    }
+
+    closeButton?.addEventListener("click", closePopup);
+
+    cancelButton?.addEventListener("click", closePopup);
+
+    donateButton?.addEventListener("click", () => {
+        sessionStorage.setItem(
+            "islamicQalamDonationSeen",
+            "true"
+        );
+
+        window.open(
+            donationUrl,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+        closePopup();
+    });
+
+    popup?.addEventListener("click", (event) => {
+        if (event.target === popup) {
+            closePopup();
+        }
     });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            closeNavigation();
-            closeSettings();
+        if (
+            event.key === "Escape" &&
+            popup?.classList.contains("is-visible")
+        ) {
+            closePopup();
         }
     });
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-            closeNavigation();
-        }
-    });
+    const popupHasBeenSeen =
+        sessionStorage.getItem(
+            "islamicQalamDonationSeen"
+        ) === "true";
+
+    if (popup && !popupHasBeenSeen) {
+        setTimeout(openPopup, 10000);
+    }
 });

@@ -3,18 +3,7 @@
 
 <head>
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6X1QNEYSL"></script>
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag("js", new Date());
-        gtag("config", "G-R6X1QNEYSL");
-    </script>
 
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8" />
@@ -55,12 +44,13 @@
 
     <!-- Header -->
     <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
+        <div class="brand">
+            <!-- Custom object tag preserved -->
             <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
                 aria-label="Islamic Qalam logo"></object>
 
-            <span class="brand-name">Islamic Qalam</span>
-        </a>
+            <span class="brand-name"> Islamic Qalam </span>
+        </div>
 
         <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
             <a href="index.html#poetry-library"> Poetry </a>
@@ -363,7 +353,8 @@
 
                 <a href="e-books.html"> E-books </a>
 
-                <a href="contact-us.html" aria-current="page"> Contact </a>
+                <a href="contact-us.html"> Contact </a>
+                <a href="faq.html"> FAQ </a>
             </div>
 
             <div class="social-links" aria-label="Social media">
@@ -393,13 +384,14 @@
         </div>
     </footer>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script src="Supabase/supabase-client.js"></script>
     <script src="Scripts/global.js"></script>
-<script src="Scripts/donation-popup.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+    <script src="Scripts/donation-popup.js"></script>
 </body>
 
 </html>

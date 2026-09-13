@@ -36,12 +36,13 @@
     <!-- Use your normal navbar here -->
     <!-- Navbar -->
     <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
+        <div class="brand">
+            <!-- Custom object tag preserved -->
             <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
                 aria-label="Islamic Qalam logo"></object>
 
-            <span class="brand-name">Islamic Qalam</span>
-        </a>
+            <span class="brand-name"> Islamic Qalam </span>
+        </div>
 
         <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
             <a href="index.html#poetry-library"> Poetry </a>
@@ -530,11 +531,13 @@
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="quran.html"> Qur'an </a>
 
-                <a href="videos.html" aria-current="page"> Videos </a>
+                <a href="videos.html"> Videos </a>
 
                 <a href="e-books.html"> E-books </a>
 
                 <a href="contact-us.html"> Contact </a>
+
+                <a href="faq.html"> FAQ </a>
             </div>
 
             <div class="social-links" aria-label="Social media">
@@ -570,7 +573,8 @@
     <script src="Supabase/supabase-client.js"></script>
 
     <script src="Scripts/global.js"></script>
-<script src="Scripts/donation-popup.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+    <script src="Scripts/donation-popup.js"></script>
 
     <script src="Scripts/Data/videos.js"></script>
 

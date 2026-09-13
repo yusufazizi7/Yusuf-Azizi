@@ -1,0 +1,236 @@
+/* =========================================================
+   RETRIEVE DOWNLOAD
+   ========================================================= */
+
+.retrieve-main {
+  min-height: calc(100vh - 80px);
+  padding: 70px 20px;
+  background: linear-gradient(180deg, #f7f3ec 0%, #ffffff 100%);
+}
+
+.retrieve-card {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 42px;
+  border: 1px solid #e7dfd3;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(24, 50, 39, 0.08);
+}
+
+/* ================= ICON ================= */
+
+.retrieve-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 22px;
+
+  border-radius: 14px;
+
+  color: #ffffff;
+  background: #0d3b26;
+
+  font-size: 23px;
+}
+
+.retrieve-card .section-kicker {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ================= HEADING ================= */
+
+.retrieve-card .section-kicker {
+  margin: 0 0 7px;
+
+  color: #8c6239;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.retrieve-card h1 {
+  margin: 0 0 14px;
+
+  color: #0d3b26;
+
+  font-family: Georgia, serif;
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+.retrieve-description {
+  margin: 0 0 30px;
+
+  color: #666666;
+
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ================= FORM ================= */
+
+.retrieve-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.retrieve-field label {
+  color: #26352e;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.retrieve-field input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d6d0c7;
+  border-radius: 9px;
+
+  color: #2b2b2b;
+  background: #ffffff;
+
+  font: inherit;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.retrieve-field input::placeholder {
+  color: #9a9a9a;
+}
+
+.retrieve-field input:focus {
+  border-color: #0d3b26;
+
+  box-shadow: 0 0 0 3px rgba(13, 59, 38, 0.1);
+}
+
+/* ================= MESSAGE ================= */
+
+.retrieve-message {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.retrieve-message.success {
+  border: 1px solid #b8dbc7;
+
+  color: #17603b;
+  background: #edf8f1;
+}
+
+.retrieve-message.error {
+  border: 1px solid #e4baba;
+
+  color: #9b2424;
+  background: #fff1f1;
+}
+
+.retrieve-message[hidden] {
+  display: none !important;
+}
+
+/* ================= BUTTON ================= */
+
+.retrieve-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  width: 100%;
+
+  margin-top: 20px;
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  color: #ffffff;
+  background: #0d3b26;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.retrieve-button:hover:not(:disabled) {
+  background: #124d33;
+
+  box-shadow: 0 8px 20px rgba(13, 59, 38, 0.18);
+
+  transform: translateY(-1px);
+}
+
+.retrieve-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.retrieve-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ================= HELP ================= */
+
+.retrieve-help {
+  margin: 24px 0 0;
+  padding-top: 20px;
+
+  border-top: 1px solid #ece6dc;
+
+  color: #777777;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+  .retrieve-main {
+    padding: 40px 15px;
+  }
+
+  .retrieve-card {
+    padding: 30px 22px;
+
+    border-radius: 13px;
+  }
+
+  .retrieve-card h1 {
+    font-size: 29px;
+  }
+
+  .retrieve-description {
+    font-size: 15px;
+  }
+}

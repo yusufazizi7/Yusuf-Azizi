@@ -2914,70 +2914,174 @@ userSearch.addEventListener(
    DASHBOARD TABS
 ===================================== */
 
-document
-    .querySelectorAll(
+/* =====================================
+   DASHBOARD TABS
+===================================== */
+
+const ADMIN_TAB_STORAGE_KEY =
+    "islamicQalamAdminActiveTab";
+
+
+const adminTabs =
+    document.querySelectorAll(
         ".admin-tab"
-    )
-    .forEach(
+    );
+
+
+const adminPanels = {
+
+    comments:
+        document.getElementById(
+            "commentsPanel"
+        ),
+
+    messages:
+        document.getElementById(
+            "messagesPanel"
+        ),
+
+    videos:
+        document.getElementById(
+            "videosPanel"
+        ),
+
+    poems:
+        document.getElementById(
+            "poemsPanel"
+        ),
+
+    users:
+        document.getElementById(
+            "usersPanel"
+        )
+
+};
+
+
+
+function setAdminTab(
+    selectedTab
+) {
+
+    /*
+     * Make sure the requested tab
+     * actually exists.
+     */
+
+    if (
+        !adminPanels[
+        selectedTab
+        ]
+    ) {
+
+        selectedTab =
+            "comments";
+
+    }
+
+
+
+    /* ================= TAB BUTTONS ================= */
+
+    adminTabs.forEach(
         tab => {
 
-            tab.addEventListener(
-                "click",
-                () => {
-
-                    document
-                        .querySelectorAll(
-                            ".admin-tab"
-                        )
-                        .forEach(
-                            item =>
-                                item.classList
-                                    .remove(
-                                        "active"
-                                    )
-                        );
+            const isActive =
+                tab.dataset.tab ===
+                selectedTab;
 
 
-                    tab.classList.add(
-                        "active"
-                    );
+            tab.classList.toggle(
+                "active",
+                isActive
+            );
 
 
-                    const selected =
-                        tab.dataset.tab;
-
-
-                    document
-                        .getElementById(
-                            "commentsPanel"
-                        )
-                        .hidden =
-                        selected !==
-                        "comments";
-
-
-                    document
-                        .getElementById(
-                            "messagesPanel"
-                        )
-                        .hidden =
-                        selected !==
-                        "messages";
-
-
-                    document
-                        .getElementById(
-                            "usersPanel"
-                        )
-                        .hidden =
-                        selected !==
-                        "users";
-
-                }
+            tab.setAttribute(
+                "aria-selected",
+                String(
+                    isActive
+                )
             );
 
         }
     );
+
+
+
+    /* ================= PANELS ================= */
+
+    Object.entries(
+        adminPanels
+    ).forEach(
+        ([
+            tabName,
+            panel
+        ]) => {
+
+            if (
+                panel
+            ) {
+
+                panel.hidden =
+                    tabName !==
+                    selectedTab;
+
+            }
+
+        }
+    );
+
+
+
+    /* ================= SAVE ================= */
+
+    localStorage.setItem(
+        ADMIN_TAB_STORAGE_KEY,
+        selectedTab
+    );
+
+}
+
+
+
+/* =====================================
+   TAB CLICKS
+===================================== */
+
+adminTabs.forEach(
+    tab => {
+
+        tab.addEventListener(
+            "click",
+            () => {
+
+                setAdminTab(
+                    tab.dataset.tab
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================
+   RESTORE LAST TAB
+===================================== */
+
+const savedAdminTab =
+    localStorage.getItem(
+        ADMIN_TAB_STORAGE_KEY
+    ) ||
+    "comments";
+
+
+setAdminTab(
+    savedAdminTab
+);
 
 
 

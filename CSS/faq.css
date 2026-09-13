@@ -1,0 +1,652 @@
+/* =========================================================
+   ISLAMIC QALAM FAQ PAGE
+   ========================================================= */
+
+/* ================= PAGE ================= */
+
+.faq-page {
+  width: 100%;
+  margin-top: 0;
+  padding: 150px 20px 90px;
+
+  background: linear-gradient(180deg, #faf4e8 0%, #fffdf8 45%, #faf4e8 100%);
+
+  text-align: left;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.faq-hero {
+  width: min(760px, 100%);
+
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-hero-icon {
+  display: grid;
+
+  width: 66px;
+  height: 66px;
+
+  margin: 0 auto 22px;
+
+  place-items: center;
+
+  border: 1px solid rgba(140, 98, 57, 0.22);
+
+  border-radius: 18px;
+
+  color: var(--home-brown-dark);
+
+  background: var(--home-surface-soft);
+
+  font-size: 25px;
+}
+
+.faq-hero .section-kicker {
+  justify-content: center;
+
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  text-align: center;
+}
+
+.faq-hero h1 {
+  margin: 0;
+
+  color: var(--home-green);
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+
+  font-weight: 600;
+
+  line-height: 1.06;
+
+  letter-spacing: -0.035em;
+}
+
+.faq-hero-description {
+  max-width: 650px;
+
+  margin: 20px auto 0;
+
+  color: var(--home-muted);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   RETRIEVE CARD
+   ========================================================= */
+
+.faq-retrieve-card {
+  display: grid;
+
+  width: min(920px, 100%);
+
+  grid-template-columns: auto minmax(0, 1fr) auto;
+
+  gap: 20px;
+
+  align-items: center;
+
+  margin: 55px auto 0;
+
+  padding: 24px;
+
+  border: 1px solid rgba(13, 59, 38, 0.15);
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow: 0 14px 40px rgba(33, 42, 32, 0.07);
+}
+
+.faq-retrieve-icon {
+  display: grid;
+
+  width: 58px;
+  height: 58px;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  color: #ffffff;
+
+  background: var(--home-green);
+
+  font-size: 21px;
+}
+
+.faq-retrieve-content h2 {
+  margin: 0;
+
+  color: var(--home-green);
+
+  font-family: var(--font-heading);
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+}
+
+.faq-retrieve-content p {
+  margin-top: 5px;
+
+  color: var(--home-muted);
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.faq-retrieve-button {
+  display: inline-flex;
+
+  min-height: 48px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 12px 17px;
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background: var(--home-green);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faq-retrieve-button:hover {
+  color: #ffffff;
+
+  background: var(--home-green-light);
+
+  box-shadow: 0 10px 22px rgba(13, 59, 38, 0.17);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   FAQ SECTION
+   ========================================================= */
+
+.faq-section {
+  width: min(860px, 100%);
+
+  margin: 80px auto 0;
+}
+
+.faq-section-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.faq-section-heading .section-kicker {
+  justify-content: center;
+  width: 100%;
+}
+
+.faq-section-heading h2 {
+  margin: 0;
+
+  color: var(--home-green);
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  font-weight: 600;
+}
+
+.faq-section-heading > p:last-child {
+  max-width: 620px;
+
+  margin: 10px auto 0;
+
+  color: var(--home-muted);
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   FAQ ITEMS
+   ========================================================= */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  overflow: hidden;
+
+  border: 1px solid rgba(13, 59, 38, 0.13);
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow: 0 5px 18px rgba(33, 42, 32, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(140, 98, 57, 0.35);
+
+  box-shadow: 0 10px 30px rgba(33, 42, 32, 0.07);
+}
+
+/* ================= SUMMARY ================= */
+
+.faq-item summary {
+  display: flex;
+
+  min-height: 76px;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 17px 20px;
+
+  color: var(--home-green);
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  list-style: none;
+
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question-content {
+  display: flex;
+
+  min-width: 0;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.faq-question-icon {
+  display: grid;
+
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: var(--home-brown-dark);
+
+  background: var(--home-surface-soft);
+
+  font-size: 15px;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+
+  color: var(--home-brown);
+
+  font-size: 13px;
+
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* ================= ANSWER ================= */
+
+.faq-answer {
+  padding: 0 22px 22px 76px;
+
+  color: var(--home-muted);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+.faq-answer p + p {
+  margin-top: 12px;
+}
+
+.faq-answer strong {
+  color: var(--home-green);
+}
+
+.faq-answer a {
+  color: var(--home-brown-dark);
+
+  font-weight: 800;
+
+  border-bottom: 1px solid rgba(140, 98, 57, 0.35);
+}
+
+.faq-answer a:hover {
+  color: var(--home-green);
+
+  border-color: var(--home-green);
+}
+
+/* =========================================================
+   FAQ NOTE
+   ========================================================= */
+
+.faq-note {
+  display: flex;
+
+  gap: 10px;
+
+  align-items: flex-start;
+
+  margin-top: 16px;
+
+  padding: 13px 14px;
+
+  border: 1px solid rgba(140, 98, 57, 0.18);
+
+  border-radius: 9px;
+
+  color: #665641;
+
+  background: #f8f1e6;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+.faq-note i {
+  margin-top: 3px;
+
+  color: var(--home-brown);
+}
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.faq-contact {
+  display: grid;
+
+  width: min(920px, 100%);
+
+  grid-template-columns: auto minmax(0, 1fr) auto;
+
+  gap: 22px;
+
+  align-items: center;
+
+  margin: 80px auto 0;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  background: linear-gradient(120deg, #0d3b26, #174f37);
+
+  box-shadow: 0 22px 50px rgba(13, 59, 38, 0.16);
+}
+
+.faq-contact-icon {
+  display: grid;
+
+  width: 58px;
+  height: 58px;
+
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 15px;
+
+  color: #ead7bc;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  font-size: 21px;
+}
+
+.faq-contact .section-kicker {
+  margin-bottom: 5px;
+
+  color: #d7b98f;
+}
+
+.faq-contact h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: var(--font-heading);
+
+  font-size: 1.8rem;
+}
+
+.faq-contact p:last-child {
+  max-width: 610px;
+
+  margin-top: 7px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.faq-contact-button {
+  display: inline-flex;
+
+  min-height: 48px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.faq-contact-button:hover {
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.faq-item summary:focus-visible,
+.faq-retrieve-button:focus-visible,
+.faq-contact-button:focus-visible {
+  outline: 3px solid rgba(140, 98, 57, 0.45);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media only screen and (max-width: 800px) {
+  .faq-page {
+    padding: 125px 16px 70px;
+  }
+
+  .faq-retrieve-card,
+  .faq-contact {
+    grid-template-columns: auto 1fr;
+  }
+
+  .faq-retrieve-button,
+  .faq-contact-button {
+    grid-column: 1 / -1;
+
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 600px) {
+  .faq-page {
+    padding: 110px 14px 55px;
+  }
+
+  .faq-hero-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 22px;
+  }
+
+  .faq-hero h1 {
+    font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+
+  .faq-hero-description {
+    font-size: 15px;
+  }
+
+  .faq-retrieve-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 21px;
+
+    text-align: center;
+  }
+
+  .faq-retrieve-icon {
+    margin-inline: auto;
+  }
+
+  .faq-section {
+    margin-top: 60px;
+  }
+
+  .faq-item summary {
+    min-height: 70px;
+
+    padding: 15px 16px;
+
+    font-size: 15px;
+  }
+
+  .faq-question-content {
+    gap: 11px;
+  }
+
+  .faq-question-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+  .faq-answer {
+    padding: 0 17px 19px;
+
+    font-size: 14px;
+  }
+
+  .faq-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-top: 60px;
+
+    padding: 25px;
+
+    text-align: center;
+  }
+
+  .faq-contact-icon {
+    margin-inline: auto;
+  }
+
+  .faq-contact .section-kicker {
+    justify-content: center;
+  }
+}

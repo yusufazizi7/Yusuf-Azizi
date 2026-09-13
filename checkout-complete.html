@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Your Islamic Qalam e-book purchase." />
+
+    <title>
+        Order Complete | Islamic Qalam
+    </title>
+
+
+    <link rel="stylesheet" href="CSS/global.css" />
+
+    <link rel="stylesheet" href="CSS/checkout-complete.css" />
+
+    <link rel="icon" type="image/png" href="Images/website-favicon.png" />
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+    <header class="site-header">
+
+        <div class="brand">
+
+            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
+                aria-label="Islamic Qalam logo"></object>
+
+            <span class="brand-name">
+                Islamic Qalam
+            </span>
+
+        </div>
+
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+
+            <a href="index.html#poetry-library">
+                Poetry
+            </a>
+
+            <a href="quran.html">
+                Qur'an
+            </a>
+
+            <a href="videos.html">
+                Videos
+            </a>
+
+            <a href="e-books.html">
+                E-books
+            </a>
+
+            <a href="contact-us.html">
+                Contact
+            </a>
+
+            <a id="navAccountLink" class="nav-login" href="login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+            </a>
+
+        </nav>
+
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+    </header>
+
+
+    <main class="complete-main">
+
+        <!-- LOADING -->
+
+        <section id="completeLoading" class="complete-card">
+
+            <div class="complete-spinner">
+                <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i>
+            </div>
+
+            <h1>
+                Verifying your purchase
+            </h1>
+
+            <p>
+                We're confirming your payment securely.
+            </p>
+
+        </section>
+
+
+        <!-- SUCCESS -->
+
+        <section id="completeSuccess" class="complete-card" hidden>
+
+            <div class="complete-success-icon">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+            </div>
+
+            <p class="complete-eyebrow">
+                Payment successful
+            </p>
+
+            <h1>
+                Your e-books are ready
+            </h1>
+
+            <p class="complete-description">
+                Thank you for your purchase. Here is your temporary download link. It will expire after 15 minutes.
+            </p>
+
+
+            <div id="completeOrderNumber" class="complete-order-number"></div>
+
+
+            <div id="completeItems" class="complete-items"></div>
+
+
+            <div class="complete-total">
+
+                <span>
+                    Total paid
+                </span>
+
+                <strong id="completeTotal">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="complete-actions">
+
+                <a href="e-books.html" class="complete-secondary-button">
+                    Browse more e-books
+                </a>
+
+                <a href="index.html" class="complete-primary-button">
+                    Return home
+                </a>
+
+            </div>
+
+
+            <p class="complete-sharing-note">
+
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+
+                Your download links are temporary for security and expire after 15 minutes. You can generate a new link anytime from
+                your account or retrieve your purchase again.
+
+            </p>
+
+        </section>
+
+
+        <!-- PROCESSING -->
+
+        <section id="completeProcessing" class="complete-card" hidden>
+
+            <div class="complete-processing-icon">
+
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+
+            </div>
+
+            <h1>
+                Payment is still processing
+            </h1>
+
+            <p>
+                Stripe has not confirmed the payment yet.
+                Some payment methods can take a little longer.
+            </p>
+
+            <button id="checkAgainButton" class="complete-primary-button" type="button">
+                Check again
+            </button>
+
+        </section>
+
+
+        <!-- ERROR -->
+
+        <section id="completeError" class="complete-card" hidden>
+
+            <div class="complete-error-icon">
+
+                <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+
+            </div>
+
+            <h1>
+                We couldn't verify this order
+            </h1>
+
+            <p id="completeErrorText">
+                The payment could not be verified.
+            </p>
+
+            <a href="e-books.html" class="complete-primary-button">
+                Return to e-books
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="Supabase/supabase-client.js"></script>
+
+    <script src="Scripts/global.js"></script>
+    <script src="Scripts/SideBar.js"></script>
+
+    <script src="Scripts/checkout-complete.js"></script>
+
+</body>
+
+</html>

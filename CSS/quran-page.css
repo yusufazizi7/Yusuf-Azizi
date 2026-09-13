@@ -1,329 +1,707 @@
-/* ================= QURAN PAGE STYLING ================= */
+/* =========================================================
+   QUR'AN SURAH READER
+   ========================================================= */
 
-/* General Layout */
-main {
-    text-align: center;
-    padding: 40px 20px;
-    margin: 0 auto;
-    margin-top: 150px; /* Reduced margin for better spacing */
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.surah-page {
+  width: 100%;
+  flex: 1 0 auto;
+
+  margin-top: 0;
+  padding-top: 82px;
+
+  overflow-x: hidden;
+
+  background: var(--home-bg);
+
+  text-align: left;
 }
 
-/* Page Title */
-.page-title {
-    font-size: 3rem;
-    color: var(--text-color);
-    margin-bottom: 40px;
+.surah-page section {
+  margin-top: 0;
 }
 
+/* =========================================================
+   HERO
+   ========================================================= */
 
+.surah-hero {
+  position: relative;
 
+  overflow: hidden;
 
-/* Extra Spacing */
-.extra-space {
-    height: 100px;
+  background:
+    radial-gradient(
+      circle at 78% 42%,
+      rgba(140, 98, 57, 0.24),
+      transparent 30rem
+    ),
+    linear-gradient(135deg, #0d3b26 0%, #123f2d 52%, #18332f 100%);
 }
 
-/* ================= SURAH NAVIGATION BUTTONS ================= */
+.surah-hero::before {
+  content: "";
 
-.quran-nav {
-    text-align: center;
-    margin: 30px 0;
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+
+  background-size: 52px 52px;
+
+  mask-image: linear-gradient(to right, transparent, black 55%, transparent);
 }
 
-.quran-btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 8px 15px; /* Reduced padding */
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: var(--accent-color);
-    border: none;
-    border-radius: 8px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s;
-    width: 120px; /* Fixed smaller width */
+.surah-hero-inner {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+
+  gap: clamp(2.5rem, 6vw, 6rem);
+
+  width: min(1100px, calc(100% - 40px));
+
+  min-height: 430px;
+
+  margin-inline: auto;
+
+  padding: clamp(4rem, 7vw, 6rem) 0;
+
+  align-items: center;
 }
 
-/* Hover Effect */
-.quran-btn:hover {
-    background-color: var(--blue-color);
-    transform: scale(1.05);
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.surah-hero-copy {
+  max-width: 680px;
 }
 
-/* ================= COMING SOON SECTION ================= */
-.coming-soon {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    background: var(--primary-color);
-    padding: 15px 30px;
-    border: 2px solid var(--secondary-color);
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 50px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 0.3s ease-in-out;
+.surah-eyebrow {
+  margin-bottom: 0.8rem;
+
+  color: #d8c3a8;
+
+  font-size: 0.76rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
 }
 
-/* Hover Effect */
-.coming-soon:hover {
-    background: var(--accent-color);
-    color: white;
-    border-color: var(--secondary-color);
-    transform: scale(1.05);
+.surah-hero h1 {
+  margin: 0;
+
+  color: var(--home-bg);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.7rem, 6vw, 4.8rem);
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
 }
 
+.surah-hero-description {
+  max-width: 620px;
 
-/* ================= RESPONSIVE DESIGN ================= */
+  margin-top: 1.3rem;
 
-.quran-container {
-    max-width: 800px;
-    margin: 100px auto;
-    padding: 0 20px;
-    
+  color: rgba(250, 244, 232, 0.78);
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
 }
+
+/* =========================================================
+   HERO META
+   ========================================================= */
+
+.surah-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem 1.15rem;
+
+  margin-top: 1.8rem;
+
+  color: rgba(250, 244, 232, 0.82);
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+}
+
+.surah-meta span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.42rem;
+}
+
+.surah-meta i {
+  color: #d8c3a8;
+}
+
+/* =========================================================
+   HERO ARABIC ART
+   ========================================================= */
+
+.surah-hero-art {
+  display: grid;
+
+  place-items: center;
+}
+
+.surah-hero-art-frame {
+  position: relative;
+
+  display: flex;
+
+  width: min(100%, 350px);
+
+  aspect-ratio: 1.08;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  padding: 2rem;
+
+  border: 1px solid rgba(250, 244, 232, 0.18);
+
+  border-radius: 28px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  box-shadow:
+    inset 0 0 0 8px rgba(255, 255, 255, 0.018),
+    0 30px 80px rgba(0, 0, 0, 0.16);
+
+  text-align: center;
+}
+
+.surah-hero-art-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 18px;
+
+  border: 1px solid rgba(216, 195, 168, 0.22);
+
+  border-radius: 20px;
+
+  pointer-events: none;
+}
+
+.surah-arabic-title {
+  position: relative;
+
+  z-index: 1;
+
+  color: var(--home-bg);
+
+  font-family: Thuluth, Amiri, serif;
+
+  font-size: clamp(4rem, 9vw, 6.3rem);
+
+  line-height: 1.2;
+
+  direction: rtl;
+}
+
+.surah-arabic-subtitle {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 0.8rem;
+
+  color: rgba(250, 244, 232, 0.62);
+
+  font-family: Amiri, serif;
+
+  font-size: 1rem;
+
+  direction: rtl;
+}
+
+/* =========================================================
+   READING SECTION
+   ========================================================= */
+
+.surah-reading-section {
+  width: min(940px, calc(100% - 40px));
+
+  margin-inline: auto;
+
+  padding: clamp(4rem, 7vw, 6rem) 0;
+}
+
+/* =========================================================
+   SURAH NAVIGATION
+   ========================================================= */
+
+.surah-navigation {
+  display: flex;
+
+  gap: 0.8rem;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 1.2rem;
+}
+
+.bottom-navigation {
+  margin-top: 1.2rem;
+
+  margin-bottom: 0;
+}
+
+.surah-nav-button {
+  display: inline-flex;
+
+  min-height: 46px;
+
+  gap: 0.5rem;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0.7rem 1rem;
+
+  border: 1px solid var(--home-green);
+
+  border-radius: 10px;
+
+  color: #ffffff;
+
+  background: var(--home-green);
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.surah-nav-button:hover {
+  color: #ffffff;
+
+  background: var(--home-green-light);
+
+  transform: translateY(-1px);
+}
+
+.surah-nav-button.secondary {
+  border-color: var(--home-border);
+
+  color: var(--home-green);
+
+  background: var(--home-surface);
+}
+
+.surah-nav-button.secondary:hover {
+  border-color: rgba(140, 98, 57, 0.3);
+
+  color: var(--home-brown-dark);
+
+  background: var(--home-surface-soft);
+}
+
+/* =========================================================
+   READING CARD
+   ========================================================= */
+
+.surah-reading-card {
+  overflow: hidden;
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 24px;
+
+  background: var(--home-surface);
+
+  box-shadow: var(--home-shadow);
+}
+
+/* =========================================================
+   READING HEADER
+   ========================================================= */
+
+.surah-reading-header {
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 1.35rem 1.5rem;
+
+  border-bottom: 1px solid var(--home-border);
+}
+
+.surah-reading-label {
+  color: var(--home-green);
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+}
+
+.surah-reading-header p {
+  margin-top: 0.25rem;
+
+  color: var(--home-muted);
+
+  font-size: 0.74rem;
+}
+
+.surah-reading-icon {
+  display: grid;
+
+  width: 42px;
+
+  height: 42px;
+
+  flex-shrink: 0;
+
+  place-items: center;
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 10px;
+
+  color: var(--home-green);
+
+  background: var(--home-surface-soft);
+}
+
+/* =========================================================
+   AYAH BLOCKS
+   ========================================================= */
 
 .ayah-block {
-    text-align: center;
-    margin-bottom: 20px;
+  position: relative;
+
+  padding: clamp(2rem, 5vw, 3.2rem) clamp(1.3rem, 5vw, 3.4rem);
+
+  border-bottom: 1px solid rgba(13, 59, 38, 0.09);
+
+  background: #ffffff;
 }
+
+.ayah-block:last-child {
+  border-bottom: 0;
+}
+
+/* =========================================================
+   ARABIC TEXT
+   ========================================================= */
 
 .arabic-text {
-    font-size: 1.9rem;
-    font-family: 'Quran-Hafs';
-    direction: rtl;
-    color: black;
-    margin-bottom: 30px;
-    margin-top: 35px;
-    text-align: right;
-    
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0.8rem 0 1.6rem;
+
+  color: var(--home-green);
+
+  font-family: "Quran-Hafs", Uthman, Amiri, serif;
+
+  font-size: clamp(1.8rem, 4vw, 2.05rem);
+
+  font-weight: normal;
+
+  line-height: 2.15;
+
+  direction: rtl;
+
+  text-align: right;
 }
+
+/* =========================================================
+   TRANSLATION
+   ========================================================= */
 
 .translation-text {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 10px;
-    text-align: left;
+  width: 100%;
+
+  margin: 0;
+
+  color: var(--home-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+
+  direction: ltr;
+
+  text-align: left;
+
+  max-width: none;
 }
 
-.bismillah {
+/* =========================================================
+   AYAH HOVER
+   ========================================================= */
 
-    font-family: "Amiri";
-    font-size: 1.5rem;
+.ayah-block {
+  position: relative;
+
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.4rem, 5vw, 3.2rem);
+
+  border-bottom: 1px solid rgba(13, 59, 38, 0.09);
+
+  background: #ffffff;
+
+  transition: background-color 0.2s ease;
 }
 
-.ayah-separator {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin: 20px 0;
+.ayah-block:hover {
+  background: #fffefa;
 }
 
+/* =========================================================
+   FOCUS
+   ========================================================= */
 
-.word {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 4px;
-    white-space: nowrap;
+.surah-page a:focus-visible {
+  outline: 3px solid rgba(140, 98, 57, 0.45);
+
+  outline-offset: 3px;
 }
 
-/* Default hover if no class applied (fallback) */
-.word:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-/* If audio file found */
-.audio-found:hover {
-    background-color: var(--blue-color);
-    color: var(--primary-color);
-}
+@media only screen and (max-width: 900px) {
+  .surah-hero-inner {
+    grid-template-columns: 1fr;
 
-/* If audio file missing */
-.audio-missing:hover {
-    background-color: var(--red-color); /* Bootstrap's 'danger' red (#dc3545) fits your palette */
-    color: var(--primary-color);
-}
+    min-height: auto;
 
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 1em;
-    top: 0.5em;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.tajweed-rule {
-    margin: 8px 0;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-}
-
-.color-box {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 3px;
-}
-
-
-.tajweed-btn {
-    background-color: var(--accent-color); /* Bootstrap blue */
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
     text-align: center;
-    margin-top: 30px;
+  }
+
+  .surah-hero-copy {
+    max-width: 760px;
+
+    margin-inline: auto;
+  }
+
+  .surah-hero-description {
+    margin-inline: auto;
+  }
+
+  .surah-meta {
+    justify-content: center;
+  }
+
+  .surah-hero-art-frame {
+    width: min(76vw, 310px);
+  }
 }
 
-.tajweed-btn:hover {
-    background-color: #7494b5;
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media only screen and (max-width: 768px) {
+  .surah-page {
+    padding-top: 72px;
+  }
+
+  .surah-hero-inner {
+    width: min(100% - 28px, 1100px);
+
+    gap: 2.8rem;
+
+    padding: 3.8rem 0 4.5rem;
+  }
+
+  .surah-reading-section {
+    width: min(100% - 28px, 940px);
+
+    padding: 4rem 0;
+  }
+
+  .surah-hero h1 {
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
+  }
+
+  .surah-navigation {
+    gap: 0.55rem;
+  }
+
+  .surah-nav-button {
+    flex: 1;
+
+    padding: 0.7rem 0.6rem;
+
+    font-size: 0.76rem;
+  }
+
+  .surah-reading-card {
+    border-radius: 18px;
+  }
+
+  .surah-reading-header {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .ayah-block {
+    padding: 2rem 1rem;
+  }
+
+  .arabic-text {
+    padding: 0.8rem 0 1.3rem;
+
+    font-size: clamp(1.75rem, 7vw, 2.2rem);
+
+    line-height: 2;
+
+    text-align: right;
+
+    width: 100%;
+  }
+
+  .translation-text {
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    text-align: left;
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+  }
 }
 
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
 
-.diff-from-hafs-box { background-color: #f703f6; }
-.ra-muraqqaqah-box { background-color: #44e53f; }
-.lam-mulaghazhah-box { background-color: #0273fd; }
-.mad-badal-box { background-color: #00ccff; }
-.taqlil-word-box { background-color: red; }
-.silah-meem-box { background-color: orange; }
-.mad-lin-box { background-color: #9acc00; }
-.idgham-box { background-color: #4a23f1; }
+@media only screen and (max-width: 480px) {
+  .surah-meta {
+    align-items: center;
 
-.tooltip {
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 8px 12px; /* slightly larger */
-    border-radius: 8px; /* more rounded */
-    font-size: 15px; /* slightly bigger text */
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    font-family: Calibri;
-    user-select: none;
-    direction: ltr;
+    flex-direction: column;
+  }
+
+  .surah-hero-art-frame {
+    width: min(80vw, 270px);
+  }
+
+  .surah-navigation {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .surah-nav-button {
+    width: 100%;
+  }
 }
 
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
-.word:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    
+@media (prefers-reduced-motion: reduce) {
+  .ayah-block,
+  .surah-nav-button {
+    transition: none;
+  }
 }
 
-/* Responsive Design for Quran Pages */
-@media only screen and (max-width: 1024px) {
-    .quranbg {
-        width: 90%; /* Scale down for tablets */
-        height: auto; /* Allow flexible height */
-        padding: 15px;
-    }
+/* ================= SURAH READER EXTRA SUPPORT ================= */
 
-    .quransvg {
-        width: 95%; /* Adjust SVG width */
-    }
+/* Bismillah used before Surahs such as Al-Baqarah */
+
+.surah-bismillah {
+  padding: 2.2rem 1rem 1.7rem;
+
+  border-bottom: 1px solid rgba(13, 59, 38, 0.09);
+
+  color: var(--home-green);
+
+  background: #ffffff;
+
+  font-family: Amiri, serif;
+
+  font-size: 2.2rem;
+
+  line-height: 1.5;
+
+  direction: rtl;
+
+  text-align: center;
+}
+
+/* Disabled next/previous Surah navigation */
+
+.surah-nav-button.disabled {
+  border-color: var(--home-border);
+
+  color: var(--home-muted);
+
+  background: var(--home-surface-soft);
+
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 768px) {
-    .page-title {
-        font-size: 2.2rem;
-        margin-bottom: 30px; /* Reduce spacing */
-    }
+  .surah-bismillah {
+    padding: 1.8rem 1rem 1.4rem;
 
-    .quranbg {
-        width: 100%; /* Full width for better adaptation */
-        max-width: 95vw; /* Prevent overflow */
-        height: auto; /* Adjust height dynamically */
-        padding: 10px;
-        border-radius: 8px;
-    }
-
-    .quransvg {
-        width: 100%;
-        max-height: 100%;
-    }
-
-    .page-number {
-        font-size: 1.3rem;
-    }
-
-    .quran-btn {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-        width: 110px;
-    }
+    font-size: 1.9rem;
+  }
 }
-
-@media only screen and (max-width: 480px) {
-    .quranbg {
-        width: 100%;
-        max-width: 90vw; /* Ensure it doesn’t exceed viewport */
-        height: auto;
-        padding: 8px;
-        border-radius: 5px;
-    }
-
-    .quransvg {
-        width: 100%;
-    }
-
-    .page-number {
-        font-size: 1.1rem;
-    }
-
-    .quran-btn {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-        width: 90px;
-    }
-
-    .coming-soon {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-    }
-}
-

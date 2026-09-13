@@ -5,26 +5,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     const poemPaths = {
         "laamiyah-ibn-taymiyyah.html": {
             audio: "Audios/Poem-Recitations/Laamiyah-Ibn-Taimiyyah-Audio.mp3",
-            json:  "Scripts/Data/Laamiyah-Ibn-Taimiyyah-Audio-Timing.json"
+            json: "Scripts/Data/Laamiyah-Ibn-Taimiyyah-Audio-Timing.json"
         },
         "haiyyah-ibn-al-qayyim.html": {
             audio: "Audios/Poem-Recitations/Ha'iyyah-Ibn-Al-Qayyim-Audio.mp3",
-            json:  "Scripts/Data/Ha'iyyah-Ibn-Al-Qayyim-Audio-Timing.json"
+            json: "Scripts/Data/Ha'iyyah-Ibn-Al-Qayyim-Audio-Timing.json"
         },
         "haiyyah-ibn-abi-dawud.html": {
             audio: "Audios/Poem-Recitations/Ha'iyyah-Ibn-Abi-Dawud-Audio.mp3",
-            json:  "Scripts/Data/Ha'iyyah-Ibn-Abi-Dawud-Audio-Timing.json"
+            json: "Scripts/Data/Ha'iyyah-Ibn-Abi-Dawud-Audio-Timing.json"
         },
         "laamiyah-ibn-al-wardi": {
             audio: "Audios/Poem-Recitations/Laamiyah-Ibn-Al-Wardi-Audio.mp3",
-            json:  "Scripts/Data/Laamiyah-Ibn-Al-Wardi-Audio-Timing.json"
+            json: "Scripts/Data/Laamiyah-Ibn-Al-Wardi-Audio-Timing.json"
         },
         "laamiyah-ibn-al-qayyim.html": {
             audio: "Audios/Poem-Recitations/Laamiyah-Ibn-Al-Qayyim-Audio.mp3",
-            json:  "Scripts/Data/Laamiyah-Ibn-Al-Qayyim-Audio-Timing.json"
+            json: "Scripts/Data/Laamiyah-Ibn-Al-Qayyim-Audio-Timing.json"
         },
 
-        
+
     };
 
     const currentPoem = poemPaths[fileName];

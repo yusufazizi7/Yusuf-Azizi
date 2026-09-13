@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: Neiziri;
+    font-family: Neirizi;
     src: 
          url('../Fonts/Neirizi.ttf') format('truetype');
 
@@ -109,8 +109,17 @@
 .poem-titles {
     font-family: Titles;
     font-size: 17rem;
+    color: var(--secondary-color);
     
     
+}
+
+.poem-titles:hover {
+    font-family: Titles;
+    font-size: 17rem;
+    color: blue;
+
+
 }
 
 

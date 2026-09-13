@@ -1,230 +1,484 @@
 /* ================= E-BOOK LIBRARY PAGE ================= */
 
 .ebooks-main {
-    width: 100%;
-    margin-top: 145px;
-    padding: 0 20px;
+  width: 100%;
+  margin-top: 145px;
+  padding: 0 20px;
 }
 
 /* ================= PAGE INTRODUCTION ================= */
 
 .ebooks-hero {
-    width: min(750px, 100%);
-    margin: 0 auto 55px;
-    text-align: center;
+  width: min(750px, 100%);
+  margin: 0 auto 55px;
+  text-align: center;
 }
 
 .ebooks-eyebrow {
-    margin-bottom: 10px;
-    color: var(--accent-color);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .ebooks-hero .page-title {
-    margin-bottom: 18px;
-    color: var(--secondary-color);
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--secondary-color);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.15;
 }
 
 .ebooks-introduction {
-    color: var(--text-color);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    opacity: 0.85;
+  color: var(--text-color);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.85;
 }
 
 /* ================= E-BOOK GRID ================= */
 
 .ebook-library {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
-    width: min(1200px, 100%);
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  width: min(1200px, 100%);
+  margin: 0 auto;
 }
 
 /* ================= E-BOOK CARD ================= */
 
 .ebook-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-width: 0;
-    background: #fffdf8;
-    border: 1px solid rgba(140, 98, 57, 0.18);
-    border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(13, 59, 38, 0.08);
-    color: var(--text-color);
-    text-align: left;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  background: #fffdf8;
+  border: 1px solid rgba(140, 98, 57, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(13, 59, 38, 0.08);
+  color: var(--text-color);
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .ebook-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-color);
-    box-shadow: 0 16px 35px rgba(13, 59, 38, 0.15);
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: 0 16px 35px rgba(13, 59, 38, 0.15);
 }
 
 /* Keyboard accessibility */
 .ebook-card:focus-visible {
-    outline: 3px solid var(--highlight-color);
-    outline-offset: 4px;
+  outline: 3px solid var(--highlight-color);
+  outline-offset: 4px;
 }
 
 /* ================= COVER IMAGE ================= */
 
 .ebook-cover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 390px;
-    padding: 24px;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(140, 98, 57, 0.09),
-            rgba(13, 59, 38, 0.08)
-        );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 390px;
+  padding: 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba(140, 98, 57, 0.09),
+    rgba(13, 59, 38, 0.08)
+  );
 }
 
 .ebook-cover img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.18));
-    transition: transform 0.35s ease;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.18));
+  transition: transform 0.35s ease;
 }
 
 .ebook-card:hover .ebook-cover img {
-    transform: scale(1.035);
+  transform: scale(1.035);
 }
 
 /* ================= CARD CONTENT ================= */
 
 .ebook-card-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 25px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
 }
 
 .ebook-category {
-    display: inline-block;
-    margin-bottom: 13px;
-    padding: 6px 10px;
-    background: rgba(140, 98, 57, 0.12);
-    border-radius: 50px;
-    color: var(--accent-color);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 13px;
+  padding: 6px 10px;
+  background: rgba(140, 98, 57, 0.12);
+  border-radius: 50px;
+  color: var(--accent-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .ebook-card h2 {
-    margin-bottom: 13px;
-    color: var(--secondary-color);
-    font-family: "Playfair Display", serif;
-    font-size: 1.45rem;
-    line-height: 1.3;
+  margin-bottom: 13px;
+  color: var(--secondary-color);
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  line-height: 1.3;
 }
 
 .ebook-card p {
-    margin-bottom: 24px;
-    color: var(--text-color);
-    font-size: 0.96rem;
-    line-height: 1.65;
-    opacity: 0.82;
+  margin-bottom: 18px;
+  color: var(--text-color);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  opacity: 0.82;
 }
 
 /* ================= VIEW BUTTON ================= */
 
 .ebook-view-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    margin-top: auto;
-    padding: 11px 17px;
-    background: var(--secondary-color);
-    border-radius: 6px;
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    font-weight: 700;
-    transition:
-        background-color 0.3s ease,
-        gap 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: auto;
+  padding: 11px 17px;
+  background: var(--secondary-color);
+  border-radius: 6px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    background-color 0.3s ease,
+    gap 0.3s ease;
 }
 
 .ebook-card:hover .ebook-view-button {
-    gap: 14px;
-    background: var(--accent-color);
+  gap: 14px;
+  background: var(--accent-color);
 }
 
 /* ================= RESPONSIVE DESIGN ================= */
 
-@media (max-width: 1024px) {
-    .ebook-library {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+/* ================= STORE PRODUCT LINKS ================= */
 
-    .ebook-cover {
-        height: 380px;
-    }
+.ebook-cover-link {
+  display: block;
+  color: inherit;
+}
+
+.ebook-card h2 a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ebook-card h2 a:hover {
+  color: var(--accent-color);
+}
+
+/* ================= PRODUCT PRICE ================= */
+
+.ebook-price {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.ebook-price-value {
+  color: var(--secondary-color);
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.ebook-currency {
+  color: var(--text-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  opacity: 0.65;
+}
+
+/* ================= PRODUCT ACTIONS ================= */
+
+.ebook-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.ebook-view-button {
+  width: 100%;
+  margin-top: 0;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+
+
+/* ================= STORE MOBILE ================= */
+
+@media (max-width: 450px) {
+  .ebook-card-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ebook-library {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ebook-cover {
+    height: 380px;
+  }
 }
 
 @media (max-width: 650px) {
-    .ebooks-main {
-        margin-top: 115px;
-        padding: 0 15px;
-    }
+  .ebooks-main {
+    margin-top: 115px;
+    padding: 0 15px;
+  }
 
-    .ebooks-hero {
-        margin-bottom: 35px;
-    }
+  .ebooks-hero {
+    margin-bottom: 35px;
+  }
 
-    .ebooks-hero .page-title {
-        margin-bottom: 14px;
-    }
+  .ebooks-hero .page-title {
+    margin-bottom: 14px;
+  }
 
-    .ebooks-introduction {
-        font-size: 0.95rem;
-    }
+  .ebooks-introduction {
+    font-size: 0.95rem;
+  }
 
-    .ebook-library {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
+  .ebook-library {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 
-    .ebook-cover {
-        height: 390px;
-        padding: 20px;
-    }
+  .ebook-cover {
+    height: 390px;
+    padding: 20px;
+  }
 
-    .ebook-card-content {
-        padding: 22px;
-    }
+  .ebook-card-content {
+    padding: 22px;
+  }
 
-    .ebook-card h2 {
-        font-size: 1.35rem;
-    }
+  .ebook-card h2 {
+    font-size: 1.35rem;
+  }
 }
 
 @media (max-width: 400px) {
-    .ebook-cover {
-        height: 340px;
-    }
+  .ebook-cover {
+    height: 340px;
+  }
 }
 
+
+/* =========================================================
+   E-BOOK HELP SECTION
+   ========================================================= */
+
+.ebooks-help-section {
+    display: grid;
+
+    width: min(960px, calc(100% - 40px));
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    gap: 22px;
+
+    align-items: center;
+
+     margin:
+        120px
+        auto
+        60px;
+
+    padding: 28px;
+
+    border:
+        1px solid
+        rgba(13, 59, 38, 0.14);
+
+    border-radius: 18px;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 14px 35px
+        rgba(33, 42, 32, 0.06);
+
+    text-align: left;
+}
+
+
+.ebooks-help-icon {
+    display: grid;
+
+    width: 58px;
+    height: 58px;
+
+    place-items: center;
+
+    border-radius: 15px;
+
+    color: var(--home-brown-dark);
+
+    background: var(--home-surface-soft);
+
+    font-size: 22px;
+}
+
+
+.ebooks-help-kicker {
+    margin: 0 0 5px;
+
+    color: var(--home-brown-dark);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.ebooks-help-content h2 {
+    margin: 0;
+
+    color: var(--home-green);
+
+    font-family: var(--font-heading);
+
+    font-size: 1.55rem;
+}
+
+
+.ebooks-help-content p:last-child {
+    margin-top: 6px;
+
+    color: var(--home-muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.ebooks-help-actions {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+
+.ebooks-help-button,
+.ebooks-help-secondary {
+    display: inline-flex;
+
+    min-height: 46px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        11px
+        16px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.ebooks-help-button {
+    color: #ffffff;
+
+    background: var(--home-green);
+}
+
+
+.ebooks-help-button:hover {
+    color: #ffffff;
+
+    background: var(--home-green-light);
+}
+
+
+.ebooks-help-secondary {
+    border:
+        1px solid
+        rgba(13, 59, 38, 0.18);
+
+    color: var(--home-green);
+
+    background: transparent;
+}
+
+
+.ebooks-help-secondary:hover {
+    background: var(--home-surface-soft);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media only screen and (max-width: 760px) {
+
+    .ebooks-help-section {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .ebooks-help-icon {
+        margin-inline: auto;
+    }
+
+
+    .ebooks-help-actions {
+        flex-direction: column;
+    }
+
+
+    .ebooks-help-button,
+    .ebooks-help-secondary {
+        width: 100%;
+    }
+
+}
