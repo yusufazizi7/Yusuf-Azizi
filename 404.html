@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots" content="noindex, follow">
+
+    <title>Page Not Found | Islamic Qalam</title>
+
+    <link rel="stylesheet" href="/CSS/global.css">
+
+    <link rel="icon" type="image/png" href="/Images/website-favicon.png">
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .not-found-main {
+            min-height: calc(100vh - 160px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .not-found-card {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .not-found-code {
+            margin: 0;
+            font-size: clamp(5rem, 16vw, 9rem);
+            line-height: 1;
+            color: var(--secondary-color);
+            opacity: 0.12;
+        }
+
+        .not-found-card h1 {
+            margin: -20px 0 15px;
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        .not-found-card p {
+            max-width: 540px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .not-found-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .not-found-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .not-found-button.primary {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .not-found-button.secondary {
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="not-found-main">
+
+        <section class="not-found-card">
+
+            <p class="not-found-code" aria-hidden="true">
+                404
+            </p>
+
+            <h1>
+                Page Not Found
+            </h1>
+
+            <p>
+                The page you are looking for may have been moved,
+                renamed or removed. You can return to the homepage
+                or browse the e-book library.
+            </p>
+
+            <div class="not-found-actions">
+
+                <a href="/" class="not-found-button primary">
+                    <i class="fa-solid fa-house" aria-hidden="true">
+                    </i>
+
+                    Home
+                </a>
+
+                <a href="/e-books.html" class="not-found-button secondary">
+                    <i class="fa-solid fa-book" aria-hidden="true">
+                    </i>
+
+                    E-books
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
