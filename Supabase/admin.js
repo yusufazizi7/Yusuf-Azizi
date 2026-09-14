@@ -146,7 +146,7 @@ async function initialiseAdmin() {
     ) {
 
         window.location.href =
-            "/login.html?redirect=/admin-test.html";
+            "/login.html?redirect=/admin-dashboard.html";
 
         return;
 
@@ -198,7 +198,8 @@ async function initialiseAdmin() {
 
     await Promise.all([
         loadAdminComments(),
-        loadAdminUsers()
+        loadAdminUsers(),
+        loadAdminSales()
     ]);
 
 }
@@ -2938,6 +2939,11 @@ const adminPanels = {
     messages:
         document.getElementById(
             "messagesPanel"
+        ),
+
+    sales:
+        document.getElementById(
+            "salesPanel"
         ),
 
     videos:

@@ -1,66 +1,167 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
-<url>
-<loc>https://islamicqalam.com/</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>1.00</priority>
-</url>
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://islamicqalam.com/nooniyah-al-qahtani.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>1.00</priority>
-</url>
+  <url>
+    <loc>https://www.islamicqalam.com/contact-us.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/al-aqeedah-as-safariniyyah-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/haiyyah-ibn-abi-dawud-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/laamiyah-ibn-al-qayyim-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/laamiyah-ibn-al-wardi-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/laamiyah-ibn-taymiyyah-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/nooniyah-al-qahtani-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/oh-worshipper-of-christ-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/E-books/taiyyah-al-ilbiri-e-book.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/e-books.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/faq.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/ainiyyah-at-tabrizi.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/al-aqeedah-as-safariniyyah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/al-baidha.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/al-munirah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/ala-kullu-mashiah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/haiyyah-ibn-abi-dawud.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/haiyyah-ibn-al-qayyim.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/i-will-carry-my-soul.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/laamiyah-ibn-al-qayyim.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/laamiyah-ibn-al-wardi.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/laamiyah-ibn-taymiyyah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/names-of-allah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/nooniyah-about-aishah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/nooniyah-al-mutanabbi.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/nooniyah-al-qahtani.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/nooniyah-ibn-al-qayyim.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/poem-about-martyrdom.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/raiyyah-ibn-rajab.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/taiyyah-al-ilbiri.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/taiyyah-ibn-rajab.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/taiyyah-ibn-taymiyyah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/tatawala-layluk.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/poems/urjuzah-about-the-seerah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
 
-<url>
-<loc>https://islamicqalam.com/haiyyah-ibn-al-qayyim.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-
-
-<url>
-<loc>https://islamicqalam.com/nooniyah-ibn-al-qayyim.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-
-
-<url>
-<loc>https://islamicqalam.com/laamiyah-ibn-al-wardi.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-
-
-<url>
-<loc>https://islamicqalam.com/Quran/Hafs/Al-Fatihah.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-
-<url>
-<loc>https://islamicqalam.com/Quran/Hafs/Al-Baqarah.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-
-
-<url>
-<loc>https://islamicqalam.com/names-of-allah.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-
-
-<url>
-<loc>https://islamicqalam.com/e-books.html</loc>
-<lastmod>2024-12-03T07:13:16+00:00</lastmod>
-<priority>0.60</priority>
-</url>
-
-
-
-
-
+  <url>
+    <loc>https://www.islamicqalam.com/Quran/Hafs/Al-Baqarah.html</loc>
+    <lastmod>2026-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/Quran/Hafs/Al-Fatihah.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.islamicqalam.com/quran.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.islamicqalam.com/video.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.islamicqalam.com/videos.html</loc>
+    <lastmod>2026-09-13</lastmod>
+  </url>
 </urlset>

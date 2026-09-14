@@ -323,6 +323,15 @@
 
                 </button>
 
+                <button class="admin-tab" type="button" data-tab="sales">
+
+                    <i class="fa-solid fa-chart-line" aria-hidden="true">
+                    </i>
+
+                    Sales
+
+                </button>
+
                 <button class="admin-tab" type="button" data-tab="videos">
 
                     <i class="fa-solid fa-video" aria-hidden="true">
@@ -562,6 +571,309 @@
 
 
                 </form>
+
+            </div>
+
+
+            <!-- ================= SALES ================= -->
+
+            <div id="salesPanel" class="admin-panel" hidden>
+
+
+                <div class="admin-panel-heading">
+
+                    <div>
+
+                        <p class="section-kicker">
+                            E-book store
+                        </p>
+
+                        <h2>
+                            Sales
+                        </h2>
+
+                        <p>
+                            Review e-book revenue, completed orders
+                            and customer purchases.
+                        </p>
+
+                    </div>
+
+
+                    <button id="refreshSales" class="admin-video-refresh" type="button">
+
+                        <i class="fa-solid fa-rotate" aria-hidden="true">
+                        </i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+                <div id="salesLoading" class="admin-sales-loading">
+                    <div class="admin-loading-spinner"></div>
+
+                    <p>
+                        Loading sales data...
+                    </p>
+                </div>
+
+
+                <!-- ================= SALES SUMMARY ================= -->
+                <div id="salesContent" hidden>
+                    <div class="admin-sales-summary">
+
+
+                        <article class="admin-sales-summary-card">
+
+                            <span class="admin-sales-summary-icon revenue">
+
+                                <i class="fa-solid fa-dollar-sign" aria-hidden="true">
+                                </i>
+
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    Revenue — last 7 days
+                                </span>
+
+                                <strong id="salesWeekRevenue">
+                                    $0.00
+                                </strong>
+
+                                <small>
+                                    Gross before Stripe fees
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="admin-sales-summary-card">
+
+                            <span class="admin-sales-summary-icon orders">
+
+                                <i class="fa-solid fa-receipt" aria-hidden="true">
+                                </i>
+
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    Orders — last 7 days
+                                </span>
+
+                                <strong id="salesWeekOrders">
+                                    0
+                                </strong>
+
+                                <small>
+                                    Completed orders
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="admin-sales-summary-card">
+
+                            <span class="admin-sales-summary-icon books">
+
+                                <i class="fa-solid fa-book" aria-hidden="true">
+                                </i>
+
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    E-books — last 7 days
+                                </span>
+
+                                <strong id="salesWeekItems">
+                                    0
+                                </strong>
+
+                                <small>
+                                    E-books delivered
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="admin-sales-summary-card">
+
+                            <span class="admin-sales-summary-icon total">
+
+                                <i class="fa-solid fa-chart-column" aria-hidden="true">
+                                </i>
+
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    All-time revenue
+                                </span>
+
+                                <strong id="salesAllTimeRevenue">
+                                    $0.00
+                                </strong>
+
+                                <small>
+                                    Gross completed revenue
+                                </small>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- ================= SALES TOOLBAR ================= -->
+
+                <div class="admin-sales-toolbar">
+
+                    <label class="admin-search">
+
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true">
+                        </i>
+
+                        <input id="salesSearch" type="search" placeholder="Search email, order or e-book...">
+
+                    </label>
+
+
+                    <label class="admin-sales-filter-wrapper">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <select id="salesStatusFilter">
+
+                            <option value="all">
+                                All orders
+                            </option>
+
+                            <option value="paid">
+                                Paid
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="failed">
+                                Failed
+                            </option>
+
+                            <option value="cancelled">
+                                Cancelled
+                            </option>
+
+                            <option value="refunded">
+                                Refunded
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                    <label class="admin-sales-filter-wrapper">
+
+                        <span>
+                            Sale type
+                        </span>
+
+                        <select id="salesTypeFilter">
+
+                            <option value="non-free" selected>
+                                Non-free sales
+                            </option>
+
+                            <option value="free">
+                                Free orders
+                            </option>
+
+                            <option value="all">
+                                All sales
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <!-- ================= ORDERS ================= -->
+
+                <div class="admin-table-wrapper admin-sales-table-wrapper">
+
+                    <table class="admin-users-table admin-sales-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Order
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    E-books
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Payment
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="salesOrdersBody">
+
+                            <tr>
+
+                                <td colspan="7" class="admin-table-empty">
+                                    Loading sales...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
 
             </div>
 
@@ -1142,7 +1454,7 @@
     <script src="/Scripts/Data/poems.js"></script>
 
 
-
+    <script src="/Supabase/admin-sales.js"></script>
     <!-- Main admin dashboard -->
     <script src="/Supabase/admin.js"></script>
 
@@ -1150,6 +1462,7 @@
     <!-- Video analytics -->
     <script src="/Supabase/admin-videos.js"></script>
     <script src="/Supabase/admin-poems.js"></script>
+
 
 
 
