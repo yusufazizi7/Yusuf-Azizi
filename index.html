@@ -7,29 +7,38 @@
 
     <title>Islamic Qalam | Classical Islamic Poetry, Qur'an and E-books</title>
     <meta name="description"
-        content="Explore classical Islamic poetry, Arabic texts, English translations, Qur'an resources, videos and free e-books on Islamic Qalam." />
-    <meta name="keywords"
-        content="Islamic poetry, Arabic poetry, Islamic poems, Nooniyah Al-Qahtani, Qur'an, Islamic e-books, Arabic, Islamic Qalam" />
+        content="Read classical Islamic poetry in Arabic with English translations, explore Qur'an resources, watch videos, and browse Islamic e-books on Islamic Qalam." />
     <meta name="author" content="Mohammad Yusuf Azizi" />
-    <link rel="canonical" href="https://www.islamicqalam.com/" />
+    <link rel="canonical" href="https://islamicqalam.com/" />
 
     <!-- Social sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Islamic Qalam" />
+    <meta property="og:title" content="Islamic Qalam | Classical Islamic Poetry, Qur'an and E-books" />
     <meta property="og:description"
-        content="Classical Islamic poetry, Arabic texts, English translations, Qur'an resources and free e-books." />
-    <meta property="og:url" content="https://www.islamicqalam.com/" />
+        content="Read classical Islamic poetry in Arabic with English translations, explore Qur'an resources, videos and Islamic e-books." />
+    <meta property="og:url" content="https://islamicqalam.com/" />
     <meta property="og:site_name" content="Islamic Qalam" />
-    <meta property="og:image" content="https://www.islamicqalam.com/Images/social-preview.webp">
+
+    <meta property="og:image" content="https://islamicqalam.com/Images/social-preview.png" />
+    <meta property="og:image:alt" content="Islamic Qalam - Classical works, thoughtfully presented." />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Islamic Qalam | Classical Islamic Poetry, Qur'an and E-books" />
+    <meta name="twitter:description"
+        content="Read classical Islamic poetry in Arabic with English translations, explore Qur'an resources, videos and Islamic e-books." />
+    <meta name="twitter:image" content="https://islamicqalam.com/Images/social-preview.png" />
 
     <!-- Website icon -->
     <link rel="icon" type="image/png" href="Images/website-favicon.png" />
 
     <!-- Global stylesheet -->
-    <link rel="stylesheet" href="CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/global.css" />
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous" defer>
+    </script>
 
 
 
@@ -40,8 +49,8 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Islamic Qalam",
-        "url": "https://www.islamicqalam.com/",
-        "description": "Classical Islamic poetry, Arabic texts, English translations, Qur'an resources, videos and free e-books.",
+        "url": "https://islamicqalam.com/",
+        "description": "Read classical Islamic poetry in Arabic with English translations, explore Qur'an resources, videos and Islamic e-books.",
         "inLanguage": ["en", "ar"],
         "creator": {
           "@type": "Person",
@@ -58,8 +67,11 @@
     <header class="site-header">
         <div class="brand">
             <!-- Custom object tag preserved -->
-            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
-                aria-label="Islamic Qalam logo"></object>
+            <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                <svg class="website-logo" aria-hidden="true" focusable="false">
+                    <use href="/Images/Website-logo.svg#website-logo"></use>
+                </svg>
+            </a>
 
             <span class="brand-name"> Islamic Qalam </span>
         </div>
@@ -75,7 +87,7 @@
 
             <a href="contact-us.html"> Contact </a>
 
-            
+
 
             <a id="navAccountLink" class="nav-login" href="login.html">
                 <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
@@ -142,7 +154,7 @@
                     <li>
                         <i class="fa-solid fa-check" aria-hidden="true"></i>
 
-                        Free access
+                        Free online reading
                     </li>
                 </ul>
             </div>
@@ -151,7 +163,7 @@
                 <div class="hero-art-frame">
                     <span class="hero-ornament"> ✦ </span>
 
-                    <p class="hero-arabic">القلم الإسلامي</p>
+                    <p class="hero-arabic" lang="ar" dir="rtl">القلم الإسلامي</p>
 
                     <span class="hero-divider"></span>
 
@@ -225,10 +237,10 @@
                 <div>
                     <p class="section-kicker">The poetry collection</p>
 
-                    <h2 id="library-title">Explore classical works</h2>
+                    <h2 id="library-title">Explore classical Islamic poetry</h2>
 
                     <p>
-                        Read Arabic texts alongside clear English titles and translations.
+                        Read classical Arabic poetry alongside clear English translations.
                     </p>
                 </div>
 
@@ -245,11 +257,14 @@
                 <a class="poem-card featured-card" href="poems/nooniyah-al-qahtani.html">
                     <span class="card-label"> Featured </span>
 
-                    <!-- Custom icon tag preserved -->
-                    <icon class="poem-title"> Nooniyah-Al-Qahtani </icon>
+                    <span class="poem-title-icon" data-icon="nooniyah-al-qahtani" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            نونية القحطاني
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Nooniyah Al-Qahtani </strong>
+                        <h3> Nooniyah Al-Qahtani </h3>
 
                         <span>
                             A renowned poem on creed, character and steadfastness.
@@ -266,10 +281,15 @@
                 <!-- Laamiyah Ibn Al-Wardi -->
 
                 <a class="poem-card" href="poems/laamiyah-ibn-al-wardi.html">
-                    <icon class="poem-title"> laamiyah-ibn-al-wardi </icon>
+                    
+                    <span class="poem-title-icon" data-icon="laamiyah-ibn-al-wardi" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            لامية ابن الوردى
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Laamiyah Ibn Al-Wardi </strong>
+                        <h3> Laamiyah Ibn Al-Wardi </h3>
 
                         <span>
                             Wisdom on knowledge, discipline, ambition and the world.
@@ -286,10 +306,14 @@
                 <!-- Ha'iyyah Ibn Abi Dawud -->
 
                 <a class="poem-card" href="poems/haiyyah-ibn-abi-dawud.html">
-                    <icon class="poem-title"> haiyyah-ibn-abi-dawud </icon>
+                    <span class="poem-title-icon" data-icon="haiyyah-ibn-abi-dawud" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            حائية ابن أبي داود  
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ha'iyyah Ibn Abi Dawud </strong>
+                        <h3> Ha'iyyah Ibn Abi Dawud </h3>
 
                         <span>
                             A concise classical poem outlining the creed of Ahl al-Sunnah.
@@ -306,10 +330,15 @@
                 <!-- Names of Allah -->
 
                 <a class="poem-card" href="poems/names-of-allah.html">
-                    <icon class="poem-title"> Names-of-Allah </icon>
+                    <span class="poem-title-icon" data-icon="names-of-allah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            أسماء الله الحسنى
+                        </span>
+                    </span>
+
 
                     <span class="card-copy">
-                        <strong> The Most Beautiful Names of Allah </strong>
+                        <h3> The Most Beautiful Names of Allah </h3>
 
                         <span>
                             Learn and reflect upon Allah's Most Beautiful Names.
@@ -326,10 +355,15 @@
                 <!-- O Worshippers of Christ -->
 
                 <a class="poem-card" href="poems/haiyyah-ibn-al-qayyim.html">
-                    <icon class="poem-title"> Haiyyah-Ibn-Al-Qayyim </icon>
+                    <span class="poem-title-icon" data-icon="haiyyah-ibn-al-qayyim" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            هائية ابن القيم
+                        </span>
+                    </span>
+
 
                     <span class="card-copy">
-                        <strong> O Worshippers of Christ </strong>
+                        <h3> O Worshippers of Christ </h3>
 
                         <span>
                             Ibn Al-Qayyim's poetic address concerning the nature of Christ.
@@ -346,10 +380,15 @@
                 <!-- Laamiyah Ibn Taymiyyah -->
 
                 <a class="poem-card" href="poems/laamiyah-ibn-taymiyyah.html">
-                    <icon class="poem-title"> Laamiyah-Ibn-Taymiyyah </icon>
+                    <span class="poem-title-icon" data-icon="laamiyah-ibn-taymiyyah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            لامية ابن تيمية
+                        </span>
+                    </span>
+
 
                     <span class="card-copy">
-                        <strong> Laamiyah Ibn Taymiyyah </strong>
+                        <h3> Laamiyah Ibn Taymiyyah </h3>
 
                         <span>
                             A concise poem expressing faith, loyalty and devotion.
@@ -366,10 +405,14 @@
                 <!-- Nooniyah Ibn Al-Qayyim -->
 
                 <a class="poem-card" href="poems/nooniyah-ibn-al-qayyim.html">
-                    <icon class="poem-title"> Nooniyah-Ibn-Al-Qayyim </icon>
+                    <span class="poem-title-icon" data-icon="nooniyah-ibn-al-qayyim" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            نونية ابن القيم
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Nooniyah Ibn Al-Qayyim </strong>
+                        <h3> Nooniyah Ibn Al-Qayyim </h3>
 
                         <span>
                             Selected verses from one of the great classical works on creed.
@@ -386,10 +429,15 @@
                 <!-- Laamiyah Ibn Al-Qayyim -->
 
                 <a class="poem-card" href="poems/laamiyah-ibn-al-qayyim.html">
-                    <icon class="poem-title"> Laamiyah-Ibn-Al-Qayyim </icon>
+
+                    <span class="poem-title-icon" data-icon="laamiyah-ibn-al-qayyim" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            لامية ابن القيم
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Laamiyah Ibn Al-Qayyim </strong>
+                        <h3> Laamiyah Ibn Al-Qayyim </h3>
 
                         <span>
                             Poetic counsel on the path of faith and upright conduct.
@@ -406,10 +454,14 @@
                 <!-- Ta'iyyah Al-Ilbiri -->
 
                 <a class="poem-card" href="poems/taiyyah-al-ilbiri.html">
-                    <icon class="poem-title"> Taiyyah-Al-Ilbiri </icon>
+                    <span class="poem-title-icon" data-icon="taiyyah-al-ilbiri" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            تائية الإلبيري
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ta'iyyah Al-Ilbiri </strong>
+                        <h3> Ta'iyyah Al-Ilbiri </h3>
 
                         <span>
                             Timeless advice on knowledge, age, repentance and the Hereafter.
@@ -426,10 +478,14 @@
                 <!-- Al-Aqeedah As-Safariniyyah -->
 
                 <a class="poem-card" href="poems/al-aqeedah-as-safariniyyah.html">
-                    <icon class="poem-title"> Al-Aqeedah-As-Safariniyyah </icon>
+                    <span class="poem-title-icon" data-icon="al-aqeedah-as-safariniyyah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            العقيدة السفارينية
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Al-Aqeedah As-Safariniyyah </strong>
+                        <h3> Al-Aqeedah As-Safariniyyah </h3>
 
                         <span>
                             A classical didactic poem presenting matters of Islamic creed.
@@ -446,10 +502,14 @@
                 <!-- Ainiyyah At-Tabrizi -->
 
                 <a class="poem-card" href="poems/ainiyyah-at-tabrizi.html">
-                    <icon class="poem-title"> ainiyyah-at-tabrizi </icon>
+                    <span class="poem-title-icon" data-icon="ainiyyah-at-tabrizi" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            عينية التبريزي
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ainiyyah At-Tabrizi </strong>
+                        <h3> Ainiyyah At-Tabrizi </h3>
 
                         <span>
                             A brief classical poem presented in Arabic and English.
@@ -466,10 +526,14 @@
                 <!-- Poem About Martyrdom -->
 
                 <a class="poem-card" href="poems/poem-about-martyrdom.html">
-                    <icon class="poem-title"> poem-about-martyrdom </icon>
+                    <span class="poem-title-icon" data-icon="poem-about-martyrdom" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            أوليس موتي في حياتي مرة
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Poem About Martyrdom </strong>
+                        <h3> Poem About Martyrdom </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -485,10 +549,14 @@
 
 
                 <a class="poem-card" href="poems/ala-kullu-mashiah.html">
-                    <icon class="poem-title"> ala-kullu-mashiah </icon>
+                    <span class="poem-title-icon" data-icon="ala-kullu-mashiah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            ألا كل ماشية الهيذبى
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ala Kullu Mashiah </strong>
+                        <h3> Ala Kullu Mashiah </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -504,10 +572,14 @@
 
 
                 <a class="poem-card" href="poems/nooniyah-al-mutanabbi.html">
-                    <icon class="poem-title"> nooniyah-al-mutanabbi </icon>
+                    <span class="poem-title-icon" data-icon="nooniyah-al-mutanabbi" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            نونية المتنبي
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Nooniyah Al-Mutanabbi </strong>
+                        <h3> Nooniyah Al-Mutanabbi </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -522,10 +594,14 @@
                 </a>
 
                 <a class="poem-card" href="poems/taiyyah-ibn-rajab.html">
-                    <icon class="poem-title"> taiyyah-ibn-rajab </icon>
+                    <span class="poem-title-icon" data-icon="taiyyah-ibn-rajab" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            تائية ابن رجب
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ta'iyyah Ibn Rajab </strong>
+                        <h3> Ta'iyyah Ibn Rajab </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -540,10 +616,14 @@
                 </a>
 
                 <a class="poem-card" href="poems/i-will-carry-my-soul.html">
-                    <icon class="poem-title"> i-will-carry-my-soul </icon>
+                    <span class="poem-title-icon" data-icon="i-will-carry-my-soul" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            سأحمل روحي على راحتي
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> I will carry my soul </strong>
+                        <h3> I Will Carry My Soul </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -558,10 +638,14 @@
                 </a>
 
                 <a class="poem-card" href="poems/al-munirah.html">
-                    <icon class="poem-title"> al-munirah </icon>
+                    <span class="poem-title-icon" data-icon="al-munirah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            المنظومة المنيرة في مهم علم السيرة
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> The radiant poem about the sirah of the prophet (SAW) </strong>
+                        <h3> The Radiant Poem About the Seerah of the Prophet ﷺ </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -577,10 +661,14 @@
 
 
                 <a class="poem-card" href="poems/taiyyah-ibn-taymiyyah.html">
-                    <icon class="poem-title"> taiyyah-ibn-taymiyyah </icon>
+                    <span class="poem-title-icon" data-icon="taiyyah-ibn-taymiyyah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            تائية ابن تيمية
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ta'iyyah Ibn Taymiyyah </strong>
+                        <h3> Ta'iyyah Ibn Taymiyyah </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -595,10 +683,14 @@
                 </a>
 
                 <a class="poem-card" href="poems/raiyyah-ibn-rajab.html">
-                    <icon class="poem-title"> raiyyah-ibn-rajab </icon>
+                    <span class="poem-title-icon" data-icon="raiyyah-ibn-rajab" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            رائية ابن رجب
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Ra'iyyah Ibn Rajab </strong>
+                        <h3> Ra'iyyah Ibn Rajab </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -614,10 +706,14 @@
 
 
                 <a class="poem-card" href="poems/nooniyah-about-aishah.html">
-                    <icon class="poem-title"> nooniyah-about-aishah </icon>
+                    <span class="poem-title-icon" data-icon="nooniyah-about-aishah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            نونية في فضل عائشة
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> Nooniyah About Aishah </strong>
+                        <h3> Nooniyah About Aishah </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -633,10 +729,14 @@
 
 
                 <a class="poem-card" href="poems/tatawala-layluk.html">
-                    <icon class="poem-title"> tatawala-layluk </icon>
+                    <span class="poem-title-icon" data-icon="tatawala-layluk" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            تطاول ليلك بالأثمد
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> A long night </strong>
+                        <h3> A long night </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -651,10 +751,14 @@
                 </a>
 
                 <a class="poem-card" href="poems/al-baidha.html">
-                    <icon class="poem-title"> al-baidha </icon>
+                    <span class="poem-title-icon" data-icon="al-baidha" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            البيضاء في عقيدة السلف
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> The Radiant Poem about the Creed of Salaf </strong>
+                        <h3> The Radiant Poem about the Creed of Salaf </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -669,10 +773,14 @@
                 </a>
 
                 <a class="poem-card" href="poems/urjuzah-about-the-seerah.html">
-                    <icon class="poem-title"> urjuzah-about-the-seerah </icon>
+                    <span class="poem-title-icon" data-icon="urjuzah-about-the-seerah" lang="ar" dir="rtl">
+                        <span class="poem-title-text">
+                            الأرجوزة السنية في ذكر سيرة أشرف البرية
+                        </span>
+                    </span>
 
                     <span class="card-copy">
-                        <strong> The Sunni Poem about the Seerah of the Prophet (SAW) </strong>
+                        <h3> The Sunni Poem About the Seerah of the Prophet ﷺ </h3>
 
                         <span>
                             A reflective Arabic poem with an English translation.
@@ -744,8 +852,13 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <!-- Custom object tag preserved -->
-                <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
-                    aria-label="Islamic Qalam logo"></object>
+                <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                    <svg class="website-logo" aria-hidden="true" focusable="false">
+                        <use href="/Images/Website-logo.svg#website-logo"></use>
+                    </svg>
+                
+                    
+                </a>
 
                 <div>
                     <strong> Islamic Qalam </strong>
@@ -762,7 +875,7 @@
                 <a href="e-books.html"> E-books </a>
 
                 <a href="contact-us.html"> Contact </a>
-                
+
                 <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank" rel="noopener noreferrer"> Donate
                 </a>
                 <a href="faq.html"> FAQ </a>

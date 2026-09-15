@@ -8,7 +8,7 @@
     <meta name="keywords"
         content="Islam, Islamic Poems, E-books, PDF Downloads, Al-Aqeedah As-Safariniyyah, Islamic Qalam">
     <meta name="author" content="Mohammad Yusuf Azizi">
-    <link rel="canonical" href="https://www.islamicqalam.com/E-books/al-Aqeedah-as-Safariniyyah-e-book.html">
+    <link rel="canonical" href="https://islamicqalam.com/E-books/al-Aqeedah-as-Safariniyyah-e-book.html">
 
     <title>Al-Aqeedah As-Safariniyyah PDF</title>
 
@@ -20,7 +20,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Islamic Qalam - E-books",
-        "url": "https://www.islamicqalam.com/E-books",
+        "url": "https://islamicqalam.com/E-books",
         "author": {
             "@type": "Person",
             "name": "Mohammad Yusuf Azizi"
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="../CSS/global.css">
     <link rel="stylesheet" href="../CSS/ebook-details-page.css">
     <link rel="stylesheet" href="../CSS/cart.css">
-    
+
 
     <link rel="icon" type="image/png" href="/Images/website-favicon.png">
 
@@ -49,9 +49,12 @@
 
         <div class="brand">
 
-            <object class="website-logo" data="/Images/Website-logo.svg" type="image/svg+xml"
-                aria-label="Islamic Qalam logo">
-            </object>
+            <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                <svg class="website-logo" aria-hidden="true" focusable="false">
+                    <use href="/Images/Website-logo.svg#website-logo"></use>
+                </svg>
+            </a>
+
 
             <span class="brand-name">
                 Islamic Qalam
@@ -82,7 +85,7 @@
                 Contact
             </a>
 
-            
+
 
 
             <button id="navCartButton" class="nav-cart" type="button" aria-label="Open shopping cart"
@@ -377,7 +380,7 @@
 
                     </div> <!-- E-BOOK FORMAT SELECTOR START -->
 
-                    
+
 
                     <div class="btn-container">
 
@@ -409,17 +412,18 @@
 
         <!-- Image lightbox -->
         <div class="lightbox" role="dialog" aria-label="E-book image preview">
-            <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close image preview">
+            <button type="button" class="lightbox-close" aria-label="Close image preview">
                 <i class="fas fa-times" aria-hidden="true"></i>
             </button>
 
-            <button type="button" class="arrow arrow-left" onclick="prevImage()" aria-label="Previous image">
+            <button type="button" class="arrow arrow-left" aria-label="Previous image">
                 <i class="fas fa-chevron-left" aria-hidden="true"></i>
             </button>
 
-            <img src="../Images/E-books/al-aqeedah-as-safariniyyah/pdf/preview-1.webp" alt="Expanded Al-Aqeedah As-Safariniyyah preview" class="expanded-image">
+            <img src="../Images/E-books/al-aqeedah-as-safariniyyah/pdf/preview-1.webp"
+                alt="Expanded Al-Aqeedah As-Safariniyyah preview" class="expanded-image">
 
-            <button type="button" class="arrow arrow-right" onclick="nextImage()" aria-label="Next image">
+            <button type="button" class="arrow arrow-right" aria-label="Next image">
                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
             </button>
         </div>
@@ -486,8 +490,11 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <!-- Custom object tag preserved -->
-                <object class="website-logo" data="/Images/Website-logo.svg" type="image/svg+xml"
-                    aria-label="Islamic Qalam logo"></object>
+                <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                    <svg class="website-logo" aria-hidden="true" focusable="false">
+                        <use href="/Images/Website-logo.svg#website-logo"></use>
+                    </svg>
+                </a>
 
                 <div>
                     <strong> Islamic Qalam </strong>
@@ -537,16 +544,16 @@
         </div>
     </footer>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-        
-        
+
+
     <script src="/Supabase/supabase-client.js"></script>
     <script src="/Scripts/global.js"></script>
     <script src="/Scripts/SideBar.js"></script>
     <script src="/Scripts/book-script.js"></script>
     <script src="/Scripts/store.js"></script>
-    
+
 </body>
 
 </html>

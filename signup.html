@@ -28,12 +28,16 @@
     <!-- ================= HEADER ================= -->
 
     <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Islamic Qalam homepage">
-            <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
-                aria-label="Islamic Qalam logo"></object>
+        <div class="brand">
+            <!-- Custom object tag preserved -->
+            <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                <svg class="website-logo" aria-hidden="true" focusable="false">
+                    <use href="/Images/Website-logo.svg#website-logo"></use>
+                </svg>
+            </a>
 
             <span class="brand-name"> Islamic Qalam </span>
-        </a>
+        </div>
 
         <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
             <a href="index.html#poetry-library"> Poetry </a>
@@ -216,8 +220,11 @@
     <footer class="footer site-footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <object class="website-logo" data="Images/Website-logo.svg" type="image/svg+xml"
-                    aria-label="Islamic Qalam logo"></object>
+                <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                <svg class="website-logo" aria-hidden="true" focusable="false">
+                    <use href="/Images/Website-logo.svg#website-logo"></use>
+                </svg>
+            </a>
 
                 <div>
                     <strong> Islamic Qalam </strong>

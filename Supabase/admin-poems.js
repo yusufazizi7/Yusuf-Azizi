@@ -607,9 +607,11 @@ document.addEventListener(
 
             symbol.innerHTML = `
 
-                <icon class="poem-title">
-                    ${poem.id}
-                </icon>
+                
+
+                <span class="poem-title-icon" data-icon="${poem.id}" lang="ar" dir="rtl">
+                        
+                </span>
 
             `;
 

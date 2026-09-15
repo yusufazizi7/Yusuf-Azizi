@@ -528,9 +528,7 @@ main {
   }
 
   /* Adjust Bismillah font */
-  .bismillah {
-    font-size: 1.1rem;
-  }
+  
 
   /* Ensure main content starts after navbar */
   main {
@@ -1851,5 +1849,124 @@ main {
   .poem-title-svg {
     max-width: 90%;
     max-height: 110px;
+  }
+}
+
+/* =========================================================
+   POEM HERO TITLE SVG
+   New <span> system — matches old <icon> appearance
+   ========================================================= */
+
+/* Wrapper before/while the SVG is loading */
+
+.poem-main-title .poem-title-icon {
+  display: flex;
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+}
+
+/*
+ * Once the SVG has rendered, make the wrapper
+ * disappear from the visual layout.
+ */
+
+.poem-main-title .poem-title-icon.poem-title-rendered {
+  display: contents;
+}
+
+/*
+ * The generated SVG receives the class .poem-title.
+ *
+ * Override the older .poem-title styles so that
+ * it looks exactly like the previous .poem-title-svg.
+ */
+
+.poem-main-title svg.poem-title {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: min(100%, 560px);
+  max-height: 145px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  background: none;
+  box-shadow: none;
+
+  position: static;
+  overflow: visible;
+
+  color: inherit;
+
+  transform: none;
+  transition: none;
+}
+
+/* Remove the old .poem-title hover effects */
+
+.poem-main-title svg.poem-title:hover {
+  color: inherit;
+
+  background: none;
+
+  border: 0;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+/* Remove any old decorative pseudo-elements */
+
+.poem-main-title svg.poem-title::before,
+.poem-main-title svg.poem-title::after {
+  content: none;
+}
+
+/* ================= FALLBACK ARABIC TITLE ================= */
+
+/*
+ * This is only visible if the SVG has not loaded yet.
+ */
+
+.poem-main-title .poem-title-icon:not(.poem-title-rendered) .poem-title-text {
+  display: block;
+
+  color: inherit;
+
+  font-family: Titles, Thuluth, Amiri, serif;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  font-weight: normal;
+
+  line-height: 1.4;
+
+  text-align: center;
+  direction: rtl;
+}
+
+/* ================= MOBILE ================= */
+
+@media only screen and (max-width: 700px) {
+  .poem-main-title svg.poem-title {
+    max-width: 90%;
+    max-height: 110px;
+  }
+
+  .poem-bismillah {
+    
+
+    font-size: 1.5rem;
+
+    
   }
 }

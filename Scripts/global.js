@@ -1,23 +1,27 @@
 /* =====================================
-   CUSTOM SVG ICON SYSTEM
+   POEM TITLE SVG SYSTEM
 ===================================== */
 
-let customIconsPromise =
+let poemTitlesPromise =
     null;
 
 
-async function getCustomIcons() {
+/* =====================================
+   LOAD POEM TITLE MAP
+===================================== */
+
+async function getPoemTitles() {
 
     if (
-        customIconsPromise
+        poemTitlesPromise
     ) {
 
-        return customIconsPromise;
+        return poemTitlesPromise;
 
     }
 
 
-    customIconsPromise =
+    poemTitlesPromise =
         fetch(
             "/Scripts/Data/icons.json"
         )
@@ -41,52 +45,76 @@ async function getCustomIcons() {
             );
 
 
-    return customIconsPromise;
+    return poemTitlesPromise;
 
 }
 
 
+/* =====================================
+   RENDER POEM TITLE SVGS
+===================================== */
 
-async function renderCustomIcons(
+async function renderPoemTitles(
     root = document
 ) {
 
     const icons =
-        await getCustomIcons();
+        await getPoemTitles();
 
 
-    const iconElements =
+    const titleElements =
         root.querySelectorAll(
-            "icon"
+            ".poem-title-icon[data-icon]"
         );
 
 
     const replacements =
         Array.from(
-            iconElements
+            titleElements
         ).map(
-            async el => {
+            async element => {
+
+                /*
+                 * Do not render the same element twice.
+                 */
+
+                if (
+                    element.dataset.rendered ===
+                    "true"
+                ) {
+
+                    return;
+
+                }
+
 
                 const iconName =
-                    el.textContent
-                        .trim()
+                    element.dataset.icon
+                        ?.trim()
                         .toLowerCase();
 
 
-                const existingClass =
-                    el.getAttribute(
-                        "class"
-                    ) || "";
+                if (
+                    !iconName
+                ) {
+
+                    return;
+
+                }
+
+
+                const svgPath =
+                    icons[
+                    iconName
+                    ];
 
 
                 if (
-                    !icons[
-                    iconName
-                    ]
+                    !svgPath
                 ) {
 
                     console.warn(
-                        `Icon "${iconName}" not found in icons.json`
+                        `Poem title "${iconName}" not found in icons.json`
                     );
 
                     return;
@@ -98,9 +126,7 @@ async function renderCustomIcons(
 
                     const svgResponse =
                         await fetch(
-                            icons[
-                            iconName
-                            ]
+                            svgPath
                         );
 
 
@@ -115,31 +141,102 @@ async function renderCustomIcons(
                     }
 
 
-                    let svgText =
+                    const svgText =
                         await svgResponse.text();
 
 
-                    const combinedClasses =
-                        `${existingClass} ${iconName}`
-                            .trim();
+                    /*
+                     * Parse the SVG rather than doing a
+                     * string replacement on "<svg".
+                     */
+
+                    const parser =
+                        new DOMParser();
 
 
-                    svgText =
-                        svgText.replace(
-                            "<svg",
-                            `<svg class="${combinedClasses}"`
+                    const svgDocument =
+                        parser.parseFromString(
+                            svgText,
+                            "image/svg+xml"
                         );
 
 
-                    el.outerHTML =
-                        svgText;
+                    const svg =
+                        svgDocument.querySelector(
+                            "svg"
+                        );
+
+
+                    if (
+                        !svg
+                    ) {
+
+                        throw new Error(
+                            "SVG element not found."
+                        );
+
+                    }
+
+
+                    /*
+                     * Keep the existing .poem-title class
+                     * on the actual SVG so your current
+                     * SVG styling can continue to work.
+                     */
+
+                    svg.classList.add(
+                        "poem-title",
+                        iconName
+                    );
+
+
+                    /*
+                     * The Arabic text already provides the
+                     * accessible title, so the decorative
+                     * SVG should not be read separately.
+                     */
+
+                    svg.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+
+                    svg.setAttribute(
+                        "focusable",
+                        "false"
+                    );
+
+
+                    /*
+                     * Put the SVG before the Arabic fallback
+                     * text instead of replacing the whole
+                     * HTML element.
+                     */
+
+                    element.prepend(
+                        document.importNode(
+                            svg,
+                            true
+                        )
+                    );
+
+
+                    element.dataset.rendered =
+                        "true";
+
+
+                    element.classList.add(
+                        "poem-title-rendered"
+                    );
+
 
                 } catch (
                 error
                 ) {
 
                     console.error(
-                        `Error loading SVG for "${iconName}":`,
+                        `Error loading poem title "${iconName}":`,
                         error
                     );
 
@@ -156,25 +253,34 @@ async function renderCustomIcons(
 }
 
 
+/* =====================================
+   MAKE AVAILABLE GLOBALLY
+===================================== */
+
+window.renderPoemTitles =
+    renderPoemTitles;
+
+
 /*
- * Make it available to scripts that
- * dynamically create <icon> elements.
+ * Temporary backwards compatibility
+ * if any existing scripts still call:
+ *
+ * window.renderCustomIcons(...)
  */
 
 window.renderCustomIcons =
-    renderCustomIcons;
-
+    renderPoemTitles;
 
 
 /* =====================================
-   INITIAL ICON RENDER
+   INITIAL POEM TITLE RENDER
 ===================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        renderCustomIcons(
+        renderPoemTitles(
             document
         );
 
