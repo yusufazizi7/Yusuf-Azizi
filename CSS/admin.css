@@ -2225,7 +2225,6 @@
   }
 }
 
-
 /* =========================================================
    E-BOOK SALES
    ========================================================= */
@@ -2233,14 +2232,12 @@
 .admin-sales-summary {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 1rem;
 
   margin-bottom: 1.5rem;
 }
-
 
 .admin-sales-summary-card {
   display: flex;
@@ -2253,15 +2250,12 @@
 
   padding: 1rem;
 
-  border:
-    1px solid
-    var(--home-border);
+  border: 1px solid var(--home-border);
 
   border-radius: 14px;
 
   background: #ffffff;
 }
-
 
 .admin-sales-summary-icon {
   display: grid;
@@ -2278,30 +2272,25 @@
   font-size: 1rem;
 }
 
-
 .admin-sales-summary-icon.revenue {
   color: #17613d;
   background: #e6f5eb;
 }
-
 
 .admin-sales-summary-icon.orders {
   color: #83591d;
   background: #fff3da;
 }
 
-
 .admin-sales-summary-icon.books {
   color: var(--home-brown-dark);
   background: var(--home-surface-soft);
 }
 
-
 .admin-sales-summary-icon.total {
   color: #355a8a;
   background: #eaf1fb;
 }
-
 
 .admin-sales-summary-card > div {
   display: flex;
@@ -2311,7 +2300,6 @@
   flex-direction: column;
 }
 
-
 .admin-sales-summary-card span {
   color: var(--home-muted);
 
@@ -2320,20 +2308,15 @@
   font-weight: 700;
 }
 
-
 .admin-sales-summary-card strong {
   margin-top: 0.15rem;
 
   color: var(--home-green);
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
   font-size: 1.45rem;
 }
-
 
 .admin-sales-summary-card small {
   margin-top: 0.2rem;
@@ -2342,7 +2325,6 @@
 
   font-size: 0.65rem;
 }
-
 
 /* ================= TOOLBAR ================= */
 
@@ -2356,7 +2338,6 @@
 
   margin: 1.5rem 0 1rem;
 }
-
 
 .admin-sales-filter-wrapper {
   display: flex;
@@ -2372,17 +2353,12 @@
   font-weight: 700;
 }
 
-
 .admin-sales-filter-wrapper select {
   min-height: 42px;
 
-  padding:
-    0.55rem
-    0.75rem;
+  padding: 0.55rem 0.75rem;
 
-  border:
-    1px solid
-    var(--home-border);
+  border: 1px solid var(--home-border);
 
   border-radius: 9px;
 
@@ -2397,18 +2373,15 @@
   cursor: pointer;
 }
 
-
 /* ================= TABLE ================= */
 
 .admin-sales-table-wrapper {
   margin-top: 1rem;
 }
 
-
 .admin-sales-table {
   min-width: 1100px;
 }
-
 
 .admin-sales-order-id,
 .admin-sales-customer,
@@ -2421,14 +2394,12 @@
   gap: 0.2rem;
 }
 
-
 .admin-sales-order-id strong,
 .admin-sales-customer strong,
 .admin-sales-payment strong,
 .admin-sales-date strong {
   color: var(--home-green);
 }
-
 
 .admin-sales-order-id span {
   display: block;
@@ -2446,13 +2417,10 @@
   white-space: nowrap;
 }
 
-
 .admin-sales-customer-type {
   width: fit-content;
 
-  padding:
-    0.25rem
-    0.45rem;
+  padding: 0.25rem 0.45rem;
 
   border-radius: 999px;
 
@@ -2461,13 +2429,11 @@
   font-weight: 800;
 }
 
-
 .admin-sales-customer-type.account {
   color: #17613d;
 
   background: #e6f5eb;
 }
-
 
 .admin-sales-customer-type.guest {
   color: #83591d;
@@ -2475,13 +2441,11 @@
   background: #fff1d8;
 }
 
-
 /* ================= ITEMS ================= */
 
 .admin-sales-items-cell {
   min-width: 220px;
 }
-
 
 .admin-sales-item {
   display: flex;
@@ -2491,18 +2455,12 @@
   align-items: center;
   justify-content: space-between;
 
-  padding:
-    0.3rem
-    0;
+  padding: 0.3rem 0;
 }
-
 
 .admin-sales-item + .admin-sales-item {
-  border-top:
-    1px solid
-    var(--home-border);
+  border-top: 1px solid var(--home-border);
 }
-
 
 .admin-sales-item span {
   color: var(--home-text);
@@ -2510,20 +2468,17 @@
   font-size: 0.78rem;
 }
 
-
 .admin-sales-item small {
   flex: 0 0 auto;
 
   color: var(--home-muted);
 }
 
-
 .admin-sales-total {
   color: var(--home-green);
 
   white-space: nowrap;
 }
-
 
 /* ================= PAYMENT ================= */
 
@@ -2534,15 +2489,12 @@
   font-size: 0.67rem;
 }
 
-
 /* ================= STATUS ================= */
 
 .admin-order-status {
   display: inline-flex;
 
-  padding:
-    0.35rem
-    0.55rem;
+  padding: 0.35rem 0.55rem;
 
   border-radius: 999px;
 
@@ -2555,20 +2507,17 @@
   text-transform: uppercase;
 }
 
-
 .admin-order-status.paid {
   color: #17613d;
 
   background: #e6f5eb;
 }
 
-
 .admin-order-status.pending {
   color: #83591d;
 
   background: #fff1d8;
 }
-
 
 .admin-order-status.failed,
 .admin-order-status.refunded {
@@ -2577,13 +2526,11 @@
   background: #fbeaea;
 }
 
-
 .admin-order-status.cancelled {
   color: #666666;
 
   background: #eeeeee;
 }
-
 
 .admin-sales-receipt {
   display: flex;
@@ -2599,7 +2546,6 @@
   font-size: 0.64rem;
 }
 
-
 /* ================= TAB OVERFLOW ================= */
 
 /*
@@ -2614,35 +2560,24 @@
   scrollbar-width: thin;
 }
 
-
 .admin-tab {
-  flex:
-    0
-    0
-    auto;
+  flex: 0 0 auto;
 }
-
 
 /* ================= RESPONSIVE ================= */
 
 @media only screen and (max-width: 1000px) {
-
   .admin-sales-summary {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
-
 @media only screen and (max-width: 700px) {
-
   .admin-sales-toolbar {
     align-items: stretch;
 
     flex-direction: column;
   }
-
 
   .admin-sales-toolbar .admin-search {
     width: 100%;
@@ -2650,25 +2585,19 @@
     max-width: none;
   }
 
-
   .admin-sales-filter-wrapper {
     justify-content: space-between;
   }
 
-
   .admin-sales-filter-wrapper select {
     flex: 1;
   }
-
 }
 
-
 @media only screen and (max-width: 520px) {
-
   .admin-sales-summary {
     grid-template-columns: 1fr;
   }
-
 }
 
 .admin-sales-loading {
@@ -2686,11 +2615,1094 @@
   color: var(--home-muted);
 }
 
-
 .admin-sales-loading p {
   margin: 0;
 
   font-size: 0.85rem;
 
   font-weight: 700;
+}
+
+/* =========================================================
+   ADMIN DASHBOARD — IMPROVED MOBILE LAYOUT
+   Keep this section at the very bottom of admin.css
+   ========================================================= */
+
+/* ================= OVERFLOW SAFETY ================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.admin-page {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.admin-hero,
+.admin-stats,
+.admin-workspace,
+.admin-panel,
+.admin-panel-heading,
+.admin-toolbar,
+.admin-message-form,
+.admin-sales-toolbar,
+.admin-video-toolbar,
+.admin-videos-grid,
+.admin-table-wrapper {
+  min-width: 0;
+}
+
+/* Long text such as emails must never force the page wider */
+
+.admin-identity,
+.admin-identity > div,
+.admin-comment-author-info,
+.admin-video-content,
+.admin-sales-summary-card > div,
+.admin-stat-card > div {
+  min-width: 0;
+}
+
+.admin-identity strong,
+.admin-comment-author-info strong,
+.admin-comment-content,
+.admin-field-help {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ================= TABLE SAFETY ================= */
+
+/*
+ * Large tables can still scroll INSIDE their own box,
+ * but they will no longer make the whole page scroll.
+ */
+
+.admin-table-wrapper,
+.admin-sales-table-wrapper {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior-inline: contain;
+}
+
+/* ================= MOBILE ================= */
+
+@media only screen and (max-width: 768px) {
+  /* ---------- PAGE ---------- */
+
+  .admin-page {
+    padding-top: 72px;
+    padding-bottom: 3.5rem;
+  }
+
+  .admin-hero,
+  .admin-stats,
+  .admin-workspace {
+    width: calc(100% - 24px);
+  }
+
+  /* ---------- HERO ---------- */
+
+  .admin-hero {
+    gap: 1.4rem;
+
+    padding: 2.5rem 0 1.8rem;
+  }
+
+  .admin-hero h1 {
+    font-size: clamp(2.15rem, 10vw, 3.2rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.035em;
+  }
+
+  .admin-hero-description {
+    margin-top: 1rem;
+
+    font-size: 0.95rem;
+  }
+
+  /* ---------- ADMIN IDENTITY ---------- */
+
+  .admin-identity {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+  }
+
+  .admin-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .admin-identity strong {
+    max-width: 100%;
+
+    font-size: 0.82rem;
+  }
+
+  /* ---------- STATISTICS ---------- */
+
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.75rem;
+  }
+
+  .admin-stat-card {
+    gap: 0.7rem;
+
+    padding: 1rem;
+  }
+
+  .admin-stat-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .admin-stat-label {
+    font-size: 0.72rem;
+  }
+
+  .admin-stat-number {
+    font-size: 1.5rem;
+  }
+
+  /* =====================================================
+     TABS
+     Instead of horizontally scrolling six tabs,
+     display them as a clean two-column mobile grid.
+     ===================================================== */
+
+  .admin-tabs {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.45rem;
+
+    width: 100%;
+
+    padding: 0.45rem;
+
+    overflow: visible;
+  }
+
+  .admin-tab {
+    width: 100%;
+    min-width: 0;
+
+    flex: none;
+
+    padding: 0.7rem 0.65rem;
+
+    font-size: 0.78rem;
+
+    white-space: normal;
+
+    text-align: center;
+  }
+
+  .admin-tab i {
+    flex: 0 0 auto;
+  }
+
+  /* ---------- PANELS ---------- */
+
+  .admin-panel {
+    margin-top: 0.8rem;
+
+    padding: 1.1rem;
+
+    border-radius: 16px;
+  }
+
+  .admin-panel-heading {
+    gap: 1rem;
+
+    margin-bottom: 1.25rem;
+  }
+
+  .admin-panel-heading h2 {
+    font-size: clamp(1.65rem, 8vw, 2.1rem);
+  }
+
+  .admin-panel-heading > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .admin-panel-heading > div > p:last-child {
+    font-size: 0.9rem;
+  }
+
+  /* ---------- SEARCH / TOOLBARS ---------- */
+
+  .admin-toolbar,
+  .admin-sales-toolbar,
+  .admin-video-toolbar {
+    width: 100%;
+
+    gap: 0.75rem;
+
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .admin-search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .admin-sales-filter-wrapper,
+  .admin-video-sort-wrapper {
+    width: 100%;
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 0.4rem;
+  }
+
+  .admin-sales-filter-wrapper select,
+  .admin-video-sort-wrapper select {
+    width: 100%;
+    max-width: 100%;
+
+    flex: none;
+  }
+
+  /* ---------- COMMENT FILTERS ---------- */
+
+  .admin-filter-group {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    width: 100%;
+
+    gap: 0.45rem;
+  }
+
+  .comment-filter {
+    width: 100%;
+
+    padding: 0.65rem 0.5rem;
+  }
+
+  /* ---------- COMMENT CARDS ---------- */
+
+  .admin-comment-card {
+    padding: 1rem;
+  }
+
+  .admin-comment-top {
+    gap: 0.8rem;
+
+    flex-direction: column;
+  }
+
+  .admin-comment-author {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .admin-comment-context {
+    gap: 0.55rem;
+  }
+
+  .admin-comment-actions {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.5rem;
+  }
+
+  .admin-action {
+    width: 100%;
+
+    padding-inline: 0.5rem;
+  }
+
+  /* ---------- REPLIES ---------- */
+
+  .admin-replies-list {
+    margin-left: 0.4rem;
+
+    padding-left: 0.65rem;
+  }
+
+  .admin-replies-toggle {
+    margin-left: 0.65rem;
+  }
+
+  /* ---------- MESSAGE FORM ---------- */
+
+  .admin-message-form {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .admin-message-field {
+    min-width: 0;
+  }
+
+  .admin-message-field input,
+  .admin-message-field select,
+  .admin-message-field textarea {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .admin-message-footer {
+    gap: 0.75rem;
+
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  #sendAdminMessageButton {
+    width: 100%;
+  }
+
+  /* ---------- SALES SUMMARY ---------- */
+
+  .admin-sales-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.7rem;
+  }
+
+  .admin-sales-summary-card {
+    gap: 0.65rem;
+
+    padding: 0.85rem;
+  }
+
+  .admin-sales-summary-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .admin-sales-summary-card strong {
+    font-size: 1.25rem;
+  }
+
+  /* ---------- VIDEO / POEM ANALYTICS ---------- */
+
+  .admin-video-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.7rem;
+  }
+
+  .admin-video-summary-card {
+    gap: 0.65rem;
+
+    padding: 0.85rem;
+  }
+
+  .admin-videos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-video-card {
+    display: block;
+  }
+
+  .admin-video-thumbnail {
+    width: 100%;
+
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+  }
+
+  .admin-video-thumbnail-placeholder {
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+  }
+
+  .admin-video-content {
+    padding: 1rem;
+  }
+
+  .admin-video-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* ---------- TABLES ---------- */
+
+  .admin-users-table th,
+  .admin-users-table td {
+    padding: 0.75rem 0.8rem;
+  }
+
+  /*
+   * These tables genuinely contain too much information
+   * to fit on a phone. Keep their scrolling confined
+   * inside the table container.
+   */
+
+  .admin-users-table {
+    min-width: 760px;
+  }
+
+  .admin-sales-table {
+    min-width: 950px;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media only screen and (max-width: 520px) {
+  .admin-hero,
+  .admin-stats,
+  .admin-workspace {
+    width: calc(100% - 20px);
+  }
+
+  /* ---------- HERO ---------- */
+
+  .admin-hero {
+    padding-top: 2rem;
+  }
+
+  /* ---------- STATS ---------- */
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- PANEL ---------- */
+
+  .admin-panel {
+    padding: 0.9rem;
+  }
+
+  /* ---------- TABS ---------- */
+
+  .admin-tab {
+    min-height: 46px;
+
+    font-size: 0.74rem;
+  }
+
+  /* ---------- SALES ---------- */
+
+  .admin-sales-summary {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- COMMENTS ---------- */
+
+  .admin-comment-actions {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- VIDEO / POEM SUMMARY ---------- */
+
+  .admin-video-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-video-summary-card {
+    min-width: 0;
+  }
+
+  .admin-video-summary-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .admin-video-summary-card strong {
+    font-size: 1.2rem;
+  }
+
+  /* ---------- VIDEO METRICS ---------- */
+
+  .admin-video-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  .admin-video-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.6rem;
+  }
+}
+
+
+/* =========================================================
+   ADMIN DASHBOARD — FINAL MOBILE FIXES
+   Must stay at the VERY BOTTOM of admin.css
+   ========================================================= */
+
+@media only screen and (max-width: 768px) {
+
+  /* =====================================================
+     REMOVE TABLE HORIZONTAL SCROLL
+     ===================================================== */
+
+  .admin-table-wrapper,
+  .admin-sales-table-wrapper {
+    overflow: visible;
+
+    width: 100%;
+    max-width: 100%;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+  }
+
+
+  /* =====================================================
+     USERS TABLE → MOBILE CARDS
+     ===================================================== */
+
+  .admin-users-table {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    background: transparent;
+  }
+
+  .admin-users-table thead {
+    display: none;
+  }
+
+  .admin-users-table tbody {
+    display: grid;
+
+    width: 100%;
+
+    gap: 0.8rem;
+  }
+
+  .admin-users-table tbody tr {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid var(--home-border);
+    border-radius: 14px;
+
+    background: #ffffff;
+  }
+
+  .admin-users-table tbody td {
+    display: grid;
+
+    width: 100%;
+    min-width: 0;
+
+    grid-template-columns:
+      92px minmax(0, 1fr);
+
+    gap: 0.8rem;
+
+    align-items: center;
+
+    padding: 0.75rem 0.85rem;
+
+    border-bottom: 1px solid var(--home-border);
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+  }
+
+  .admin-users-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+
+  /* labels */
+
+  .admin-users-table tbody td::before {
+    color: var(--home-muted);
+
+    font-size: 0.68rem;
+    font-weight: 900;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+  }
+
+  .admin-users-table tbody td:nth-child(1)::before {
+    content: "User";
+  }
+
+  .admin-users-table tbody td:nth-child(2)::before {
+    content: "Email";
+  }
+
+  .admin-users-table tbody td:nth-child(3)::before {
+    content: "Status";
+  }
+
+  .admin-users-table tbody td:nth-child(4)::before {
+    content: "Joined";
+  }
+
+  .admin-users-table tbody td:nth-child(5)::before {
+    content: "Last sign in";
+  }
+
+  .admin-users-table tbody td:nth-child(6)::before {
+    content: "Actions";
+  }
+
+
+  /* remove desktop action-cell restrictions */
+
+  .admin-user-actions-cell {
+    min-width: 0;
+
+    white-space: normal;
+  }
+
+  .admin-user-action-group,
+  .admin-suspension-controls {
+    display: flex;
+
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    gap: 0.4rem;
+  }
+
+  .admin-user-action {
+    min-width: 0;
+
+    flex: 1 1 auto;
+  }
+
+  .admin-suspension-duration {
+    min-width: 0;
+
+    flex: 1 1 110px;
+  }
+
+  .admin-user-action.delete-account {
+    margin-left: 0;
+  }
+
+
+  /* =====================================================
+     SALES TABLE → MOBILE CARDS
+     ===================================================== */
+
+  .admin-sales-table {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    background: transparent;
+  }
+
+  .admin-sales-table thead {
+    display: none;
+  }
+
+  .admin-sales-table tbody {
+    display: grid;
+
+    width: 100%;
+
+    gap: 0.8rem;
+  }
+
+  .admin-sales-table tbody tr {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid var(--home-border);
+    border-radius: 14px;
+
+    background: #ffffff;
+  }
+
+  .admin-sales-table tbody td {
+    display: grid;
+
+    width: 100%;
+    min-width: 0;
+
+    grid-template-columns:
+      82px minmax(0, 1fr);
+
+    gap: 0.75rem;
+
+    align-items: start;
+
+    padding: 0.75rem 0.85rem;
+
+    border-bottom: 1px solid var(--home-border);
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+  }
+
+  .admin-sales-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+
+  /* labels */
+
+  .admin-sales-table tbody td::before {
+    padding-top: 0.1rem;
+
+    color: var(--home-muted);
+
+    font-size: 0.67rem;
+    font-weight: 900;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+  }
+
+  .admin-sales-table tbody td:nth-child(1)::before {
+    content: "Order";
+  }
+
+  .admin-sales-table tbody td:nth-child(2)::before {
+    content: "Customer";
+  }
+
+  .admin-sales-table tbody td:nth-child(3)::before {
+    content: "E-books";
+  }
+
+  .admin-sales-table tbody td:nth-child(4)::before {
+    content: "Total";
+  }
+
+  .admin-sales-table tbody td:nth-child(5)::before {
+    content: "Payment";
+  }
+
+  .admin-sales-table tbody td:nth-child(6)::before {
+    content: "Status";
+  }
+
+  .admin-sales-table tbody td:nth-child(7)::before {
+    content: "Date";
+  }
+
+
+  /* remove desktop width restrictions */
+
+  .admin-sales-items-cell {
+    min-width: 0;
+  }
+
+  .admin-sales-item {
+    min-width: 0;
+
+    gap: 0.5rem;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .admin-sales-order-id,
+  .admin-sales-customer,
+  .admin-sales-payment,
+  .admin-sales-date {
+    min-width: 0;
+  }
+
+  .admin-sales-order-id span {
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+
+    white-space: normal;
+
+    text-overflow: initial;
+  }
+
+
+  /* =====================================================
+     EMPTY TABLE STATES
+     ===================================================== */
+
+  .admin-users-table .admin-table-empty,
+  .admin-sales-table .admin-table-empty {
+    display: block !important;
+
+    width: 100%;
+
+    padding: 2rem 1rem !important;
+
+    border: none;
+
+    text-align: center;
+  }
+
+  .admin-users-table .admin-table-empty::before,
+  .admin-sales-table .admin-table-empty::before {
+    content: none;
+  }
+
+
+  /* =====================================================
+     VIDEO + POEM CARDS
+     ===================================================== */
+
+  .admin-videos-grid {
+    display: grid;
+
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 0.85rem;
+  }
+
+
+  /*
+   * IMPORTANT:
+   * Use a one-column GRID instead of display:block.
+   */
+
+  .admin-video-card,
+  .admin-poem-card {
+    display: grid !important;
+
+    width: 100%;
+    min-width: 0;
+
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- VIDEO THUMBNAIL ---------- */
+
+  .admin-video-thumbnail {
+    display: block;
+
+    width: 100%;
+    height: auto !important;
+
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+  }
+
+  .admin-video-thumbnail img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+  }
+
+  .admin-video-thumbnail-placeholder {
+    width: 100%;
+    height: auto !important;
+
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+  }
+
+
+  /* ---------- POEM IMAGE / SVG AREA ---------- */
+
+  .admin-poem-symbol {
+    display: flex;
+
+    width: 100%;
+    height: auto;
+
+    min-height: 145px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.25rem;
+  }
+
+  .admin-poem-symbol .poem-title {
+    width: min(70%, 190px);
+    height: auto;
+
+    max-height: 115px;
+  }
+
+
+  /* ---------- CARD CONTENT ---------- */
+
+  .admin-video-content {
+    display: flex !important;
+
+    width: 100%;
+    min-width: 0;
+    height: auto;
+
+    visibility: visible !important;
+
+    flex-direction: column;
+
+    padding: 1rem;
+
+    overflow: visible;
+
+    opacity: 1 !important;
+  }
+
+  .admin-video-header {
+    display: block;
+
+    width: 100%;
+  }
+
+  .admin-video-header h3 {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 0.4rem;
+
+    overflow: visible;
+
+    font-size: 1rem;
+
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+  }
+
+
+  /* ---------- STATS ---------- */
+
+  .admin-video-stats {
+    display: grid !important;
+
+    width: 100%;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 0.45rem;
+
+    margin-top: 0.9rem;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+  }
+
+  .admin-video-metric {
+    display: flex;
+
+    min-width: 0;
+
+    gap: 0.4rem;
+
+    padding: 0.6rem 0.45rem;
+  }
+
+  .admin-video-metric span {
+    overflow: visible;
+
+    white-space: normal;
+
+    text-overflow: initial;
+  }
+
+
+  /* ---------- VIDEO/POEM FOOTER ---------- */
+
+  .admin-video-footer {
+    display: flex;
+
+    width: 100%;
+
+    gap: 0.6rem;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media only screen and (max-width: 430px) {
+
+  /* Tables */
+
+  .admin-users-table tbody td {
+    grid-template-columns:
+      80px minmax(0, 1fr);
+  }
+
+  .admin-sales-table tbody td {
+    grid-template-columns:
+      72px minmax(0, 1fr);
+  }
+
+
+  /* Analytics metrics */
+
+  .admin-video-stats {
+    grid-template-columns: 1fr !important;
+  }
+
 }
