@@ -23,7 +23,7 @@ async function getPoemTitles() {
 
     poemTitlesPromise =
         fetch(
-            "/scripts/data-2/icons.json"
+            "/scripts/data/icons.json"
         )
             .then(
                 response => {
