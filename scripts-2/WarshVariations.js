@@ -986,9 +986,9 @@ function isTanweenBeforeAlif(segments, index) {
 
     const decomposedAfterNext = afterNext.normalize('NFD');
 
-    const startsWithAlifFathah = decomposedAfterNext.startsWith('ا\u064E'); // اَ
-    const startsWithAlifDhammah = decomposedAfterNext.startsWith('ا\u064F'); // اُ
-    const startsWithAlifKasrah = decomposedAfterNext.startsWith('ا\u0650');  // اِ
+    const startsWithAlifFathah = decomposedAfterNext.startsWith('ا/u064E'); // اَ
+    const startsWithAlifDhammah = decomposedAfterNext.startsWith('ا/u064F'); // اُ
+    const startsWithAlifKasrah = decomposedAfterNext.startsWith('ا/u0650');  // اِ
     const startsWithTatweel = decomposedAfterNext.startsWith('\u0640');
 
     return startsWithAlifFathah || startsWithAlifDhammah || startsWithAlifKasrah || startsWithTatweel;
