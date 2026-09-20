@@ -30,8 +30,8 @@ let currentAudio = null;
 
 // Function to check if an audio file exists in Quran or Poems folder
 async function checkAudioExists(wordText) {
-    const quranPath = `../../Audios/Quran/${wordText}.MP3`;
-    const poemsPath = `../../Audios/Poems/${wordText}.MP3`;
+    const quranPath = `../../audios/quran/${wordText}.MP3`;
+    const poemsPath = `../../audios/Poems/${wordText}.MP3`;
 
     try {
         const responseQuran = await fetch(quranPath, { method: 'HEAD' });
@@ -131,7 +131,7 @@ function showPopup(message) {
 
 
 if (window.location.pathname.endsWith('Al-Fatihah.html')) {
-    fetch('../../Scripts/Data/Al-Fatihah.json')
+    fetch('../../scripts/Data/Al-Fatihah.json')
       .then(response => response.json())
       .then(allTranslations => {
         const verses = document.querySelectorAll('.ayah-block');

@@ -855,7 +855,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Replace with your actual audio files for each word
     const audioFiles = [
-        ['Audios/Ya.MP3', 'Audios/Munzila.MP3', 'Audios/AlAyate.MP3', 'Audios/WalFurqane.MP3', 'Audios/Bayni.MP3', 'Audios/WaBaynaka.MP3', 'Audios/Hurmatu.MP3', 'Audios/AlQurane.MP3'] 
+        ['audios/Ya.MP3', 'audios/Munzila.MP3', 'audios/AlAyate.MP3', 'audios/WalFurqane.MP3', 'audios/Bayni.MP3', 'audios/WaBaynaka.MP3', 'audios/Hurmatu.MP3', 'audios/AlQurane.MP3'] 
         
         // More lines as needed
     ];

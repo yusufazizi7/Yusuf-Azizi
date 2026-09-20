@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 let currentAudio = null;
 
 async function checkAudioExists(wordText) {
-    const quranPath = `../../Audios/Quran/${wordText}.MP3`;
-    const poemsPath = `../../Audios/Poems/${wordText}.MP3`;
+    const quranPath = `../../audios/quran/${wordText}.MP3`;
+    const poemsPath = `../../audios/Poems/${wordText}.MP3`;
 
     try {
         const responseQuran = await fetch(quranPath, { method: 'HEAD' });

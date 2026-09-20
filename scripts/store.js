@@ -57,7 +57,7 @@ function getProductCoverPath(product) {
 
 
     return (
-        `/Images/E-books/` +
+        `/images/e-books-2/` +
         `${folder}/pdf/preview-1.webp`
     );
 

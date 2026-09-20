@@ -5,37 +5,37 @@
 /* --- Fonts --- */
 @font-face {
   font-family: Uthman;
-  src: url("../Fonts/UthmanTN.ttf") format("truetype");
+  src: url("../fonts/UthmanTN.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Neirizi;
-  src: url("../Fonts/Neirizi.ttf") format("truetype");
+  src: url("../fonts/Neirizi.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Amiri;
-  src: url("../Fonts/Amiri-Regular.ttf") format("truetype");
+  src: url("../fonts/Amiri-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Hafs;
-  src: url("../Fonts/Hafs.ttf") format("truetype");
+  src: url("../fonts/Hafs.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Thuluth;
-  src: url("../Fonts/AM_Thulth_Regular.ttf") format("truetype");
+  src: url("../fonts/AM_Thulth_Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Titles;
-  src: url("../Fonts/Titles.otf") format("opentype");
+  src: url("../fonts/Titles.otf") format("opentype");
 }
 
 @font-face {
   font-family: Quran-Hafs;
-  src: url("../Fonts/original-hafs.otf") format("opentype");
+  src: url("../fonts/original-hafs.otf") format("opentype");
 }
 
 /* --- Root Variables --- */

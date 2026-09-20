@@ -178,7 +178,7 @@ document.addEventListener(
                     <p class="admin-empty-state">
 
                         No poems were found in
-                        Scripts/Data/poems.js.
+                        scripts/Data/poems.js.
 
                     </p>
 

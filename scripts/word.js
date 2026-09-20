@@ -28,7 +28,7 @@ let currentAudio = null;
 // Function to check if an audio file exists
 async function checkAudioExists(wordText) {
     try {
-        const response = await fetch(`Audios/Poems/${wordText}.MP3`, { method: 'HEAD' });
+        const response = await fetch(`audios/Poems/${wordText}.MP3`, { method: 'HEAD' });
         return response.ok;
     } catch (error) {
         return false;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!wordText) return;
 
         const sanitizedWord = wordText.replace(/[^\p{Letter}\p{Mark}\p{Number}]/gu, '');
-        const audioPath = `Audios/Poems/${sanitizedWord}.MP3`;
+        const audioPath = `audios/Poems/${sanitizedWord}.MP3`;
 
         const exists = await checkAudioExists(sanitizedWord);
         if (exists) {

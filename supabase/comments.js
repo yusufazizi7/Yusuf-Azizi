@@ -722,7 +722,7 @@ document.addEventListener(
             avatar.src =
                 comment.author
                     ?.avatar_url ||
-                "/Images/Avatars/default-male.png";
+                "/images/avatar-2/default-male.png";
 
 
 

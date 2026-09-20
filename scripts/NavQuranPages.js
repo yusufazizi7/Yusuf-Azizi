@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentQiraah = currentQiraahMatch ? currentQiraahMatch[1] : null;
 
         if (currentQiraah && currentQiraah !== savedQiraah) {
-            const newUrl = window.location.href.replace(/\/Quran\/[^/]+/, `/Quran/${savedQiraah}`);
+            const newUrl = window.location.href.replace(/\/Quran\/[^/]+/, `/quran/${savedQiraah}`);
             window.location.href = newUrl;
             return;
         }
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedQiraah = document.querySelector('input[name="Qiraah"]:checked').value;
             localStorage.setItem('preferredQiraah', selectedQiraah);
 
-            const newUrl = window.location.href.replace(/\/Quran\/[^/]+/, `/Quran/${selectedQiraah}`);
+            const newUrl = window.location.href.replace(/\/Quran\/[^/]+/, `/quran/${selectedQiraah}`);
             window.location.href = newUrl;
         });
     });

@@ -202,7 +202,7 @@ document.addEventListener(
 
             /*
              * Video metadata comes from
-             * Scripts/Data/videos.js
+             * scripts/Data/videos.js
              */
 
             const videoDefinitions =
