@@ -520,7 +520,7 @@ async function loadProfile() {
 
     const avatarUrl =
         data.avatar_url ||
-        "/images/avatar-2/default-male.png";
+        "/images/avatars/default-male.png";
 
 
     profileAvatar.src =
@@ -3574,7 +3574,7 @@ function createProfileReplies(
             avatar.src =
                 reply.author
                     ?.avatar_url ||
-                "/images/avatar-2/default-male.png";
+                "/images/avatars/default-male.png";
 
 
             avatar.alt =

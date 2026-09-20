@@ -231,7 +231,7 @@ function getCheckoutProductCoverPath(item) {
 
 
     return (
-        `/images/e-books-2/` +
+        `/images/e-books/` +
         `${folder}/pdf/preview-1.webp`
     );
 
