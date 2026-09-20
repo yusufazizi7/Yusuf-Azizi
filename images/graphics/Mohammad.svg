@@ -8,7 +8,7 @@
 
 
 
-      @import url('../../css/SvgStyling.css');
+      @import url('../../css/svg-styling.css');
       
     </style>
   </defs>

@@ -1,0 +1,1386 @@
+@font-face {
+    font-family: Uthman;
+    src: 
+         url('../fonts/UthmanTN.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Neirizi;
+    src: 
+         url('../fonts/Neirizi.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Amiri;
+    src: 
+         url('../fonts/Amiri-Regular.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Hafs;
+    src: 
+         url('../fonts/Hafs.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Thuluth;
+    src: 
+         url('../fonts/AM_Thulth_Regular.ttf') format('truetype');
+
+
+}
+
+@font-face {
+    font-family: Symbols;
+    src: 
+         url('../fonts/Symbols1_Ver02.otf') format('opentype');
+
+
+}
+
+@font-face {
+    font-family: quran1;
+    src: 
+         url('../fonts/Quran/QCF_P001-Regular.ttf') format('opentype');
+
+
+}
+
+@font-face {
+    font-family: Titles;
+    src: 
+         url('../fonts/Titles.otf') format('opentype');
+
+
+}
+
+* {
+    box-sizing: content-box;
+}
+
+
+:root {
+
+    --primary-color: #eae2d9;
+    --secondary-color: #212121;
+    --text-color: #000000;
+    
+
+    
+
+
+    
+}
+
+.title-links {
+    margin-top: 100px;
+    box-sizing: border-box;
+    /* border: .1rem solid transparent; */
+    
+}
+
+.title-links:hover, .links:hover {
+    
+    color: #007BFF;
+    
+}
+
+.dark-theme {
+
+    --primary-color: #242424;
+    --secondary-color: #fff;
+    --text-color: #fff;
+
+    
+
+    
+
+}
+
+
+.poem-titles {
+    font-family: Titles;
+    font-size: 17rem;
+    color: var(--secondary-color);
+    
+    
+}
+
+.poem-titles:hover {
+    font-family: Titles;
+    font-size: 17rem;
+    color: blue;
+
+
+}
+
+
+a {
+    text-decoration: none; /* Removes underline */
+    /* Makes the link colour inherit from its parent */
+    font-style: normal; /* Resets any italic styles */
+    font-weight: normal; /* Resets bold styling */
+    color: black;
+    display: inline-block;
+    
+   
+}
+
+
+a:visited {
+    text-decoration: none; /* Ensures no underline for visited links */
+    /* Keeps the same colour as unvisited links */
+    color: inherit;
+}
+
+
+
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background with more transparency */
+    transition: all 0.3s ease; /* Smooth transition when showing/hiding */
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 40px; /* Increased padding for better spacing */
+    border: 1px solid #888;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+    position: relative; /* Positioning for the close button */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Use your custom font */
+}
+
+/* Popup content */
+.popup-content button {
+
+    border-radius: 5px;
+
+    font-size: large;
+
+    border-style: none;
+
+    margin: 10px;
+    padding: 5px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+#cancelButton {
+
+    
+    background-color: #e63946;
+    
+}
+
+#donateButton {
+
+    
+    background-color: #22b290;
+    
+}
+
+#donateButton:hover {
+
+    
+    background-color: #1f6454;
+    
+}
+
+#cancelButton:hover {
+
+    background-color: #764648;
+
+}
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #e74c3c; /* Red color on hover for emphasis */
+    text-decoration: none;
+}
+
+/* Animations for showing the popup */
+.popup.show {
+    display: block; /* Show the popup when necessary */
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.quran {
+    
+    font-family: quran1;
+    font-size: 50px;
+    direction: rtl;
+    
+}
+
+
+
+.list:hover {
+
+    background-color: var(--sixth-color);
+    color: var(--third-color);
+    
+    
+    
+    
+    
+
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #585858;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: x-large;
+    font-family: Uthman;
+    direction: ltr;
+    user-select: none; /* For modern browsers */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.engTranslation {
+
+    direction: ltr;
+    font-size: 30px;
+
+    margin: 0px 30%;
+    font-family: Uthman;
+}
+
+
+
+
+.poemTitle {
+
+    font-family: Thuluth;
+    font-weight: 0;
+    font-size: 110px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    
+}
+
+#qahtaniTitle {
+
+    width: 535px;
+    position: static;
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+    
+    
+    
+
+    
+}
+
+.engTitle2 {
+
+    font-weight: normal;
+    font-size: xx-large;
+}
+.links {
+
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: Thuluth;
+    font-weight: 0;
+    font-size: 110px;
+}
+
+.qword:hover {
+
+    background-color: var(--fifth-color);
+    color: red;
+    
+
+}
+
+.list {
+
+    padding: 3px;
+}
+.qword {
+
+    padding: 0px 0px;
+}
+
+
+
+
+
+
+.poems{
+
+    direction: rtl;
+
+    font-size: 37px;
+
+    font-family: Thuluth;
+
+    margin: 30px;
+    
+    
+
+    list-style: none;
+
+    
+    
+    
+
+    
+
+    
+
+}
+
+
+.diacritic {
+    color: blue; /* Change this to your desired color */
+}
+
+.symbols-font {
+
+    color: red;
+}
+
+
+
+
+
+.bismillah {
+    
+    text-align: center;
+
+    font-size: 30px;
+
+    font-family: Amiri;
+
+    margin: 30px;
+
+}
+
+
+
+
+
+.poems li {
+
+    margin: 30px 65px 30px 65px;
+}
+
+.quran-container {
+
+    direction: rtl;
+
+    font-size: 40px;
+
+    font-family: Thuluth;
+
+    margin: 0px 150px 0px 150px;
+
+    text-align: center;
+
+    
+
+    
+
+    
+}
+
+.extra-space {
+
+    height: 200px;
+
+}
+
+
+
+
+i:hover{
+
+    color: aqua;
+}
+
+
+html, body {overflow-x:hidden;}
+
+
+
+
+.dark-theme .corner {
+
+    display: none;
+}
+
+
+
+body{
+
+
+    margin: 0 auto;
+
+    
+    text-align: center;
+    
+    
+    background-color: var(--primary-color);
+    
+    color:  var(--secondary-color);
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: Calibri;
+    
+    
+    position: relative;
+
+    min-height: 100vh;
+
+    transition: 0.3s;;
+
+    
+    
+    
+
+    
+   
+    
+    
+
+
+}
+
+
+
+
+.textBox {
+
+    border-style: solid;
+    border-width: 3px;
+
+    border-color: black;
+
+    background-color: azure;
+
+    width: 250px;
+
+    height: 35px;
+
+    font-size: x-large;
+    
+    
+    
+}
+
+
+.names {
+
+    border-style: solid;
+    border-width: 3px;
+
+    border-color: black;
+
+    background-color: azure;
+
+    
+
+    
+
+    font-size: x-large;
+
+    
+
+
+}
+
+
+#countLabel {
+
+
+    font-size: 50px;
+
+    border-style: solid;
+
+    padding-left: 30px;
+    
+    padding-right: 30px;
+
+}
+
+.button {
+
+
+    border-radius: 10px;
+    
+    width: 150px;
+    height: 50px;
+
+    margin-top: 20px;
+
+    background-color: azure;
+}
+
+
+
+
+
+
+
+
+
+.sumbitBtn {
+
+    margin: 25px;
+
+    background-color: blanchedalmond;
+
+    border-radius: 10px;
+
+    border-width: 3px;
+
+    width: 200px; 
+    
+    height: 30px;
+
+}
+
+
+
+
+
+
+
+#logo{
+
+    width: 40%;
+    position: static;
+    padding: 93px;
+
+    
+    
+    
+
+    
+}
+
+
+
+
+
+
+p[id^="p"] {
+
+
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+
+
+
+
+
+.container {
+
+    padding: 0 380px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 63px 0px;
+    
+    
+    
+
+    
+}
+
+.btn {
+
+    border: 0;
+
+    width: 60px;
+
+    background: 0;
+    
+
+    
+}
+
+
+
+.website-logo{
+
+    width: 115px;
+    cursor: pointer;
+}
+
+.vid {
+    display: block; /* Ensures the iframe is treated as a block-level element */
+    margin: 100px auto; /* Sets top and bottom margins to 0 and left and right margins to auto, centering the iframe horizontally */
+    width: 960px; /* Set the width to 100% to fill its container */
+    height: 540px;
+}
+
+nav ul {
+
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li{
+
+    display: inline-block;
+    margin: 10px 20px;
+
+}
+
+.navMobile  {
+
+    list-style: none;
+    display: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    
+    
+}
+
+.navMobile a {
+
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.navMobile li {
+
+    margin: 5px 0px;
+}
+
+
+
+.navMobile a:hover {
+
+    
+    color: aqua;
+}
+
+nav ul li a{
+
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: large;
+}
+
+
+
+
+i {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    
+    color: red;
+    
+    cursor: pointer;
+}
+
+
+
+
+@media (max-width: 1500px) {
+    .container {
+        padding: 0 140px; /* Remove padding when viewport width is 768px or smaller */
+    }
+    nav {
+        width: 100%; /* Ensure navigation bar takes full width */
+    }
+
+    nav ul {
+
+        padding-right: 15px;
+
+    }
+    
+    .website-logo {
+
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    
+    .container {
+        padding: 0 70px; /* Remove padding when viewport width is 768px or smaller */
+
+        margin: 0px 20px;
+
+
+    }
+    nav {
+        width: 100%; /* Ensure navigation bar takes full width */
+    }
+
+    .container ul {
+
+        display: none;
+
+    }
+
+    
+    .btn {
+        
+        border: 0;
+
+        width: 40px;
+
+        background: 0;
+        display: grid;
+
+        
+
+    }
+
+    .quran-container {
+
+        
+        
+    
+        margin: 0px 50px 0px 50px;
+    
+       
+    
+        
+    
+        
+    }
+    
+
+
+    
+
+    nav {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 63px 70px;
+
+        
+    }
+
+    .website-logo {
+
+        width: 100px;
+        cursor: pointer;
+    }
+
+    .vid {
+        display: block; /* Ensures the iframe is treated as a block-level element */
+        margin: 100px auto; /* Sets top and bottom margins to 0 and left and right margins to auto, centering the iframe horizontally */
+        width: 370px; /* Set the width to 100% to fill its container */
+        height: 208px;
+    }
+
+    nav ul li a{
+
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-size: small;
+    }
+
+    .poems li {
+
+        margin: 30px;
+    }
+    
+    .bismillah {
+
+        
+    
+        font-size: 17px;
+    
+        
+    
+    }
+    
+    .poemTitle {
+
+        
+        
+        font-size: 50px;
+        
+    }
+    
+    .poemofIbnAlQayim .poemTitle {
+
+        margin: 70px 0;
+    }
+    
+    
+    #qahtaniTitle {
+    
+        width: 300px;
+        position: static;
+        margin-top: 100px;
+    
+        
+        
+        
+    
+        
+    }
+    
+    .poemTitles {
+
+        width: 300px;
+        position: static;
+        margin-top: 100px;
+    }
+
+    .engTitle {
+
+        font-size: larger;
+    }
+
+    .popup-content {
+        width: 90%; /* Reduce the width for mobile screens */
+        padding: 20px; /* Adjust padding for mobile */
+        margin: 50% auto; /* Adjust vertical margin */
+        font-size: 14px; /* Slightly smaller text for mobile */
+    }
+
+    .popup-content button {
+        font-size: 14px; /* Smaller button text for mobile */
+        padding: 8px 15px; /* Adjust padding on buttons for mobile */
+    }
+}
+
+
+.engTitle {
+
+    font-weight: normal;
+}
+
+.homeTitle {
+
+    font-weight: normal;
+    margin-top: 70px;
+}
+
+
+#Tiktok {
+
+    color: var(--secondary-color);
+}
+
+#Tiktok:hover {
+
+    color: aqua;
+}
+
+
+
+
+
+
+
+
+nav ul li a:hover {
+
+    color: aqua;
+}
+
+
+
+.corner {
+    position: absolute;
+    width: 150px; /* Adjust the size as needed */
+    height: 174px; /* Adjust the size as needed */
+    
+    z-index: -1;
+    pointer-events: none;
+
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.icon-YoutubeIcon:before {
+    content: "\e900";
+  }
+
+
+.cls-1 {
+
+    
+
+    fill: black;
+
+    
+}
+.cls-1:hover {
+
+    fill: aqua;
+}
+
+#Layer_1 {
+
+    width: 200px;
+    height: auto;
+}
+
+#arrow {
+
+    color: var(--primary-color);
+    padding: 0 5px;
+}
+
+#contactImg {
+
+    color: black;
+
+    font-size: 500px;
+
+    
+}
+
+
+.contact-container {
+
+    padding-top: 150px;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements inside the form */
+    gap: 20px;
+}
+
+.contact-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the title and hr */
+}
+
+.contact-title h2 {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color: #a9a9a9;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text inside the button */
+    padding: 15px 30px;
+    font-size: 16px;
+    color: var(--primary-color);
+    gap: 10px;
+    border-radius: 50px;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width:800px) {
+
+    .contact-inputs {
+
+        width: 80vw;
+    }
+
+   
+}
+
+.success-message {
+    
+    margin-top: 200px;
+}
+
+#tick {
+
+    color: rgb(36, 161, 20);
+
+    font-size: 50px;
+}
+
+.success-message h2 {
+
+    color: rgb(35, 159, 35);
+    font-weight: normal;
+    margin-bottom: 10px;
+    font-size: xx-large;
+
+    
+}
+
+.success-message p {
+
+    font-size: large;
+
+    margin-bottom: 10px;
+}
+
+.success-message a {
+
+    text-decoration: none;
+    color: #50ab3f;
+
+    font-size: large;
+
+}
+
+.success-message a:hover {
+
+    text-decoration: underline;
+}
+
+
+
+#sidebarToggle {
+
+    display: none;
+} 
+
+@media only screen and (max-width: 768px) {
+    #sidebarToggle {
+        display: block;
+    }
+
+    .navMobile {
+
+        display: block;
+    }
+}
+
+body.hasSidebar #sidebarToggle {
+
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    
+    right: -250px; /* Off-screen initially on the right */
+    
+
+    color: black;
+    
+    background: #f5f0ea;
+    border-radius: 2px;
+
+    border-color: black;
+    transition: right 0.3s ease; /* Transition on right property */
+    border: 1px solid black;
+    
+}
+
+.sidebar.active {
+    right: 0; /* Show sidebar from the right */
+    padding: 20px;
+    z-index: 1000;
+    height: 100%;
+    width: 250px;
+    top: 0;
+
+    
+}
+
+
+@media only screen and (max-width: 640px) {
+    
+    .poems {
+
+        font-size: 23px;
+    }
+
+    .engTranslation {
+
+        
+        font-size: 15px;
+    
+        margin: 0px 0px;
+    }
+
+
+    .corner {
+
+        width: 97px; /* Adjust the size as needed */
+        height: 97px; /* Adjust the size as needed */
+    
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    #logo {
+
+        width: 70%;
+        position: static;
+        padding: 30px;
+
+        
+    }
+
+    .sidebar.active {
+        
+        width: 150px;
+        
+        
+    }
+
+    .fa-solid {
+
+        font-size: 23px;
+    }
+    
+
+    .tooltip .tooltiptext {
+        
+        width: 70px; /* Set the tooltip width to 70px */
+        font-size: small; /* Adjust the font size for better readability */
+        margin-left: -35px; /* Center the tooltip based on its new width */
+        padding: 2px; /* Add some padding for better appearance */
+        
+    }
+
+}
+
+.fa-tiktok {
+
+    color: var(--secondary-color);
+}
+
+
+
+#tggle-label {
+
+    width: 125px;
+
+    height: 36px;
+
+    position: relative;
+
+    display: block;
+
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+#tggle-label:after {
+
+    content: "";
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: 4px;
+    
+    background: linear-gradient(190deg, #ffcc89, #d8860b );
+
+    border-radius: 180px;
+    box-shadow:  0px 5px 10px rgba(0,0,0,0.2);
+    transition:  0.3s;
+
+}
+
+#drkmde-tggle {
+
+    width: 0;
+    height: 0;
+    visibility: hidden;
+
+}
+
+#drkmde-tggle:checked + #tggle-label {
+
+    background: #242424;
+}
+
+#drkmde-tggle:checked + #tggle-label:after {
+
+    left: 70px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+#tggle-label:active::after {
+
+    width: 50px;
+}
+
+#drkmde-tggle:checked  body {
+
+    background-color: #242424;
+
+}
+
+.fa-sun {
+
+    color: yellow;
+}
+
+.fa-moon {
+
+    color: black;
+}
+
+.fa-bars {
+
+    color: var(--secondary-color);
+
+    
+}
+
+
+
