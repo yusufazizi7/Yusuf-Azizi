@@ -95,6 +95,51 @@
                     <video id="mainVideo" playsinline preload="metadata"></video>
 
 
+                    <!-- ================= EARLY ACCESS GATE ================= -->
+                    
+                    <div id="earlyAccessGate" class="early-access-gate" hidden>
+                    
+                        <div class="early-access-gate-content">
+                    
+                            <div class="early-access-gate-icon">
+                                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                            </div>
+                    
+                    
+                            <span class="early-access-gate-label">
+                                Premium Early Access
+                            </span>
+                    
+                    
+                            <h2>
+                                Watch this video before its public release
+                            </h2>
+                    
+                    
+                            <p id="earlyAccessGateMessage">
+                                This video is currently available exclusively to Islamic Qalam Premium members.
+                            </p>
+                    
+                    
+                            <div class="early-access-gate-release">
+                    
+                                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    
+                                <span id="earlyAccessGateRelease">
+                                    Public release coming soon
+                                </span>
+                    
+                            </div>
+                    
+                    
+                            <a id="earlyAccessGateAction" class="early-access-gate-action" href="/premium.html">
+                                Get Premium
+                            </a>
+                    
+                        </div>
+                    
+                    </div>
+
                     <button id="largePlayButton" class="large-play-button" type="button" aria-label="Play video">
 
                         <i class="fa-solid fa-play" aria-hidden="true"></i>
@@ -515,8 +560,12 @@
 
                 <a href="contact-us.html"> Contact </a>
 
-                <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank" rel="noopener noreferrer"> Donate
-                </a>
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </a>
+
+                
                 <a href="faq.html"> FAQ </a>
             </div>
 

@@ -30,9 +30,10 @@
     </script>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/comments.css" />
-    <link rel="stylesheet" href="/css/poems.css" />
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/comments.css"/>
+    <link rel="stylesheet" href="/css/poems.css">
+    <link rel="stylesheet" href="/css/poem-word-tooltips.css">
 
     <link rel="icon" type="image/ico" href="/images/website-favicon.png" />
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
@@ -57,7 +58,12 @@
             <a href="/quran.html">Qur'an</a>
             <a href="/videos.html">Videos</a>
             <a href="/e-books.html">E-books</a>
-            <a href="/contact-us.html">Contact</a>
+            <a href="contact-us.html"> Contact </a>
+
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </a>
 
 
             <a id="navAccountLink" class="nav-login" href="/login.html">
@@ -84,90 +90,183 @@
         </div>
     </header>
 
-    <!-- Dark background shown behind the settings sidebar -->
+    
+    <!-- Background behind the settings sidebar -->
     <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
-
-    <!-- Poem settings sidebar -->
+    
+    <!-- Poem Settings Sidebar -->
     <aside class="sidebar" id="poem-settings" aria-label="Poem settings" aria-hidden="true">
         <div class="sidebar-header">
             <h2>Poem Settings</h2>
-
+    
             <button id="settings-close" class="sidebar-close" type="button" aria-label="Close poem settings">
                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
         </div>
-
+    
+        <!-- Choose Font -->
         <div class="sidebar-section">
             <h3>Choose Font</h3>
-
+    
             <label>
                 <input type="radio" name="font" value="default" checked />
                 Default
             </label>
-
+    
             <label>
                 <input type="radio" name="font" value="amiri" />
                 Amiri
             </label>
-
+    
             <label>
                 <input type="radio" name="font" value="Neirizi" />
                 Neirizi
             </label>
-
+    
             <label>
                 <input type="radio" name="font" value="Uthman" />
                 Uthman
             </label>
-
+    
             <label>
                 <input type="radio" name="font" value="Thuluth" />
                 Thuluth
             </label>
         </div>
-
+    
+        <!-- Reading Options -->
         <div class="sidebar-section">
             <h3>Options</h3>
-
+    
             <label>
                 <input type="checkbox" id="LineNumbers" checked />
                 Verse Numbers
             </label>
-
+    
             <label>
                 <input type="checkbox" id="engTranslationToggle" />
                 English Translation
             </label>
+    
+            <!-- Premium Feature -->
+            <div class="iq-premium-feature" id="iq-words-setting">
+                <button type="button" id="iq-words-toggle" class="iq-feature-button" role="switch" aria-checked="false"
+                    aria-labelledby="iq-words-label iq-words-badge" aria-describedby="iq-words-status" disabled>
+                    <span class="iq-feature-copy">
+                        <span class="iq-feature-heading">
+                            <span id="iq-words-label">
+                                Word-by-word meanings
+                            </span>
+    
+                            <span class="iq-words-badge" id="iq-words-badge">
+                                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                                Premium
+                            </span>
+                        </span>
+    
+                        <span class="iq-feature-description">
+                            Hover or tap a word for its meaning
+                        </span>
+                    </span>
+    
+                    <!-- Switch for Premium members -->
+                    <span class="iq-feature-switch" id="iq-words-switch" aria-hidden="true">
+                        <span class="iq-feature-switch-thumb"></span>
+                    </span>
+    
+                    <!-- CTA for non-Premium visitors -->
+                    <span class="iq-feature-cta" id="iq-words-cta" hidden aria-hidden="true">
+                        Get Premium
+    
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </span>
+                </button>
+    
+                <p class="iq-feature-status" id="iq-words-status" aria-live="polite">
+                    Checking membership…
+                </p>
+            </div>
         </div>
-
+    
+        <!-- Font Size -->
         <div class="sidebar-section">
             <h3>Font Size</h3>
-
+    
             <div class="font-size-controls">
                 <button id="decreaseFont" type="button" aria-label="Decrease font size">
                     −
                 </button>
-
+    
                 <span id="fontSizeDisplay">18px</span>
-
+    
                 <button id="increaseFont" type="button" aria-label="Increase font size">
                     +
                 </button>
-
-                <button id="resetFont" type="button">Reset</button>
+    
+                <button id="resetFont" type="button">
+                    Reset
+                </button>
             </div>
         </div>
-
+    
+        <!-- Jump to Verse -->
         <div class="sidebar-section">
             <h3>Jump to Verse</h3>
-
+    
             <select id="verseDropdown">
                 <option value="">Select Verse</option>
             </select>
         </div>
     </aside>
 
-    <!-- Donation Popup -->
+
+    <!-- Premium Feature Popup -->
+    <div class="iq-premium-modal" id="iq-words-premium-modal" hidden>
+        <!-- Dark backdrop -->
+        <div class="iq-premium-modal-backdrop" id="iq-words-modal-backdrop"></div>
+    
+        <!-- Popup content -->
+        <section class="iq-premium-dialog" role="dialog" aria-modal="true" aria-labelledby="iq-words-modal-title"
+            aria-describedby="iq-words-modal-description" tabindex="-1">
+            <!-- Close button -->
+            <button type="button" class="iq-premium-modal-close" id="iq-words-modal-close"
+                aria-label="Close Premium information">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+    
+            <!-- Premium icon -->
+            <div class="iq-premium-modal-icon" aria-hidden="true">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+    
+            <p class="iq-premium-modal-eyebrow">
+                ISLAMIC QALAM PREMIUM
+            </p>
+    
+            <h2 id="iq-words-modal-title">
+                Unlock word-by-word meanings
+            </h2>
+    
+            <p id="iq-words-modal-description">
+                Explore classical Arabic poetry word by word,
+                with contextual English meanings for Premium
+                members. Sign in to continue.
+            </p>
+    
+            <!-- Sign in, then redirect to Premium -->
+            <a class="iq-premium-modal-primary" id="iq-words-modal-login" href="/login.html?redirect=%2Fpremium.html">
+                Sign in to get Premium
+    
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+    
+            <button type="button" class="iq-premium-modal-later" id="iq-words-modal-later">
+                Maybe later
+            </button>
+        </section>
+    </div>>
+
+    
     
 
 
@@ -1763,6 +1862,7 @@
     <!-- ================= POEM ================= -->
 
     <script src="/scripts/poems.js"></script>
+    <script src="/scripts/poem-word-tooltips.js"></script>
     <script src="/supabase/poem-stats.js"></script>
 
 

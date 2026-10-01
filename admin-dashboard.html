@@ -1,1474 +1,3218 @@
 <!doctype html>
 
+
+
 <html lang="en">
+
+
 
 <head>
 
+
+
     <meta charset="UTF-8" />
+
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
     <title>
+
         Admin Dashboard | Islamic Qalam
+
     </title>
+
+
+
 
 
     <link rel="icon" type="image/png" href="images/website-favicon.png" />
 
 
+
+
+
     <link rel="stylesheet" href="css/global.css" />
+
+
 
     <link rel="stylesheet" href="css/admin.css" />
 
 
+
+
+
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
 
+
+
 </head>
+
+
+
 
 
 <body>
 
 
+
+
+
     <!-- ================= HEADER ================= -->
+
+
 
     <header class="site-header">
 
+
+
         <div class="brand">
+
             <!-- Custom object tag preserved -->
+
             <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+
                 <svg class="website-logo" aria-hidden="true" focusable="false">
+
                     <use href="/images/website-logo.svg#website-logo"></use>
+
                 </svg>
+
             </a>
 
+
+
             <span class="brand-name"> Islamic Qalam </span>
+
         </div>
+
+
+
 
 
         <nav id="primary-navigation" class="navbar" aria-label="Admin navigation">
 
+
+
             <a href="#dashboard" class="active">
+
                 Dashboard
+
             </a>
+
+
+
 
 
             <a href="index.html">
 
+
+
                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
 
+
+
                 View Website
+
+
 
             </a>
 
 
+
+
+
             <button id="adminLogoutButton" class="admin-nav-logout" type="button">
+
+
 
                 <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
 
+
+
                 Log Out
+
+
 
             </button>
 
+
+
         </nav>
+
+
+
 
 
         <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
             aria-controls="primary-navigation" aria-expanded="false">
 
+
+
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
 
+
+
         </button>
+
+
 
     </header>
 
 
 
+
+
+
+
     <!-- ================= ACCESS CHECK ================= -->
+
+
 
     <div id="adminLoading" class="admin-loading">
 
+
+
         <div class="admin-loading-spinner"></div>
 
+
+
         <p>
+
             Verifying administrator access...
+
         </p>
+
+
 
     </div>
 
 
 
+
+
+
+
     <!-- ================= ACCESS DENIED ================= -->
+
+
 
     <main id="accessDenied" class="access-denied" hidden>
 
+
+
         <div class="access-denied-card">
+
+
 
             <span class="access-denied-icon">
 
+
+
                 <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+
 
             </span>
 
 
+
+
+
             <p class="section-kicker">
+
                 Restricted Area
+
             </p>
+
+
+
 
 
             <h1>
+
                 Administrator access required
+
             </h1>
 
 
+
+
+
             <p>
+
                 This page is restricted to Islamic Qalam
+
                 administrators.
+
             </p>
 
 
+
+
+
             <a class="button button-primary" href="index.html">
+
                 Return to Islamic Qalam
+
             </a>
+
+
 
         </div>
 
+
+
     </main>
+
+
+
+
 
 
 
     <!-- ================= ADMIN DASHBOARD ================= -->
 
+
+
     <main id="adminDashboard" class="admin-page" hidden>
+
+
+
 
 
         <!-- ================= PAGE HEADER ================= -->
 
+
+
         <section id="dashboard" class="admin-hero">
+
+
 
             <div>
 
+
+
                 <p class="section-kicker">
+
                     Administration
+
                 </p>
 
 
+
+
+
                 <h1>
+
                     Islamic Qalam
+
                     <span>Admin Dashboard</span>
+
                 </h1>
+
+
+
 
 
                 <p class="admin-hero-description">
 
-                    Review community submissions,
-                    manage comments and view registered
+
+
+                    Review community activity, Premium subscriptions,
+
+                    subscription revenue and registered
+
                     accounts.
+
+
 
                 </p>
 
+
+
             </div>
+
+
+
 
 
             <div class="admin-identity">
 
+
+
                 <span class="admin-avatar">
 
+
+
                     <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+
+
 
                 </span>
 
 
+
+
+
                 <div>
 
+
+
                     <span class="admin-identity-label">
+
                         Signed in as
+
                     </span>
 
+
+
                     <strong id="adminEmail">
+
                         —
+
                     </strong>
+
+
 
                 </div>
 
+
+
             </div>
 
+
+
         </section>
+
+
+
+
 
 
 
         <!-- ================= STATISTICS ================= -->
 
+
+
         <section class="admin-stats" aria-label="Dashboard statistics">
 
 
+
+
+
             <article class="admin-stat-card">
+
+
 
                 <span class="admin-stat-icon pending">
 
+
+
                     <i class="fa-regular fa-clock" aria-hidden="true"></i>
+
+
 
                 </span>
 
+
+
                 <div>
 
+
+
                     <span class="admin-stat-label">
+
                         Awaiting approval
+
                     </span>
 
+
+
                     <strong id="pendingCount" class="admin-stat-number">
+
                         0
+
                     </strong>
 
+
+
                 </div>
+
+
 
             </article>
 
 
+
+
+
             <article class="admin-stat-card">
+
+
 
                 <span class="admin-stat-icon approved">
 
+
+
                     <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+
 
                 </span>
 
+
+
                 <div>
 
+
+
                     <span class="admin-stat-label">
+
                         Approved
+
                     </span>
 
+
+
                     <strong id="approvedCount" class="admin-stat-number">
+
                         0
+
                     </strong>
 
+
+
                 </div>
+
+
 
             </article>
 
 
+
+
+
             <article class="admin-stat-card">
+
+
 
                 <span class="admin-stat-icon rejected">
 
+
+
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+
+
 
                 </span>
 
+
+
                 <div>
 
+
+
                     <span class="admin-stat-label">
+
                         Rejected
+
                     </span>
 
+
+
                     <strong id="rejectedCount" class="admin-stat-number">
+
                         0
+
                     </strong>
+
+
 
                 </div>
 
+
+
             </article>
+
+
+
 
 
             <article class="admin-stat-card">
 
+
+
                 <span class="admin-stat-icon users">
+
+
 
                     <i class="fa-solid fa-users" aria-hidden="true"></i>
 
+
+
                 </span>
+
+
 
                 <div>
 
+
+
                     <span class="admin-stat-label">
+
                         Registered users
+
                     </span>
 
+
+
                     <strong id="usersCount" class="admin-stat-number">
+
                         0
+
                     </strong>
+
+
 
                 </div>
 
+
+
             </article>
 
+
+
         </section>
+
+
+
+
 
 
 
         <!-- ================= TABS ================= -->
 
+
+
         <section class="admin-workspace">
+
+
 
             <div class="admin-tabs" role="tablist" aria-label="Admin sections">
 
+
+
                 <button class="admin-tab active" type="button" data-tab="comments">
+
+
 
                     <i class="fa-regular fa-comments" aria-hidden="true"></i>
 
+
+
                     Comments
 
+
+
                     <span id="pendingTabCount" class="admin-tab-count">
+
                         0
+
                     </span>
 
+
+
                 </button>
+
+
 
                 <button class="admin-tab" type="button" data-tab="messages">
 
+
+
                     <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
+
 
                     Messages
 
+
+
                 </button>
+
+
 
                 <button class="admin-tab" type="button" data-tab="sales">
 
+
+
                     <i class="fa-solid fa-chart-line" aria-hidden="true">
+
                     </i>
 
-                    Sales
+
+
+                    Premium Sales
+
+
 
                 </button>
+
+                <button class="admin-tab" type="button" data-tab="grants">
+                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
+
+                    Complimentary Premium
+                </button>
+
+
 
                 <button class="admin-tab" type="button" data-tab="videos">
 
+
+
                     <i class="fa-solid fa-video" aria-hidden="true">
+
                     </i>
+
+
 
                     Videos
 
+
+
                 </button>
+
+
 
                 <button class="admin-tab" type="button" data-tab="poems">
 
+
+
                     <i class="fa-solid fa-feather-pointed" aria-hidden="true">
+
                     </i>
+
+
 
                     Poems
 
+
+
                 </button>
+
+
+
 
 
                 <button class="admin-tab" type="button" data-tab="users">
 
+
+
                     <i class="fa-solid fa-users" aria-hidden="true"></i>
+
+
 
                     Users
 
+
+
                 </button>
 
+
+
             </div>
+
+
+
+
 
 
 
             <!-- ================= COMMENTS ================= -->
 
+
+
             <div id="commentsPanel" class="admin-panel">
+
+
+
 
 
                 <div class="admin-panel-heading">
 
+
+
                     <div>
 
+
+
                         <p class="section-kicker">
+
                             Community moderation
+
                         </p>
+
+
 
                         <h2>
+
                             Comments
+
                         </h2>
 
+
+
                         <p>
+
                             Review comments and replies before
+
                             they appear publicly.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <!-- FILTERS -->
 
+
+
                 <div class="admin-toolbar">
+
+
 
                     <div class="admin-filter-group">
 
+
+
                         <button type="button" class="comment-filter active" data-status="pending">
+
                             Pending
+
                         </button>
+
+
+
 
 
                         <button type="button" class="comment-filter" data-status="approved">
+
                             Approved
+
                         </button>
+
+
+
 
 
                         <button type="button" class="comment-filter" data-status="rejected">
+
                             Rejected
+
                         </button>
+
+
+
 
 
                         <button type="button" class="comment-filter" data-status="all">
+
                             All
+
                         </button>
+
+
 
                     </div>
 
 
+
+
+
                     <label class="admin-search">
+
+
 
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
 
+
+
                         <input id="commentSearch" type="search" placeholder="Search comments..." />
+
+
 
                     </label>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <div id="commentsAdminList" class="admin-comments-list">
 
+
+
                     <p class="admin-empty-state">
+
                         Loading comments...
+
                     </p>
 
+
+
                 </div>
+
+
 
             </div>
 
 
+
+
+
             <!-- ================= MESSAGES ================= -->
+
+
 
             <div id="messagesPanel" class="admin-panel" hidden>
 
 
+
+
+
                 <div class="admin-panel-heading">
+
+
 
                     <div>
 
+
+
                         <p class="section-kicker">
+
                             Community communication
+
                         </p>
+
+
 
                         <h2>
+
                             Send Message
+
                         </h2>
 
+
+
                         <p>
+
                             Send a message to every registered user
+
                             or directly to one specific account.
+
                         </p>
+
+
 
                     </div>
 
+
+
                 </div>
+
+
+
 
 
                 <form id="adminMessageForm" class="admin-message-form">
 
 
+
+
+
                     <!-- RECIPIENT -->
+
+
 
                     <div class="admin-message-field">
 
+
+
                         <label for="messageRecipient">
+
                             Recipient
+
                         </label>
+
+
 
                         <select id="messageRecipient" required>
 
+
+
                             <option value="all">
+
                                 All registered users — Global broadcast
+
                             </option>
+
+
 
                         </select>
 
+
+
                         <p class="admin-field-help">
+
                             Global broadcasts appear in every user's Messages section.
+
                         </p>
 
+
+
                     </div>
+
+
+
 
 
                     <!-- TYPE -->
 
+
+
                     <div class="admin-message-field">
 
+
+
                         <label for="messageType">
+
                             Message type
+
                         </label>
+
+
 
                         <select id="messageType">
 
+
+
                             <option value="general">
+
                                 General
+
                             </option>
+
+
 
                             <option value="update">
+
                                 Website update
+
                             </option>
+
+
 
                             <option value="admin">
+
                                 Administrator notice
+
                             </option>
 
+
+
                             <option value="security">
+
                                 Security notice
+
                             </option>
+
+
 
                         </select>
 
+
+
                     </div>
+
+
+
 
 
                     <!-- TITLE -->
 
+
+
                     <div class="admin-message-field">
 
+
+
                         <label for="messageTitle">
+
                             Title
+
                         </label>
+
+
 
                         <input id="messageTitle" type="text" maxlength="120" placeholder="Message title" required>
 
+
+
                     </div>
+
+
+
 
 
                     <!-- CONTENT -->
 
+
+
                     <div class="admin-message-field">
 
+
+
                         <label for="messageContent">
+
                             Message
+
                         </label>
+
+
 
                         <textarea id="messageContent" maxlength="3000" rows="7" placeholder="Write your message..."
                             required></textarea>
 
+
+
                     </div>
+
+
+
 
 
                     <div class="admin-message-footer">
 
+
+
                         <div id="adminMessageStatus" class="admin-message-status" role="status" aria-live="polite">
+
                         </div>
+
+
+
 
 
                         <button id="sendAdminMessageButton" class="button button-primary" type="submit">
 
+
+
                             <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+
 
                             Send message
 
+
+
+                        </button>
+
+
+
+                    </div>
+
+
+
+
+
+                </form>
+
+
+
+            </div>
+
+            <!-- ================= PREMIUM SALES ================= -->
+
+
+
+            <div id="salesPanel" class="admin-panel" hidden>
+
+
+
+
+
+                <div class="admin-panel-heading">
+
+
+
+                    <div>
+
+
+
+                        <div class="admin-sales-heading-row">
+
+                            <p class="section-kicker">
+
+                                Premium membership
+
+                            </p>
+
+                            <span id="salesEnvironmentBadge" class="admin-sales-environment">
+
+                                Loading environment
+
+                            </span>
+
+                        </div>
+
+
+
+                        <h2>
+
+                            Subscription Sales
+
+                        </h2>
+
+
+
+                        <p>
+
+                            Review Premium revenue, active memberships,
+
+                            renewal state and subscriber history.
+
+                        </p>
+
+
+
+                    </div>
+
+
+
+
+
+                    <button id="refreshSales" class="admin-video-refresh" type="button">
+
+
+
+                        <i class="fa-solid fa-rotate" aria-hidden="true">
+
+                        </i>
+
+
+
+                        Refresh
+
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+                <div id="salesLoading" class="admin-sales-loading">
+
+                    <div class="admin-loading-spinner"></div>
+
+
+
+                    <p>
+
+                        Loading Premium subscription data...
+
+                    </p>
+
+                </div>
+
+
+
+
+
+                <!-- ================= PRIMARY SUMMARY ================= -->
+
+                <div id="salesContent" hidden>
+
+
+
+                    <div class="admin-sales-summary">
+
+
+
+
+
+                        <article class="admin-sales-summary-card">
+
+
+
+                            <span class="admin-sales-summary-icon revenue">
+
+                                <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+
+                            </span>
+
+
+
+                            <div>
+
+                                <span>Revenue — last 7 days</span>
+
+                                <strong id="salesWeekRevenue">$0.00</strong>
+
+                                <small>Gross Premium payments collected</small>
+
+                            </div>
+
+
+
+                        </article>
+
+
+
+
+
+                        <article class="admin-sales-summary-card">
+
+
+
+                            <span class="admin-sales-summary-icon payments">
+
+                                <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+
+                            </span>
+
+
+
+                            <div>
+
+                                <span>Payments — last 7 days</span>
+
+                                <strong id="salesWeekPayments">0</strong>
+
+                                <small>Paid Premium invoices</small>
+
+                            </div>
+
+
+
+                        </article>
+
+
+
+
+
+                        <article class="admin-sales-summary-card">
+
+
+
+                            <span class="admin-sales-summary-icon members">
+
+                                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+
+                            </span>
+
+
+
+                            <div>
+
+                                <span>Active Premium</span>
+
+                                <strong id="salesActivePremium">0</strong>
+
+                                <small>Members with current paid access</small>
+
+                            </div>
+
+
+
+                        </article>
+
+
+
+
+
+                        <article class="admin-sales-summary-card">
+
+
+
+                            <span class="admin-sales-summary-icon total">
+
+                                <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+
+                            </span>
+
+
+
+                            <div>
+
+                                <span>All-time revenue</span>
+
+                                <strong id="salesAllTimeRevenue">$0.00</strong>
+
+                                <small>Gross Premium payments collected</small>
+
+                            </div>
+
+
+
+                        </article>
+
+
+
+                    </div>
+
+
+
+                    <!-- ================= MEMBERSHIP BREAKDOWN ================= -->
+
+                    <div class="admin-premium-breakdown">
+
+
+
+                        <article>
+
+                            <span>Monthly memberships</span>
+
+                            <strong id="salesRecurringCount">0</strong>
+
+                            <small>Active recurring-plan members</small>
+
+                        </article>
+
+
+
+                        <article>
+
+                            <span>One-month passes</span>
+
+                            <strong id="salesPassCount">0</strong>
+
+                            <small>Active non-renewing passes</small>
+
+                        </article>
+
+
+
+                        <article>
+
+                            <span>Ending at period end</span>
+
+                            <strong id="salesEndingCount">0</strong>
+
+                            <small>Active access with renewal disabled</small>
+
+                        </article>
+
+
+
+                        <article>
+
+                            <span>Past due</span>
+
+                            <strong id="salesPastDueCount">0</strong>
+
+                            <small>Subscriptions requiring payment attention</small>
+
+                        </article>
+
+
+
+                    </div>
+
+
+
+
+
+                    <p class="admin-sales-revenue-note">
+
+                        Revenue figures are gross Stripe Premium payments before
+
+                        Stripe processing fees, refunds or other business expenses.
+
+                    </p>
+
+
+
+                </div>
+
+
+
+                <!-- ================= FILTERS ================= -->
+
+
+
+                <div class="admin-sales-toolbar">
+
+
+
+                    <label class="admin-search">
+
+
+
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
+
+
+                        <input id="salesSearch" type="search"
+                            placeholder="Search subscriber email or Stripe subscription...">
+
+
+
+                    </label>
+
+
+
+
+
+                    <label class="admin-sales-filter-wrapper">
+
+
+
+                        <span>Status</span>
+
+
+
+                        <select id="salesStatusFilter">
+
+                            <option value="all">All statuses</option>
+
+                            <option value="active">Active</option>
+
+                            <option value="past_due">Past due</option>
+
+                            <option value="canceled">Cancelled</option>
+
+                            <option value="incomplete">Incomplete</option>
+
+                            <option value="unpaid">Unpaid</option>
+
+                            <option value="paused">Paused</option>
+
+                        </select>
+
+
+
+                    </label>
+
+
+
+
+
+                    <label class="admin-sales-filter-wrapper">
+
+
+
+                        <span>Plan</span>
+
+
+
+                        <select id="salesPlanFilter">
+
+                            <option value="all">All plans</option>
+
+                            <option value="recurring">Monthly Premium</option>
+
+                            <option value="pass">One-Month Pass</option>
+
+                        </select>
+
+
+
+                    </label>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- ================= SUBSCRIPTIONS ================= -->
+
+
+
+                <div class="admin-table-wrapper admin-sales-table-wrapper">
+
+
+
+                    <table class="admin-users-table admin-sales-table">
+
+
+
+                        <thead>
+
+
+
+                            <tr>
+
+                                <th>Subscriber</th>
+
+                                <th>Plan</th>
+
+                                <th>Access</th>
+
+                                <th>Billing</th>
+
+                                <th>Total paid</th>
+
+                                <th>Payments</th>
+
+                                <th>Paid through</th>
+
+                                <th>Started</th>
+
+                            </tr>
+
+
+
+                        </thead>
+
+
+
+
+
+                        <tbody id="salesSubscriptionsBody">
+
+
+
+                            <tr>
+
+                                <td colspan="8" class="admin-table-empty">
+
+                                    Loading Premium subscriptions...
+
+                                </td>
+
+                            </tr>
+
+
+
+                        </tbody>
+
+
+
+                    </table>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+            <!-- ================= COMPLIMENTARY PREMIUM ================= -->
+
+            <div id="grantsPanel" class="admin-panel" hidden>
+
+                <div class="admin-panel-heading">
+
+                    <div>
+
+                        <p class="section-kicker">
+                            Complimentary Premium
+                        </p>
+
+                        <h2>
+                            Premium Grants
+                        </h2>
+
+                        <p>
+                            Grant complimentary Premium access to donors,
+                            supporters or other selected users without
+                            creating a Stripe subscription.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <section class="admin-premium-grant-card">
+
+                    <div class="admin-premium-grant-heading">
+
+                        <span class="admin-premium-grant-icon">
+                            <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Grant Premium Membership
+                            </h3>
+
+                            <p>
+                                Enter the recipient's email and choose how
+                                long they should receive complimentary
+                                Premium access.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="premiumGrantForm" class="admin-premium-grant-form">
+
+                        <!-- EMAIL -->
+
+                        <div class="admin-message-field">
+
+                            <label for="premiumGrantEmail">
+                                Email address
+                            </label>
+
+                            <input id="premiumGrantEmail" type="email" placeholder="donor@example.com"
+                                autocomplete="off" required>
+
+                            <p class="admin-field-help">
+                                If they do not have an account yet,
+                                the grant will wait until they sign up
+                                with this email.
+                            </p>
+
+                        </div>
+
+
+                        <!-- DURATION -->
+
+                        <div class="admin-message-field">
+
+                            <label for="premiumGrantMonths">
+                                Membership duration
+                            </label>
+
+                            <div class="admin-premium-months-input">
+
+                                <input id="premiumGrantMonths" type="number" min="1" max="1200" step="1" value="1"
+                                    required>
+
+                                <span>
+                                    months
+                                </span>
+
+                            </div>
+
+                            <p class="admin-field-help">
+                                Additional grants are added after any
+                                existing complimentary period.
+                            </p>
+
+                        </div>
+
+
+                        <!-- REASON -->
+
+                        <div class="admin-message-field">
+
+                            <label for="premiumGrantReason">
+                                Reason
+                            </label>
+
+                            <select id="premiumGrantReason">
+
+                                <option value="donation" selected>
+                                    Donation
+                                </option>
+
+                                <option value="gift">
+                                    Gift
+                                </option>
+
+                                <option value="promotion">
+                                    Promotion
+                                </option>
+
+                                <option value="admin">
+                                    Administrator grant
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- NOTE -->
+
+                        <div class="admin-message-field">
+
+                            <label for="premiumGrantNote">
+                                Private note
+                            </label>
+
+                            <input id="premiumGrantNote" type="text" maxlength="1000"
+                                placeholder="Optional note about this grant">
+
+                            <p class="admin-field-help">
+                                Only administrators will see this note.
+                            </p>
+
+                        </div>
+
+
+                        <!-- FOOTER -->
+
+                        <div class="admin-premium-grant-footer">
+
+                            <div id="premiumGrantMessage" class="admin-premium-grant-message" role="status"
+                                aria-live="polite">
+                            </div>
+
+
+                            <button id="premiumGrantButton" class="button button-primary" type="submit">
+                                <i class="fa-solid fa-gift" aria-hidden="true"></i>
+
+                                Grant Premium
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- ================= GRANT MANAGEMENT ================= -->
+
+                <section class="admin-premium-grants-management">
+
+                    <div class="admin-premium-grants-management-heading">
+
+                        <div>
+
+                            <p class="section-kicker">
+                                Membership management
+                            </p>
+
+                            <h3>
+                                Complimentary Memberships
+                            </h3>
+
+                            <p>
+                                Review active, upcoming and previous complimentary
+                                Premium grants.
+                            </p>
+
+                        </div>
+
+
+                        <button id="refreshPremiumGrants" class="admin-video-refresh" type="button">
+                            <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+
+                            Refresh
                         </button>
 
                     </div>
 
 
-                </form>
+                    <!-- ================= SUMMARY ================= -->
 
-            </div>
+                    <div class="admin-premium-grants-summary">
+
+                        <article>
+                            <span>
+                                Active
+                            </span>
+
+                            <strong id="premiumGrantsActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Currently usable memberships
+                            </small>
+                        </article>
 
 
-            <!-- ================= SALES ================= -->
+                        <article>
+                            <span>
+                                Upcoming
+                            </span>
 
-            <div id="salesPanel" class="admin-panel" hidden>
+                            <strong id="premiumGrantsUpcomingCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Future stacked periods
+                            </small>
+                        </article>
 
 
-                <div class="admin-panel-heading">
+                        <article>
+                            <span>
+                                Unclaimed
+                            </span>
 
-                    <div>
+                            <strong id="premiumGrantsUnclaimedCount">
+                                0
+                            </strong>
 
-                        <p class="section-kicker">
-                            E-book store
-                        </p>
+                            <small>
+                                Waiting for the matching account
+                            </small>
+                        </article>
 
-                        <h2>
-                            Sales
-                        </h2>
 
-                        <p>
-                            Review e-book revenue, completed orders
-                            and customer purchases.
-                        </p>
+                        <article>
+                            <span>
+                                Expired
+                            </span>
+
+                            <strong id="premiumGrantsExpiredCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Finished memberships
+                            </small>
+                        </article>
+
+
+                        <article>
+                            <span>
+                                Revoked
+                            </span>
+
+                            <strong id="premiumGrantsRevokedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Manually cancelled grants
+                            </small>
+                        </article>
+
+                    </div>
+
+
+                    <!-- ================= FILTERS ================= -->
+
+                    <div class="admin-premium-grants-toolbar">
+
+                        <label class="admin-search">
+
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
+                            <input id="premiumGrantSearch" type="search" placeholder="Search by email...">
+
+                        </label>
+
+
+                        <label class="admin-sales-filter-wrapper">
+
+                            <span>
+                                Status
+                            </span>
+
+                            <select id="premiumGrantStatusFilter">
+
+                                <option value="all">
+                                    All statuses
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="upcoming">
+                                    Upcoming
+                                </option>
+
+                                <option value="expired">
+                                    Expired
+                                </option>
+
+                                <option value="revoked">
+                                    Revoked
+                                </option>
+
+                                <option value="unclaimed">
+                                    Unclaimed
+                                </option>
+
+                            </select>
+
+                        </label>
 
                     </div>
 
 
-                    <button id="refreshSales" class="admin-video-refresh" type="button">
+                    <!-- ================= TABLE ================= -->
 
-                        <i class="fa-solid fa-rotate" aria-hidden="true">
-                        </i>
+                    <div class="admin-table-wrapper">
 
-                        Refresh
+                        <table class="admin-users-table admin-premium-grants-table">
 
-                    </button>
+                            <thead>
 
-                </div>
+                                <tr>
+                                    <th>
+                                        Recipient
+                                    </th>
 
-                <div id="salesLoading" class="admin-sales-loading">
-                    <div class="admin-loading-spinner"></div>
+                                    <th>
+                                        Status
+                                    </th>
 
-                    <p>
-                        Loading sales data...
-                    </p>
-                </div>
+                                    <th>
+                                        Access period
+                                    </th>
 
+                                    <th>
+                                        Reason
+                                    </th>
 
-                <!-- ================= SALES SUMMARY ================= -->
-                <div id="salesContent" hidden>
-                    <div class="admin-sales-summary">
+                                    <th>
+                                        Account
+                                    </th>
 
+                                    <th>
+                                        Note
+                                    </th>
 
-                        <article class="admin-sales-summary-card">
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
 
-                            <span class="admin-sales-summary-icon revenue">
-
-                                <i class="fa-solid fa-dollar-sign" aria-hidden="true">
-                                </i>
-
-                            </span>
-
-                            <div>
-
-                                <span>
-                                    Revenue — last 7 days
-                                </span>
-
-                                <strong id="salesWeekRevenue">
-                                    $0.00
-                                </strong>
-
-                                <small>
-                                    Gross before Stripe fees
-                                </small>
-
-                            </div>
-
-                        </article>
+                            </thead>
 
 
-                        <article class="admin-sales-summary-card">
+                            <tbody id="premiumGrantsTableBody">
 
-                            <span class="admin-sales-summary-icon orders">
+                                <tr>
 
-                                <i class="fa-solid fa-receipt" aria-hidden="true">
-                                </i>
+                                    <td colspan="7" class="admin-table-empty">
+                                        Loading complimentary memberships...
+                                    </td>
 
-                            </span>
+                                </tr>
 
-                            <div>
+                            </tbody>
 
-                                <span>
-                                    Orders — last 7 days
-                                </span>
-
-                                <strong id="salesWeekOrders">
-                                    0
-                                </strong>
-
-                                <small>
-                                    Completed orders
-                                </small>
-
-                            </div>
-
-                        </article>
-
-
-                        <article class="admin-sales-summary-card">
-
-                            <span class="admin-sales-summary-icon books">
-
-                                <i class="fa-solid fa-book" aria-hidden="true">
-                                </i>
-
-                            </span>
-
-                            <div>
-
-                                <span>
-                                    E-books — last 7 days
-                                </span>
-
-                                <strong id="salesWeekItems">
-                                    0
-                                </strong>
-
-                                <small>
-                                    E-books delivered
-                                </small>
-
-                            </div>
-
-                        </article>
-
-
-                        <article class="admin-sales-summary-card">
-
-                            <span class="admin-sales-summary-icon total">
-
-                                <i class="fa-solid fa-chart-column" aria-hidden="true">
-                                </i>
-
-                            </span>
-
-                            <div>
-
-                                <span>
-                                    All-time revenue
-                                </span>
-
-                                <strong id="salesAllTimeRevenue">
-                                    $0.00
-                                </strong>
-
-                                <small>
-                                    Gross completed revenue
-                                </small>
-
-                            </div>
-
-                        </article>
+                        </table>
 
                     </div>
-                </div>
 
-                <!-- ================= SALES TOOLBAR ================= -->
-
-                <div class="admin-sales-toolbar">
-
-                    <label class="admin-search">
-
-                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true">
-                        </i>
-
-                        <input id="salesSearch" type="search" placeholder="Search email, order or e-book...">
-
-                    </label>
-
-
-                    <label class="admin-sales-filter-wrapper">
-
-                        <span>
-                            Status
-                        </span>
-
-                        <select id="salesStatusFilter">
-
-                            <option value="all">
-                                All orders
-                            </option>
-
-                            <option value="paid">
-                                Paid
-                            </option>
-
-                            <option value="pending">
-                                Pending
-                            </option>
-
-                            <option value="failed">
-                                Failed
-                            </option>
-
-                            <option value="cancelled">
-                                Cancelled
-                            </option>
-
-                            <option value="refunded">
-                                Refunded
-                            </option>
-
-                        </select>
-
-                    </label>
-
-                    <label class="admin-sales-filter-wrapper">
-
-                        <span>
-                            Sale type
-                        </span>
-
-                        <select id="salesTypeFilter">
-
-                            <option value="non-free" selected>
-                                Non-free sales
-                            </option>
-
-                            <option value="free">
-                                Free orders
-                            </option>
-
-                            <option value="all">
-                                All sales
-                            </option>
-
-                        </select>
-
-                    </label>
-
-                </div>
-
-
-                <!-- ================= ORDERS ================= -->
-
-                <div class="admin-table-wrapper admin-sales-table-wrapper">
-
-                    <table class="admin-users-table admin-sales-table">
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Order
-                                </th>
-
-                                <th>
-                                    Customer
-                                </th>
-
-                                <th>
-                                    E-books
-                                </th>
-
-                                <th>
-                                    Total
-                                </th>
-
-                                <th>
-                                    Payment
-                                </th>
-
-                                <th>
-                                    Status
-                                </th>
-
-                                <th>
-                                    Date
-                                </th>
-
-                            </tr>
-
-                        </thead>
-
-
-                        <tbody id="salesOrdersBody">
-
-                            <tr>
-
-                                <td colspan="7" class="admin-table-empty">
-                                    Loading sales...
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
+                </section>
             </div>
+
+
 
             <!-- ================= VIDEOS ================= -->
+
+
 
             <div id="videosPanel" class="admin-panel" hidden>
 
 
+
+
+
                 <div class="admin-panel-heading">
+
+
 
                     <div>
 
+
+
                         <p class="section-kicker">
+
                             Video analytics
+
                         </p>
+
+
 
                         <h2>
+
                             Videos
+
                         </h2>
 
+
+
                         <p>
+
                             Review video performance across Islamic Qalam,
+
                             including views, likes and comments.
+
                         </p>
 
+
+
                     </div>
+
+
+
 
 
                     <button id="refreshVideoStats" class="admin-video-refresh" type="button">
 
+
+
                         <i class="fa-solid fa-rotate" aria-hidden="true">
+
                         </i>
+
+
 
                         Refresh
 
+
+
                     </button>
 
+
+
                 </div>
+
+
+
 
 
                 <!-- ================= VIDEO TOTALS ================= -->
 
+
+
                 <div class="admin-video-summary">
 
 
+
+
+
                     <article class="admin-video-summary-card">
+
+
 
                         <span class="admin-video-summary-icon videos">
 
+
+
                             <i class="fa-solid fa-video" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total videos
+
                             </span>
 
+
+
                             <strong id="videoTotalCount">
+
                                 0
+
                             </strong>
 
+
+
                         </div>
+
+
 
                     </article>
 
 
+
+
+
                     <article class="admin-video-summary-card">
+
+
 
                         <span class="admin-video-summary-icon views">
 
+
+
                             <i class="fa-regular fa-eye" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total views
+
                             </span>
 
+
+
                             <strong id="videoTotalViews">
+
                                 0
+
                             </strong>
 
+
+
                         </div>
+
+
 
                     </article>
 
 
+
+
+
                     <article class="admin-video-summary-card">
+
+
 
                         <span class="admin-video-summary-icon likes">
 
+
+
                             <i class="fa-regular fa-thumbs-up" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total likes
+
                             </span>
 
+
+
                             <strong id="videoTotalLikes">
+
                                 0
+
                             </strong>
+
+
 
                         </div>
 
+
+
                     </article>
+
+
+
 
 
                     <article class="admin-video-summary-card">
 
+
+
                         <span class="admin-video-summary-icon comments">
 
+
+
                             <i class="fa-regular fa-comments" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total comments
+
                             </span>
 
+
+
                             <strong id="videoTotalComments">
+
                                 0
+
                             </strong>
 
+
+
                         </div>
+
+
 
                     </article>
 
 
+
+
+
                 </div>
+
+
+
 
 
                 <!-- ================= VIDEO TOOLBAR ================= -->
 
+
+
                 <div class="admin-video-toolbar">
+
+
+
 
 
                     <label class="admin-search">
 
+
+
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true">
+
                         </i>
+
+
 
                         <input id="videoSearch" type="search" placeholder="Search videos...">
 
+
+
                     </label>
+
+
+
 
 
                     <label class="admin-video-sort-wrapper">
 
+
+
                         <span>
+
                             Sort by
+
                         </span>
+
+
 
                         <select id="videoSort">
 
+
+
                             <option value="views-desc">
+
                                 Most viewed
+
                             </option>
+
+
 
                             <option value="likes-desc">
+
                                 Most liked
+
                             </option>
+
+
 
                             <option value="comments-desc">
+
                                 Most commented
+
                             </option>
+
+
 
                             <option value="views-asc">
+
                                 Least viewed
+
                             </option>
+
+
 
                             <option value="title-asc">
+
                                 Title A–Z
+
                             </option>
 
+
+
                         </select>
+
+
 
                     </label>
 
 
+
+
+
                 </div>
+
+
+
 
 
                 <!-- ================= VIDEO LIST ================= -->
 
+
+
                 <div id="adminVideosList" class="admin-videos-grid">
 
+
+
                     <p class="admin-empty-state">
+
                         Loading video statistics...
+
                     </p>
 
+
+
                 </div>
+
+
+
 
 
             </div>
 
+
+
             <!-- ================= POEMS ================= -->
+
+
 
             <div id="poemsPanel" class="admin-panel" hidden>
 
 
+
+
+
                 <div class="admin-panel-heading">
+
+
 
                     <div>
 
+
+
                         <p class="section-kicker">
+
                             Poetry analytics
+
                         </p>
+
+
 
                         <h2>
+
                             Poems
+
                         </h2>
 
+
+
                         <p>
+
                             Review poem performance across Islamic Qalam,
+
                             including views, likes and comments.
+
                         </p>
+
+
 
                     </div>
 
 
+
+
+
                     <button id="refreshPoemStats" class="admin-video-refresh" type="button">
 
+
+
                         <i class="fa-solid fa-rotate" aria-hidden="true">
+
                         </i>
+
+
 
                         Refresh
 
+
+
                     </button>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <!-- ================= TOTALS ================= -->
 
+
+
                 <div class="admin-video-summary">
 
 
+
+
+
                     <article class="admin-video-summary-card">
+
+
 
                         <span class="admin-video-summary-icon videos">
 
+
+
                             <i class="fa-solid fa-feather-pointed" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total poems
+
                             </span>
 
+
+
                             <strong id="poemTotalCount">
+
                                 0
+
                             </strong>
 
+
+
                         </div>
+
+
 
                     </article>
 
 
 
+
+
+
+
                     <article class="admin-video-summary-card">
+
+
 
                         <span class="admin-video-summary-icon views">
 
+
+
                             <i class="fa-regular fa-eye" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total views
+
                             </span>
 
+
+
                             <strong id="poemTotalViews">
+
                                 0
+
                             </strong>
 
+
+
                         </div>
+
+
 
                     </article>
 
 
 
+
+
+
+
                     <article class="admin-video-summary-card">
+
+
 
                         <span class="admin-video-summary-icon likes">
 
+
+
                             <i class="fa-regular fa-thumbs-up" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total likes
+
                             </span>
 
+
+
                             <strong id="poemTotalLikes">
+
                                 0
+
                             </strong>
+
+
 
                         </div>
 
+
+
                     </article>
+
+
+
+
 
 
 
                     <article class="admin-video-summary-card">
 
+
+
                         <span class="admin-video-summary-icon comments">
 
+
+
                             <i class="fa-regular fa-comments" aria-hidden="true">
+
                             </i>
+
+
 
                         </span>
 
+
+
                         <div>
 
+
+
                             <span>
+
                                 Total comments
+
                             </span>
 
+
+
                             <strong id="poemTotalComments">
+
                                 0
+
                             </strong>
 
+
+
                         </div>
+
+
 
                     </article>
 
 
+
+
+
                 </div>
+
+
+
+
 
 
 
                 <!-- ================= TOOLBAR ================= -->
 
+
+
                 <div class="admin-video-toolbar">
+
+
+
 
 
                     <label class="admin-search">
 
+
+
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true">
+
                         </i>
+
+
 
                         <input id="poemSearch" type="search" placeholder="Search poems...">
 
+
+
                     </label>
+
+
+
 
 
                     <label class="admin-video-sort-wrapper">
 
+
+
                         <span>
+
                             Sort by
+
                         </span>
+
+
 
                         <select id="poemSort">
 
+
+
                             <option value="views-desc">
+
                                 Most viewed
+
                             </option>
+
+
 
                             <option value="likes-desc">
+
                                 Most liked
+
                             </option>
+
+
 
                             <option value="comments-desc">
+
                                 Most commented
+
                             </option>
+
+
 
                             <option value="views-asc">
+
                                 Least viewed
+
                             </option>
+
+
 
                             <option value="title-asc">
+
                                 Title A–Z
+
                             </option>
 
+
+
                         </select>
+
+
 
                     </label>
 
 
+
+
+
                 </div>
+
+
+
+
 
 
 
                 <!-- ================= POEM LIST ================= -->
 
+
+
                 <div id="adminPoemsList" class="admin-videos-grid">
 
+
+
                     <p class="admin-empty-state">
+
                         Loading poem statistics...
+
                     </p>
 
+
+
                 </div>
+
+
+
 
 
             </div>
 
 
+
+
+
             <!-- ================= USERS ================= -->
+
+
 
             <div id="usersPanel" class="admin-panel" hidden>
 
 
+
+
+
                 <div class="admin-panel-heading">
+
+
 
                     <div>
 
+
+
                         <p class="section-kicker">
+
                             Community accounts
+
                         </p>
+
+
 
                         <h2>
+
                             Registered Users
+
                         </h2>
 
+
+
                         <p>
+
                             View accounts registered with
+
                             Islamic Qalam.
+
                         </p>
+
+
 
                     </div>
 
 
+
+
+
                     <label class="admin-search">
+
+
 
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
 
+
+
                         <input id="userSearch" type="search" placeholder="Search users..." />
+
+
 
                     </label>
 
+
+
                 </div>
+
+
+
+
 
 
 
                 <div class="admin-table-wrapper">
 
+
+
                     <table class="admin-users-table">
+
+
 
                         <thead>
 
+
+
                             <tr>
+
+
 
                                 <th>User</th>
 
+
+
                                 <th>Email</th>
+
+
 
                                 <th>Status</th>
 
+
+
                                 <th>Joined</th>
+
+
 
                                 <th>Last sign in</th>
 
+
+
                                 <th>Actions</th>
 
+
+
                             </tr>
+
+
 
                         </thead>
 
 
+
+
+
                         <tbody id="usersTableBody">
+
+
 
                             <tr>
 
+
+
                                 <td colspan="5" class="admin-table-empty">
+
                                     Loading users...
+
                                 </td>
+
+
 
                             </tr>
 
+
+
                         </tbody>
+
+
 
                     </table>
 
+
+
                 </div>
+
+
 
             </div>
 
+
+
         </section>
+
+
 
     </main>
 
 
 
+
+
+
+
     <!-- ================= FOOTER ================= -->
+
+
 
     <footer id="adminFooter" class="footer site-footer" hidden>
 
+
+
         <div class="footer-inner">
+
+
 
             <div class="footer-brand">
 
+
+
                 <a class="brand" href="/" aria-label="Islamic Qalam homepage">
-                <svg class="website-logo" aria-hidden="true" focusable="false">
-                    <use href="/images/website-logo.svg#website-logo"></use>
-                </svg>
-            </a>
+
+                    <svg class="website-logo" aria-hidden="true" focusable="false">
+
+                        <use href="/images/website-logo.svg#website-logo"></use>
+
+                    </svg>
+
+                </a>
+
+
+
 
 
                 <div>
 
+
+
                     <strong>
+
                         Islamic Qalam
+
                     </strong>
 
+
+
                     <p>
+
                         Administration dashboard.
+
                     </p>
+
+
 
                 </div>
 
+
+
             </div>
+
+
+
 
 
             <div class="footer-links">
 
+
+
                 <a href="index.html">
+
                     Website
+
                 </a>
+
+
 
                 <a href="quran.html">
+
                     Qur'an
+
                 </a>
 
+
+
                 <a href="e-books.html">
+
                     E-books
+
                 </a>
+
+
 
             </div>
 
+
+
         </div>
+
+
+
 
 
         <div class="footer-bottom">
 
+
+
             <p>
+
                 &copy; 2026 Islamic Qalam.
+
                 Administrator access only.
+
             </p>
 
+
+
         </div>
+
+
+
 
 
     </footer>
 
 
 
+
+
+
+
     <!-- ================= SCRIPTS ================= -->
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
 
     <script src="/supabase/supabase-client.js"></script>
 
 
+
+
+
     <script src="/scripts/global.js"></script>
+    <script src="/supabase/admin-premium-grants.js"></script>
+
 
     <!-- Video definitions -->
+
     <script src="/scripts/data/videos.js"></script>
+
     <script src="/scripts/data/poems.js"></script>
 
 
+
+
+
     <script src="/supabase/admin-sales.js"></script>
+
+
     <!-- Main admin dashboard -->
+
     <script src="/supabase/admin.js"></script>
 
 
+
+
+
     <!-- Video analytics -->
+
     <script src="/supabase/admin-videos.js"></script>
+
     <script src="/supabase/admin-poems.js"></script>
 
 
 
 
 
+
+
+
+
+
+
 </body>
+
+
 
 </html>

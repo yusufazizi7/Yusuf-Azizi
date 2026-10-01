@@ -1,0 +1,22 @@
+{
+    id:
+        "REPLACE-WITH-VIDEO-ID",
+
+    title:
+        "REPLACE WITH VIDEO TITLE",
+
+    category:
+        "Poetry",
+
+    description:
+        "REPLACE WITH VIDEO DESCRIPTION",
+
+    thumbnail:
+        "images/video-thumbnails/REPLACE-WITH-THUMBNAIL.jpg",
+
+    earlyAccess:
+        true,
+
+    releaseAt:
+        "2026-10-15T00:00:00+08:00"
+},

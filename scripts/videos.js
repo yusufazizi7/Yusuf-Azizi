@@ -27,8 +27,43 @@ document.addEventListener(
                         );
 
 
+                    const managedAccess =
+                        video.earlyAccess === true;
+
+
+                    const releaseTime =
+                        managedAccess
+                            ? new Date(
+                                video.releaseAt
+                            ).getTime()
+                            : 0;
+
+
+                    const isEarlyAccess =
+                        managedAccess &&
+                        Number.isFinite(
+                            releaseTime
+                        ) &&
+                        Date.now() <
+                        releaseTime;
+
+
                     card.className =
                         "video-card";
+
+
+                    if (managedAccess) {
+                        card.classList.add(
+                            "managed-access-video"
+                        );
+                    }
+
+
+                    if (isEarlyAccess) {
+                        card.classList.add(
+                            "early-access-video"
+                        );
+                    }
 
 
                     card.href =
@@ -39,9 +74,71 @@ document.addEventListener(
 
                     card.setAttribute(
                         "aria-label",
-                        `Watch ${video.title}`
+                        isEarlyAccess
+                            ? `Premium Early Access: ${video.title}`
+                            : `Watch ${video.title}`
                     );
 
+
+
+                    const previewMarkup =
+                        video.video
+                            ? `
+                                <video
+                                    class="video-preview"
+                                    muted
+                                    playsinline
+                                    preload="none"
+                                    data-src="${video.video}"
+                                ></video>
+                            `
+                            : "";
+
+
+                    const progressMarkup =
+                        video.video
+                            ? `
+                                <div class="video-preview-progress">
+                                    <span></span>
+                                </div>
+                            `
+                            : "";
+
+
+                    const earlyAccessMarkup =
+                        isEarlyAccess
+                            ? `
+                                <span class="video-early-access-badge">
+                                    <i
+                                        class="fa-solid fa-crown"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    Premium Early Access
+                                </span>
+                            `
+                            : "";
+
+
+                    const releaseMarkup =
+                        isEarlyAccess
+                            ? `
+                                <div class="video-release-info">
+
+                                    <i
+                                        class="fa-regular fa-calendar"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                    <span>
+                                        Public ${formatReleaseDate(
+                                video.releaseAt
+                            )}
+                                    </span>
+
+                                </div>
+                            `
+                            : "";
 
 
                     card.innerHTML = `
@@ -56,13 +153,7 @@ document.addEventListener(
                             >
 
 
-                            <video
-                                class="video-preview"
-                                muted
-                                playsinline
-                                preload="none"
-                                data-src="${video.video}"
-                            ></video>
+                            ${previewMarkup}
 
 
                             <span class="video-category">
@@ -70,12 +161,18 @@ document.addEventListener(
                             </span>
 
 
+                            ${earlyAccessMarkup}
+
+
                             <span class="video-play-overlay">
 
                                 <span class="video-play-circle">
 
                                     <i
-                                        class="fa-solid fa-play"
+                                        class="fa-solid ${isEarlyAccess
+                            ? "fa-crown"
+                            : "fa-play"
+                        }"
                                         aria-hidden="true"
                                     ></i>
 
@@ -84,11 +181,7 @@ document.addEventListener(
                             </span>
 
 
-                            <div class="video-preview-progress">
-
-                                <span></span>
-
-                            </div>
+                            ${progressMarkup}
 
                         </div>
 
@@ -100,6 +193,9 @@ document.addEventListener(
                             </h3>
 
 
+                            ${releaseMarkup}
+
+
                             <p>
                                 ${video.description}
                             </p>
@@ -107,7 +203,10 @@ document.addEventListener(
 
                             <span class="video-watch-link">
 
-                                Watch video
+                                ${isEarlyAccess
+                            ? "Watch with Premium"
+                            : "Watch video"
+                        }
 
                                 <i
                                     class="fa-solid fa-arrow-right"
@@ -126,14 +225,74 @@ document.addEventListener(
                     );
 
 
-                    initialisePreview(
-                        card
-                    );
+                    /*
+                     * Only ordinary public videos that
+                     * actually contain a public video URL
+                     * receive hover previews.
+                     *
+                     * Private Early Access files never
+                     * enter this code path.
+                     */
+
+                    if (video.video) {
+
+                        initialisePreview(
+                            card
+                        );
+
+                    }
 
                 }
             );
 
 
+
+        /* =====================================
+           RELEASE DATE
+        ===================================== */
+
+        function formatReleaseDate(
+            value
+        ) {
+
+            const date =
+                new Date(
+                    value
+                );
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+                return "";
+            }
+
+
+            return new Intl.DateTimeFormat(
+                "en-AU",
+                {
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+                }
+            ).format(
+                date
+            );
+
+        }
+
+
+
+        /* =====================================
+           VIDEO PREVIEW
+        ===================================== */
 
         function initialisePreview(
             card
@@ -155,6 +314,15 @@ document.addEventListener(
                 card.querySelector(
                     ".video-preview-progress span"
                 );
+
+
+            if (
+                !preview ||
+                !image ||
+                !progress
+            ) {
+                return;
+            }
 
 
             let previewLoaded =
@@ -217,7 +385,7 @@ document.addEventListener(
                     );
 
                 } catch (
-                    error
+                error
                 ) {
 
                     return;
@@ -285,7 +453,7 @@ document.addEventListener(
                         0;
 
                 } catch (
-                    error
+                error
                 ) {
                     // Video metadata may not
                     // have loaded yet.

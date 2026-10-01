@@ -300,6 +300,102 @@
 }
 
 /* =========================================================
+   PREMIUM EARLY ACCESS
+========================================================= */
+
+.video-early-access-badge {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  z-index: 5;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 11px;
+
+  border: 1px solid rgba(255, 224, 154, 0.35);
+
+  border-radius: 50px;
+
+  color: #fff3cf;
+
+  background:
+    rgba(92, 65, 18, 0.88);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.2);
+
+  font-size: 0.66rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.055em;
+
+  text-transform: uppercase;
+
+  pointer-events: none;
+}
+
+
+.video-early-access-badge i {
+  color: #f0c66a;
+}
+
+
+.video-release-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 8px;
+
+  color: var(--home-brown-dark);
+
+  font-size: 0.76rem;
+
+  font-weight: 700;
+}
+
+
+.video-release-info i {
+  font-size: 0.72rem;
+}
+
+
+.early-access-video .video-thumbnail-image {
+  filter:
+    brightness(0.72)
+    saturate(0.9);
+}
+
+
+.early-access-video .video-play-circle {
+  color: #fff3cf;
+
+  background:
+    rgba(103, 75, 25, 0.92);
+
+  border-color:
+    rgba(240, 198, 106, 0.5);
+}
+
+
+.early-access-video:hover .video-play-circle {
+  background:
+    rgba(124, 88, 25, 0.96);
+}
+
+/* =========================================================
    PLAY BUTTON
 ========================================================= */
 

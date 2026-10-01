@@ -1970,3 +1970,176 @@ main {
     
   }
 }
+
+/* =========================================================
+   POEM PREMIUM EARLY ACCESS GATE
+========================================================= */
+
+.early-access-poem-gate {
+  padding: 22px 28px 36px;
+}
+
+
+.early-access-poem-gate-inner {
+  width: min(620px, 100%);
+
+  margin: 10px auto 0;
+
+  padding: 44px 38px;
+
+  border: 1px solid rgba(140, 98, 57, 0.24);
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 248, 0.96),
+      rgba(248, 240, 220, 0.96)
+    );
+
+  box-shadow:
+    0 16px 45px rgba(33, 42, 32, 0.08);
+}
+
+
+.early-access-poem-gate-inner > i {
+  display: grid;
+
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 17px;
+
+  place-items: center;
+
+  border: 1px solid rgba(176, 140, 72, 0.3);
+
+  border-radius: 50%;
+
+  color: #9a6d22;
+
+  background: rgba(176, 140, 72, 0.11);
+
+  font-size: 1.45rem;
+}
+
+
+.early-access-poem-gate-inner strong {
+  display: block;
+
+  color: var(--home-green);
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+
+  line-height: 1.25;
+}
+
+
+.early-access-poem-gate-inner p {
+  max-width: 500px;
+
+  margin: 14px auto 0;
+
+  color: var(--home-muted);
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+.early-access-poem-gate-inner > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-top: 17px;
+
+  padding: 7px 13px;
+
+  border-radius: 50px;
+
+  color: var(--home-brown-dark);
+
+  background: rgba(140, 98, 57, 0.1);
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+}
+
+
+.early-access-poem-gate-inner > a {
+  display: flex;
+
+  width: fit-content;
+
+  min-height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 22px auto 0;
+
+  padding: 0 25px;
+
+  border: 1px solid var(--home-green);
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  background: var(--home-green);
+
+  font-size: 0.84rem;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.early-access-poem-gate-inner > a:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 600px) {
+
+  .early-access-poem-gate {
+    padding:
+      12px
+      14px
+      25px;
+  }
+
+
+  .early-access-poem-gate-inner {
+    padding:
+      32px
+      20px;
+  }
+
+
+  .early-access-poem-gate-inner > i {
+    width: 54px;
+    height: 54px;
+
+    font-size: 1.2rem;
+  }
+
+
+  .early-access-poem-gate-inner p {
+    font-size: 0.87rem;
+  }
+
+}

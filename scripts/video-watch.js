@@ -42,6 +42,62 @@ document.addEventListener(
         relatedVideos.forEach(
             relatedVideo => {
 
+                const releaseTime =
+                    relatedVideo.earlyAccess
+                        ? new Date(
+                            relatedVideo.releaseAt
+                        ).getTime()
+                        : 0;
+
+
+                const isEarlyAccess =
+                    relatedVideo.earlyAccess === true &&
+                    Number.isFinite(
+                        releaseTime
+                    ) &&
+                    Date.now() < releaseTime;
+
+
+                const previewMarkup =
+                    relatedVideo.video
+                        ? `
+            <video
+                class="related-video-preview"
+                muted
+                playsinline
+                preload="none"
+                data-src="${relatedVideo.video}"
+            ></video>
+        `
+                        : "";
+
+
+                const progressMarkup =
+                    relatedVideo.video
+                        ? `
+            <div class="related-preview-progress">
+                <span></span>
+            </div>
+        `
+                        : "";
+
+
+                const earlyAccessBadge =
+                    isEarlyAccess
+                        ? `
+                    <span class="related-early-access-badge">
+
+                        <i
+                            class="fa-solid fa-crown"
+                            aria-hidden="true"
+                        ></i>
+
+                        Early Access
+
+                    </span>
+                `
+                                : "";
+
                 const link =
                     document.createElement(
                         "a"
@@ -69,14 +125,8 @@ document.addEventListener(
                         loading="lazy"
                     >
 
-
-                    <video
-                        class="related-video-preview"
-                        muted
-                        playsinline
-                        preload="none"
-                        data-src="${relatedVideo.video}"
-                    ></video>
+                    ${earlyAccessBadge}
+                    ${previewMarkup}
 
 
                     <span class="related-video-play">
@@ -89,11 +139,7 @@ document.addEventListener(
                     </span>
 
 
-                    <div class="related-preview-progress">
-
-                        <span></span>
-
-                    </div>
+                    ${progressMarkup}
 
                 </div>
 
@@ -118,9 +164,15 @@ document.addEventListener(
                         link
                     );
 
-                initialiseRelatedPreview(
-                    link
-                );
+                if (
+                    relatedVideo.video
+                ) {
+
+                    initialiseRelatedPreview(
+                        link
+                    );
+
+                }
 
             }
         );
@@ -474,14 +526,35 @@ document.addEventListener(
                 "watchCategory"
             );
 
+        const earlyAccessGate =
+            document.getElementById(
+                "earlyAccessGate"
+            );
+
+
+        const earlyAccessGateMessage =
+            document.getElementById(
+                "earlyAccessGateMessage"
+            );
+
+
+        const earlyAccessGateRelease =
+            document.getElementById(
+                "earlyAccessGateRelease"
+            );
+
+
+        const earlyAccessGateAction =
+            document.getElementById(
+                "earlyAccessGateAction"
+            );
+
 
 
         /* =====================================
            LOAD VIDEO
         ===================================== */
 
-        video.src =
-            videoData.video;
 
 
         video.poster =
@@ -505,17 +578,354 @@ document.addEventListener(
 
 
 
+        async function loadVideoSource() {
+
+            /*
+             * Normal public video.
+             */
+
+            if (
+                !videoData.earlyAccess
+            ) {
+
+                video.src =
+                    videoData.video;
+
+                return;
+            }
+
+
+            /*
+             * Prevent playback while access
+             * is being checked.
+             */
+
+            largePlayButton.disabled =
+                true;
+
+            playPauseButton.disabled =
+                true;
+
+
+            try {
+
+                const {
+                    data,
+                    error
+                } =
+                    await window
+                        .supabaseClient
+                        .functions
+                        .invoke(
+                            "get-early-access",
+                            {
+                                body: {
+
+                                    action:
+                                        "access",
+
+                                    contentType:
+                                        "video",
+
+                                    contentKey:
+                                        videoData.id
+
+                                }
+                            }
+                        );
+
+
+                /*
+                 * Supabase returns non-2xx
+                 * responses through error.
+                 */
+
+                if (error) {
+
+                    const status =
+                        error?.context?.status;
+
+
+                    if (
+                        status === 401
+                    ) {
+
+                        showEarlyAccessGate(
+                            "signedOut"
+                        );
+
+                        return;
+                    }
+
+
+                    if (
+                        status === 403
+                    ) {
+
+                        showEarlyAccessGate(
+                            "premiumRequired"
+                        );
+
+                        return;
+                    }
+
+
+                    console.error(
+                        "Early Access video request failed:",
+                        error
+                    );
+
+
+                    showEarlyAccessGate(
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /*
+                 * Successful access must return
+                 * a temporary signed URL.
+                 */
+
+                if (
+                    !data?.signedUrl
+                ) {
+
+                    console.error(
+                        "No signed Early Access URL returned."
+                    );
+
+
+                    showEarlyAccessGate(
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                /*
+                 * Premium member or already
+                 * publicly released.
+                 */
+
+                
+
+
+                video.src =
+                    data.signedUrl;
+
+
+                unlockEarlyAccessPlayer();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Unable to load Early Access video:",
+                    error
+                );
+
+
+                showEarlyAccessGate(
+                    "error"
+                );
+
+            }
+
+        }
+
+        function showEarlyAccessGate(
+            state
+        ) {
+
+            player.classList.add(
+                "access-locked"
+            );
+
+
+            earlyAccessGate.hidden =
+                false;
+
+
+            largePlayButton.disabled =
+                true;
+
+            playPauseButton.disabled =
+                true;
+
+
+            earlyAccessGateRelease
+                .textContent =
+                `Public release: ${formatEarlyAccessReleaseDate(
+                    videoData.releaseAt
+                )
+                }`;
+
+
+            const returnPath =
+                `${window.location.pathname}${window.location.search}`;
+
+
+            if (
+                state === "signedOut"
+            ) {
+
+                earlyAccessGateMessage
+                    .textContent =
+                    "Sign in with a Premium account to watch this video before its public release.";
+
+
+                earlyAccessGateAction
+                    .textContent =
+                    "Sign in";
+
+
+                earlyAccessGateAction.href =
+                    `/login.html?redirect=${encodeURIComponent(
+                        returnPath
+                    )}`;
+
+
+                return;
+            }
+
+
+            if (
+                state === "premiumRequired"
+            ) {
+
+                earlyAccessGateMessage
+                    .textContent =
+                    "This video is available early to Islamic Qalam Premium members. It will become available to everyone on the public release date.";
+
+
+                earlyAccessGateAction
+                    .textContent =
+                    "Get Premium";
+
+
+                earlyAccessGateAction.href =
+                    "/premium.html";
+
+
+                return;
+            }
+
+
+            /*
+             * Unexpected backend/network problem.
+             */
+
+            earlyAccessGateMessage
+                .textContent =
+                "We couldn't check Early Access right now. Please refresh the page and try again.";
+
+
+            earlyAccessGateAction
+                .textContent =
+                "Refresh page";
+
+
+            earlyAccessGateAction.href =
+                window.location.href;
+
+        }
+
+
+        function unlockEarlyAccessPlayer() {
+
+            player.classList.remove(
+                "access-locked"
+            );
+
+
+            earlyAccessGate.hidden =
+                true;
+
+
+            largePlayButton.disabled =
+                false;
+
+            playPauseButton.disabled =
+                false;
+
+        }
+
+
+        function formatEarlyAccessReleaseDate(
+            value
+        ) {
+
+            const date =
+                new Date(
+                    value
+                );
+
+
+            if (
+                Number.isNaN(
+                    date.getTime()
+                )
+            ) {
+                return "coming soon";
+            }
+
+
+            return new Intl.DateTimeFormat(
+                "en-AU",
+                {
+                    day:
+                        "numeric",
+
+                    month:
+                        "long",
+
+                    year:
+                        "numeric"
+                }
+            ).format(
+                date
+            );
+
+        }
+
+
+
+        void loadVideoSource();
+
+
+
         /* =====================================
            PLAY / PAUSE
         ===================================== */
 
-        function togglePlayback() {
+        async function togglePlayback() {
 
             if (
                 video.paused
             ) {
 
-                video.play();
+                try {
+
+                    await video.play();
+
+                } catch (error) {
+
+                    if (
+                        error?.name !== "AbortError"
+                    ) {
+
+                        console.error(
+                            "Video playback failed:",
+                            error
+                        );
+
+                    }
+
+                }
 
             } else {
 

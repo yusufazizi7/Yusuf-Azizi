@@ -41,7 +41,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/e-book-styling.css" />
-    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/ebook-access.css" />
 
     <link rel="icon" type="image/png" href="images/website-favicon.png" />
 
@@ -74,18 +74,17 @@
 
             <a href="contact-us.html"> Contact </a>
 
-            
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </a>
 
-            <button id="navCartButton" class="nav-cart" type="button" aria-label="Open shopping cart"
-                aria-controls="shoppingCart" aria-expanded="false">
-                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
 
-                <span>Cart</span>
 
-                <span id="cartItemCount" class="cart-item-count" aria-label="0 items in cart">
-                    0
-                </span>
-            </button>
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </a>
             <a id="navAccountLink" class="nav-login" href="login.html">
                 <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
 
@@ -101,74 +100,15 @@
         </button>
     </header>
 
-    <!-- Shopping Cart Overlay -->
-    <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
 
 
-    <!-- Shopping Cart -->
-    <aside id="shoppingCart" class="shopping-cart" aria-label="Shopping cart" aria-hidden="true">
-        <div class="cart-header">
-
-            <div>
-                <p class="cart-eyebrow">Your selection</p>
-                <h2>Shopping Cart</h2>
-            </div>
-
-            <button id="closeCartButton" class="cart-close-button" type="button" aria-label="Close shopping cart">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-
-        </div>
 
 
-        <div id="cartContents" class="cart-contents">
-
-            <div id="emptyCartMessage" class="empty-cart-message">
-
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-
-                <h3>Your cart is empty</h3>
-
-                <p>
-                    Add an e-book to begin your order.
-                </p>
-
-            </div>
-
-            <div id="cartItems" class="cart-items"></div>
-
-        </div>
-
-
-        <div id="cartFooter" class="cart-footer" hidden>
-
-            <div class="cart-subtotal">
-
-                <span>Subtotal</span>
-
-                <strong id="cartSubtotal">
-                    $0.00 USD
-                </strong>
-
-            </div>
-
-            <button id="checkoutButton" class="cart-checkout-button" type="button" disabled>
-                Proceed to Checkout
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </button>
-
-            <p class="cart-checkout-note">
-                Secure payment processing will be provided by Stripe.
-            </p>
-
-        </div>
-
-    </aside>
 
 
 
     <!-- Donation Popup -->
-    
+
 
     <!-- E-books Section -->
     <main class="ebooks-main">
@@ -176,9 +116,10 @@
             <p class="ebooks-eyebrow">Islamic Qalam Library</p>
             <h1 class="page-title">Islamic E-books</h1>
             <p class="ebooks-introduction">
-                Browse our collection of translated Islamic poems and works. Select an
-                e-book to view its details, preview pages, read it online or download
-                the PDF.
+                Explore our collection of classical Islamic works and translated
+                poetry. Preview each e-book and download it with your free
+                Islamic Qalam account, or unlock our Premium collection with
+                a monthly membership.
             </p>
         </section>
 
@@ -189,7 +130,8 @@
                 <a href="e-books/nooniyah-al-qahtani-e-book.html" class="ebook-cover-link"
                     aria-label="View Nooniyah Al-Qahtani">
                     <div class="ebook-cover">
-                        <img src="images/e-books/nooniyah-al-qahtani/pdf/preview-1.webp" alt="Cover of Nooniyah Al-Qahtani" loading="lazy" />
+                        <img src="images/e-books/nooniyah-al-qahtani/pdf/preview-1.webp"
+                            alt="Cover of Nooniyah Al-Qahtani" loading="lazy" />
                     </div>
                 </a>
 
@@ -207,10 +149,7 @@
                         Ahlus-Sunnah wal-Jama'ah.
                     </p>
 
-                    <div class="ebook-price" aria-label="Price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/nooniyah-al-qahtani-e-book.html" class="ebook-view-button">
@@ -218,10 +157,8 @@
                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="nooniyah-al-qahtani"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -233,7 +170,8 @@
                 <a href="e-books/haiyyah-ibn-al-qayyim-e-book.html" class="ebook-cover-link"
                     aria-label="View Oh Worshippers of Christ">
                     <div class="ebook-cover">
-                        <img src="images/e-books/haiyyah-ibn-al-qayyim/pdf/preview-1.webp" alt="Cover of Oh Worshippers of Christ" loading="lazy" />
+                        <img src="images/e-books/haiyyah-ibn-al-qayyim/pdf/preview-1.webp"
+                            alt="Cover of Oh Worshippers of Christ" loading="lazy" />
                     </div>
                 </a>
 
@@ -251,10 +189,7 @@
                         and defence of Islamic monotheism.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/haiyyah-ibn-al-qayyim-e-book.html" class="ebook-view-button">
@@ -262,10 +197,8 @@
                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="oh-worshippers-of-christ"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -276,7 +209,8 @@
             <article class="ebook-card" data-product-slug="laamiyah-ibn-al-wardi">
                 <a href="e-books/laamiyah-ibn-al-wardi-e-book.html" class="ebook-cover-link">
                     <div class="ebook-cover">
-                        <img src="images/e-books/laamiyah-ibn-al-wardi/pdf/preview-1.webp" alt="Cover of Laamiyah Ibn Al-Wardi" loading="lazy" />
+                        <img src="images/e-books/laamiyah-ibn-al-wardi/pdf/preview-1.webp"
+                            alt="Cover of Laamiyah Ibn Al-Wardi" loading="lazy" />
                     </div>
                 </a>
 
@@ -294,10 +228,7 @@
                         morality and living a virtuous life.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/laamiyah-ibn-al-wardi-e-book.html" class="ebook-view-button">
@@ -305,10 +236,8 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="laamiyah-ibn-al-wardi"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -319,7 +248,8 @@
             <article class="ebook-card" data-product-slug="laamiyah-ibn-taymiyyah">
                 <a href="e-books/laamiyah-ibn-taymiyyah-e-book.html" class="ebook-cover-link">
                     <div class="ebook-cover">
-                        <img src="images/e-books/laamiyah-ibn-taymiyyah/pdf/preview-1.webp" alt="Cover of Laamiyah Ibn Taymiyyah" loading="lazy" />
+                        <img src="images/e-books/laamiyah-ibn-taymiyyah/pdf/preview-1.webp"
+                            alt="Cover of Laamiyah Ibn Taymiyyah" loading="lazy" />
                     </div>
                 </a>
 
@@ -337,10 +267,7 @@
                         of Ahl al-Sunnah wal-Jama'ah.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/laamiyah-ibn-taymiyyah-e-book.html" class="ebook-view-button">
@@ -348,10 +275,8 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="laamiyah-ibn-taymiyyah"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -362,8 +287,8 @@
             <article class="ebook-card" data-product-slug="haiyyah-ibn-abi-dawud">
                 <a href="e-books/haiyyah-ibn-abi-dawud-e-book.html" class="ebook-cover-link">
                     <div class="ebook-cover">
-                        <img src="images/e-books/haiyyah-ibn-abi-dawud/pdf/preview-1.webp" alt="Cover of Ha'iyyah Ibn Abi Dawud"
-                            loading="lazy" />
+                        <img src="images/e-books/haiyyah-ibn-abi-dawud/pdf/preview-1.webp"
+                            alt="Cover of Ha'iyyah Ibn Abi Dawud" loading="lazy" />
                     </div>
                 </a>
 
@@ -381,10 +306,7 @@
                         of Ahl al-Sunnah wal-Jama'ah.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/haiyyah-ibn-abi-dawud-e-book.html" class="ebook-view-button">
@@ -392,10 +314,8 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="haiyyah-ibn-abi-dawud"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -427,10 +347,7 @@
                         righteous deeds and the reality of worldly life.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/taiyyah-al-ilbiri-e-book.html" class="ebook-view-button">
@@ -438,9 +355,8 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="taiyyah-al-ilbiri" disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -451,8 +367,8 @@
             <article class="ebook-card" data-product-slug="laamiyah-ibn-al-qayyim">
                 <a href="e-books/laamiyah-ibn-al-qayyim-e-book.html" class="ebook-cover-link">
                     <div class="ebook-cover">
-                        <img src="images/e-books/laamiyah-ibn-al-qayyim/pdf/preview-1.webp" alt="Cover of Laamiyah Ibn Al-Qayyim"
-                            loading="lazy" />
+                        <img src="images/e-books/laamiyah-ibn-al-qayyim/pdf/preview-1.webp"
+                            alt="Cover of Laamiyah Ibn Al-Qayyim" loading="lazy" />
                     </div>
                 </a>
 
@@ -472,10 +388,7 @@
                         and practices unsupported by the Qur'an and Sunnah.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/laamiyah-ibn-al-qayyim-e-book.html" class="ebook-view-button">
@@ -483,10 +396,8 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="laamiyah-ibn-al-qayyim"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -516,10 +427,7 @@
                         Ahl al-Sunnah wal-Jama'ah.
                     </p>
 
-                    <div class="ebook-price">
-                        <span class="ebook-price-value">—</span>
-                        <span class="ebook-currency">USD</span>
-                    </div>
+
 
                     <div class="ebook-card-actions">
                         <a href="e-books/al-aqeedah-as-safariniyyah-e-book.html" class="ebook-view-button">
@@ -527,10 +435,8 @@
                             <i class="fas fa-arrow-right"></i>
                         </a>
 
-                        <button class="ebook-cart-button" type="button" data-product-slug="al-aqeedah-as-safariniyyah"
-                            disabled>
-                            <i class="fa-solid fa-cart-plus"></i>
-                            Add to Cart
+                        <button class="ebook-access-button" type="button" disabled>
+                            Checking availability...
                         </button>
                     </div>
                 </div>
@@ -559,8 +465,9 @@
                 </h2>
 
                 <p>
-                    Visit our FAQ for answers about purchases,
-                    downloading again, sharing e-books and more.
+                    Need help accessing an e-book or managing your membership?
+                    Visit our FAQ or manage your Premium subscription
+                    from your profile.
                 </p>
 
             </div>
@@ -575,8 +482,8 @@
                 </a>
 
 
-                <a href="retrieve-download.html" class="ebooks-help-secondary">
-                    Retrieve Download
+                <a href="profile.html?premium=1" class="ebooks-help-secondary">
+                    Manage Premium
                 </a>
 
             </div>
@@ -584,7 +491,7 @@
         </section>
 
 
-        
+
     </main>
 
     <!-- Footer -->
@@ -593,10 +500,10 @@
             <div class="footer-brand">
                 <!-- Custom object tag preserved -->
                 <a class="brand" href="/" aria-label="Islamic Qalam homepage">
-                <svg class="website-logo" aria-hidden="true" focusable="false">
-                    <use href="/images/website-logo.svg#website-logo"></use>
-                </svg>
-            </a>
+                    <svg class="website-logo" aria-hidden="true" focusable="false">
+                        <use href="/images/website-logo.svg#website-logo"></use>
+                    </svg>
+                </a>
 
                 <div>
                     <strong> Islamic Qalam </strong>
@@ -614,8 +521,12 @@
 
                 <a href="contact-us.html"> Contact </a>
 
-                <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank" rel="noopener noreferrer"> Donate
-                </a>
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </a>
+
+                
                 <a href="faq.html"> FAQ </a>
             </div>
 
@@ -653,9 +564,9 @@
     <script src="scripts/global.js"></script>
     <script src="scripts/side-bar.js"></script>
 
-    
 
-    <script src="scripts/store.js"></script>
+
+    <script src="scripts/ebook-access.js"></script>
 </body>
 
 </html>

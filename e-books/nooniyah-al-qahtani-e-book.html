@@ -32,7 +32,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/ebook-details-page.css">
-    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/ebook-access.css">
+    
 
     <link rel="icon" type="image/png" href="/images/website-favicon.png">
 
@@ -79,23 +80,17 @@
                 E-books
             </a>
 
-            <a href="/contact-us.html">
-                Contact
+            <a href="contact-us.html"> Contact </a>
+
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
             </a>
 
             
 
 
-            <button id="navCartButton" class="nav-cart" type="button" aria-label="Open shopping cart"
-                aria-controls="shoppingCart" aria-expanded="false">
-                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-
-                <span>Cart</span>
-
-                <span id="cartItemCount" class="cart-item-count" aria-label="0 items in cart">
-                    0
-                </span>
-            </button>
+            
             <a id="navAccountLink" class="nav-login" href="/login.html">
 
                 <i class="fa-solid fa-right-to-bracket" aria-hidden="true">
@@ -120,69 +115,10 @@
 
     </header>
 
-    <!-- Shopping Cart Overlay -->
-    <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+    
 
 
-    <!-- Shopping Cart -->
-    <aside id="shoppingCart" class="shopping-cart" aria-label="Shopping cart" aria-hidden="true">
-        <div class="cart-header">
-
-            <div>
-                <p class="cart-eyebrow">Your selection</p>
-                <h2>Shopping Cart</h2>
-            </div>
-
-            <button id="closeCartButton" class="cart-close-button" type="button" aria-label="Close shopping cart">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-
-        </div>
-
-
-        <div id="cartContents" class="cart-contents">
-
-            <div id="emptyCartMessage" class="empty-cart-message">
-
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-
-                <h3>Your cart is empty</h3>
-
-                <p>
-                    Add an e-book to begin your order.
-                </p>
-
-            </div>
-
-            <div id="cartItems" class="cart-items"></div>
-
-        </div>
-
-
-        <div id="cartFooter" class="cart-footer" hidden>
-
-            <div class="cart-subtotal">
-
-                <span>Subtotal</span>
-
-                <strong id="cartSubtotal">
-                    </header>.00 USD
-                </strong>
-
-            </div>
-
-            <button id="checkoutButton" class="cart-checkout-button" type="button" disabled>
-                Proceed to Checkout
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </button>
-
-            <p class="cart-checkout-note">
-                Secure payment processing will be provided by Stripe.
-            </p>
-
-        </div>
-
-    </aside>
+    
 
     <!-- Sidebar -->
 
@@ -297,10 +233,11 @@
                             <span>PDF, English DOCX, Arabic DOCX</span>
                         </div>
 
-                        <div>
-                            <strong>Price</strong>
-                            <span class="ebook-product-price">—</span>
-                        </div>
+                        <div class="ebook-tier-info">
+    <span class="ebook-tier-value" aria-live="polite">
+        Checking availability...
+    </span>
+</div>
                     </div> <!-- E-BOOK FORMAT SELECTOR START -->
 
                     <div class="ebook-format-section">
@@ -392,55 +329,7 @@
 
     </main>
 
-    <!-- Resource Support Popup -->
-    <div id="resourceSupportPopup" class="resource-support-popup" role="dialog" aria-modal="true"
-        aria-labelledby="resourceSupportTitle" aria-hidden="true">
-        <div class="resource-support-content">
-
-            <button type="button" class="resource-support-close" aria-label="Close popup">
-                &times;
-            </button>
-
-            <div class="resource-support-icon">
-                <i class="fas fa-book-open" aria-hidden="true"></i>
-            </div>
-
-            <h2 id="resourceSupportTitle">
-                Help Us Keep These Resources Free
-            </h2>
-
-            <p>
-                We are committed to keeping our Islamic e-books and resources
-                freely available for everyone.
-            </p>
-
-            <p>
-                Preparing, translating, designing and publishing these resources
-                takes a significant amount of time and effort. If you benefit from
-                this e-book, please consider donating $5 to help us continue
-                maintaining the website and adding more beneficial resources.
-            </p>
-
-            <p class="resource-support-dua">
-                May Allah reward you for your support.
-            </p>
-
-            <div class="resource-support-buttons">
-
-                <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank" rel="noopener"
-                    class="resource-donate-button">
-                    <i class="fas fa-heart" aria-hidden="true"></i>
-                    Donate $5
-                </a>
-
-                <button type="button" id="continueResourceButton" class="resource-continue-button">
-                    Continue for Free
-                </button>
-
-            </div>
-
-        </div>
-    </div>
+    
 
 
 
@@ -472,8 +361,7 @@
 
                 <a href="/contact-us.html"> Contact </a>
 
-                <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank" rel="noopener noreferrer"> Donate
-                </a>
+                
                 <a href="/faq.html"> FAQ </a>
             </div>
 
@@ -512,8 +400,8 @@
     <script src="/scripts/side-bar.js"></script>
     
     
-    <script src="/scripts/book-script.js"></script>
-    <script src="/scripts/store.js"></script>
+    <script src="/scripts/ebook-gallery.js"></script>
+    <script src="/scripts/ebook-access.js"></script>
 </body>
 
 </html>

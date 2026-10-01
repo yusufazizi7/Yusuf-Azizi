@@ -1,6 +1,7 @@
 /* =========================================================
-   ISLAMIC QALAM ADMIN SALES
+   ISLAMIC QALAM ADMIN — PREMIUM SUBSCRIPTION SALES
    ========================================================= */
+
 const salesLoading =
     document.getElementById(
         "salesLoading"
@@ -11,19 +12,24 @@ const salesContent =
         "salesContent"
     );
 
+const salesEnvironmentBadge =
+    document.getElementById(
+        "salesEnvironmentBadge"
+    );
+
 const salesWeekRevenue =
     document.getElementById(
         "salesWeekRevenue"
     );
 
-const salesWeekOrders =
+const salesWeekPayments =
     document.getElementById(
-        "salesWeekOrders"
+        "salesWeekPayments"
     );
 
-const salesWeekItems =
+const salesActivePremium =
     document.getElementById(
-        "salesWeekItems"
+        "salesActivePremium"
     );
 
 const salesAllTimeRevenue =
@@ -31,9 +37,29 @@ const salesAllTimeRevenue =
         "salesAllTimeRevenue"
     );
 
-const salesOrdersBody =
+const salesRecurringCount =
     document.getElementById(
-        "salesOrdersBody"
+        "salesRecurringCount"
+    );
+
+const salesPassCount =
+    document.getElementById(
+        "salesPassCount"
+    );
+
+const salesEndingCount =
+    document.getElementById(
+        "salesEndingCount"
+    );
+
+const salesPastDueCount =
+    document.getElementById(
+        "salesPastDueCount"
+    );
+
+const salesSubscriptionsBody =
+    document.getElementById(
+        "salesSubscriptionsBody"
     );
 
 const salesSearch =
@@ -46,9 +72,9 @@ const salesStatusFilter =
         "salesStatusFilter"
     );
 
-const salesTypeFilter =
+const salesPlanFilter =
     document.getElementById(
-        "salesTypeFilter"
+        "salesPlanFilter"
     );
 
 const refreshSales =
@@ -57,18 +83,18 @@ const refreshSales =
     );
 
 
-let adminSalesOrders =
+let adminPremiumSubscriptions =
     [];
 
 
 /* =========================================================
-   LOAD SALES
+   LOAD PREMIUM SALES
    ========================================================= */
 
 async function loadAdminSales() {
 
     if (
-        !salesOrdersBody
+        !salesSubscriptionsBody
     ) {
         return;
     }
@@ -78,25 +104,30 @@ async function loadAdminSales() {
         true
     );
 
-    salesLoading.hidden =
-        false;
 
-    salesContent.hidden =
-        true;
+    if (salesLoading) {
+        salesLoading.hidden =
+            false;
+    }
 
 
-    salesOrdersBody.innerHTML = `
-        <tr>
+    if (salesContent) {
+        salesContent.hidden =
+            true;
+    }
 
-            <td
-                colspan="7"
-                class="admin-table-empty"
-            >
-                Loading sales...
-            </td>
 
-        </tr>
-    `;
+    salesSubscriptionsBody.innerHTML =
+        `
+            <tr>
+                <td
+                    colspan="8"
+                    class="admin-table-empty"
+                >
+                    Loading Premium subscriptions...
+                </td>
+            </tr>
+        `;
 
 
     try {
@@ -106,80 +137,107 @@ async function loadAdminSales() {
             error
         } =
             await window.supabaseClient
-                .rpc(
-                    "admin_get_ebook_sales"
+                .functions
+                .invoke(
+                    "admin-premium-sales",
+                    {
+                        body: {
+                            action:
+                                "overview"
+                        }
+                    }
                 );
 
 
-        if (
-            error
-        ) {
+        if (error) {
 
             console.error(
-                "Unable to load e-book sales:",
+                "Unable to load Premium sales:",
                 error
             );
-
 
             throw error;
 
         }
 
 
-        const summary =
-            data?.summary ||
-            {};
+        if (
+            !data ||
+            data.ok !== true
+        ) {
+
+            throw new Error(
+                data?.error ||
+                "Unable to load Premium sales."
+            );
+
+        }
 
 
-        adminSalesOrders =
+        adminPremiumSubscriptions =
             Array.isArray(
-                data?.orders
+                data.subscriptions
             )
-                ? data.orders
+                ? data.subscriptions
                 : [];
 
 
+        renderSalesEnvironment(
+            data.environment
+        );
+
+
         renderSalesSummary(
-            summary
+            data.summary || {}
         );
 
 
         renderAdminSales();
 
-        salesLoading.hidden =
-            true;
 
-        salesContent.hidden =
-            false;
+        if (salesLoading) {
+            salesLoading.hidden =
+                true;
+        }
 
-    } catch (
-    error
-    ) {
+
+        if (salesContent) {
+            salesContent.hidden =
+                false;
+        }
+
+
+    } catch (error) {
 
         console.error(
-            "Sales dashboard failed:",
+            "Premium sales dashboard failed:",
             error
         );
 
-        salesLoading.hidden =
-            true;
 
-        salesContent.hidden =
-            false;
+        if (salesLoading) {
+            salesLoading.hidden =
+                true;
+        }
 
 
-        salesOrdersBody.innerHTML = `
-            <tr>
+        if (salesContent) {
+            salesContent.hidden =
+                false;
+        }
 
-                <td
-                    colspan="7"
-                    class="admin-table-empty"
-                >
-                    Unable to load sales information.
-                </td>
 
-            </tr>
-        `;
+        salesSubscriptionsBody.innerHTML =
+            `
+                <tr>
+                    <td
+                        colspan="8"
+                        class="admin-table-empty"
+                    >
+                        Unable to load Premium subscription information.
+                    </td>
+                </tr>
+            `;
 
     } finally {
 
@@ -188,6 +246,38 @@ async function loadAdminSales() {
         );
 
     }
+
+}
+
+
+/* =========================================================
+   ENVIRONMENT
+   ========================================================= */
+
+function renderSalesEnvironment(
+    environment
+) {
+
+    if (!salesEnvironmentBadge) {
+        return;
+    }
+
+
+    const live =
+        environment ===
+        "live";
+
+
+    salesEnvironmentBadge.textContent =
+        live
+            ? "Live Stripe"
+            : "Test Stripe";
+
+
+    salesEnvironmentBadge.classList.toggle(
+        "live",
+        live
+    );
 
 }
 
@@ -208,43 +298,63 @@ function renderSalesSummary(
     salesWeekRevenue.textContent =
         formatAdminSalesMoney(
             summary.weekRevenueCents || 0,
-            currency,
-            false
+            currency
         );
 
 
-    salesWeekOrders.textContent =
-        String(
-            summary.weekOrders ||
-            0
+    salesWeekPayments.textContent =
+        formatAdminSalesNumber(
+            summary.weekPayments || 0
         );
 
 
-    salesWeekItems.textContent =
-        String(
-            summary.weekItems ||
-            0
+    salesActivePremium.textContent =
+        formatAdminSalesNumber(
+            summary.activePremium || 0
         );
 
 
     salesAllTimeRevenue.textContent =
         formatAdminSalesMoney(
             summary.allTimeRevenueCents || 0,
-            currency,
-            false
+            currency
+        );
+
+
+    salesRecurringCount.textContent =
+        formatAdminSalesNumber(
+            summary.activeRecurring || 0
+        );
+
+
+    salesPassCount.textContent =
+        formatAdminSalesNumber(
+            summary.activePasses || 0
+        );
+
+
+    salesEndingCount.textContent =
+        formatAdminSalesNumber(
+            summary.endingAtPeriodEnd || 0
+        );
+
+
+    salesPastDueCount.textContent =
+        formatAdminSalesNumber(
+            summary.pastDue || 0
         );
 
 }
 
 
 /* =========================================================
-   RENDER ORDERS
+   FILTER + RENDER
    ========================================================= */
 
 function renderAdminSales() {
 
     if (
-        !salesOrdersBody
+        !salesSubscriptionsBody
     ) {
         return;
     }
@@ -263,127 +373,88 @@ function renderAdminSales() {
             ?.value ||
         "all";
 
-    const selectedSaleType =
-        salesTypeFilter
+
+    const selectedPlan =
+        salesPlanFilter
             ?.value ||
-        "non-free";
-        
+        "all";
 
 
-    const orders =
-        adminSalesOrders.filter(
-            order => {
+    const subscriptions =
+        adminPremiumSubscriptions
+            .filter(
+                subscription => {
 
-                const matchesStatus =
-                    selectedStatus ===
-                    "all" ||
-                    order.status ===
-                    selectedStatus;
-
-
-                const itemText =
-                    (
-                        order.items ||
-                        []
-                    )
-                        .map(
-                            item =>
-                                item.title
-                        )
-                        .join(
-                            " "
-                        )
-                        .toLowerCase();
-
-                const totalCents =
-                    Number(
-                        order.totalCents ||
-                        0
-                    );
+                    const matchesStatus =
+                        selectedStatus ===
+                        "all" ||
+                        subscription.status ===
+                        selectedStatus;
 
 
-                const matchesSaleType =
-                    selectedSaleType ===
-                    "all" ||
-
-                    (
-                        selectedSaleType ===
-                        "non-free" &&
-                        totalCents > 0
-                    ) ||
-
-                    (
-                        selectedSaleType ===
-                        "free" &&
-                        totalCents === 0
-                    );
+                    const matchesPlan =
+                        selectedPlan ===
+                        "all" ||
+                        subscription.plan ===
+                        selectedPlan;
 
 
-                const matchesSearch =
-                    !query ||
+                    const searchable =
+                        [
+                            subscription.email,
+                            subscription.subscriptionId,
+                            subscription.customerId
+                        ]
+                            .filter(Boolean)
+                            .join(" ")
+                            .toLowerCase();
 
-                    (
-                        order.email ||
-                        ""
-                    )
-                        .toLowerCase()
-                        .includes(
+
+                    const matchesSearch =
+                        !query ||
+                        searchable.includes(
                             query
-                        ) ||
+                        );
 
-                    (
-                        order.id ||
-                        ""
-                    )
-                        .toLowerCase()
-                        .includes(
-                            query
-                        ) ||
 
-                    itemText.includes(
-                        query
+                    return (
+                        matchesStatus &&
+                        matchesPlan &&
+                        matchesSearch
                     );
 
-
-                return (
-                    matchesStatus &&
-                    matchesSaleType &&
-                    matchesSearch
-                );
-            }
-        );
+                }
+            );
 
 
-    salesOrdersBody.innerHTML =
+    salesSubscriptionsBody.innerHTML =
         "";
 
 
     if (
-        orders.length ===
+        subscriptions.length ===
         0
     ) {
 
-        salesOrdersBody.innerHTML = `
-            <tr>
-
-                <td
-                    colspan="7"
-                    class="admin-table-empty"
-                >
-                    No matching orders found.
-                </td>
-
-            </tr>
-        `;
-
+        salesSubscriptionsBody.innerHTML =
+            `
+                <tr>
+                    <td
+                        colspan="8"
+                        class="admin-table-empty"
+                    >
+                        No matching Premium subscriptions found.
+                    </td>
+                </tr>
+            `;
 
         return;
 
     }
 
 
-    orders.forEach(
-        order => {
+    subscriptions.forEach(
+        subscription => {
 
             const row =
                 document.createElement(
@@ -391,311 +462,196 @@ function renderAdminSales() {
                 );
 
 
-            /* ================= ORDER ================= */
-
-            const orderCell =
-                document.createElement(
-                    "td"
-                );
+            const email =
+                subscription.email ||
+                "Email unavailable";
 
 
-            const shortOrderId =
-                (
-                    order.id ||
-                    ""
-                )
-                    .slice(
-                        0,
-                        8
+            const subscriptionId =
+                subscription.subscriptionId ||
+                "";
+
+
+            const shortSubscriptionId =
+                subscriptionId
+                    ? `${subscriptionId.slice(0, 18)}…`
+                    : "—";
+
+
+            const plan =
+                subscription.plan ===
+                "pass"
+                    ? "pass"
+                    : "recurring";
+
+
+            const planLabel =
+                plan ===
+                "pass"
+                    ? "One-Month Pass"
+                    : "Monthly Premium";
+
+
+            const hasAccess =
+                subscription.hasAccess ===
+                true;
+
+
+            const accessLabel =
+                hasAccess
+                    ? (
+                        subscription.cancelAtPeriodEnd
+                            ? "Active — ending"
+                            : "Active"
                     )
-                    .toUpperCase();
+                    : "No active access";
 
 
-            orderCell.innerHTML = `
-                <div class="admin-sales-order-id">
-
-                    <strong>
-                        #${escapeAdminSalesHtml(
-                shortOrderId
-            )}
-                    </strong>
-
-                    <span title="${escapeAdminSalesHtml(
-                order.id ||
-                ""
-            )}">
-                        ${escapeAdminSalesHtml(
-                order.id ||
-                ""
-            )}
-                    </span>
-
-                </div>
-            `;
+            const status =
+                subscription.status ||
+                "unknown";
 
 
-            /* ================= CUSTOMER ================= */
-
-            const customerCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            customerCell.innerHTML = `
-                <div class="admin-sales-customer">
-
-                    <strong>
-                        ${escapeAdminSalesHtml(
-                order.email ||
-                "No email"
-            )}
-                    </strong>
-
-                    <span
-                        class="admin-sales-customer-type ${order.customerType ===
-                    "account"
-                    ? "account"
-                    : "guest"
-                }"
-                    >
-                        ${order.customerType ===
-                    "account"
-                    ? "Account"
-                    : "Guest"
-                }
-                    </span>
-
-                </div>
-            `;
+            const billingNote =
+                subscription.cancelAtPeriodEnd
+                    ? "Renewal disabled"
+                    : (
+                        plan === "pass"
+                            ? "Ends automatically"
+                            : (
+                                status === "active"
+                                    ? "Renews monthly"
+                                    : formatAdminSalesStatus(
+                                        status
+                                    )
+                            )
+                    );
 
 
-            /* ================= ITEMS ================= */
+            row.innerHTML =
+                `
+                    <td>
+                        <div class="admin-premium-subscriber">
+                            <strong>
+                                ${escapeAdminSalesHtml(
+                                    email
+                                )}
+                            </strong>
 
-            const itemsCell =
-                document.createElement(
-                    "td"
-                );
+                            <span title="${escapeAdminSalesHtml(
+                                subscriptionId
+                            )}">
+                                ${escapeAdminSalesHtml(
+                                    shortSubscriptionId
+                                )}
+                            </span>
+                        </div>
+                    </td>
 
+                    <td>
+                        <span class="admin-premium-plan-badge ${plan}">
+                            ${escapeAdminSalesHtml(
+                                planLabel
+                            )}
+                        </span>
+                    </td>
 
-            itemsCell.className =
-                "admin-sales-items-cell";
+                    <td>
+                        <span class="admin-premium-access-badge ${
+                            hasAccess
+                                ? "active"
+                                : "inactive"
+                        }">
+                            ${escapeAdminSalesHtml(
+                                accessLabel
+                            )}
+                        </span>
+                    </td>
 
+                    <td>
+                        <div class="admin-premium-billing">
+                            <span class="admin-premium-status ${escapeAdminSalesHtml(
+                                status
+                            )}">
+                                ${escapeAdminSalesHtml(
+                                    formatAdminSalesStatus(
+                                        status
+                                    )
+                                )}
+                            </span>
 
-            const items =
-                Array.isArray(
-                    order.items
-                )
-                    ? order.items
-                    : [];
-
-
-            if (
-                items.length ===
-                0
-            ) {
-
-                itemsCell.textContent =
-                    "—";
-
-            } else {
-
-                items.forEach(
-                    item => {
-
-                        const itemRow =
-                            document.createElement(
-                                "div"
-                            );
-
-
-                        itemRow.className =
-                            "admin-sales-item";
-
-
-                        itemRow.innerHTML = `
                             <span>
                                 ${escapeAdminSalesHtml(
-                            item.title ||
-                            "E-book"
-                        )}
+                                    billingNote
+                                )}
                             </span>
+                        </div>
+                    </td>
 
-                            <small>
+                    <td>
+                        <strong class="admin-premium-total-paid">
+                            ${escapeAdminSalesHtml(
+                                formatAdminSalesMoney(
+                                    subscription.totalPaidCents || 0,
+                                    subscription.currency || "usd"
+                                )
+                            )}
+                        </strong>
+                    </td>
+
+                    <td>
+                        <span class="admin-premium-payment-count">
+                            ${escapeAdminSalesHtml(
+                                formatAdminSalesNumber(
+                                    subscription.paymentCount || 0
+                                )
+                            )}
+                        </span>
+                    </td>
+
+                    <td>
+                        <div class="admin-premium-date">
+                            <strong>
                                 ${escapeAdminSalesHtml(
-                            formatAdminSalesMoney(
-                                item.priceCents ||
-                                0,
-                                order.currency
-                            )
-                        )}
-                            </small>
-                        `;
+                                    formatAdminSalesDate(
+                                        subscription.paidThrough
+                                    )
+                                )}
+                            </strong>
 
-
-                        itemsCell.appendChild(
-                            itemRow
-                        );
-
-                    }
-                );
-
-            }
-
-
-            /* ================= TOTAL ================= */
-
-            const totalCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            totalCell.innerHTML = `
-                <strong class="admin-sales-total">
-                    ${escapeAdminSalesHtml(
-                formatAdminSalesMoney(
-                    order.totalCents ||
-                    0,
-                    order.currency
-                )
-            )}
-                </strong>
-            `;
-
-
-            /* ================= PAYMENT ================= */
-
-            const paymentCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            const provider =
-                order.paymentProvider ===
-                    "free"
-                    ? "Free"
-                    : "Stripe";
-
-
-            paymentCell.innerHTML = `
-                <div class="admin-sales-payment">
-
-                    <strong>
-                        ${provider}
-                    </strong>
-
-                    ${order.paymentSessionReference
-                    ? `
-                                <span
-                                    title="${escapeAdminSalesHtml(
-                        order.paymentSessionReference
-                    )}"
-                                >
-                                    ${escapeAdminSalesHtml(
-                        order.paymentSessionReference
-                            .slice(
-                                0,
-                                14
-                            )
-                    )}…
-                                </span>
-                            `
-                    : ""
-                }
-
-                </div>
-            `;
-
-
-            /* ================= STATUS ================= */
-
-            const statusCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            statusCell.innerHTML = `
-                <span
-                    class="admin-order-status ${escapeAdminSalesHtml(
-                order.status ||
-                "unknown"
-            )}"
-                >
-                    ${escapeAdminSalesHtml(
-                order.status ||
-                "unknown"
-            )}
-                </span>
-
-                ${order.receiptEmailSent
-                    ? `
-                            <span class="admin-sales-receipt">
-                                <i
-                                    class="fa-regular fa-envelope"
-                                    aria-hidden="true"
-                                ></i>
-
-                                Receipt sent
+                            <span>
+                                ${
+                                    subscription.lastPaymentAt
+                                        ? `Last paid ${escapeAdminSalesHtml(
+                                            formatAdminSalesDate(
+                                                subscription.lastPaymentAt
+                                            )
+                                        )}`
+                                        : "No paid invoice"
+                                }
                             </span>
-                        `
-                    : ""
-                }
-            `;
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="admin-premium-date">
+                            <strong>
+                                ${escapeAdminSalesHtml(
+                                    formatAdminSalesDate(
+                                        subscription.createdAt
+                                    )
+                                )}
+                            </strong>
+
+                            <span>
+                                Stripe subscription
+                            </span>
+                        </div>
+                    </td>
+                `;
 
 
-            /* ================= DATE ================= */
-
-            const dateCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            dateCell.innerHTML = `
-                <div class="admin-sales-date">
-
-                    <strong>
-                        ${escapeAdminSalesHtml(
-                formatAdminSalesDate(
-                    order.createdAt ||
-                    order.paidAt
-                )
-            )}
-                    </strong>
-
-                    ${order.paidAt
-                    ? `
-                                <span>
-                                    Paid:
-                                    ${escapeAdminSalesHtml(
-                        formatAdminSalesDate(
-                            order.paidAt
-                        )
-                    )}
-                                </span>
-                            `
-                    : ""
-                }
-
-                </div>
-            `;
-
-
-            row.append(
-                orderCell,
-                customerCell,
-                itemsCell,
-                totalCell,
-                paymentCell,
-                statusCell,
-                dateCell
-            );
-
-
-            salesOrdersBody.appendChild(
+            salesSubscriptionsBody.appendChild(
                 row
             );
 
@@ -706,110 +662,161 @@ function renderAdminSales() {
 
 
 /* =========================================================
-   FORMAT MONEY
+   FORMATTERS
    ========================================================= */
 
 function formatAdminSalesMoney(
     cents,
-    currency = "usd",
-    zeroAsFree = true
+    currency = "usd"
 ) {
 
-    if (
-        Number(cents) === 0 &&
-        zeroAsFree
-    ) {
+    const amount =
+        (
+            Number(cents) ||
+            0
+        ) / 100;
 
-        return "Free";
+
+    try {
+
+        return new Intl.NumberFormat(
+            "en-AU",
+            {
+                style:
+                    "currency",
+                currency:
+                    String(currency)
+                        .toUpperCase(),
+                minimumFractionDigits:
+                    2
+            }
+        )
+            .format(
+                amount
+            );
+
+    } catch {
+
+        return `$${amount.toFixed(2)}`;
 
     }
-
-
-    return new Intl.NumberFormat(
-        "en-US",
-        {
-            style:
-                "currency",
-
-            currency:
-                String(
-                    currency ||
-                    "usd"
-                )
-                    .toUpperCase()
-        }
-    )
-        .format(
-            Number(
-                cents
-            ) /
-            100
-        );
 
 }
 
 
-/* =========================================================
-   FORMAT DATE
-   ========================================================= */
+function formatAdminSalesNumber(
+    value
+) {
+
+    return new Intl.NumberFormat(
+        "en-AU"
+    )
+        .format(
+            Number(value) ||
+            0
+        );
+
+}
+
 
 function formatAdminSalesDate(
     value
 ) {
 
+    if (!value) {
+        return "—";
+    }
+
+
+    const date =
+        new Date(
+            value
+        );
+
+
     if (
-        !value
+        Number.isNaN(
+            date.getTime()
+        )
     ) {
         return "—";
     }
 
 
-    return new Date(
-        value
-    )
-        .toLocaleString(
-            undefined,
-            {
-                dateStyle:
-                    "medium",
-
-                timeStyle:
-                    "short"
-            }
-        );
+    return date.toLocaleDateString(
+        "en-AU",
+        {
+            day:
+                "numeric",
+            month:
+                "short",
+            year:
+                "numeric"
+        }
+    );
 
 }
 
 
-/* =========================================================
-   ESCAPE HTML
-   ========================================================= */
+function formatAdminSalesStatus(
+    value
+) {
+
+    const labels = {
+        active:
+            "Active",
+        past_due:
+            "Past due",
+        canceled:
+            "Cancelled",
+        incomplete:
+            "Incomplete",
+        incomplete_expired:
+            "Expired",
+        trialing:
+            "Trialling",
+        unpaid:
+            "Unpaid",
+        paused:
+            "Paused"
+    };
+
+
+    return labels[value] ||
+        String(value || "Unknown")
+            .replaceAll(
+                "_",
+                " "
+            );
+
+}
+
 
 function escapeAdminSalesHtml(
     value
 ) {
 
     return String(
-        value
+        value ?? ""
     )
-        .replace(
-            /&/g,
+        .replaceAll(
+            "&",
             "&amp;"
         )
-        .replace(
-            /</g,
+        .replaceAll(
+            "<",
             "&lt;"
         )
-        .replace(
-            />/g,
+        .replaceAll(
+            ">",
             "&gt;"
         )
-        .replace(
-            /"/g,
+        .replaceAll(
+            "\"",
             "&quot;"
         )
-        .replace(
-            /'/g,
+        .replaceAll(
+            "'",
             "&#039;"
         );
 
@@ -817,16 +824,14 @@ function escapeAdminSalesHtml(
 
 
 /* =========================================================
-   REFRESH BUTTON
+   REFRESH
    ========================================================= */
 
 function setSalesRefreshState(
     loading
 ) {
 
-    if (
-        !refreshSales
-    ) {
+    if (!refreshSales) {
         return;
     }
 
@@ -842,15 +847,13 @@ function setSalesRefreshState(
                     class="fa-solid fa-circle-notch fa-spin"
                     aria-hidden="true"
                 ></i>
-
-                Loading
+                Refreshing
             `
             : `
                 <i
                     class="fa-solid fa-rotate"
                     aria-hidden="true"
                 ></i>
-
                 Refresh
             `;
 
@@ -874,7 +877,8 @@ salesStatusFilter
         renderAdminSales
     );
 
-salesTypeFilter
+
+salesPlanFilter
     ?.addEventListener(
         "change",
         renderAdminSales

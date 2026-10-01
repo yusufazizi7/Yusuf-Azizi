@@ -1,0 +1,16 @@
+{
+    id:
+        "REPLACE-WITH-POEM-ID",
+
+    title:
+        "REPLACE WITH POEM TITLE",
+
+    url:
+        "/poems/REPLACE-WITH-POEM-ID.html",
+
+    earlyAccess:
+        true,
+
+    releaseAt:
+        "2026-10-15T00:00:00+08:00"
+},

@@ -1,6 +1,21 @@
 document.addEventListener(
     "DOMContentLoaded",
-    () => {
+    async () => {
+
+        if (
+            window.iqEarlyAccessPoemReady
+        ) {
+
+            const contentReady =
+                await window
+                    .iqEarlyAccessPoemReady;
+
+
+            if (!contentReady) {
+                return;
+            }
+
+        }
 
         const poemContainer =
             document.querySelector(

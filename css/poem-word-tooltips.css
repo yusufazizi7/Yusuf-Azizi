@@ -1,0 +1,106 @@
+/* Islamic Qalam — word-by-word meanings, sidebar Premium feature.
+   All names are scoped so future Premium settings can use the same pattern. */
+#iq-words-setting { margin-top: .75rem; }
+#poem-settings .iq-premium-feature { width: 100%; }
+#poem-settings .iq-feature-button {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: .8rem; width: 100%; padding: .8rem .65rem;
+    border: 1px solid rgba(180, 144, 78, .36); border-radius: 12px;
+    background: linear-gradient(115deg, rgba(194, 149, 68, .10), rgba(194, 149, 68, .025));
+    color: inherit; cursor: pointer; font: inherit; text-align: left;
+    transition: border-color .18s ease, background-color .18s ease;
+}
+#poem-settings .iq-feature-button:hover:not(:disabled) {
+    border-color: rgba(187, 143, 65, .76);
+    background: rgba(194, 149, 68, .13);
+}
+#poem-settings .iq-feature-button:disabled { cursor: wait; opacity: .68; }
+#poem-settings .iq-feature-copy { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+#poem-settings .iq-feature-heading { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; font-weight: 680; font-size: .89rem; line-height: 1.45; }
+.iq-words-badge {
+    display: inline-flex; align-items: center; gap: .28rem;
+    font-family: inherit; font-size: .61rem; line-height: 1;
+    font-weight: 800; letter-spacing: .055em; text-transform: uppercase;
+    padding: .31rem .43rem; border-radius: 5px;
+    color: #785420; background: #f5e5c2; border: 1px solid #dfbe80;
+}
+#poem-settings .iq-feature-description { font-size: .76rem; line-height: 1.4; opacity: .69; }
+#poem-settings .iq-feature-switch {
+    flex: 0 0 39px; width: 39px; height: 23px; padding: 3px; border-radius: 99px;
+    background: #aaa9a4; transition: background .2s ease;
+}
+#poem-settings .iq-feature-switch-thumb {
+    display: block; width: 17px; height: 17px; border-radius: 50%; background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s ease;
+}
+#poem-settings .iq-feature-button[aria-checked="true"] .iq-feature-switch { background: #ae8135; }
+#poem-settings .iq-feature-button[aria-checked="true"] .iq-feature-switch-thumb { transform: translateX(16px); }
+#poem-settings .iq-feature-cta {
+    flex: 0 0 auto; color: #a67829; font-size: .76rem; font-weight: 760;
+    white-space: nowrap; display: inline-flex; align-items: center; gap: .35rem;
+}
+#poem-settings [hidden], .iq-premium-modal[hidden] { display: none !important; }
+#poem-settings .iq-feature-status { margin: .45rem .3rem 0; font-size: .73rem; line-height: 1.4; opacity: .72; }
+#poem-settings .iq-feature-button:focus-visible, .iq-word:focus-visible,
+.iq-premium-modal :focus-visible { outline: 3px solid #cca152; outline-offset: 3px; }
+/* Keep the original Arabic typography, spacing and font unchanged. No underline
+   and no question-mark cursor. The hover/tap tooltip still functions. */
+.arabic-text .iq-word {
+    display: inline; font: inherit; direction: inherit;
+    border: 0 !important; text-decoration: none !important; cursor: text;
+    border-radius: 2px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.arabic-text .iq-word:hover, .arabic-text .iq-word:focus-visible,
+.arabic-text .iq-word.iq-word-selected { background-color: rgba(199, 158, 77, .13); }
+.iq-word-tooltip {
+    position: fixed; z-index: 2147483000;
+    max-width: min(280px, calc(100vw - 28px)); min-width: 80px;
+    padding: 10px 13px; color: #fff9eb; background: #20342b;
+    border: 1px solid rgba(201, 172, 111, .48); border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.26);
+    font: 600 14px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    direction: ltr; text-align: center; pointer-events: none;
+}
+.iq-word-tooltip[hidden] { display: none !important; }
+.iq-word-tooltip::after {
+    position: absolute; content: ""; width: 8px; height: 8px;
+    background: #20342b; border-right: 1px solid rgba(201, 172, 111, .48);
+    border-bottom: 1px solid rgba(201, 172, 111, .48);
+    left: calc(50% - 4px); bottom: -5px; transform: rotate(45deg);
+}
+.iq-word-tooltip.iq-tooltip-below::after { bottom: auto; top: -5px; transform: rotate(225deg); }
+/* The guest popup is above both the site header and settings sidebar. */
+body.iq-premium-modal-open { overflow: hidden; }
+.iq-premium-modal { position: fixed; inset: 0; z-index: 2147483100; display: grid; place-items: center; padding: 1rem; }
+.iq-premium-modal-backdrop { position: absolute; inset: 0; background: rgba(16,29,24,.70); backdrop-filter: blur(4px); }
+.iq-premium-dialog {
+    position: relative; width: min(100%, 425px); padding: clamp(1.4rem, 4vw, 2.15rem);
+    border-radius: 19px; border: 1px solid rgba(201,172,111,.54);
+    background: #fcfbf7; color: #24372f; box-shadow: 0 22px 75px rgba(0,0,0,.34);
+    text-align: center; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.iq-premium-modal-close {
+    position: absolute; top: .8rem; right: .8rem; width: 33px; height: 33px;
+    border: 0; border-radius: 50%; background: #f0eee8; color: #3a443d;
+    font-size: 16px; cursor: pointer;
+}
+.iq-premium-modal-icon {
+    display: grid; place-items: center; width: 59px; height: 59px; margin: .3rem auto 1rem;
+    border-radius: 17px; background: #f8ead0; color: #aa7a2b; font-size: 1.55rem;
+}
+.iq-premium-modal-eyebrow { margin: 0 0 .55rem; color: #a47830; font-size: .72rem; font-weight: 820; letter-spacing: .14em; }
+.iq-premium-dialog h2 { font-size: 1.53rem; line-height: 1.25; margin: 0 0 .8rem; color: #22362b; }
+.iq-premium-dialog p#iq-words-modal-description { margin: 0 auto 1.45rem; max-width: 34ch; line-height: 1.6; font-size: .93rem; color: #56645b; }
+.iq-premium-modal-primary {
+    display: flex; align-items: center; justify-content: center; gap: .65rem;
+    min-height: 46px; padding: .7rem 1rem; background: #a37c3d; border-radius: 9px;
+    color: #fff !important; font-size: .94rem; font-weight: 750; text-decoration: none;
+}
+.iq-premium-modal-primary:hover { background: #89642e; }
+.iq-premium-modal-later { margin-top: .8rem; padding: .45rem .9rem; border: 0; background: transparent; color: #59665c; cursor: pointer; font-family: inherit; font-size: .86rem; font-weight: 600; }
+@media (max-width: 500px) { #poem-settings .iq-feature-button { flex-wrap: wrap; } .iq-premium-dialog { padding: 1.6rem 1.25rem; } }
+@media (prefers-reduced-motion: reduce) {
+    #poem-settings .iq-feature-button, #poem-settings .iq-feature-switch,
+    #poem-settings .iq-feature-switch-thumb { transition: none; }
+}

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="noindex">
+    <title>Premium Checkout | Islamic Qalam</title>
+
+    <link rel="icon" type="image/png" href="/images/website-favicon.png">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/premium-checkout.css">
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+
+    <!-- Always load Stripe.js from Stripe. -->
+    <script src="https://js.stripe.com/dahlia/stripe.js"></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="brand">
+            <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                <svg class="website-logo" aria-hidden="true">
+                    <use href="/images/website-logo.svg#website-logo">
+                    </use>
+                </svg>
+            </a>
+            <span class="brand-name">Islamic Qalam</span>
+        </div>
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+
+            <a href="/index.html#poetry-library">Poetry</a>
+            <a href="/quran.html">Qur'an</a>
+            <a href="/videos.html">Videos</a>
+            <a href="/e-books.html">E-books</a>
+            <a href="/contact-us.html">Contact</a>
+
+            <a id="navAccountLink" class="nav-login" href="/login.html">
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+                <span id="navAccountText">Login</span>
+            </a>
+
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                <span>Premium</span>
+            </a>
+        </nav>
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+    </header>
+
+    <main class="premium-checkout-main">
+
+        <a href="/premium.html" class="checkout-back-link">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back to Premium
+        </a>
+
+        <div class="checkout-heading">
+            <span class="checkout-eyebrow">
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                Islamic Qalam Premium
+            </span>
+
+            <h1>Complete your membership</h1>
+
+            <p>
+                Securely activate your Premium e-book access.
+                Choose how you'd like to pay.
+            </p>
+        </div>
+
+        <div class="checkout-layout">
+
+            <!-- LEFT COLUMN -->
+
+            <section class="checkout-payment-card" aria-labelledby="checkoutPaymentTitle">
+
+                <h2 id="checkoutPaymentTitle">
+                    Your payment
+                </h2>
+
+                <fieldset class="checkout-plan-selector">
+                    <legend>Membership option</legend>
+
+                    <a id="checkoutRecurringPlan" class="checkout-plan-choice"
+                        href="/premium-checkout.html?plan=recurring">
+
+                        <span class="checkout-plan-radio" aria-hidden="true"></span>
+
+                        <span class="checkout-plan-copy">
+                            <strong>Monthly Premium</strong>
+                            <small>
+                                $7.90 USD, billed monthly
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                    </a>
+
+                    <a id="checkoutPassPlan" class="checkout-plan-choice" href="/premium-checkout.html?plan=pass">
+
+                        <span class="checkout-plan-radio" aria-hidden="true"></span>
+
+                        <span class="checkout-plan-copy">
+                            <strong>30-Day Premium Pass</strong>
+                            <small>
+                                $7.90 USD, one-time payment
+                            </small>
+                        </span>
+
+                        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                    </a>
+                </fieldset>
+
+                <div class="checkout-section-divider"></div>
+
+                <h3>Account</h3>
+
+                <div class="checkout-account">
+                    <span class="checkout-account-icon">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                    </span>
+
+                    <div>
+                        <small>Signed in as</small>
+                        <strong id="checkoutAccountEmail">
+                            Checking your account...
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="checkout-section-divider"></div>
+
+                <h3>Payment method</h3>
+
+                <p class="checkout-support-text">
+                    Your card details are processed securely
+                    by Stripe.
+                </p>
+
+                <div id="checkoutLoading" class="checkout-loading" role="status">
+                    <span class="checkout-spinner" aria-hidden="true"></span>
+                    Preparing secure payment...
+                </div>
+
+                <!-- Stripe mounts its secure iframe here. -->
+                <form id="premiumPaymentForm" hidden>
+
+                    <div id="payment-element"></div>
+
+                    <label id="checkoutRenewalLabel" class="checkout-confirmation" hidden>
+                        <input id="checkoutRenewalConsent" type="checkbox">
+                        <span>
+                            I understand that Monthly Premium
+                            automatically renews at $7.90 USD
+                            each month until I cancel.
+                        </span>
+                    </label>
+
+                    <p id="checkoutPaymentError" class="checkout-error" role="alert" aria-live="polite" hidden></p>
+
+                    <button id="checkoutPayButton" class="checkout-pay-button" type="submit" disabled>
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        <span>Preparing payment...</span>
+                    </button>
+
+                    <p class="checkout-secure-note">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        Secure payment powered by Stripe
+                    </p>
+                </form>
+
+                <div id="checkoutUnavailable" class="checkout-unavailable" role="alert" hidden>
+                    <p id="checkoutUnavailableText"></p>
+                    <a href="/premium.html">
+                        Return to Premium
+                    </a>
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN -->
+
+            <aside class="checkout-summary" aria-labelledby="checkoutSummaryTitle">
+
+                <div class="checkout-summary-header">
+                    <span class="checkout-summary-icon">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    </span>
+
+                    <div>
+                        <span class="checkout-summary-eyebrow">
+                            Your order
+                        </span>
+                        <h2 id="checkoutSummaryTitle">
+                            Islamic Qalam Premium
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="checkout-summary-plan">
+                    <div>
+                        <strong id="checkoutSummaryPlan">
+                            Monthly Premium
+                        </strong>
+                        <p id="checkoutSummaryDescription">
+                            Automatically renews each month.
+                        </p>
+                    </div>
+
+                    <strong id="checkoutSummaryPrice">
+                        $7.90
+                    </strong>
+                </div>
+
+                <div class="checkout-summary-total">
+                    <strong>Amount due today</strong>
+                    <strong id="checkoutSummaryTotal">
+                        Calculating...
+                    </strong>
+                </div>
+
+                <p id="checkoutSummaryRenewal" class="checkout-renewal-note">
+                    Renews at $7.90 USD per month
+                    until cancelled.
+                </p>
+
+                <div class="checkout-summary-divider"></div>
+
+                <h3>Included with your membership</h3>
+
+                <ul class="checkout-benefits">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Full Premium e-book library
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Available PDF and DOCX formats
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        New Premium additions during access
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Secure downloads through your account
+                    </li>
+                </ul>
+
+                <div class="checkout-summary-help">
+                    <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                    <span>
+                        Questions?
+                        <a href="/contact-us.html">
+                            Contact us
+                        </a>
+                    </span>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="footer site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+                    <svg class="website-logo" aria-hidden="true">
+                        <use href="/images/website-logo.svg#website-logo">
+                        </use>
+                    </svg>
+                </a>
+                <div>
+                    <strong>Islamic Qalam</strong>
+                    <p>
+                        Classical works, thoughtfully presented.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="/e-books.html">E-books</a>
+                <a href="/premium.html">Premium</a>
+                <a href="/contact-us.html">Contact</a>
+                <a href="/faq.html">FAQ</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="current-year">2026</span>
+                Islamic Qalam. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
+    <script src="/supabase/supabase-client.js"></script>
+    <script src="/scripts/global.js"></script>
+    <script src="/scripts/side-bar.js"></script>
+    <script src="/scripts/premium-checkout.js"></script>
+</body>
+
+</html>

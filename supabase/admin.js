@@ -2946,6 +2946,11 @@ const adminPanels = {
             "salesPanel"
         ),
 
+    grants:
+        document.getElementById(
+            "grantsPanel"
+        ),
+
     videos:
         document.getElementById(
             "videosPanel"

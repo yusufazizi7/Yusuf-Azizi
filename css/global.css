@@ -2165,3 +2165,144 @@ label {
 .website-logo:hover {
     color: var(--accent-color);
 }
+
+
+/* ================= NAVBAR PREMIUM BUTTON ================= */
+
+.site-header .navbar .nav-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: auto;
+    padding: 0.75rem 1.15rem;
+
+    border: 1px solid #d7b36b;
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #f2d794,
+        #c99a46
+    );
+
+    color: #193b2a;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: 0 3px 12px rgba(191, 148, 70, 0.2);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.site-header .navbar .nav-premium:hover {
+    background: linear-gradient(
+        135deg,
+        #ffe6a9,
+        #dfb564
+    );
+    color: #193b2a;
+
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(191, 148, 70, 0.3);
+}
+
+.site-header .navbar .nav-premium i {
+    color: inherit;
+    font-size: 0.95rem;
+}
+
+/* Keep hidden until membership has been checked. */
+.site-header .navbar .nav-premium[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .site-header .navbar .nav-premium {
+        width: 100%;
+        justify-content: center;
+        margin-top: 6px;
+    }
+}
+
+
+/* =========================================================
+   HOMEPAGE POEM EARLY ACCESS
+========================================================= */
+
+.early-access-poem-card {
+  border-color:
+    rgba(176, 140, 72, 0.38);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 253, 248, 0.98),
+      rgba(247, 238, 215, 0.96)
+    );
+}
+
+
+.poem-early-access-badge {
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
+
+  z-index: 3;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0.4rem 0.65rem;
+
+  border-radius: 999px;
+
+  color: #80591c;
+
+  background: rgba(176, 140, 72, 0.15);
+
+  font-size: 0.63rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.055em;
+
+  text-transform: uppercase;
+}
+
+
+.poem-early-access-badge i {
+  color: #a87929;
+}
+
+
+.poem-release-date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--home-brown-dark) !important;
+
+  font-size: 0.78rem !important;
+
+  font-weight: 800;
+}
+
+
+.early-access-poem-card .card-link {
+  color: #8e6524;
+}

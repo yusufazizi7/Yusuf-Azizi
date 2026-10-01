@@ -459,3 +459,157 @@ if (
 ===================================== */
 
 updateNavbarAccount();
+
+
+
+/* ==========================================
+   ISLAMIC QALAM — PREMIUM NAVIGATION
+   ========================================== */
+
+(() => {
+    const client = window.supabaseClient;
+    const premiumLink = document.getElementById(
+        "navPremiumLink"
+    );
+
+    if (!client || !premiumLink) return;
+
+    let requestVersion = 0;
+
+    async function updatePremiumNav() {
+
+        const version =
+            ++requestVersion;
+
+
+        // Keep it hidden until we know the user's status.
+        premiumLink.hidden =
+            true;
+
+
+        try {
+
+            const {
+                data: {
+                    session
+                },
+                error: authError
+            } =
+                await client
+                    .auth
+                    .getSession();
+
+
+            if (
+                version !==
+                requestVersion
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                authError
+            ) {
+
+                console.error(
+                    "Unable to check login status:",
+                    authError
+                );
+
+                return;
+
+            }
+
+
+            const user =
+                session?.user ??
+                null;
+
+
+            // Guests can see the Premium offer.
+            if (
+                !user
+            ) {
+
+                premiumLink.hidden =
+                    false;
+
+                return;
+
+            }
+
+
+            // Check the signed-in user's membership.
+            const {
+                data,
+                error
+            } =
+                await client
+                    .functions
+                    .invoke(
+                        "get-ebook-access",
+                        {
+                            body: {
+                                action:
+                                    "status"
+                            }
+                        }
+                    );
+
+
+            if (
+                version !==
+                requestVersion
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                error
+            ) {
+
+                console.error(
+                    "Unable to check Premium membership:",
+                    error
+                );
+
+                return;
+
+            }
+
+
+            // Free members: show.
+            // Premium members: hide.
+            premiumLink.hidden =
+                data?.hasPremium !==
+                false;
+
+
+        } catch (
+        error
+        ) {
+
+            console.error(
+                "Premium navigation error:",
+                error
+            );
+
+        }
+
+    }
+
+    // Initial check whenever the page opens.
+    updatePremiumNav();
+
+    // Update if the user signs in or out
+    // without a full page reload.
+    client.auth.onAuthStateChange(() => {
+        setTimeout(updatePremiumNav, 0);
+    });
+})();

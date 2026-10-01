@@ -1,711 +1,1395 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
+
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
     <title>My Profile | Islamic Qalam</title>
+
+
 
     <meta name="description" content="Manage your Islamic Qalam account and profile." />
 
+
+
     <link rel="icon" type="image/png" href="images/website-favicon.png" />
 
+
+
     <!-- Global Islamic Qalam styling -->
+
     <link rel="stylesheet" href="css/global.css" />
 
+
+
     <!-- Profile styling -->
+
     <link rel="stylesheet" href="css/profile.css" />
 
+
+
     <!-- Font Awesome -->
+
     <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous"></script>
+
 </head>
 
+
+
 <body>
+
     <!-- ================= HEADER ================= -->
 
+
+
     <header class="site-header">
+
         <div class="brand">
+
             <!-- Custom object tag preserved -->
+
             <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+
                 <svg class="website-logo" aria-hidden="true" focusable="false">
+
                     <use href="/images/website-logo.svg#website-logo"></use>
+
                 </svg>
+
             </a>
 
+
+
             <span class="brand-name"> Islamic Qalam </span>
+
         </div>
 
+
+
         <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+
             <a href="index.html#poetry-library"> Poetry </a>
+
+
 
             <a href="quran.html"> Qur'an </a>
 
+
+
             <a href="videos.html"> Videos </a>
+
+
 
             <a href="e-books.html"> E-books </a>
 
+
+
             <a href="contact-us.html"> Contact </a>
+
+
+
+
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+            
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+            
+                <span>Premium</span>
+            
+            </a>
+
+
+            <a id="navAccountLink" class="nav-login" href="login.html">
+
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+
+
+                <span id="navAccountText"> Login </span>
+
+            </a>
 
             
 
-            <a id="navAccountLink" class="nav-login" href="login.html">
-                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
-
-                <span id="navAccountText"> Login </span>
-            </a>
         </nav>
+
+
 
         <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
             aria-controls="primary-navigation" aria-expanded="false">
+
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
+
         </button>
+
     </header>
+
+
 
     <!-- ================= LOADING ================= -->
 
+
+
     <div id="profileLoading" class="profile-loading">
+
         <div class="profile-spinner"></div>
 
+
+
         <p>Loading your profile...</p>
+
     </div>
+
+
 
     <!-- ================= PROFILE ================= -->
 
+
+
     <main id="profilePage" class="profile-page" hidden>
+
         <section class="profile-layout">
+
             <!-- ================= PROFILE SIDEBAR ================= -->
 
+
+
             <aside class="profile-summary">
+
                 <div class="profile-avatar">
+
                     <img id="profileAvatar" src="/images/avatars/default-male.png" alt="Profile avatar" />
+
                 </div>
+
+
 
                 <h1 id="profileDisplayHeading">User</h1>
 
+
+
                 <p id="profileUsernameHeading" class="profile-username">@username</p>
 
+
+
                 <span id="verificationBadge" class="verification-badge">
+
                     <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
 
+
+
                     Verified
+
                 </span>
+
+
 
                 <div class="profile-summary-divider"></div>
 
+
+
                 <div class="profile-summary-details">
+
                     <div class="profile-summary-row">
+
                         <span class="summary-icon">
+
                             <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+
                         </span>
 
+
+
                         <div>
+
                             <span> Member since </span>
 
+
+
                             <strong id="memberSince"> — </strong>
+
                         </div>
+
                     </div>
+
+
 
                     <div class="profile-summary-row">
+
                         <span class="summary-icon">
+
                             <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
                         </span>
 
+
+
                         <div>
+
                             <span> Comments </span>
 
+
+
                             <strong id="commentCount"> 0 </strong>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
 
                 <!-- ================= ACCOUNT NAVIGATION ================= -->
 
+
+
                 <nav class="profile-navigation" aria-label="Profile sections">
+
                     <button class="profile-nav-button active" type="button" data-profile-section="account">
+
                         <span class="profile-nav-icon">
+
                             <i class="fa-regular fa-user" aria-hidden="true"></i>
+
                         </span>
+
+
 
                         <span class="profile-nav-label"> Account </span>
 
+
+
                         <i class="fa-solid fa-chevron-right profile-nav-arrow" aria-hidden="true"></i>
+
                     </button>
 
+
+
                     <button class="profile-nav-button" type="button" data-profile-section="comments">
+
                         <span class="profile-nav-icon">
+
                             <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
                         </span>
+
+
 
                         <span class="profile-nav-label"> My Comments </span>
 
+
+
                         <span id="commentsNavCount" class="profile-nav-count"> 0 </span>
 
+
+
                         <i class="fa-solid fa-chevron-right profile-nav-arrow" aria-hidden="true"></i>
+
                     </button>
 
+
+
                     <button class="profile-nav-button" type="button" data-profile-section="messages">
+
                         <span class="profile-nav-icon">
+
                             <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
                         </span>
+
+
 
                         <span class="profile-nav-label"> Messages </span>
 
+
+
                         <span id="messagesNavCount" class="profile-nav-count" hidden>
+
                             0
+
                         </span>
+
+
 
                         <i class="fa-solid fa-chevron-right profile-nav-arrow" aria-hidden="true"></i>
+
                     </button>
 
-                    <button class="profile-nav-button" type="button" data-profile-section="purchases">
+
+
+
+
+                    <button class="profile-nav-button" type="button" data-profile-section="premium">
+
                         <span class="profile-nav-icon">
-                            <i class="fa-solid fa-bag-shopping" aria-hidden="true"> </i>
+
+                            <i class="fa-solid fa-crown" aria-hidden="true"></i>
+
                         </span>
 
-                        <span class="profile-nav-label"> Purchased Items </span>
 
-                        <span id="purchasesNavCount" class="profile-nav-count" hidden>
-                            0
+
+                        <span class="profile-nav-label">
+
+                            Premium Membership
+
                         </span>
 
-                        <i class="fa-solid fa-chevron-right profile-nav-arrow" aria-hidden="true">
-                        </i>
+
+
+                        <i class="fa-solid fa-chevron-right profile-nav-arrow" aria-hidden="true"></i>
+
                     </button>
+
+
 
                     <button class="profile-nav-button" type="button" data-profile-section="security">
+
                         <span class="profile-nav-icon">
+
                             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
                         </span>
+
+
 
                         <span class="profile-nav-label"> Security </span>
 
+
+
                         <i class="fa-solid fa-chevron-right profile-nav-arrow" aria-hidden="true"></i>
+
                     </button>
+
                 </nav>
 
+
+
                 <button id="logoutButton" class="profile-logout" type="button">
+
                     <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
 
+
+
                     Log out
+
                 </button>
+
             </aside>
+
+
 
             <!-- ================= MAIN PROFILE CONTENT ================= -->
 
+
+
             <div class="profile-content">
+
                 <!-- =====================================================
+
                 ACCOUNT
+
                 ===================================================== -->
 
+
+
                 <div id="profileSectionAccount" class="profile-section active" data-profile-panel="account">
+
                     <div class="profile-page-heading">
+
                         <p class="section-kicker">Your account</p>
+
+
 
                         <h2>Account</h2>
 
+
+
                         <p>
+
                             Manage your public profile and review your Islamic Qalam account
+
                             information.
+
                         </p>
+
                     </div>
+
+
 
                     <!-- PUBLIC PROFILE -->
 
+
+
                     <section class="profile-panel">
+
                         <div class="profile-panel-heading">
+
                             <span class="profile-panel-icon">
+
                                 <i class="fa-regular fa-user" aria-hidden="true"></i>
+
                             </span>
 
+
+
                             <div>
+
                                 <h3>Public profile</h3>
 
+
+
                                 <p>This information may appear alongside your comments.</p>
+
                             </div>
+
                         </div>
 
+
+
                         <form id="profileForm">
+
                             <!-- AVATAR -->
 
+
+
                             <div class="profile-form-group">
+
                                 <label> Profile avatar </label>
 
+
+
                                 <p class="profile-field-note">
+
                                     Choose how your profile appears across Islamic Qalam.
+
                                 </p>
 
+
+
                                 <div class="avatar-options">
+
                                     <!-- MALE -->
 
+
+
                                     <label class="avatar-option">
+
                                         <input type="radio" name="avatar" value="/images/avatars/default-male.png"
                                             checked />
 
+
+
                                         <span class="avatar-option-card">
+
                                             <img src="/images/avatars/default-male.png" alt="Male avatar" />
+
+
 
                                             <span> Male </span>
 
+
+
                                             <span class="avatar-check">
+
                                                 <i class="fa-solid fa-check" aria-hidden="true"></i>
+
                                             </span>
+
                                         </span>
+
                                     </label>
+
+
 
                                     <!-- FEMALE -->
 
+
+
                                     <label class="avatar-option">
+
                                         <input type="radio" name="avatar" value="/images/avatars/default-female.png" />
 
+
+
                                         <span class="avatar-option-card">
+
                                             <img src="/images/avatars/default-female.png"
                                                 alt="Female avatar with hijab" />
 
+
+
                                             <span> Female </span>
 
+
+
                                             <span class="avatar-check">
+
                                                 <i class="fa-solid fa-check" aria-hidden="true"></i>
+
                                             </span>
+
                                         </span>
+
                                     </label>
+
                                 </div>
+
                             </div>
+
+
 
                             <!-- USERNAME -->
 
+
+
                             <div class="profile-form-group">
+
                                 <label for="username"> Username </label>
 
+
+
                                 <div class="profile-input-wrapper">
+
                                     <i class="fa-regular fa-user" aria-hidden="true"></i>
 
+
+
                                     <input id="username" type="text" readonly />
+
                                 </div>
 
+
+
                                 <p class="profile-field-note">
+
                                     Your username cannot currently be changed.
+
                                 </p>
+
                             </div>
+
+
 
                             <!-- DISPLAY NAME -->
 
+
+
                             <div class="profile-form-group">
+
                                 <label for="displayName"> Display name </label>
 
+
+
                                 <div class="profile-input-wrapper">
+
                                     <i class="fa-regular fa-id-card" aria-hidden="true"></i>
+
+
 
                                     <input id="displayName" type="text" placeholder="Enter a display name"
                                         maxlength="50" />
+
                                 </div>
 
+
+
                                 <p class="profile-field-note">
+
                                     This is the name shown publicly with your comments.
+
                                 </p>
+
                             </div>
+
+
 
                             <div id="profileMessage" class="profile-message" role="status" aria-live="polite"></div>
 
+
+
                             <button id="saveProfileButton" class="profile-save-button" type="submit">
+
                                 <i class="fa-solid fa-check" aria-hidden="true"></i>
 
+
+
                                 <span> Save changes </span>
+
                             </button>
+
                         </form>
+
                     </section>
+
+
 
                     <!-- ACCOUNT INFORMATION -->
 
+
+
                     <section class="profile-panel">
+
                         <div class="profile-panel-heading">
+
                             <span class="profile-panel-icon">
+
                                 <i class="fa-regular fa-address-card" aria-hidden="true"></i>
+
                             </span>
 
+
+
                             <div>
+
                                 <h3>Account information</h3>
 
+
+
                                 <p>Your private Islamic Qalam account details.</p>
+
                             </div>
+
                         </div>
+
+
 
                         <div class="account-details">
+
                             <div class="account-detail-row">
+
                                 <div>
+
                                     <span class="account-detail-label"> Email address </span>
 
+
+
                                     <strong id="profileEmail"> — </strong>
+
                                 </div>
+
+
 
                                 <span id="emailStatus" class="account-status">
+
                                     Verified
+
                                 </span>
+
                             </div>
+
+
 
                             <div class="account-detail-row">
+
                                 <div>
+
                                     <span class="account-detail-label"> Account ID </span>
 
+
+
                                     <strong id="profileUserId" class="account-id"> — </strong>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </section>
+
                 </div>
 
+
+
                 <!-- =====================================================
+
                 MY COMMENTS
+
                 ===================================================== -->
 
+
+
                 <div id="profileSectionComments" class="profile-section" data-profile-panel="comments" hidden>
+
                     <div class="profile-page-heading profile-comments-heading">
+
                         <div>
+
                             <p class="section-kicker">Your activity</p>
+
+
 
                             <h2>My Comments</h2>
 
+
+
                             <p>
+
                                 Review the comments and replies you've submitted across
+
                                 Islamic Qalam.
+
                             </p>
+
                         </div>
+
                     </div>
 
+
+
                     <section class="profile-panel">
+
                         <div class="profile-comments-toolbar">
+
                             <div class="profile-comments-total">
+
                                 <span> Total comments </span>
 
+
+
                                 <strong id="profileCommentsTotal"> 0 </strong>
+
                             </div>
 
+
+
                             <div class="profile-comments-filter">
+
                                 <label for="profileCommentFilter" class="sr-only">
+
                                     Filter comments
+
                                 </label>
 
+
+
                                 <select id="profileCommentFilter">
+
                                     <option value="all">All comments</option>
+
+
 
                                     <option value="approved">Approved</option>
 
+
+
                                     <option value="pending">Pending review</option>
 
+
+
                                     <option value="rejected">Rejected</option>
+
                                 </select>
+
                             </div>
+
                         </div>
+
+
 
                         <div id="profileCommentsMessage" class="profile-message" role="status" aria-live="polite"></div>
 
+
+
                         <!-- LOADING -->
 
+
+
                         <div id="profileCommentsLoading" class="profile-comments-loading" hidden>
+
                             <span class="profile-mini-spinner"></span>
 
+
+
                             Loading your comments...
+
                         </div>
+
+
 
                         <!-- COMMENTS -->
 
+
+
                         <div id="profileCommentsList" class="profile-comments-list"></div>
+
+
 
                         <!-- EMPTY -->
 
+
+
                         <div id="profileCommentsEmpty" class="profile-comments-empty" hidden>
+
                             <span class="profile-comments-empty-icon">
+
                                 <i class="fa-regular fa-comments" aria-hidden="true"></i>
+
                             </span>
+
+
 
                             <h3>No comments here</h3>
 
+
+
                             <p>You don't have any comments matching this filter yet.</p>
+
                         </div>
+
                     </section>
+
                 </div>
 
-                <!-- =====================================================
-                     PURCHASED ITEMS
-                     ===================================================== -->
 
-                <div id="profileSectionPurchases" class="profile-section" data-profile-panel="purchases" hidden>
-                    <div class="profile-page-heading">
-                        <p class="section-kicker">Your library</p>
-
-                        <h2>Purchased Items</h2>
-
-                        <p>Access the e-books you've purchased through Islamic Qalam.</p>
-                    </div>
-
-                    <section class="profile-panel">
-                        <!-- ================= PANEL HEADING ================= -->
-
-                        <div class="profile-panel-heading">
-                            <span class="profile-panel-icon">
-                                <i class="fa-solid fa-book-open" aria-hidden="true"> </i>
-                            </span>
-
-                            <div>
-                                <h3>My E-books</h3>
-
-                                <p>
-                                    Generate a new temporary download link whenever you need
-                                    your e-book.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- ================= MESSAGE ================= -->
-
-                        <div id="profilePurchasesMessage" class="profile-message" role="status" aria-live="polite">
-                        </div>
-
-                        <!-- ================= LOADING ================= -->
-
-                        <div id="profilePurchasesLoading" class="profile-comments-loading" hidden>
-                            <span class="profile-mini-spinner"></span>
-
-                            Loading your purchases...
-                        </div>
-
-                        <!-- ================= PURCHASES ================= -->
-
-                        <div id="profilePurchasesList" class="profile-purchases-list"></div>
-
-                        <!-- ================= EMPTY ================= -->
-
-                        <div id="profilePurchasesEmpty" class="profile-comments-empty" hidden>
-                            <span class="profile-comments-empty-icon">
-                                <i class="fa-solid fa-bag-shopping" aria-hidden="true"> </i>
-                            </span>
-
-                            <h3>No purchases yet</h3>
-
-                            <p>E-books purchased while signed in will appear here.</p>
-
-                            <a href="/e-books.html" class="profile-purchases-browse">
-                                Browse E-books
-                            </a>
-                        </div>
-                    </section>
-                </div>
 
                 <!-- =====================================================
+
      MESSAGES
+
 ===================================================== -->
 
+
+
                 <div id="profileSectionMessages" class="profile-section" data-profile-panel="messages" hidden>
+
                     <div class="profile-page-heading">
+
                         <p class="section-kicker">Your inbox</p>
+
+
 
                         <h2>Messages</h2>
 
+
+
                         <p>
+
                             Security notices, account messages and updates from Islamic
+
                             Qalam.
+
                         </p>
+
                     </div>
 
+
+
                     <section class="profile-panel">
+
                         <div class="profile-messages-toolbar">
+
                             <div>
+
                                 <h3>Inbox</h3>
 
+
+
                                 <p>Important activity and announcements.</p>
+
                             </div>
 
+
+
                             <button id="markAllMessagesRead" class="profile-mark-read-button" type="button">
+
                                 <i class="fa-regular fa-envelope-open" aria-hidden="true"></i>
 
+
+
                                 Mark all as read
+
                             </button>
+
                         </div>
+
+
 
                         <div id="profileMessagesLoading" class="profile-comments-loading" hidden>
+
                             <span class="profile-mini-spinner"></span>
 
+
+
                             Loading messages...
+
                         </div>
+
+
 
                         <div id="profileMessagesList" class="profile-messages-list"></div>
 
+
+
                         <div id="profileMessagesEmpty" class="profile-comments-empty" hidden>
+
                             <span class="profile-comments-empty-icon">
+
                                 <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
                             </span>
+
+
 
                             <h3>No messages</h3>
 
+
+
                             <p>You don't have any messages yet.</p>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+
+                <!-- =====================================================
+
+                SECURITY
+
+                ===================================================== -->
+
+
+
+                <!-- ================= PREMIUM MEMBERSHIP ================= -->
+                <div id="profileSectionPremium" class="profile-section" data-profile-panel="premium" hidden>
+                    <div class="profile-page-heading">
+                        <p class="section-kicker">Your membership</p>
+                        <h2>Premium Membership</h2>
+                        <p>Manage your access, renewal and secure payment details.</p>
+                    </div>
+
+                    <section class="profile-panel premium-profile-panel">
+                        <div id="premiumLoading" class="profile-comments-loading" role="status">
+                            <span class="profile-mini-spinner" aria-hidden="true"></span>
+                            Loading your membership...
+                        </div>
+                        <div id="premiumMessage" class="profile-message" role="status" aria-live="polite"></div>
+
+                        <!-- SHOWN WHEN THE ACCOUNT HAS NEVER SUBSCRIBED -->
+                        <div id="premiumNoSubscription" class="premium-empty" hidden>
+                            <span class="premium-empty-icon" aria-hidden="true">
+                                <i class="fa-solid fa-crown"></i>
+                            </span>
+                            <p class="premium-eyebrow">ISLAMIC QALAM PREMIUM</p>
+                            <h3>Discover the complete library</h3>
+                            <p>
+                                Unlock Premium e-books, word-by-word poem translations,
+                                Early Access poems and videos, and more with a flexible
+                                monthly subscription or a one-month pass.
+                            </p>
+                            <div class="premium-empty-price">$7.90 <span>USD / month</span></div>
+                            <button id="premiumSubscribeButton" class="premium-button premium-button-gold"
+                                type="button">
+                                View Premium options <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <!-- SHOWN FOR ACTIVE, CANCELLED AND EXPIRED MEMBERSHIPS -->
+                        <div id="premiumMembershipDetails" hidden>
+                            <div id="premiumHero" class="premium-hero">
+                                <div class="premium-hero-icon" aria-hidden="true">
+                                    <i class="fa-solid fa-crown"></i>
+                                </div>
+                                <div class="premium-hero-copy">
+                                    <p class="premium-eyebrow">YOUR MEMBERSHIP</p>
+                                    <h3 id="premiumPlanName">Islamic Qalam Premium</h3>
+                                    <p id="premiumHeroSubtitle">Your membership details</p>
+                                </div>
+                                <span id="premiumStatus" class="premium-status-pill">Loading</span>
+                            </div>
+
+                            <div class="premium-facts" aria-label="Membership details">
+                                <div class="premium-fact">
+                                    <span id="premiumPeriodLabel">Paid access until</span>
+                                    <strong id="premiumPaidThrough">—</strong>
+                                </div>
+                                <div class="premium-fact">
+                                    <span>Automatic renewal</span>
+                                    <strong id="premiumRenewalStatus">—</strong>
+                                </div>
+                                <div class="premium-fact">
+                                    <span>Next payment</span>
+                                    <strong id="premiumNextRenewal">—</strong>
+                                </div>
+                            </div>
+
+                            <div id="premiumCancellationNotice" class="premium-notice" hidden></div>
+
+                            <!-- An expired subscription is historical. Restart creates a new checkout. -->
+                            <div id="premiumRestartPanel" class="premium-restart-panel" hidden>
+                                <div class="premium-restart-icon" aria-hidden="true">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </div>
+                                <div class="premium-restart-content">
+                                    <h4>Ready to return to Premium?</h4>
+                                    <p>Start a new membership with your previous option already selected. You can review
+                                        the price and payment method before confirming.</p>
+                                    <button id="premiumRestartButton" class="premium-button premium-button-gold"
+                                        type="button">
+                                        Restart Premium
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="premium-section-divider"></div>
+
+                            <div class="premium-billing-row">
+                                <div class="premium-detail-icon" aria-hidden="true">
+                                    <i class="fa-regular fa-credit-card"></i>
+                                </div>
+                                <div class="premium-billing-copy">
+                                    <h4>Payment method</h4>
+                                    <p id="premiumPaymentMethod">Loading payment details...</p>
+                                    <small>Payment details are handled securely by Stripe.</small>
+                                </div>
+                                <button id="premiumUpdatePaymentButton" class="premium-button premium-button-outline"
+                                    type="button">
+                                    <i class="fa-solid fa-pen" aria-hidden="true"></i>
+                                    Change card
+                                </button>
+                            </div>
+
+                            <div id="premiumActiveManagement" class="premium-management-row" hidden>
+                                <div>
+                                    <h4>Manage renewal</h4>
+                                    <p>Control future payments without losing the access you've already paid for.</p>
+                                </div>
+                                <button id="premiumCancelButton" class="premium-button premium-button-muted"
+                                    type="button" hidden>
+                                    Turn off renewal
+                                </button>
+                                <button id="premiumReactivateButton" class="premium-button premium-button-gold"
+                                    type="button" hidden>
+                                    Keep my subscription
+                                </button>
+                            </div>
                         </div>
                     </section>
                 </div>
 
-                <!-- =====================================================
-                SECURITY
-                ===================================================== -->
+                <!-- ================= SECURITY ================= -->
 
                 <div id="profileSectionSecurity" class="profile-section" data-profile-panel="security" hidden>
+
                     <div class="profile-page-heading">
+
                         <p class="section-kicker">Account security</p>
+
+
 
                         <h2>Security</h2>
 
+
+
                         <p>
+
                             Manage your password and keep your Islamic Qalam account secure.
+
                         </p>
+
                     </div>
 
+
+
                     <section class="profile-panel">
+
                         <div class="profile-panel-heading">
+
                             <span class="profile-panel-icon">
+
                                 <i class="fa-solid fa-key" aria-hidden="true"></i>
+
                             </span>
 
+
+
                             <div>
+
                                 <h3>Change password</h3>
 
+
+
                                 <p>Update the password you use to sign in to your account.</p>
+
                             </div>
+
                         </div>
 
+
+
                         <form id="changePasswordForm">
+
                             <!-- CURRENT -->
 
+
+
                             <div class="profile-form-group">
+
                                 <label for="currentPassword"> Current password </label>
 
+
+
                                 <div class="profile-input-wrapper profile-password-wrapper">
+
                                     <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+
 
                                     <input id="currentPassword" type="password"
                                         placeholder="Enter your current password" autocomplete="current-password"
                                         required />
 
+
+
                                     <button type="button" class="profile-password-toggle" data-target="currentPassword"
                                         aria-label="Show password">
+
                                         <i class="fa-regular fa-eye" aria-hidden="true"></i>
+
                                     </button>
+
                                 </div>
+
                             </div>
+
+
 
                             <!-- NEW -->
 
+
+
                             <div class="profile-form-group">
+
                                 <label for="profileNewPassword"> New password </label>
 
+
+
                                 <div class="profile-input-wrapper profile-password-wrapper">
+
                                     <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+
 
                                     <input id="profileNewPassword" type="password" placeholder="Enter your new password"
                                         minlength="6" autocomplete="new-password" required />
 
+
+
                                     <button type="button" class="profile-password-toggle"
                                         data-target="profileNewPassword" aria-label="Show password">
+
                                         <i class="fa-regular fa-eye" aria-hidden="true"></i>
+
                                     </button>
+
                                 </div>
+
                             </div>
+
+
 
                             <!-- CONFIRM -->
 
+
+
                             <div class="profile-form-group">
+
                                 <label for="profileConfirmPassword">
+
                                     Confirm new password
+
                                 </label>
 
+
+
                                 <div class="profile-input-wrapper profile-password-wrapper">
+
                                     <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+
 
                                     <input id="profileConfirmPassword" type="password"
                                         placeholder="Enter your new password again" minlength="6"
                                         autocomplete="new-password" required />
 
+
+
                                     <button type="button" class="profile-password-toggle"
                                         data-target="profileConfirmPassword" aria-label="Show password">
+
                                         <i class="fa-regular fa-eye" aria-hidden="true"></i>
+
                                     </button>
+
                                 </div>
+
                             </div>
+
+
 
                             <div id="changePasswordMessage" class="profile-message" role="status" aria-live="polite">
+
                             </div>
 
+
+
                             <button id="changePasswordButton" class="profile-save-button" type="submit">
+
                                 <i class="fa-solid fa-key" aria-hidden="true"></i>
 
+
+
                                 <span> Change password </span>
+
                             </button>
+
                         </form>
+
                     </section>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
+
+
 
     <!-- ================= FOOTER ================= -->
 
+
+
     <footer id="profileFooter" class="footer site-footer" hidden>
+
         <div class="footer-inner">
+
             <div class="footer-brand">
+
                 <a class="brand" href="/" aria-label="Islamic Qalam homepage">
-                <svg class="website-logo" aria-hidden="true" focusable="false">
-                    <use href="/images/website-logo.svg#website-logo"></use>
-                </svg>
-            </a>
+
+                    <svg class="website-logo" aria-hidden="true" focusable="false">
+
+                        <use href="/images/website-logo.svg#website-logo"></use>
+
+                    </svg>
+
+                </a>
+
+
 
                 <div>
+
                     <strong> Islamic Qalam </strong>
 
+
+
                     <p>Classical works, thoughtfully presented.</p>
+
                 </div>
+
             </div>
 
+
+
             <div class="footer-links" aria-label="Footer navigation">
+
                 <a href="quran.html"> Qur'an </a>
+
+
 
                 <a href="videos.html"> Videos </a>
 
+
+
                 <a href="e-books.html"> E-books </a>
+
+
 
                 <a href="contact-us.html"> Contact </a>
 
+
+
+                <a href="/premium.html"> Premium </a>
+
+
+
                 <a href="https://buy.stripe.com/6oE3eY8xJ0ZM5Nu7sv" target="_blank" rel="noopener noreferrer"> Donate
+
                 </a>
+
                 <a href="faq.html"> FAQ </a>
+
             </div>
 
+
+
             <div class="social-links" aria-label="Social media">
+
                 <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
                     aria-label="YouTube">
+
                     <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+
                 </a>
+
+
 
                 <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
                     aria-label="Instagram">
+
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+
                 </a>
+
+
 
                 <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
                     aria-label="TikTok">
+
                     <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+
                 </a>
+
             </div>
+
         </div>
+
+
 
         <div class="footer-bottom">
+
             <p>
+
                 &copy;
+
                 <span id="current-year">2026</span>
+
                 Islamic Qalam. All rights reserved.
+
             </p>
+
         </div>
+
     </footer>
 
+
+
     <!-- ================= SUPABASE ================= -->
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -714,9 +1398,17 @@
     <!-- ================= SCRIPTS ================= -->
 
     <script src="scripts/global.js"></script>
+
     <script src="scripts/side-bar.js"></script>
 
+
+
     <script src="supabase/profile.js"></script>
+
+    <script src="supabase/premium-profile.js"></script>
+
 </body>
+
+
 
 </html>

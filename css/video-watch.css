@@ -460,6 +460,265 @@
 }
 
 /* =========================================================
+   PREMIUM EARLY ACCESS GATE
+========================================================= */
+
+.early-access-gate[hidden] {
+  display: none;
+}
+
+
+.early-access-gate {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 30px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(5, 7, 5, 0.72),
+      rgba(5, 7, 5, 0.94)
+    );
+
+  backdrop-filter: blur(3px);
+}
+
+
+.early-access-gate-content {
+  width: min(520px, 100%);
+
+  margin: auto;
+}
+
+
+.early-access-gate-icon {
+  display: grid;
+
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 15px;
+
+  place-items: center;
+
+  border: 1px solid rgba(240, 198, 106, 0.4);
+
+  border-radius: 50%;
+
+  color: #f0c66a;
+
+  background: rgba(119, 83, 21, 0.42);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25);
+
+  font-size: 1.45rem;
+}
+
+
+.early-access-gate-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  padding: 6px 11px;
+
+  border: 1px solid rgba(240, 198, 106, 0.3);
+
+  border-radius: 50px;
+
+  color: #f5d88f;
+
+  background: rgba(119, 83, 21, 0.3);
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+.early-access-gate h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(1.45rem, 3vw, 2rem);
+
+  line-height: 1.25;
+}
+
+
+.early-access-gate p {
+  max-width: 460px;
+
+  margin: 13px auto 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 0.9rem;
+
+  line-height: 1.65;
+}
+
+
+.early-access-gate-release {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+
+  color: #f5d88f;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+}
+
+
+.early-access-gate-action {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  margin-top: 21px;
+
+  padding: 0 24px;
+
+  border: 1px solid #f0c66a;
+
+  border-radius: 50px;
+
+  color: #1e180c;
+
+  background: #f0c66a;
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+.early-access-gate-action:hover {
+  color: #1e180c;
+
+  background: #f7d98f;
+
+  transform: translateY(-1px);
+}
+
+
+/*
+ * Hide ordinary playback controls while
+ * Early Access is locked.
+ */
+
+.custom-video-player.access-locked
+.video-controls,
+
+.custom-video-player.access-locked
+.large-play-button {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+.custom-video-player.access-locked video {
+  filter: brightness(0.48);
+
+  transform: scale(1.01);
+}
+
+
+/* =========================================================
+   MOBILE EARLY ACCESS GATE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .early-access-gate {
+    padding: 20px;
+  }
+
+
+  .early-access-gate-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+  }
+
+
+  .early-access-gate h2 {
+    font-size: 1.25rem;
+  }
+
+
+  .early-access-gate p {
+    margin-top: 8px;
+
+    font-size: 0.78rem;
+
+    line-height: 1.45;
+  }
+
+
+  .early-access-gate-release {
+    margin-top: 11px;
+
+    font-size: 0.73rem;
+  }
+
+
+  .early-access-gate-action {
+    min-height: 40px;
+
+    margin-top: 14px;
+
+    padding: 0 19px;
+
+    font-size: 0.76rem;
+  }
+
+}
+
+/* =========================================================
    LARGE PLAY
 ========================================================= */
 
@@ -813,6 +1072,51 @@
 
 .watch-view-count.loading {
   visibility: hidden;
+}
+
+/* =========================================================
+   RELATED VIDEO EARLY ACCESS
+========================================================= */
+
+.related-early-access-badge {
+  position: absolute;
+
+  top: 7px;
+  right: 7px;
+
+  z-index: 5;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 5px 7px;
+
+  border-radius: 50px;
+
+  color: #fff0c4;
+
+  background:
+    rgba(96, 68, 18, 0.9);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 0.55rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+
+  pointer-events: none;
+}
+
+
+.related-early-access-badge i {
+  color: #f0c66a;
 }
 
 /* =========================================================
