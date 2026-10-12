@@ -133,6 +133,51 @@ document.addEventListener(
             27;
 
 
+        /*
+         * Font-specific size offsets.
+         *
+         * Positive = make that font larger.
+         * Negative = make that font smaller.
+         *
+         * Adjust these values until every font
+         * visually matches the others.
+         */
+
+        const fontSizeOffsets = {
+
+            uthman:
+                0,
+
+            calibri:
+                0,
+
+            amiri:
+                -2,
+
+            neirizi:
+                -4,
+
+            thuluth:
+                7,
+
+            scheherazade:
+                -3,
+
+            lateef:
+                9
+
+        };
+
+
+        /*
+         * Current font used when calculating
+         * the effective font size.
+         */
+
+        let activeFont =
+            "uthman";
+
+
         let fontSize =
             Number.parseInt(
                 localStorage.getItem(
@@ -166,15 +211,36 @@ document.addEventListener(
 
         function applyFontSize() {
 
+            const offset =
+                fontSizeOffsets[
+                activeFont
+                ] ?? 0;
+
+
+            const effectiveFontSize =
+                fontSize +
+                offset;
+
+
             arabicTexts.forEach(
                 text => {
 
                     text.style.fontSize =
-                        `${fontSize}px`;
+                        `${effectiveFontSize}px`;
 
                 }
             );
 
+
+            /*
+             * Keep the displayed number as the
+             * user's base font size.
+             *
+             * For example, it will still say
+             * 27px even if Lateef is actually
+             * rendered at 35px because of its
+             * +8px correction.
+             */
 
             if (
                 fontSizeDisplay
@@ -272,46 +338,122 @@ document.addEventListener(
            FONT FAMILY
         ===================================== */
 
+        /* =====================================
+   FONT FAMILY
+===================================== */
+
         const fontFamilies = {
 
-            default:
-                "Calibri, sans-serif",
+            uthman:
+                '"Uthman", serif',
+
+            calibri:
+                '"Calibri", sans-serif',
 
             amiri:
-                "Amiri",
+                '"Amiri", serif',
 
-            Neirizi:
-                "Neirizi",
+            neirizi:
+                '"Neirizi", serif',
 
-            Uthman:
-                "Uthman",
+            thuluth:
+                '"Thuluth", serif',
 
-            Thuluth:
-                "Thuluth"
+            scheherazade:
+                '"Scheherazade New", serif',
+
+            lateef:
+                '"Lateef", serif'
 
         };
 
+
+        /*
+         * Uthman is the default font for all
+         * poem pages.
+         */
 
         let savedFont =
             localStorage.getItem(
                 "selectedFont"
             ) ||
-            "default";
+            "uthman";
 
 
         /*
-         * Compatibility with the old script.
+         * Migrate values saved by the old
+         * font system.
+         *
+         * Old "Default" was Calibri, but since
+         * Uthman is now the website default,
+         * old default/inherit selections are
+         * moved to Uthman.
          */
 
+        const legacyFontValues = {
+
+            default:
+                "uthman",
+
+            inherit:
+                "uthman",
+
+            Uthman:
+                "uthman",
+
+            Neirizi:
+                "neirizi",
+
+            Thuluth:
+                "thuluth"
+
+        };
+
+
         if (
-            savedFont ===
-            "inherit"
+            legacyFontValues[
+            savedFont
+            ]
         ) {
 
             savedFont =
-                "default";
+                legacyFontValues[
+                savedFont
+                ];
 
         }
+
+
+        /*
+         * If an invalid or obsolete font value
+         * somehow exists in localStorage,
+         * fall back safely to Uthman.
+         */
+
+        if (
+            !Object.prototype
+                .hasOwnProperty
+                .call(
+                    fontFamilies,
+                    savedFont
+                )
+        ) {
+
+            savedFont =
+                "uthman";
+
+        }
+
+
+        /*
+         * Save the migrated value so this only
+         * needs to happen once.
+         */
+
+        localStorage.setItem(
+            "selectedFont",
+            savedFont
+        );
 
 
         function applyFont(
@@ -320,8 +462,17 @@ document.addEventListener(
 
             const family =
                 fontFamilies[
+                fontKey
+                ] ||
+                fontFamilies.uthman;
+
+
+            activeFont =
+                fontFamilies[
                     fontKey
-                ] ?? "";
+                ]
+                    ? fontKey
+                    : "uthman";
 
 
             arabicTexts.forEach(
@@ -333,6 +484,14 @@ document.addEventListener(
                 }
             );
 
+
+            /*
+             * Recalculate the size whenever
+             * the user changes fonts.
+             */
+
+            applyFontSize();
+
         }
 
 
@@ -340,6 +499,11 @@ document.addEventListener(
             savedFont
         );
 
+
+        /*
+         * Make the correct radio button match
+         * the currently selected font.
+         */
 
         const savedRadio =
             document.querySelector(

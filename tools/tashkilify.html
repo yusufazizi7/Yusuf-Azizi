@@ -1,0 +1,738 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        Arabic Tashkil Tool | Islamic Qalam
+    </title>
+
+    <meta name="description"
+        content="Add complete Arabic tashkeel to unvocalised or partially vocalised Arabic text with Islamic Qalam." />
+
+    <meta name="author" content="Mohammad Yusuf Azizi" />
+
+    <link rel="canonical" href="https://islamicqalam.com/tools/tashkeel.html" />
+
+
+    <!-- ================= SOCIAL SHARING ================= -->
+
+    <meta property="og:type" content="website" />
+
+    <meta property="og:title" content="Arabic Tashkil Tool | Islamic Qalam" />
+
+    <meta property="og:description" content="Complete missing Arabic tashkeel while preserving existing diacritics." />
+
+    <meta property="og:url" content="https://islamicqalam.com/tools/tashkeel.html" />
+
+    <meta property="og:site_name" content="Islamic Qalam" />
+
+    <meta property="og:image" content="https://islamicqalam.com/images/social-preview.png" />
+
+
+    <!-- ================= WEBSITE ICON ================= -->
+
+    <link rel="icon" type="image/png" href="/images/website-favicon.png" />
+
+
+    <!-- ================= STYLES ================= -->
+
+    <link rel="stylesheet" href="/css/global.css" />
+
+    <link rel="stylesheet" href="/css/tashkeel-tool.css" />
+
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <script src="https://kit.fontawesome.com/50f622582e.js" crossorigin="anonymous" defer></script>
+
+
+    <!-- ================= STRUCTURED DATA ================= -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Islamic Qalam Arabic Tashkil Tool",
+        "url": "https://islamicqalam.com/tools/tashkeel.html",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "description": "Add missing Arabic tashkeel while preserving existing Arabic diacritics.",
+        "inLanguage": ["en", "ar"]
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <a class="skip-link" href="#main-content">
+        Skip to content
+    </a>
+
+
+
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
+
+    <header class="site-header">
+
+
+        <div class="brand">
+
+
+            <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+
+                <svg class="website-logo" aria-hidden="true" focusable="false">
+
+                    <use href="/images/website-logo.svg#website-logo"></use>
+
+                </svg>
+
+            </a>
+
+
+            <span class="brand-name">
+                Islamic Qalam
+            </span>
+
+
+        </div>
+
+
+
+        <nav id="primary-navigation" class="navbar" aria-label="Main navigation">
+
+            <a href="/#poetry-library">
+                Poetry
+            </a>
+
+            <a href="/quran.html">
+                Qur'an
+            </a>
+
+            <a href="/videos.html">
+                Videos
+            </a>
+
+            <a href="/e-books.html"> E-books </a>
+
+            
+
+            <a href="/tools/tashkilify.html" class="nav-tool-premium active" aria-current="page">
+                <span>
+                    Tashkeelify
+                </span>
+            
+                <span class="nav-premium-badge" aria-label="Premium" title="Premium">
+                    <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                </span>
+            </a>
+
+            <a href="/contact-us.html">
+                Contact
+            </a>
+
+
+            <a id="navPremiumLink" class="nav-premium" href="/premium.html" hidden>
+
+                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+
+                <span>
+                    Premium
+                </span>
+
+            </a>
+
+
+            <a id="navAccountLink" class="nav-login" href="/login.html">
+
+                <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                <span id="navAccountText">
+                    Login
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <button id="menu-bars" class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+
+        </button>
+
+
+    </header>
+
+
+
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <main id="main-content" class="tashkeel-page">
+
+
+        <div class="tashkeel-page-inner">
+
+
+            <!-- =================================================
+                 COMPACT PAGE HEADING
+                 ================================================= -->
+
+            <section class="tashkeel-heading">
+
+
+                <div class="tashkeel-heading-copy">
+
+
+                    <p class="tashkeel-kicker">
+
+                        <i class="fa-solid fa-crown" aria-hidden="true"></i>
+
+                        Islamic Qalam Premium
+
+                    </p>
+
+
+                    <h1>
+                        Arabic Tashkil
+                    </h1>
+
+
+                    <p class="tashkeel-heading-description">
+
+                        Complete missing Arabic diacritics while
+                        preserving the tashkeel already present
+                        in your text.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div id="toolAccountState" class="tool-account-state" aria-live="polite">
+
+                    <span class="tool-account-dot" aria-hidden="true"></span>
+
+                    <span id="toolAccountText">
+                        Checking account...
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACCESS NOTICE
+                 ================================================= -->
+
+            <div id="tashkeelAccessNotice" class="tashkeel-access-notice" hidden>
+
+
+                <div class="tashkeel-access-icon">
+
+                    <i id="tashkeelAccessIcon" class="fa-solid fa-lock" aria-hidden="true"></i>
+
+                </div>
+
+
+                <div class="tashkeel-access-copy">
+
+                    <strong id="tashkeelAccessTitle">
+                        Premium access required
+                    </strong>
+
+                    <p id="tashkeelAccessText">
+                        This tool is available to Islamic Qalam
+                        Premium members.
+                    </p>
+
+                </div>
+
+
+                <a id="tashkeelAccessLink" class="tashkeel-access-link" href="/premium.html">
+                    View Premium
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TOOL
+                 ================================================= -->
+
+            <section class="tashkeel-tool" aria-label="Arabic Tashkil Tool">
+
+
+                <!-- =============================================
+                     EDITORS
+                     ============================================= -->
+
+                <div class="tashkeel-editors">
+
+
+                    <!-- =========================================
+                         INPUT
+                         ========================================= -->
+
+                    <article class="tashkeel-editor">
+
+
+                        <div class="tashkeel-editor-header">
+
+
+                            <div class="tashkeel-editor-heading">
+
+                                <span class="tashkeel-editor-icon">
+
+                                    <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Arabic Input
+                                    </strong>
+
+                                    <span>
+                                        Enter unvocalised or partially vocalised text
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <span id="tashkeelInputCount" class="tashkeel-counter">
+                                0 characters
+                            </span>
+
+
+                        </div>
+
+
+
+                        <textarea id="tashkeelInput" class="tashkeel-textarea" lang="ar" dir="rtl" spellcheck="false"
+                            autocomplete="off" maxlength="10000" placeholder="اكتب أو الصق النص العربي هنا..."
+                            aria-label="Arabic text to add tashkeel to"></textarea>
+
+
+
+                        <div class="tashkeel-editor-footer">
+
+
+                            <button id="clearTashkeelInput" class="tashkeel-secondary-button" type="button">
+
+                                <i class="fa-solid fa-eraser" aria-hidden="true"></i>
+
+                                Clear
+
+                            </button>
+
+
+
+                            <button id="pasteTashkeelInput" class="tashkeel-secondary-button" type="button">
+
+                                <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+
+                                Paste
+
+                            </button>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         OUTPUT
+                         ========================================= -->
+
+                    <article class="tashkeel-editor tashkeel-result-editor">
+
+
+                        <div class="tashkeel-editor-header">
+
+
+                            <div class="tashkeel-editor-heading">
+
+                                <span class="tashkeel-editor-icon">
+
+                                    <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+
+                                </span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Tashkil Result
+                                    </strong>
+
+                                    <span>
+                                        Fully vocalised Arabic output
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <span id="tashkeelOutputCount" class="tashkeel-counter">
+                                0 characters
+                            </span>
+
+
+                        </div>
+
+
+
+                        <textarea id="tashkeelOutput" class="tashkeel-textarea tashkeel-output" lang="ar" dir="rtl"
+                            spellcheck="false" placeholder="سَيَظْهَرُ النَّصُّ الْمُشَكَّلُ هُنَا..."
+                            aria-label="Arabic text with tashkeel" readonly></textarea>
+
+
+
+                        <div class="tashkeel-editor-footer">
+
+
+                            <button id="clearTashkeelOutput" class="tashkeel-secondary-button" type="button">
+
+                                <i class="fa-solid fa-eraser" aria-hidden="true"></i>
+
+                                Clear
+
+                            </button>
+
+
+
+                            <button id="copyTashkeelOutput" class="tashkeel-secondary-button" type="button" disabled>
+
+                                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+
+                                <span id="copyTashkeelText">
+                                    Copy Result
+                                </span>
+
+                            </button>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- =============================================
+                     ACTION
+                     ============================================= -->
+
+                <div class="tashkeel-action-row">
+
+
+                    <div id="tashkeelStatus" class="tashkeel-status" aria-live="polite">
+
+                        <span class="tashkeel-status-dot" aria-hidden="true"></span>
+
+                        <span id="tashkeelStatusText">
+                            Ready
+                        </span>
+
+                    </div>
+
+
+
+                    <button id="addTashkeelButton" class="tashkeel-primary-button" type="button" disabled>
+
+                        <span id="tashkeelButtonSpinner" class="tashkeel-button-spinner" aria-hidden="true"
+                            hidden></span>
+
+
+                        <i id="tashkeelButtonIcon" class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+
+
+                        <span id="addTashkeelButtonText">
+                            Add Tashkil
+                        </span>
+
+                    </button>
+
+
+
+                    <span class="tashkeel-shortcut">
+                        Ctrl + Enter
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- =============================================
+                     MESSAGE
+                     ============================================= -->
+
+                <div id="tashkeelMessage" class="tashkeel-message" role="status" aria-live="polite" hidden></div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SMALL TOOL NOTES
+                 ================================================= -->
+
+            <section class="tashkeel-notes">
+
+
+                <div class="tashkeel-note">
+
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+
+                    <div>
+
+                        <strong>
+                            Existing tashkeel is preserved
+                        </strong>
+
+                        <p>
+                            Marks already present in your original
+                            Arabic are given priority.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="tashkeel-note">
+
+                    <i class="fa-solid fa-spell-check" aria-hidden="true"></i>
+
+                    <div>
+
+                        <strong>
+                            Review the result
+                        </strong>
+
+                        <p>
+                            Arabic can sometimes have more than one
+                            grammatically valid reading.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="tashkeel-note">
+
+                    <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+
+                    <div>
+
+                        <strong>
+                            First request may take longer
+                        </strong>
+
+                        <p>
+                            The processing service may need a moment
+                            to start after a period of inactivity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer site-footer">
+
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+
+                <a class="brand" href="/" aria-label="Islamic Qalam homepage">
+
+                    <svg class="website-logo" aria-hidden="true" focusable="false">
+
+                        <use href="/images/website-logo.svg#website-logo"></use>
+
+                    </svg>
+
+                </a>
+
+
+                <div>
+
+                    <strong>
+                        Islamic Qalam
+                    </strong>
+
+                    <p>
+                        Classical works, thoughtfully presented.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-links" aria-label="Footer navigation">
+
+                <a href="/quran.html">
+                    Qur'an
+                </a>
+
+                <a href="/videos.html">
+                    Videos
+                </a>
+
+                <a href="/e-books.html">
+                    E-books
+                </a>
+
+                <a href="/contact-us.html">
+                    Contact
+                </a>
+
+                <a href="/premium.html">
+                    Premium
+                </a>
+
+                <a href="/faq.html">
+                    FAQ
+                </a>
+
+            </div>
+
+
+
+            <div class="social-links" aria-label="Social media">
+
+                <a href="https://www.youtube.com/@yusufazizi319/videos" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube">
+
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+
+                </a>
+
+
+                <a href="https://www.instagram.com/yusufazizizizizi/?hl=en" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+
+                </a>
+
+
+                <a href="https://www.tiktok.com/@yusufazizizizi" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok">
+
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+
+                &copy;
+
+                <span id="current-year">
+                    2026
+                </span>
+
+                Islamic Qalam. All rights reserved.
+
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         SCRIPTS
+         ========================================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="/supabase/supabase-client.js"></script>
+
+    <script src="/scripts/global.js"></script>
+
+    <script src="/scripts/side-bar.js"></script>
+
+    <script src="/scripts/tashkeel-tool.js"></script>
+
+
+</body>
+
+</html>
