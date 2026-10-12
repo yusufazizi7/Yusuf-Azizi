@@ -2038,7 +2038,7 @@ document.addEventListener(
 ===================================== */
 
         const VIEW_REQUIRED_MS =
-            60 * 1000;
+            10 * 1000;
 
 
         let watchedTimeMs =
